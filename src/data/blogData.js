@@ -184,9 +184,9 @@ export const blogData = [
     title: "cPanel - React Application (no node server yet)",
     subtitle: "What to do",
     text: [
-      "Not the last entry, that's for darn sure.",
-      "Ok, ok seriously. Here are the steps.",
-      "If you have been flailing, start over.",
+      "Don't do whatever I was doing in the last entry, that's for darn sure. Was way off.",
+      "Ok, ok seriously. Here are the steps I took. If you are in my position from my last entry, may God have mercy on your soul and I hope you're able to do what I am here or figure it out somehow.",
+      "Wiped everything I started in cpanel to start over.",
       "type npm run build in console",
       "In build folder, zip files so that they don't take up too much memory for cpanel to handle. It's a delicate flower. You can name it whatever but it must have a name or it won't show up in your folder when you go to move it and you'll have to delete that folder. Go on, ask me how I know.",
       "Go to file manager in cpanel. Open public_html.",
