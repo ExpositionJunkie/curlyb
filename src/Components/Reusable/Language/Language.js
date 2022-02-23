@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import { supportedLanguages } from "../../data/supportedLanguage";
+import { supportedLanguages } from "../../../data/supportedLanguage";
 
 export default function Language() {
   const [languages, setLanguages] = useState([...supportedLanguages]);
+  //This takes json list of supported languages and turns them into dropdown options
 
   return (
     <div>
       <form>
+        <label htmlFor="language">Choose a language</label>
         <select id="language">
-          <option value="EN">Choose a language</option>
           {languages.map((language) => {
             return (
               <option id={language.id} value={language.langCode}>
