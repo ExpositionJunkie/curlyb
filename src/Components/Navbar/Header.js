@@ -1,11 +1,11 @@
 import React from 'react'
 
-export function Home(props) {
+export function Header(props) {
     
 
     return (
         <>
-            <h1>Home page</h1>
+            <h1>Curly Brackets</h1>
         </>
     )
 }

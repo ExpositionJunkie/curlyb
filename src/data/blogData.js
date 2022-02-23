@@ -216,6 +216,7 @@ export const blogData = [
       "Also this is assuaging a little bit of my guilt for being an American who can't rub two sentences together in anythign other than javascript. I took French for four years. The only thing I know how to say in it is 'do you want to rollerblade with me' and I'm not even confident enough to type that in French here without a translator.",
     ],
   },
+  {"id": "16", "date": "2/23/2022 2:13 AM", "title": "Getting Sassy", "subtitle":"", "text": ["https://www.youtube.com/watch?v=kpcjSaRngg8&t=932s", "As much as I would like to work on the language problem as that is interesting I'm reaching out to the dev community to find out a little more about that package and if it is even necessary if I am going to be writing in node. For right now I think I am going to focus on coding in English first so that I have something to show recruiters. I'll put the practice I made into a page a bit deeper in for now until I get the server set up. Right now my challenges are in implementing the wider architecture that is going to allow for this to be easier later on. Specifically SASS, redux, and getting that node server built out to communicate back and forth." ]},
 ];
 
 // {"id": "0", "date": "2/20/2022 1:32 AM", "title": "New Template Haiku", "subtitle":"Reaching Across Disciplines", "text": ["Human & JS", ]},

@@ -1,0 +1,114 @@
+import React, { useState, useEffect } from "react";
+import Title from "../../../Reusable/Title/Title";
+import { countryList } from "../../../../data/CountryList";
+
+import "./NameGuess.css"
+
+function NameData({ input, submitTrigger }) {
+  // this function takes the data from the form and returns it once a submit is triggered.
+  const [apiResponse, setApiResponse] = useState(null)
+  const [error, setError] = useState(null)
+  const [isLoaded, setIsLoaded] = useState(false)
+
+
+  useEffect(() => {
+    let url
+    if (submitTrigger) {
+      if (input.country === "All") {
+        url = `https://api.agify.io/?name=${input.firstName}`
+      } else {
+        url = `https://api.agify.io/?name=${input.firstName}&country_id=${input.country}`
+      }
+      fetch(url)
+        .then((res) => res.json())
+        .then((result) => {
+          if (result.count > 0) {
+            setError(null)
+            setApiResponse({ ...result })
+            setApiResponse((prevState) => ({ ...prevState, country: input.country }))
+            console.log(apiResponse)
+            setIsLoaded(true)
+          } else if (result.count === 0) {
+            setError((prevState) => ({ ...prevState, message: `No entries found - your name is one of a kind, ${input.firstName} at least in ${input.country}! I'm sure you look 10 years younger than you are, though. :)` }))
+            setIsLoaded(true)
+          }
+        }, (error) => {
+          setError((prevState) => ({ ...prevState, message: error.message }))
+          console.log("Error coming from the API itself.")
+        })
+    }
+  }, [submitTrigger])
+
+  if (!isLoaded) {
+    return <div><p>Loading....</p></div>
+  } else if (error) {
+    return <><h2>{error.message}</h2></>
+  } else if (apiResponse) {
+    return (
+      <>
+        <h2>Name Queried: {apiResponse.name}</h2>
+        <h2>Country Name: {apiResponse.country}</h2>
+        <h2>Average age of people with your name: {apiResponse.age}</h2>
+        <h2>Entries in this API: {apiResponse.count}</h2>
+      </>
+    )
+  }
+}
+
+export default function NameGuess() {
+  const [input, setInput] = useState({ firstName: "John", country: "All" })
+  const [submitTrigger, setSubmitTrigger] = useState(false)
+  const [countries] = useState([...countryList])
+
+  const handleSubmit = (evt) => {
+    setSubmitTrigger(true)
+    evt.preventDefault()
+  }
+
+  const handleChange = (evt) => {
+    setInput((prevState) => ({ ...prevState, [evt.target.id]: evt.target.value }))
+    if (submitTrigger) {
+      setSubmitTrigger(false)
+    }
+    evt.preventDefault()
+  }
+
+
+  return (
+    <div className="name_guess_wrapper">
+      <Title titleStr="Age Guesser" />
+      <div className="name_guess_inner_wrapper">
+        <h2>The <a href="https://api.agify.io" target="_blank" rel="noreferrer">Agify API</a> guesses how old you are based on your name.</h2>
+        <h2>See how old you look to a dataset!</h2>
+        <p>Please note that this API has a somewhat small dataset it seems and developer is not responsible for inaccuracies in data.</p>
+        <div className="form_wrapper_center">
+        <div>
+          <form onSubmit={(e) => handleSubmit(e)}>
+          <div>
+            <div>
+            <div>
+              <label htmlFor="firstName">Name: </label></div><div>
+              <input type="text" id="firstName" value={input.firstName} onChange={(e) => handleChange(e)} /></div>
+            </div>
+            </div>
+              <div>
+                <label htmlFor="country">Country: </label>
+              </div>
+              <div>
+                <select id="country" onChange={(e) => handleChange(e)}>
+                  {countries.map((country) => {
+                    return (<option key={country.code} name={country.name} id={country.name} value={country.code}>{country.name}</option>)
+                  })}
+                </select>
+              </div>
+            <div>
+              <input type="submit" value="Submit" id="name_guess_submit" className="submit_button" />
+            </div>
+          </form>
+          </div>
+          </div>
+          <NameData input={input} submitTrigger={submitTrigger} />
+      </div>
+    </div>
+  )
+}

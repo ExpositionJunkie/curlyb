@@ -1,11 +1,11 @@
 import React from 'react'
 
-export function Home(props) {
+export function About(props) {
     
 
     return (
         <>
-            <h1>Home page</h1>
+            About
         </>
     )
 }
