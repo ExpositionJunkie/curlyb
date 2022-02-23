@@ -17,17 +17,19 @@ function App() {
 
   return (
     <LocaleContext.Provider value={{ locale, setLocale }}>
-      <div className="App">
-        <header className="App-header">
-          <Suspense fallback={<Loading />}>
+      <Suspense fallback={<p>...Loading</p>}>
+        <div className="App">
+          <header className="App-header">
             <div>
               <Greeting />
               <Paragraph />
             </div>
-            <Language />
-          </Suspense>
-        </header>
-      </div>
+            <Suspense fallback={<Loading />}>
+              <Language />
+            </Suspense>
+          </header>
+        </div>
+      </Suspense>
     </LocaleContext.Provider>
   );
 }
