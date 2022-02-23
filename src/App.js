@@ -1,17 +1,34 @@
-import logo from "./logo.svg";
+import React, { useState, Suspense, useEffect } from "react";
 import "./App.css";
-//import i18n from "./i18n"; //language functionality
-import Navbar from "./Components/Navbar/Navbar";
+
+import Language from "./Components/Reusable/Language/Language";
+import Loading from "./Components/Reusable/Loading/Loading";
+import Greeting from "./Components/Reusable/Greeting/Greeting";
+import Paragraph from "./Components/Reusable/Paragraph/Paragraph";
+import i18n from "./Language/i18n";
+import LocaleContext from "./LocaleContext";
 
 function App() {
+  const [locale, setLocale] = useState(i18n.language);
+
+  useEffect(() => {
+    i18n.on("languageChanged", (lng) => setLocale(i18n.language));
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <Navbar />
-        <p>Curly brackets incoming.</p>
-        <p>Please stay tuned while this website is built!</p>
-      </header>
-    </div>
+    <LocaleContext.Provider value={{ locale, setLocale }}>
+      <div className="App">
+        <header className="App-header">
+          <Suspense fallback={<Loading />}>
+            <div>
+              <Greeting />
+              <Paragraph />
+            </div>
+            <Language />
+          </Suspense>
+        </header>
+      </div>
+    </LocaleContext.Provider>
   );
 }
 

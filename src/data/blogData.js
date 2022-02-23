@@ -196,8 +196,26 @@ export const blogData = [
       "If it didn't work and you're now considering a career making artisinal bread instead, let me know. (I really like sourdough.)",
     ],
   },
-  {"id": "14", "date": "2/22/2022 5:36 PM", "title": "Speaking in Tongues", "subtitle":"Internationalizing and using the i18next library", "text": ["https://blog.shahednasser.com/how-to-internationalize-a-react-app/", ]},
-
+  {
+    id: "14",
+    date: "2/22/2022 8:18 PM",
+    title: "Speaking in Tongues",
+    subtitle: "Internationalizing and using the i18next library",
+    text: [
+      "https://blog.shahednasser.com/how-to-internationalize-a-react-app/ been trying to begin implementing i18next when I realized it doesn't quite do what I think it did. I thought it would provide the translations to me already but it does not. It's more a system of setting up the files so that you can then provide language support of converted documents. Basically, I would have to run this thing through a translator to provide this and save the JSON file. Gotta be an easier way though.",
+      "So here is what I'm thinking. I found this API called yandex for translating. I'm trying to keep this cheap, and they seem to be pretty robust and offer a range of services from this. Gonna look more into this. But for right now I should probably reign it in. I've made a dynamic dropdown and began setting up for that kind of support but don't have the energy to run this thing through an API. Gonna start with the code I have for 1:18 though. If I wanted to do it without an API I could probably run this through google translate. But still, awful lot of work wehn I could just do it automated in the start. A little bit of upfront for a lot less work later on. Plus if I do end up trying to sling some shopify sites on the side, this will make qualifying for translation a ton easier.",
+    ],
+  },
+  {
+    id: "15",
+    date: "2/22/2022 9:43 AM",
+    title: "I fibbed",
+    subtitle: "",
+    text: [
+      "Ok, I lied. I didn't quit. Didn't want to leave it half dead so I spent a little extra time getting this working. Got the i18next part working. When I set up my server, I think that I should make a process that runs this stuff through an API and then can save the translations. That alone should be enough to show off some skills I think. Plus, this stuff was complex to implement. I sure bet that someone out there can probably benefit from this.",
+      "Also this is assuaging a little bit of my guilt for being an American who can't rub two sentences together in anythign other than javascript. I took French for four years. The only thing I know how to say in it is 'do you want to rollerblade with me' and I'm not even confident enough to type that in French here without a translator.",
+    ],
+  },
 ];
 
 // {"id": "0", "date": "2/20/2022 1:32 AM", "title": "New Template Haiku", "subtitle":"Reaching Across Disciplines", "text": ["Human & JS", ]},
