@@ -17,7 +17,7 @@ export default function Language() {
     }
   }
 
-  function handleClick(e) {
+  function handleChange(e) {
     console.log(e.target.value);
     changeLocale(e.target.value);
     e.preventDefault();
@@ -27,7 +27,7 @@ export default function Language() {
     <div>
       <form>
         <label htmlFor="language">{t("language")}</label>
-        <select id="language" onClick={(e) => handleClick(e)}>
+        <select id="language" onChange={(e) => handleChange(e)}>
           {languages.map((language) => {
             return (
               <option
