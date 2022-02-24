@@ -216,7 +216,29 @@ export const blogData = [
       "Also this is assuaging a little bit of my guilt for being an American who can't rub two sentences together in anythign other than javascript. I took French for four years. The only thing I know how to say in it is 'do you want to rollerblade with me' and I'm not even confident enough to type that in French here without a translator.",
     ],
   },
-  {"id": "16", "date": "2/23/2022 2:13 AM", "title": "Getting Sassy", "subtitle":"", "text": ["https://www.youtube.com/watch?v=kpcjSaRngg8&t=932s", "As much as I would like to work on the language problem as that is interesting I'm reaching out to the dev community to find out a little more about that package and if it is even necessary if I am going to be writing in node. For right now I think I am going to focus on coding in English first so that I have something to show recruiters. I'll put the practice I made into a page a bit deeper in for now until I get the server set up. Right now my challenges are in implementing the wider architecture that is going to allow for this to be easier later on. Specifically SASS, redux, and getting that node server built out to communicate back and forth." ]},
+  {
+    id: "16",
+    date: "2/23/2022 2:13 AM",
+    title: "Getting Sassy",
+    subtitle: "",
+    text: [
+      "As much as I would like to work on the language problem as that is interesting I'm reaching out to the dev community to find out a little more about that package and if it is even necessary if I am going to be writing in node. For right now I think I am going to focus on coding in English first so that I have something to show recruiters. I'll put the practice I made into a page a bit deeper in for now until I get the server set up. Right now my challenges are in implementing the wider architecture that is going to allow for this to be easier later on. Specifically SASS, redux, and getting that node server built out to communicate back and forth.",
+      "https://www.youtube.com/watch?v=kpcjSaRngg8&t=932s This is a pretty nice refresher for anyone needing to implement SASS btw. Covers the basics pretty succinctly if you've been away for a while or if you are just learning it.",
+      "This one goes a bit more in depth with how it works and why to use it over other css preprocessors: https://www.youtube.com/watch?v=nu5mdN2JIwM",
+      "I also came across this article on react interview questions if anyone is needing them that pretty succinctly sums up a few functions that weren't coverd much in bootcamp: https://www.freecodecamp.org/news/react-interview-questions-to-know/. useCallback, useRef, and useMemo in particular it was a good jumping off point for and made me realize that I was doing some of these things in a way that could have been a lot easier had I known. I now know that I need to refactor a few things. Add it to the ever growing list, I suppose.",
+    ],
+  },
+  {
+    id: "17",
+    date: "2/23/2022 7:07",
+    title: "Architecture",
+    subtitle: "Building the Ugly Baby",
+    text: [
+      "Got SCSS set up, took it off of mapping everything so that it doesn't take up as much space. I don't use those maps anyway. I'm wondering if my file architecture is right here. Some people put them all in a stylesheet and I thought that I wasn't a fan of that becuase it made it hard to find your file in styles and at the component level. Tomorrow first order of business should probably be to toggle that setting and change where they all route to and make it route to its own style sheet. It doesn't really matter where it goes, after all, as long as it all pulls in the data. My main reasoning for this is that it is difficult to have components like Navbar.js right between Navbar.css and Navbar.scss. I keep clicking the wrong one and if I keep doing that something is going to get overridden and made more difficult in the future.",
+      "Next, I need to set some standards pretty quickly. Now that I have Sass, I can offload some of those bloated components I created and just make them run on scss with mixins. Like the title component, subtitle - all sass would fix that.",
+      "But really I'm putting off doing a node server. But I need a node server. I could take one of my old ones and refactor the code for it. Truthfully, I'd like a fresh start now that I've had some time to think about architecture. My blog template right now requires a place for tags. And I will have to edit this whole thing. I don't want to scrub away all of the truth of my experience here though. I have the luxury of knowing that devs are made through trial and error and failure. That doing things wrong is sometimes more valuable than doing things right. If you've had to fix it - you've found out intimately how it's broken. That the best part of this job is getting done with doing something really hard and getting to be proud of it and later avoiding that mistake.",
+    ],
+  },
 ];
 
 // {"id": "0", "date": "2/20/2022 1:32 AM", "title": "New Template Haiku", "subtitle":"Reaching Across Disciplines", "text": ["Human & JS", ]},

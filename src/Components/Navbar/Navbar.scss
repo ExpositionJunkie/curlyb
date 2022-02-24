@@ -1,0 +1,38 @@
+@import "../../Variables/Sass/SassVariables.scss";
+
+.navbar {
+  width: 100vw;
+  margin: 0;
+  height: 80px;
+}
+
+.navbar {
+  a {
+    color: $whiteColor;
+    font-family: $subtitleFont;
+  }
+}
+
+.titleText {
+  width: 100%vh;
+  position: relative;
+  margin: 0;
+  font-size: 4rem;
+  color: $yeallowColor;
+  font-family: $titleFont;
+  text-align: center;
+}
+
+.banner {
+  position: absolute;
+  margin: 0;
+  width: 100vw;
+  height: auto;
+  overflow: hidden;
+}
+
+.overlay {
+  width: inherit;
+  background-color: $blackColor;
+  opacity: 100%;
+}

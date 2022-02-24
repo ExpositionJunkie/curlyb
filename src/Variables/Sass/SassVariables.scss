@@ -1,0 +1,28 @@
+//Colors
+$blackColor: #000000;
+$yeallowColor: #f1e91c;
+$purpleColor: #8335d0;
+$pinkColor: #fa64d6;
+$whiteColor: #ffffff;
+$blueColor: #0931d0;
+
+//Fonts
+$titleFont: "Audiowide", cursive;
+$subtitleFont: "Advent Pro", sans-serif;
+$subtitleFont2: "Staatliches", cursive;
+$bodyFont: "Raleway", sans-serif;
+$bodyFont2: "Comfortaa", cursive;
+
+//Mixins
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+
+@mixin buttonStyle($background-color, $fontSize) {
+  font-size: $fontSize;
+  width: inherit;
+  align-self: center;
+  background-color: $background-color;
+}

@@ -86,7 +86,7 @@ export default function ISSLocator() {
                 handleSubmit(e);
               }}
             >
-              <button type="submit" value="Submit" id="iss_submit_button">
+              <button class="submitBtn" type="submit" value="Submit" id="iss_submit_button">
                 Show Me the ISS!
               </button>
             </form>
