@@ -239,6 +239,16 @@ export const blogData = [
       "But really I'm putting off doing a node server. But I need a node server. I could take one of my old ones and refactor the code for it. Truthfully, I'd like a fresh start now that I've had some time to think about architecture. My blog template right now requires a place for tags. And I will have to edit this whole thing. I don't want to scrub away all of the truth of my experience here though. I have the luxury of knowing that devs are made through trial and error and failure. That doing things wrong is sometimes more valuable than doing things right. If you've had to fix it - you've found out intimately how it's broken. That the best part of this job is getting done with doing something really hard and getting to be proud of it and later avoiding that mistake.",
     ],
   },
+  {
+    id: "18",
+    date: "2/24/2022 4:31 AM",
+    title: "Node",
+    subtitle: "Day 1",
+    text: [
+      "Starting setup of a backend in node to get back into the swing of it. Actually have written about as much in node as I have React, though somewhat less recently. Thing is I'll get done with the setup but then have to implement cors and haven't been able to host it. React Native doesn't play so nice with localhost the last time I checked. Could be wrong about that. Could be I was thrashing last time I tried and made a rookie mistake. Either way I got hosting so I can do CORs and a Native App too.",
+      "Could use it for my D and D notes - they are becoming increasingly complex as the gang has aquired a new bar that we now have to manage, stock and decorate. Plus, the one I am using is kind of clunky. D&D beyond is cool but it sure would be nice to be able to see the bar finances for this module. Plus if there's one thing devs love - it's D&D. I weas a bit embarrassed on that previous project when it wasn't built out fully and there's a decent API that would work for it already, which would reduce the load of data I have to store here.", "Either way, I got it started and set up a bit of middleware for logging. Made sure to take off that header that says it's a node server. I mean, you'll know that from this blog entry. But still, best practice, you know. I was really really tempted to call it curlybooty. Like really really tempted. I may change the name later. Not sure I want people to see that on github though. Or maybe I do. Could be a conversation starter. Oh well, I can call it booty to myself either way. There are ruder words than that floating around.",
+    ],
+  },
 ];
 
 // {"id": "0", "date": "2/20/2022 1:32 AM", "title": "New Template Haiku", "subtitle":"Reaching Across Disciplines", "text": ["Human & JS", ]},
