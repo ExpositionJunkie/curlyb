@@ -8,17 +8,14 @@ import DungeonsAndDragons from "./Components/APIPractice/InnerPages/DungeonsAndD
 import ISSLocator from "./Components/APIPractice/InnerPages/ISSLocator/ISSLocator";
 import IPAddress from "./Components/APIPractice/InnerPages/IPAddress/IPAddress";
 import NameGuess from "./Components/APIPractice/InnerPages/NameGuess/NameGuess";
-import Blog from "./Components/Blog/Blog"
-import Signup from "./Components/Signup/Signup"
+import Blog from "./Components/Blog/Blog";
+import Signup from "./Components/Signup/Signup";
 import i18n from "./Language/i18n";
 import LocaleContext from "./LocaleContext";
 import { Route, Routes } from "react-router-dom";
 
-//Need to read
-//https://mattermost.com/blog/avoiding-common-internationalization-mistakes/
-
-//Possibly good when I start setting up the node server but isn't quite what I was hoping for here.
-//https://johnresig.com/blog/a-strategy-for-i18n-and-node/
+//https://www.geeksforgeeks.org/how-to-connect-node-js-with-react-js/#:~:text=export%20default%20App%3B,ReactJS%20is%20connected%20with%20NodeJS
+//pause in devtools before it can load the overlay to avoid the sign in bs.
 
 function App() {
   const [locale, setLocale] = useState(i18n.language);

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 function SignupHelper({ submitTrigger, input }) {
   //const [signUpResponse, setSignUpResponse] = useState(null);
@@ -6,18 +7,14 @@ function SignupHelper({ submitTrigger, input }) {
 
   useEffect(() => {
     if (submitTrigger) {
-      var url = "https://localhost:3443/users/signup";
-      const requestOptions = {
-        method: "POST",
-        mode: "cors",
-        headers: { "Content-Type": "application/json" },
-        body: {
+      var url = "https://localhost:2443/users/signup";
+      axios.post(url, 
+        {
           username: `${input.username}`,
           email: `${input.email}`,
           password: `${input.password}`,
-        },
-      };
-      fetch(url, requestOptions)
+        }
+      )
         .then((response) => {
           response.json();
           console.log(response);
