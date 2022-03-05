@@ -1,0 +1,22 @@
+@import "../../../Variables/Sass/SassVariables.scss";
+
+.page_title {
+  background-color: $purpleColor;
+  width: 100%;
+}
+
+.page_title h1 {
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-family: "Staatliches";
+  font-size: 4rem;
+  text-align: center;
+}
+
+.title_wrapper {
+  margin: 0;
+  padding: 0;
+}

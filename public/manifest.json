@@ -1,9 +1,9 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [],
+  "short_name": "Curly Brackets",
+  "name": "Curly BRackets",
+  "icons": ["%PUBLIC_URL%/logo.svg"],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#000000"
 }

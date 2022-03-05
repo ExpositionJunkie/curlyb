@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Title from "../../../Reusable/Title/Title";
-import { countryList } from "../../../../data/CountryList";
+import { countryList } from "../../../../data/countryList";
 
 import "./NameGuess.css"
 

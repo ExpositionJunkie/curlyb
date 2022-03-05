@@ -1,47 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-
-function SignupHelper({ submitTrigger, input }) {
-  //const [signUpResponse, setSignUpResponse] = useState(null);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    if (submitTrigger) {
-      var url = "https://localhost:2443/users/signup";
-      axios.post(url, 
-        {
-          username: `${input.username}`,
-          email: `${input.email}`,
-          password: `${input.password}`,
-        }
-      )
-        .then((response) => {
-          response.json();
-          console.log(response);
-        })
-        .then((data, err) => {
-          if (err) {
-            console.log(err);
-          } else {
-            console.log("success!", data);
-          }
-        })
-        .catch((err) => {
-          setError({ errorMessage: err.toString() });
-          console.error("There was an error!", error);
-        });
-    }
-  }, [submitTrigger]);
-
-  return <div></div>;
-}
 
 export default function Signup(props) {
   const [input, setInput] = useState({ email: "", username: "", password: "" });
-  const [submitTrigger, setSubmitTrigger] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleSubmit = (evt) => {
-    setSubmitTrigger(true);
+    var url = "https://localhost:2443/users/signup";
+    axios
+      .post(url, {
+        username: `${input.username}`,
+        email: `${input.email}`,
+        password: `${input.password}`,
+      })
+      .then((response) => {
+        response.json();
+        console.log(response);
+      })
+      .then((data, err) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log("success!", data);
+        }
+      })
+      .catch((err) => {
+        setError({ errorMessage: err.toString() });
+        console.error("There was an error!", error);
+      });
+
     evt.preventDefault();
   };
 
@@ -50,9 +37,6 @@ export default function Signup(props) {
       ...prevState,
       [evt.target.id]: evt.target.value,
     }));
-    if (submitTrigger) {
-      setSubmitTrigger(false);
-    }
     evt.preventDefault();
   };
 
@@ -94,18 +78,7 @@ export default function Signup(props) {
             ></input>
           </form>
         </div>
-        <div>
-          <SignupHelper submitTrigger={submitTrigger} input={input} />
-        </div>
       </div>
     </>
   );
-}
-
-//for testing
-{
-  /* <div>email: {input.email}</div>
-<div>username: {input.username}</div>
-<div>password: {input.password}</div>
-<div>submit trigger: {submitTrigger.toString()}</div> */
 }

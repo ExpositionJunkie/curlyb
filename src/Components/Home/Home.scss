@@ -1,0 +1,35 @@
+@import "../../Variables/Sass/SassVariables.scss";
+
+.homeWrapper {
+  color: $whiteColor;
+}
+
+#hiRoz {
+  font-family: $titleFont;
+  font-size: 5rem;
+}
+
+#drop {
+  font-size: 3rem;
+  font-family: $titleFont;
+}
+
+.subtitle {
+  font-family: $bodyFont2;
+  font-size: 3rem;
+}
+
+#netrunner {
+  height: 40rem;
+  width: auto;
+  border-radius: 20px;
+}
+
+.introSpan {
+  display: inline-flex;
+}
+
+.introPic,
+.introText {
+  padding: 1rem;
+}

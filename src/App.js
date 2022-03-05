@@ -30,17 +30,19 @@ function App() {
         <Suspense fallback={<p>...Loading</p>}>
           <header className="App-header">
             <Navbar />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="apipractice" element={<APIPractice />} />
-              <Route path="blog" element={<Blog />} />
-              <Route path="nameguesser" element={<NameGuess />} />
-              <Route path="nasapower" element={<NASAPower />} />
-              <Route path="isslocator" element={<ISSLocator />} />
-              <Route path="dnd" element={<DungeonsAndDragons />} />
-              <Route path="ip" element={<IPAddress />} />
-              <Route path="signup" element={<Signup />} />
-            </Routes>
+            <div className="body">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="apipractice" element={<APIPractice />} />
+                <Route path="blog" element={<Blog />} />
+                <Route path="nameguesser" element={<NameGuess />} />
+                <Route path="nasapower" element={<NASAPower />} />
+                <Route path="isslocator" element={<ISSLocator />} />
+                <Route path="dnd" element={<DungeonsAndDragons />} />
+                <Route path="ip" element={<IPAddress />} />
+                <Route path="signup" element={<Signup />} />
+              </Routes>
+            </div>
           </header>
         </Suspense>
       </div>

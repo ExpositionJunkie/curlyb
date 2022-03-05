@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React from "react"
 import Title from "../Reusable/Title/Title"
 import {Link} from "react-router-dom"
 import "./APIPractice.css"

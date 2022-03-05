@@ -4,17 +4,32 @@
 }
 
 .headerWrapper {
-  background-image: url("../../data/photos/dragons-song-colorful-banner.jpg");
+  background-image: url("../../data/photos/frontend/the-great-flood.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+}
+
+.leftBracket, .rightBracket, .logo {
+  height: 10vh;
+}
+
+.logo {
+  position: absolute;
+  align-self: center;
+  width: 100vw;
+  z-index: 0;
 }
 
 .titleText {
-  width: 100% vh;
+  width: 100vw;
   position: relative;
   margin: 0;
   font-size: 4rem;
   color: #f1e91c;
   font-family: "Audiowide", cursive;
   text-align: center;
+  z-index: 1;
 }
 
 .linkWrapper {
@@ -33,7 +48,7 @@
 .navbarLinks > * {
   font-family: "Advent Pro", sans-serif;
   text-decoration: none;
-  color: white;
+  color: #ffffff;
   text-shadow: 2px 2px 5px black;
   size: 2.5rem;
   text-align: center;

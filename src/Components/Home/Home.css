@@ -1,0 +1,33 @@
+.homeWrapper {
+  color: #ffffff;
+}
+
+#hiRoz {
+  font-family: "Audiowide", cursive;
+  font-size: 5rem;
+}
+
+#drop {
+  font-size: 3rem;
+  font-family: "Audiowide", cursive;
+}
+
+.subtitle {
+  font-family: "Comfortaa", cursive;
+  font-size: 3rem;
+}
+
+#netrunner {
+  height: 40rem;
+  width: auto;
+  border-radius: 20px;
+}
+
+.introSpan {
+  display: inline-flex;
+}
+
+.introPic,
+.introText {
+  padding: 1rem;
+}

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import Title from "../Reusable/Title/Title"
-import { blogData } from "../../data/blogData.js"
-import "./Blog.css"
+import React from "react";
+import Title from "../Reusable/Title/Title";
+import { blogData } from "../../data/blogData.js";
+import "./Blog.css";
 
 function BlogEntry({ blog }) {
   if (blog) {
@@ -12,18 +12,17 @@ function BlogEntry({ blog }) {
           <h2>{blog.subtitle}</h2>
         </div>
         {blog.text.map((paragraph, index) => {
-          return <p key={index}>{paragraph}</p>
+          return <p key={index}>{paragraph}</p>;
         })}
         <p className="date"> - {blog.date}</p>
       </div>
-    )
+    );
   } else {
-    return (<div>Oops, there's nothing here! Better call Roz</div>)
+    return <div>Oops, there's nothing here! Better call Roz</div>;
   }
 }
 
 export default function Blog() {
-
   return (
     <div className="blog_wrapper">
       <Title titleStr="Dev Blog" />
@@ -34,12 +33,10 @@ export default function Blog() {
               <div className="entry" key={blogEntry.id}>
                 <BlogEntry blog={blogEntry} />
               </div>
-            )
-          })
-          }
+            );
+          })}
         </div>
       </div>
     </div>
-  )
-
+  );
 }

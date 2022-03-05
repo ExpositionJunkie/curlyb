@@ -1,12 +1,3 @@
-/* This can serve as boilerplate for each page, just put page specific stuff below with a good divider */
-
-/* background wrapper */
-.blog_wrapper {
-  background-color: black;
-  height: 100%;
-  padding-bottom: 2rem;
-}
-
 /* ui elements */
 .blog_wrapper select,
 .blog_wrapper label,
@@ -46,20 +37,19 @@
 
 .blog_wrapper a:link {
   text-decoration: none;
-  color: rgba(251, 63, 182, 1);
+  color: #fb3fb6;
 }
 
 .blog_wrapper a:hover {
-  color: rgba(34, 193, 195, 1);
+  color: #22c1c3;
 }
 
 .blog_wrapper a:visited {
-  color: rgba(143, 84, 190, 1);
+  color: #8f54be;
 }
 
-/* ~~~~~~~~~~~~~~~***|! Page SPECIFIC !|**~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~***|! Page SPECIFIC !|***~~~~~~~~~~~~~~~ */
 /*https://www.w3.org/TR/selectors-3/#first-of-type-pseudo */
-
 .date {
   font-size: 1rem;
   justify-self: flex-end;
@@ -69,13 +59,8 @@
   margin: 2rem;
   padding: 2rem;
   border-radius: 40px;
-  background: rgb(131, 58, 180);
-  background: linear-gradient(
-    98deg,
-    rgba(131, 58, 180, 0.7) 17%,
-    rgba(253, 29, 29, 0.7) 50%,
-    rgba(252, 176, 69, 0.7) 100%
-  );
+  background: #833ab4;
+  background: linear-gradient(98deg, rgba(131, 58, 180, 0.7) 17%, rgba(253, 29, 29, 0.7) 50%, rgba(252, 176, 69, 0.7) 100%);
   z-index: 4;
   color: white;
 }
