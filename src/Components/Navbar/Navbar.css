@@ -1,12 +1,10 @@
 .navbar {
   width: 100vw;
   margin: 0;
-  height: 80px;
 }
 
-.navbar a {
-  color: #ffffff;
-  font-family: "Advent Pro", sans-serif;
+.headerWrapper {
+  background-image: url("../../data/photos/dragons-song-colorful-banner.jpg");
 }
 
 .titleText {
@@ -19,16 +17,33 @@
   text-align: center;
 }
 
-.banner {
-  position: absolute;
-  margin: 0;
-  width: 100vw;
-  height: auto;
-  overflow: hidden;
+.linkWrapper {
+  background-color: #000000;
 }
 
-.overlay {
-  width: inherit;
-  background-color: #000000;
-  opacity: 100%;
+.navbarLinks {
+  display: flex;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.5rem;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.navbarLinks > * {
+  font-family: "Advent Pro", sans-serif;
+  text-decoration: none;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+  size: 2.5rem;
+  text-align: center;
+  flex-wrap: nowrap;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.linkWrapper a:hover {
+  text-decoration: none;
+  color: #f1e91c;
+  text-shadow: 2px 2px 5px #f1e91c;
 }
