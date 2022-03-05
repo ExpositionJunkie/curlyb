@@ -9,10 +9,7 @@ import ISSLocator from "./Components/APIPractice/InnerPages/ISSLocator/ISSLocato
 import IPAddress from "./Components/APIPractice/InnerPages/IPAddress/IPAddress";
 import NameGuess from "./Components/APIPractice/InnerPages/NameGuess/NameGuess";
 import Blog from "./Components/Blog/Blog"
-import Language from "./Components/Reusable/Language/Language";
-import Loading from "./Components/Reusable/Loading/Loading";
-import Greeting from "./Components/Reusable/Greeting/Greeting";
-import Paragraph from "./Components/Reusable/Paragraph/Paragraph";
+import Signup from "./Components/Signup/Signup"
 import i18n from "./Language/i18n";
 import LocaleContext from "./LocaleContext";
 import { Route, Routes } from "react-router-dom";
@@ -45,6 +42,7 @@ function App() {
               <Route path="isslocator" element={<ISSLocator />} />
               <Route path="dnd" element={<DungeonsAndDragons />} />
               <Route path="ip" element={<IPAddress />} />
+              <Route path="signup" element={<Signup />} />
             </Routes>
           </header>
         </Suspense>

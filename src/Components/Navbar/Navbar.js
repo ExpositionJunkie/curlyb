@@ -22,8 +22,9 @@ export default function Navbar() {
           <span className="navbarLinks">
             <NavLink to="/">Home</NavLink>
             <NavLink to="/blog">Blog</NavLink>
-            <NavLink to="/About">About</NavLink>
+            <NavLink to="/about">About</NavLink>
             <NavLink to="/apipractice">API Practice</NavLink>
+            <NavLink to="/signup">Sign Up</NavLink>
           </span>
         </div>
         <Outlet />
