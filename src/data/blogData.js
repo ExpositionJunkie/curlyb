@@ -350,10 +350,12 @@ export const blogData = [
     subtitle: "Vs Code?",
     text: [
       "Ok, so I didn't go play final fantasy. After staring at something that didn't work for so many hours I wanted to stare at something that worked marginally better for a little while. So I started working on the site. Added a logo, added a ton of SCSS and started finally working on the ugly front page. This isn't optimized. I'm still getting my bearings on the site. It just has to be functional first. Then we can work on the flourishes. This is the way.",
+
       "Anyway, I don't have localhost. He's tired and alone out there and doesn't know who to call out to. In his confusion - when he should call to 3000 he calls to 3001 then rapidly runs to 3444 even though none of my programs are still set there (I've been hopping and flailing here trying to get anything from the server to the front end). But it did work on my ip address. I tried everything I could think of, man. I tried resetting my dns again. Then I tried to see if I could update windows but it still wasn't fixed after that and a power cycle. I checked my settings, looked at my firewall - all looking like they are operating normally.",
       "I have exactly two guesses. Can't do it now - too tired. That's how I got into this mess, I'm sure.",
       "1.) Changed it in vs code somehow when setting up - this is likely. It pings ok it traces ok everything shows it should be there. I've edited my windows file, I've reset the file in at least 2 different ways. It's probably a setting I changed because I read stackoverflow and was thrashing.",
       "2.) Darn it, I just had the other one, where has it gone? Ok. Regroup in the morning. Need time. But definitely want to check into option 1. That was CJ's idea and I think it's the most likely one I have.",
+      "I just realized you can set a successor in github. Which is rather sweet but also a curse to whoever has to figure out where the sweet spot was on each project that I still showed it to people. Oh no! My variables are showing!",
     ],
     tags: ["localhost", "devfail", "bug"],
   },
