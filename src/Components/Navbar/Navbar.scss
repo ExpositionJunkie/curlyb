@@ -5,6 +5,21 @@
   margin: 0;
 }
 
+// /* For extremely small screen devices (670px and below) */
+// @media only screen and (max-width: 300px) {
+//   .titleText {
+//     width: 100vw;
+//     position: relative;
+//     margin: 0;
+//     font-size: 2rem;
+//     color: $yeallowColor;
+//     font-family: $titleFont;
+//     text-align: center;
+//     z-index: 1;
+//   }
+   
+// }
+
 .headerWrapper {
   background-image: url("../../data/photos/frontend/the-great-flood.jpg");
   background-size: cover;

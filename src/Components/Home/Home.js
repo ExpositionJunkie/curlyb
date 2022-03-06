@@ -14,7 +14,7 @@ export function Home(props) {
       </div>
       <div className="intro">
         <h1 id="hiRoz">Hi, I'm Roz.</h1>
-        <span className="introSpan">
+        <span id="topIntro" className="introSpan">
           <span className="introPic">
             <img
               id="netrunner"
@@ -32,7 +32,7 @@ export function Home(props) {
           </span>
         </span>
         <Line />
-        <span className="introSpan">
+        <span id="hobbiesIntro" className="introSpan">
           <span className="hobbies">
             <h2>Hobbies include</h2>
             <h3>

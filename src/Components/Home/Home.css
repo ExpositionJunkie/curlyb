@@ -4,8 +4,14 @@
   list-style-type: square;
 }
 
-/* For extremely small screen devices (595px and below) */
-@media only screen and (max-width: 595px) {
+.intro {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin: 1rem;
+}
+
+/* For extremely small screen devices (670px and below) */
+@media only screen and (max-width: 300px) {
   #hiRoz {
     font-family: "Audiowide", cursive;
     font-size: 5rem;
@@ -37,12 +43,6 @@
 
   #apollo {
     margin-bottom: 2rem;
-  }
-
-  .intro {
-    padding-left: 2rem;
-    padding-right: 2rem;
-    margin: 1rem;
   }
 
   .introSpan > * {
@@ -119,8 +119,117 @@
     font-size: 1.5rem;
   }
 }
-/* Big screen devices (889px and above) */
-@media only screen and (min-width: 889px) {
+/* For extremely small screen devices (670px and below) */
+@media only screen and (max-width: 670px) {
+  #hiRoz {
+    font-family: "Audiowide", cursive;
+    font-size: 5rem;
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+  }
+
+  #drop {
+    font-size: 3rem;
+    font-family: "Audiowide", cursive;
+  }
+
+  .subtitle {
+    font-family: "Raleway", sans-serif;
+    font-size: 2.5rem;
+  }
+
+  #netrunner,
+#apollo {
+    height: 30rem;
+    width: auto;
+    border-radius: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #apollo {
+    margin-bottom: 2rem;
+  }
+
+  .introSpan > * {
+    text-align: center;
+  }
+
+  .hobbies {
+    font-family: "Advent Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 100;
+  }
+
+  .stackWrap {
+    justify-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .stack {
+    display: inline-flex;
+    font-size: 4rem;
+    font-family: "Audiowide", cursive;
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    -webkit-animation: glitch 552ms infinite;
+            animation: glitch 552ms infinite;
+  }
+
+  .stack span {
+    position: absolute;
+    z-index: -1;
+  }
+
+  .stack span:first-child {
+    -webkit-animation: glitch 731ms infinite;
+            animation: glitch 731ms infinite;
+  }
+
+  .stack span:last-child {
+    -webkit-animation: glitch 373s infinite;
+            animation: glitch 373s infinite;
+  }
+
+  .stackList {
+    align-content: space-between;
+    font-size: 1.5rem;
+    padding-right: 1em;
+    font-family: "Advent Pro", sans-serif;
+  }
+
+  .sl:hover {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    -webkit-animation: glitch 450ms infinite;
+            animation: glitch 450ms infinite;
+  }
+
+  .goals h1 {
+    font-family: "Audiowide", cursive;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .goals h3 {
+    font-family: "Advent Pro", sans-serif;
+    font-size: 2rem;
+  }
+
+  .goals ul {
+    list-style-type: square;
+    font-family: "Raleway", sans-serif;
+  }
+
+  .goals p {
+    font-family: "Advent Pro", sans-serif;
+    font-size: 1.5rem;
+  }
+}
+/* Medium screen devices (671px and above) */
+@media only screen and (min-width: 671px) {
   #hiRoz {
     font-family: "Audiowide", cursive;
     font-size: 5rem;
@@ -151,6 +260,18 @@
     padding-left: 2rem;
     padding-right: 2rem;
     margin: 0;
+  }
+
+  #topIntro {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column: auto;
+  }
+
+  #hobbiesIntro {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column: auto;
   }
 
   .introSpan > * {
@@ -225,6 +346,239 @@
   .goals p {
     font-family: "Advent Pro", sans-serif;
     font-size: 1.5rem;
+  }
+}
+/* Big screen devices (889px and above) */
+@media only screen and (min-width: 889px) {
+  #hiRoz {
+    font-family: "Audiowide", cursive;
+    font-size: 5rem;
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+  }
+
+  #drop {
+    font-size: 3rem;
+    font-family: "Audiowide", cursive;
+  }
+
+  .subtitle {
+    font-family: "Raleway", sans-serif;
+    font-size: 2.5rem;
+  }
+
+  #netrunner,
+#apollo {
+    height: 30rem;
+    width: auto;
+    border-radius: 20px;
+  }
+
+  .introSpan {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin: 0;
+  }
+
+  #topIntro {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-column: auto;
+  }
+
+  #hobbiesIntro {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-column: auto;
+  }
+
+  .introSpan > * {
+    padding: 1rem;
+  }
+
+  .hobbies {
+    font-family: "Advent Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 100;
+  }
+
+  .stackWrap {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-column: auto;
+  }
+
+  .stack {
+    font-size: 8vw;
+    padding-left: 1em;
+    font-family: "Audiowide", cursive;
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    -webkit-animation: glitch 552ms infinite;
+            animation: glitch 552ms infinite;
+  }
+
+  .stack span {
+    position: absolute;
+    z-index: -1;
+  }
+
+  .stack span:first-child {
+    -webkit-animation: glitch 731ms infinite;
+            animation: glitch 731ms infinite;
+  }
+
+  .stack span:last-child {
+    -webkit-animation: glitch 373s infinite;
+            animation: glitch 373s infinite;
+  }
+
+  .stackList {
+    align-content: space-between;
+    font-size: 3.5vw;
+    padding-right: 1em;
+    font-family: "Advent Pro", sans-serif;
+  }
+
+  .sl:hover {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    -webkit-animation: glitch 450ms infinite;
+            animation: glitch 450ms infinite;
+  }
+
+  .goals h1 {
+    font-family: "Audiowide", cursive;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .goals h3 {
+    font-family: "Advent Pro", sans-serif;
+    font-size: 2rem;
+  }
+
+  .goals ul {
+    list-style-type: square;
+    font-family: "Raleway", sans-serif;
+  }
+
+  .goals p {
+    font-family: "Advent Pro", sans-serif;
+    font-size: 1.5rem;
+  }
+}
+/* Huge screen devices (1086px and above) */
+@media only screen and (min-width: 1086px) {
+  #hiRoz {
+    font-family: "Audiowide", cursive;
+    font-size: 6rem;
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+  }
+
+  #drop {
+    font-size: 6rem;
+    font-family: "Audiowide", cursive;
+  }
+
+  .subtitle {
+    font-family: "Raleway", sans-serif;
+    font-size: 3rem;
+  }
+
+  #netrunner,
+#apollo {
+    height: 40rem;
+    width: auto;
+    border-radius: 20px;
+  }
+
+  .introSpan {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin: 0;
+  }
+
+  #topIntro, #hobbiesIntro {
+    display: flex;
+  }
+
+  .introSpan > * {
+    margin: 3rem;
+  }
+
+  .hobbies {
+    font-family: "Advent Pro", sans-serif;
+    font-size: 2rem;
+    font-weight: 100;
+  }
+
+  .stackWrap {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-column: auto;
+  }
+
+  .stack {
+    font-size: 8vw;
+    padding-left: 1em;
+    font-family: "Audiowide", cursive;
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    -webkit-animation: glitch 552ms infinite;
+            animation: glitch 552ms infinite;
+  }
+
+  .stack span {
+    position: absolute;
+    z-index: -1;
+  }
+
+  .stack span:first-child {
+    -webkit-animation: glitch 731ms infinite;
+            animation: glitch 731ms infinite;
+  }
+
+  .stack span:last-child {
+    -webkit-animation: glitch 373s infinite;
+            animation: glitch 373s infinite;
+  }
+
+  .stackList {
+    align-content: space-between;
+    font-size: 3rem;
+    padding-right: 1em;
+    font-family: "Advent Pro", sans-serif;
+  }
+
+  .sl:hover {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    -webkit-animation: glitch 450ms infinite;
+            animation: glitch 450ms infinite;
+  }
+
+  .goals h1 {
+    font-family: "Audiowide", cursive;
+    font-size: 5rem;
+    text-align: center;
+  }
+
+  .goals h3 {
+    font-family: "Advent Pro", sans-serif;
+    font-size: 4rem;
+  }
+
+  .goals ul {
+    list-style-type: square;
+    font-family: "Raleway", sans-serif;
+    font-size: 2rem;
+  }
+
+  .goals p {
+    font-family: "Advent Pro", sans-serif;
+    font-size: 3rem;
   }
 }
 @-webkit-keyframes glitch {

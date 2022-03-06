@@ -1,5 +1,11 @@
 @import "../../Variables/Sass/SassVariables.scss";
 
+.blog_wrapper {
+  color: $whiteColor;
+  overflow: hidden;
+  list-style-type: square;
+}
+
 /* ui elements */
 .blog_wrapper select,
 .blog_wrapper label,
