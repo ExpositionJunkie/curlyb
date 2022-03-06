@@ -5,6 +5,10 @@
 #hiRoz {
   font-family: "Audiowide", cursive;
   font-size: 5rem;
+  text-align: center;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
 }
 
 #drop {
@@ -17,17 +21,136 @@
   font-size: 2.5rem;
 }
 
-#netrunner {
-  height: 40rem;
+#netrunner,
+#apollo {
+  height: 30rem;
   width: auto;
   border-radius: 20px;
 }
 
 .introSpan {
   display: inline-flex;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin: 0;
 }
 
 .introPic,
-.introText {
+.introText,
+.hobbies,
+.apollo {
   padding: 1rem;
+}
+
+.hobbies {
+  font-family: "Advent Pro", sans-serif;
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+.stackWrap {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-column: auto;
+}
+
+.stack {
+  font-size: 8vw;
+  padding-left: 1em;
+  font-family: "Audiowide", cursive;
+  text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  -webkit-animation: glitch 552ms infinite;
+          animation: glitch 552ms infinite;
+}
+
+.stack span {
+  position: absolute;
+  z-index: -1;
+}
+
+.stack span:first-child {
+  -webkit-animation: glitch 731ms infinite;
+          animation: glitch 731ms infinite;
+}
+
+.stack span:last-child {
+  -webkit-animation: glitch 373s infinite;
+          animation: glitch 373s infinite;
+}
+
+@-webkit-keyframes glitch {
+  0% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75), 0.05em 0.025em 0 rgba(0, 255, 0, 0.75), -0.05em -0.025em 0 rgba(0, 0, 255, 0.75);
+  }
+  14% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75), 0.05em 0.025em 0 rgba(0, 255, 0, 0.75), -0.05em -0.025em 0 rgba(0, 0, 255, 0.75);
+  }
+  15% {
+    text-shadow: -0.05em 0.025em 0 rgba(255, 0, 0, 0.75), 0.05em -0.025em 0 rgba(0, 255, 0, 0.75), -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  49% {
+    text-shadow: -0.05em 0.025em 0 rgba(255, 0, 0, 0.75), 0.05em -0.025em 0 rgba(0, 255, 0, 0.75), -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75), -0.025em -0.025em 0 rgba(0, 255, 0, 0.75), 0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75), -0.025em -0.025em 0 rgba(0, 255, 0, 0.75), 0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  100% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75), -0.05em 0.025em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75), 0.05em 0.025em 0 rgba(0, 255, 0, 0.75), -0.05em -0.025em 0 rgba(0, 0, 255, 0.75);
+  }
+  14% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75), 0.05em 0.025em 0 rgba(0, 255, 0, 0.75), -0.05em -0.025em 0 rgba(0, 0, 255, 0.75);
+  }
+  15% {
+    text-shadow: -0.05em 0.025em 0 rgba(255, 0, 0, 0.75), 0.05em -0.025em 0 rgba(0, 255, 0, 0.75), -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  49% {
+    text-shadow: -0.05em 0.025em 0 rgba(255, 0, 0, 0.75), 0.05em -0.025em 0 rgba(0, 255, 0, 0.75), -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75), -0.025em -0.025em 0 rgba(0, 255, 0, 0.75), 0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75), -0.025em -0.025em 0 rgba(0, 255, 0, 0.75), 0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  100% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75), -0.05em 0.025em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+}
+.stackList {
+  align-content: space-between;
+  font-size: 3.5vw;
+  padding-right: 1em;
+  font-family: "Advent Pro", sans-serif;
+}
+
+.sl:hover {
+  text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  -webkit-animation: glitch 450ms infinite;
+          animation: glitch 450ms infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+::before,
+::after {
+    -webkit-animation-delay: -1ms !important;
+            animation-delay: -1ms !important;
+    -webkit-animation-duration: 1ms !important;
+            animation-duration: 1ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
 }

@@ -17,6 +17,8 @@ $subtitleFont2: "Staatliches", cursive;
 $bodyFont: "Raleway", sans-serif;
 $bodyFont2: "Comfortaa", cursive;
 
+
+
 //Mixins
 @mixin transform($property) {
   -webkit-transform: $property;
@@ -30,3 +32,5 @@ $bodyFont2: "Comfortaa", cursive;
   align-self: center;
   background-color: $background-color;
 }
+
+//https://brandonbrule.github.io/scss-animation-keyframe-mixin/

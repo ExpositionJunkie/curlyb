@@ -329,7 +329,7 @@ export const blogData = [
   },
   {
     id: "23",
-    date: "3/4/2022 8:30",
+    date: "3/4/2022 8:30 PM",
     title: "I broke localhost",
     subtitle: "",
     text: [
@@ -350,7 +350,6 @@ export const blogData = [
     subtitle: "Vs Code?",
     text: [
       "Ok, so I didn't go play final fantasy. After staring at something that didn't work for so many hours I wanted to stare at something that worked marginally better for a little while. So I started working on the site. Added a logo, added a ton of SCSS and started finally working on the ugly front page. This isn't optimized. I'm still getting my bearings on the site. It just has to be functional first. Then we can work on the flourishes. This is the way.",
-
       "Anyway, I don't have localhost. He's tired and alone out there and doesn't know who to call out to. In his confusion - when he should call to 3000 he calls to 3001 then rapidly runs to 3444 even though none of my programs are still set there (I've been hopping and flailing here trying to get anything from the server to the front end). But it did work on my ip address. I tried everything I could think of, man. I tried resetting my dns again. Then I tried to see if I could update windows but it still wasn't fixed after that and a power cycle. I checked my settings, looked at my firewall - all looking like they are operating normally.",
       "I have exactly two guesses. Can't do it now - too tired. That's how I got into this mess, I'm sure.",
       "1.) Changed it in vs code somehow when setting up - this is likely. It pings ok it traces ok everything shows it should be there. I've edited my windows file, I've reset the file in at least 2 different ways. It's probably a setting I changed because I read stackoverflow and was thrashing.",
@@ -358,6 +357,17 @@ export const blogData = [
       "I just realized you can set a successor in github. Which is rather sweet but also a curse to whoever has to figure out where the sweet spot was on each project that I still showed it to people. Oh no! My variables are showing!",
     ],
     tags: ["localhost", "devfail", "bug"],
+  },
+  {
+    id: "25",
+    date: "3/5/2022 2:28 PM",
+    title: "Localhost located!",
+    subtitle: "Time for Cookies",
+    text: [
+      "Figured out the localhost problem. I realized I hadn't tried it on another browser yet so I pulled it up on Edge. Localhost registers on Edge. Was just starting to explain and reach out on devcord and the legion of code (my little server for friends who are learning coding and other techy things like figma etc) and CJ happened to see this latest update and sent a stackoverflow about clearing cookies. Sure enough, cleared my cookies on chrome and localhost appeared once more. Huzzah!",
+      "Now that this is handled, time to put in some work on the home page and get this baby cleaned up a bit!"
+    ],
+    tags: ["localhost", "cookies", "chrome"],
   },
 ];
 

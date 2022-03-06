@@ -1,0 +1,42 @@
+@import "../../../Variables/Sass/SassVariables.scss";
+
+.line {
+  margin: 3em;
+  max-width: 80vw;
+  align-self: center;
+  justify-self: center;
+  overflow-x: hidden;
+  z-index: 10006;
+  position: relative;
+  animation: colorFade 373s infinite;
+}
+
+@keyframes colorFade {
+  0% {
+    background-color: "rgb(255, 0, 0) ";
+  }
+  10% {
+    background-color: "rgb(255, 238, 0)";
+  }
+  20% {
+    background-color: "rgb(255, 238, 0)";
+  }
+  30% {
+    background-color: "rgb(21, 255, 0)";
+  }
+  40% {
+    background-color: "rgb(0, 255, 208)";
+  }
+  50% {
+    background-color: "rgb(0, 64, 255)";
+  }
+  60% {
+    background-color: "rgb(128, 0, 255)";
+  }
+  70% {
+    background-color: "rgb(255, 0, 140)";
+  }
+  100% {
+    background-color: "rgb(255, 0, 0) ";
+  }
+}
