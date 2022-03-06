@@ -20,7 +20,6 @@ export default function Navbar() {
           <NavLink to="/blog">Blog</NavLink>
           <NavLink to="/about">About</NavLink>
           <NavLink to="/apipractice">API Practice</NavLink>
-          <NavLink to="/signup">Sign Up</NavLink>
         </span>
       </div>
       <Outlet />

@@ -1,6 +1,7 @@
 import React from "react";
 import Title from "../Reusable/Title/Title";
 import Line from "../Reusable/Line/Line";
+import { NavLink } from "react-router-dom";
 import rozNetrunner from "../../data/photos/Roz/profilePhotos/netrunner2.jpg";
 import apolloGlamour from "../../data/photos/Apollo/ApolloGlamourShot.jpg";
 import "./Home.css";
@@ -10,46 +11,47 @@ export function Home(props) {
     <div className="homeWrapper">
       <div className="header">
         <Title titleStr="Home" />
-        <div className="intro">
-          <h1 id="hiRoz">Hi, I'm Roz.</h1>
-          <span className="introSpan">
-            <span className="introPic">
-              <img
-                id="netrunner"
-                src={rozNetrunner}
-                alt="Cosplay Roz with fake tattoos wearing a glowing yellow visor with an atom stenciled in the center. (The react logo is an atom. It seemed fitting.)"
-              />
-            </span>
-            <span className="introText">
-              <h2 className="subtitle">
-                I'm a fullstack MERN developer with a passion for skill
-                collecting.
-              </h2>
-              <h2 className="subtitle">Like what you see? Need code?</h2>
-              <h3 id="drop">Drop me a line</h3>
-            </span>
+      </div>
+      <div className="intro">
+        <h1 id="hiRoz">Hi, I'm Roz.</h1>
+        <span className="introSpan">
+          <span className="introPic">
+            <img
+              id="netrunner"
+              src={rozNetrunner}
+              alt="Cosplay Roz with fake tattoos wearing a glowing yellow visor with an atom stenciled in the center. (The react logo is an atom. It seemed fitting.)"
+            />
           </span>
-          <Line />
-
-          <span className="introSpan">
-            <span className="hobbies">
-              <h2>Hobbies include</h2>
-              <h3>
-                Cyberpunk RED, D&#38;D, FFXIV, SWTOR, wire wrapping, painting, epoxy, candlemaking, cosplay, walking the good boy in the photo,
-                and having money to eat!
-              </h3>
-              <h3>(Hire me!)</h3>
-            </span>
-            <span className="apollo">
-              <img
-                id="apollo"
-                src={apolloGlamour}
-                alt="Handsome border collie named Apollo squinches into the camera. He is a good boy. We currently enjoy a working relationship but he does not code very well."
-              />
-            </span>
+          <span className="introText">
+            <h2 className="subtitle">
+              I'm a fullstack MERN developer with a passion for skill
+              collecting.
+            </h2>
+            <h2 className="subtitle">Like what you see? Need code?</h2>
+            <h3 id="drop">Drop me a line</h3>
           </span>
-          <Line />
-          <div className="stackWrap">
+        </span>
+        <Line />
+        <span className="introSpan">
+          <span className="hobbies">
+            <h2>Hobbies include</h2>
+            <h3>
+              Cyberpunk RED, D&#38;D, FFXIV, SWTOR, wire wrapping, painting,
+              epoxy, candlemaking, cosplay, walking the good boy in the photo,
+              and having money to eat!
+            </h3>
+            <h3>(Hire me!)</h3>
+          </span>
+          <span className="introPic">
+            <img
+              id="apollo"
+              src={apolloGlamour}
+              alt="Handsome border collie named Apollo squinches into the camera. He is a good boy. We currently enjoy a working relationship but he does not code very well."
+            />
+          </span>
+        </span>
+        <Line />
+        <div className="stackWrap">
           <div className="stack">
             <div>
               <span aria-hidden="true">S</span>
@@ -82,11 +84,43 @@ export function Home(props) {
             <li className="sl">Rest API</li>
             <li className="sl">SCSS/SASS</li>
             <li className="sl">Bootstrap & MUI</li>
-            <li className="sl">Figma</li>
+            <li className="sl">Figma (Wireframing)</li>
             <li className="sl">Requirements Gathering</li>
             <li className="sl">VBA</li>
           </div>
         </div>
+      </div>
+      <Line />
+      <div className="intro">
+        <div className="goals">
+          <h1>Site Goals</h1>
+          <h3>
+            For most recent updates and snarky dev commentary, please check out
+            my <NavLink to="/blog">Dev Blog</NavLink>.
+          </h3>
+          <p>Near Future Attainables:</p>
+          <ul>
+            <li>Blog Facelift</li>
+            <li>
+              Updates to existing API practice projects to build more robust
+              examples
+            </li>
+          </ul>
+          <p>Written but having technical difficulties hosting:</p>
+          <ul>
+            <li>Backend</li>
+            <li>Login ability</li>
+            <li>Ability for users to post blogs and comment</li>
+          </ul>
+
+          <p>Pie in the Sky Goals</p>
+          <ul>
+            <li>
+              Language Translation Support - Lofty Stretch Goal - infrastructure
+              in place but difficult to do automated and at scale until backend
+              installed properly
+            </li>
+          </ul>
         </div>
       </div>
     </div>

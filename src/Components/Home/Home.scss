@@ -2,85 +2,241 @@
 
 .homeWrapper {
   color: $whiteColor;
+  overflow: hidden;
+  list-style-type: square;
 }
 
-#hiRoz {
-  font-family: $titleFont;
-  font-size: 5rem;
-  text-align: center;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin: 0;
+/* For extremely small screen devices (595px and below) */
+@media only screen and (max-width: 595px) {
+  #hiRoz {
+    font-family: $titleFont;
+    font-size: 5rem;
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+  }
+
+  #drop {
+    font-size: 3rem;
+    font-family: $titleFont;
+  }
+
+  .subtitle {
+    font-family: $bodyFont;
+    font-size: 2.5rem;
+  }
+
+  #netrunner,
+  #apollo {
+    height: 30rem;
+    width: auto;
+    border-radius: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #apollo {
+    margin-bottom: 2rem;
+  }
+
+  .intro {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin: 1rem;
+  }
+
+  .introSpan > * {
+    text-align: center;
+  }
+
+  .hobbies {
+    font-family: $subtitleFont;
+    font-size: 2rem;
+    font-weight: 100;
+  }
+
+  // Stack List Card
+  .stackWrap {
+    justify-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .stack {
+    display: inline-flex;
+    font-size: 4rem;
+    font-family: $titleFont;
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+      -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+      0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+
+    animation: glitch 552ms infinite;
+  }
+
+  .stack span {
+    position: absolute;
+    z-index: -1;
+  }
+
+  .stack span:first-child {
+    animation: glitch 731ms infinite;
+  }
+
+  .stack span:last-child {
+    animation: glitch 373s infinite;
+  }
+  .stackList {
+    align-content: space-between;
+    font-size: 1.5rem;
+    padding-right: 1em;
+    font-family: $subtitleFont;
+  }
+
+  .sl:hover {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+      -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+      0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+
+    animation: glitch 450ms infinite;
+  }
+
+  //Goals Card
+
+  .goals h1 {
+    font-family: $titleFont;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .goals h3 {
+    font-family: $subtitleFont;
+    font-size: 2rem;
+  }
+
+  .goals ul {
+    list-style-type: square;
+    font-family: $bodyFont;
+  }
+  .goals p {
+    font-family: $subtitleFont;
+    font-size: 1.5rem;
+  }
 }
 
-#drop {
-  font-size: 3rem;
-  font-family: $titleFont;
-}
+/* Big screen devices (889px and above) */
+@media only screen and (min-width: 889px) {
+  #hiRoz {
+    font-family: $titleFont;
+    font-size: 5rem;
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+  }
 
-.subtitle {
-  font-family: $bodyFont;
-  font-size: 2.5rem;
-}
+  #drop {
+    font-size: 3rem;
+    font-family: $titleFont;
+  }
 
-#netrunner,
-#apollo {
-  height: 30rem;
-  width: auto;
-  border-radius: 20px;
-}
+  .subtitle {
+    font-family: $bodyFont;
+    font-size: 2.5rem;
+  }
 
-//mid and large screens
-.introSpan {
-  display: inline-flex;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  margin: 0;
-}
+  #netrunner,
+  #apollo {
+    height: 30rem;
+    width: auto;
+    border-radius: 20px;
+  }
 
-.introPic,
-.introText,
-.hobbies,
-.apollo {
-  padding: 1rem;
-}
+  //mid and large screens
+  .introSpan {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin: 0;
+  }
 
-.hobbies {
-  font-family: $subtitleFont;
-  font-size: 2rem;
-  font-weight: 100;
-}
+  .introSpan > * {
+    padding: 1rem;
+  }
 
-// Stack List Card
-.stackWrap {
-  display: grid;
-  grid-template-columns: 30% 70%;
-  grid-column: auto;
-}
+  .hobbies {
+    font-family: $subtitleFont;
+    font-size: 2rem;
+    font-weight: 100;
+  }
 
-.stack {
-  font-size: 8vw;
-  padding-left: 1em;
-  font-family: $titleFont;
+  // Stack List Card
+  .stackWrap {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-column: auto;
+  }
 
-  text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
-    -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
-    0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  .stack {
+    font-size: 8vw;
+    padding-left: 1em;
+    font-family: $titleFont;
 
-  animation: glitch 552ms infinite;
-}
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+      -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+      0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
 
-.stack span {
-  position: absolute;
-  z-index: -1;
-}
+    animation: glitch 552ms infinite;
+  }
 
-.stack span:first-child {
-  animation: glitch 731ms infinite;
-}
+  .stack span {
+    position: absolute;
+    z-index: -1;
+  }
 
-.stack span:last-child {
-  animation: glitch 373s infinite;
+  .stack span:first-child {
+    animation: glitch 731ms infinite;
+  }
+
+  .stack span:last-child {
+    animation: glitch 373s infinite;
+  }
+  .stackList {
+    align-content: space-between;
+    font-size: 3.5vw;
+    padding-right: 1em;
+    font-family: $subtitleFont;
+  }
+
+  .sl:hover {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+      -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+      0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+
+    animation: glitch 450ms infinite;
+  }
+
+  //Goals Card
+
+  .goals h1 {
+    font-family: $titleFont;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .goals h3 {
+    font-family: $subtitleFont;
+    font-size: 2rem;
+  }
+
+  .goals ul {
+    list-style-type: square;
+    font-family: $bodyFont;
+  }
+  .goals p {
+    font-family: $subtitleFont;
+    font-size: 1.5rem;
+  }
 }
 
 @keyframes glitch {
@@ -121,21 +277,6 @@
   }
 }
 
-.stackList {
-  align-content: space-between;
-  font-size: 3.5vw;
-  padding-right: 1em;
-  font-family: $subtitleFont;
-}
-
-.sl:hover {
-  text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
-    -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
-    0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
-
-  animation: glitch 450ms infinite;
-}
-
 // in case user does not want to see animations for some reason
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -150,3 +291,18 @@
     transition-delay: 0s !important;
   }
 }
+
+// /* For extremely small screen devices (595px and below) */
+// @media only screen and (max-width: 595px) {...}
+
+// /* Small screen devices (600px and above) */
+// @media only screen and (min-width: 600px) {...}
+
+// /* Medium screen devices (768px and above) */
+// @media only screen and (min-width: 768px) {...}
+
+// /* Big screen devices (889px and above) */
+// @media only screen and (min-width: 889px) {...}
+
+// /* Extra big screen devices (1200px and above) */
+// @media only screen and (min-width: 1200px) {...}
