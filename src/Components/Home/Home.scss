@@ -17,20 +17,13 @@
     font-family: $titleFont;
     font-size: 3rem;
     text-align: center;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-bottom: 1rem;
     margin: 0;
   }
 
-  .leftBracket {
-    align-self: flex-start;
-  }
-  .rightBracket {
-    align-self: flex-end;
-  }
-
-  .logo {
+  .logo, .leftBracket, .rightBracket {
     opacity: 0;
+    height: 0;
   }
 
   #drop {
@@ -48,6 +41,9 @@
     max-width: 70vw;
     height: auto;
     border-radius: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   #apollo {
@@ -130,6 +126,7 @@
 
 /* For extremely small screen devices (501px and below) */
 @media only screen and (min-width: 501px) {
+
   #hiRoz {
     font-family: $titleFont;
     font-size: 5rem;
@@ -173,53 +170,55 @@
     font-weight: 100;
   }
 
-  // Stack List Card
-  .stackWrap {
-    justify-items: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .stack {
-    display: inline-flex;
-    font-size: 4rem;
-    font-family: $titleFont;
-    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
-      -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
-      0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
-
-    animation: glitch 552ms infinite;
-  }
-
-  .stack span {
-    position: absolute;
-    z-index: -1;
-  }
-
-  .stack span:first-child {
-    animation: glitch 731ms infinite;
-  }
-
-  .stack span:last-child {
-    animation: glitch 373s infinite;
-  }
-  .stackList {
-    align-content: space-between;
-    font-size: 1.5rem;
-    padding-right: 1em;
-    font-family: $subtitleFont;
-  }
-
-  .sl:hover {
-    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
-      -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
-      0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
-
-    animation: glitch 450ms infinite;
-  }
-
+    // Stack List Card
+    .stackWrap {
+      display: grid;
+      grid-template-columns: 30% 70%;
+      grid-column: auto;
+    }
+  
+    .stack {
+      font-size: 8vw;
+      padding-left: 1em;
+      font-family: $titleFont;
+      text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+        -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+        0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  
+      animation: glitch 552ms infinite;
+    }
+  
+    .stack span {
+      position: absolute;
+      z-index: -1;
+    }
+  
+    .stack span:first-child {
+      animation: glitch 731ms infinite;
+    }
+  
+    .stack span:last-child {
+      animation: glitch 373s infinite;
+    }
+    .stackList {
+      align-content: space-between;
+      font-size: 3.5vw;
+      padding-right: 1em;
+      font-family: $subtitleFont;
+    }
+  
+    .sl:hover {
+      text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+        -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+        0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  
+      animation: glitch 450ms infinite;
+    }
+  
   //Goals Card
-
+  .goals {
+    padding: 2rem;
+  }
   .goals h1 {
     font-family: $titleFont;
     font-size: 3rem;
@@ -242,6 +241,7 @@
 }
 /* Medium screen devices (671px and above) */
 @media only screen and (min-width: 671px) {
+
   #hiRoz {
     font-family: $titleFont;
     font-size: 5rem;
@@ -392,12 +392,6 @@
     border-radius: 20px;
   }
 
-  .introSpan {
-    padding-left: 2rem;
-    padding-right: 2rem;
-    margin: 0;
-  }
-
   #topIntro {
     display: grid;
     grid-template-columns: 40% 60%;
@@ -533,12 +527,14 @@
 
   .hobbies {
     font-family: $subtitleFont;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 100;
   }
 
   // Stack List Card
   .stackWrap {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     display: grid;
     grid-template-columns: 30% 70%;
     grid-column: auto;
@@ -546,7 +542,6 @@
 
   .stack {
     font-size: 8vw;
-    padding-left: 1em;
     font-family: $titleFont;
     text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
       -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
@@ -569,8 +564,7 @@
   }
   .stackList {
     align-content: space-between;
-    font-size: 3rem;
-    padding-right: 1em;
+    font-size: 3.5vw;
     font-family: $subtitleFont;
   }
 
@@ -582,8 +576,8 @@
     animation: glitch 450ms infinite;
   }
 
-  //Goals Card
 
+  //Goals Card
   .goals h1 {
     font-family: $titleFont;
     font-size: 5rem;

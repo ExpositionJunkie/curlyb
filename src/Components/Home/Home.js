@@ -36,7 +36,7 @@ export function Home(props) {
           <span className="hobbies">
             <h2>Hobbies include</h2>
             <h3>
-              Cyberpunk RED, D&#38;D, FFXIV, SWTOR, wire wrapping, painting,
+              Cyberpunk RED, D&#38;D, FFXIV, SWTOR, backpacking, wire wrapping, painting,
               epoxy, candlemaking, cosplay, walking the good boy in the photo,
               and having money to eat!
             </h3>
