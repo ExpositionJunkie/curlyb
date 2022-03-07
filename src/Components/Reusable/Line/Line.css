@@ -3,10 +3,6 @@
   align-self: center;
   justify-self: center;
   overflow-x: hidden;
-  z-index: 10006;
-  position: relative;
-  -webkit-animation: colorFade 373s infinite;
-          animation: colorFade 373s infinite;
 }
 
 @-webkit-keyframes colorFade {

@@ -5,77 +5,100 @@
   margin: 0;
 }
 
-// /* For extremely small screen devices (670px and below) */
-// @media only screen and (max-width: 300px) {
-//   .titleText {
-//     width: 100vw;
-//     position: relative;
-//     margin: 0;
-//     font-size: 2rem;
-//     color: $yeallowColor;
-//     font-family: $titleFont;
-//     text-align: center;
-//     z-index: 1;
-//   }
-   
-// }
+// Very small screens
+@media screen and (max-width: 500px) {
+  #elipses {
+    height: 40px;
+  }
 
-.headerWrapper {
-  background-image: url("../../data/photos/frontend/the-great-flood.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
+  .titleText {
+    text-decoration: none;
+    position: relative;
+    margin: 0;
+    width: 100vw;
+    font-size: 2rem;
+    color: $yellowColor;
+    font-family: $titleFont;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .leftBracket,
+  .rightBracket,
+  .logo,
+  .navbarLinks > * {
+    display: none;
+  }
 }
 
-.leftBracket, .rightBracket, .logo {
-  height: 10vh;
-}
+@media screen and (min-width: 501px) {
+  #elipses {
+    opacity: 0;
+    height: 0;
+  }
 
-.logo{
-  position: absolute;
-  align-self: center;
-  width: 100vw;
-  z-index: 0;
+  .titleText {
+    text-decoration: none;
+    width: 100vw;
+    position: relative;
+    margin: 0;
+    font-size: 4rem;
+    color: $yellowColor;
+    font-family: $titleFont;
+    text-align: center;
+    z-index: 1;
+  }
 }
+  .headerWrapper {
+    background-image: url("../../data/photos/frontend/the-great-flood.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+  }
 
-.titleText {
-  width: 100vw;
-  position: relative;
-  margin: 0;
-  font-size: 4rem;
-  color: $yeallowColor;
-  font-family: $titleFont;
-  text-align: center;
-  z-index: 1;
-}
+  .leftBracket,
+  .rightBracket,
+  .logo {
+    height: 10vh;
+  }
 
-.linkWrapper {
-  background-color: $blackColor;
-}
+  .logo {
+    position: absolute;
+    align-self: center;
+    width: 100vw;
+    z-index: 0;
+  }
 
-.navbarLinks {
-  display: flex;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 0.5rem;
-  align-content: center;
-  justify-content: space-between;
-}
 
-.navbarLinks > * {
-  font-family: $subtitleFont;
-  text-decoration: none;
-  color: $whiteColor;
-  text-shadow: 2px 2px 5px black;
-  size: 2.5rem;
-  text-align: center;
-  flex-wrap: nowrap;
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-}
 
-.linkWrapper a:hover {
-  text-decoration: none;
-  color: $yeallowColor;
-  text-shadow: 2px 2px 5px $yeallowColor;
-}
+  .linkWrapper {
+    background-color: $blackColor;
+  }
+
+  .navbarLinks {
+    display: flex;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+    align-content: center;
+    justify-content: space-between;
+  }
+
+  .navbarLinks > * {
+    font-family: $subtitleFont;
+    text-decoration: none;
+    color: $whiteColor;
+    text-shadow: 2px 2px 5px black;
+    size: 2.5rem;
+    text-align: center;
+    flex-wrap: nowrap;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .linkWrapper a:hover {
+    text-decoration: none;
+    color: $yellowColor;
+    text-shadow: 2px 2px 5px $yellowColor;
+  }
+

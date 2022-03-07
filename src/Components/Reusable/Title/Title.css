@@ -1,6 +1,6 @@
 .page_title {
   background-color: #8335d0;
-  width: 100%;
+  width: 100vw;
 }
 
 .page_title h1 {
@@ -17,4 +17,17 @@
 .title_wrapper {
   margin: 0;
   padding: 0;
+}
+
+@media only screen and (max-width: 500px) {
+  .page_title h1 {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-family: "Staatliches";
+    font-size: 3rem;
+    text-align: center;
+  }
 }

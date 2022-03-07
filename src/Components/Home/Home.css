@@ -4,21 +4,33 @@
   list-style-type: square;
 }
 
-.intro {
-  padding-left: 2rem;
-  padding-right: 2rem;
-  margin: 1rem;
-}
+/* For extremely small screen devices (500px and below) */
+@media screen and (max-width: 500px) {
+  .intro {
+    padding: 2rem;
+    display: block;
+    margin: auto;
+  }
 
-/* For extremely small screen devices (670px and below) */
-@media only screen and (max-width: 300px) {
   #hiRoz {
     font-family: "Audiowide", cursive;
-    font-size: 5rem;
+    font-size: 3rem;
     text-align: center;
     padding-top: 0;
     padding-bottom: 0;
     margin: 0;
+  }
+
+  .leftBracket {
+    align-self: flex-start;
+  }
+
+  .rightBracket {
+    align-self: flex-end;
+  }
+
+  .logo {
+    opacity: 0;
   }
 
   #drop {
@@ -28,17 +40,14 @@
 
   .subtitle {
     font-family: "Raleway", sans-serif;
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   #netrunner,
 #apollo {
-    height: 30rem;
-    width: auto;
+    max-width: 70vw;
+    height: auto;
     border-radius: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   #apollo {
@@ -51,19 +60,16 @@
 
   .hobbies {
     font-family: "Advent Pro", sans-serif;
-    font-size: 2rem;
-    font-weight: 100;
+    font-size: 1.5rem;
   }
 
   .stackWrap {
     justify-items: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
   }
 
   .stack {
     display: inline-flex;
-    font-size: 4rem;
+    font-size: 3rem;
     font-family: "Audiowide", cursive;
     text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
     -webkit-animation: glitch 552ms infinite;
@@ -88,7 +94,6 @@
   .stackList {
     align-content: space-between;
     font-size: 1.5rem;
-    padding-right: 1em;
     font-family: "Advent Pro", sans-serif;
   }
 
@@ -119,8 +124,8 @@
     font-size: 1.5rem;
   }
 }
-/* For extremely small screen devices (670px and below) */
-@media only screen and (max-width: 670px) {
+/* For extremely small screen devices (501px and below) */
+@media only screen and (min-width: 501px) {
   #hiRoz {
     font-family: "Audiowide", cursive;
     font-size: 5rem;
@@ -502,7 +507,8 @@
     margin: 0;
   }
 
-  #topIntro, #hobbiesIntro {
+  #topIntro,
+#hobbiesIntro {
     display: flex;
   }
 

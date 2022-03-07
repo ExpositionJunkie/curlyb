@@ -3,6 +3,48 @@
   margin: 0;
 }
 
+@media screen and (max-width: 500px) {
+  #elipses {
+    height: 40px;
+  }
+
+  .titleText {
+    text-decoration: none;
+    position: relative;
+    margin: 0;
+    width: 100vw;
+    font-size: 2rem;
+    color: #f1e91c;
+    font-family: "Audiowide", cursive;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .leftBracket,
+.rightBracket,
+.logo,
+.navbarLinks > * {
+    display: none;
+  }
+}
+@media screen and (min-width: 501px) {
+  #elipses {
+    opacity: 0;
+    height: 0;
+  }
+
+  .titleText {
+    text-decoration: none;
+    width: 100vw;
+    position: relative;
+    margin: 0;
+    font-size: 4rem;
+    color: #f1e91c;
+    font-family: "Audiowide", cursive;
+    text-align: center;
+    z-index: 1;
+  }
+}
 .headerWrapper {
   background-image: url("../../data/photos/frontend/the-great-flood.jpg");
   background-size: cover;
@@ -10,7 +52,9 @@
   display: flex;
 }
 
-.leftBracket, .rightBracket, .logo {
+.leftBracket,
+.rightBracket,
+.logo {
   height: 10vh;
 }
 
@@ -19,17 +63,6 @@
   align-self: center;
   width: 100vw;
   z-index: 0;
-}
-
-.titleText {
-  width: 100vw;
-  position: relative;
-  margin: 0;
-  font-size: 4rem;
-  color: #f1e91c;
-  font-family: "Audiowide", cursive;
-  text-align: center;
-  z-index: 1;
 }
 
 .linkWrapper {

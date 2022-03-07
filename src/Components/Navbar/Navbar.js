@@ -1,20 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import "./Navbar.css";
-import { ReactComponent as Logo} from "../../data/photos/frontend/logo.svg"
-import { ReactComponent as RightBracket} from "../../data/photos/frontend/rightbracket.svg"
-import { ReactComponent as LeftBracket} from "../../data/photos/frontend/leftbracket.svg"
+import { ReactComponent as Logo } from "../../data/photos/frontend/logo.svg";
+import { ReactComponent as RightBracket } from "../../data/photos/frontend/rightbracket.svg";
+import { ReactComponent as LeftBracket } from "../../data/photos/frontend/leftbracket.svg";
+import Elipses from "../../data/photos/frontend/Elipses.svg";
+
+//https://reactjs.org/docs/accessibility.html
+//Good article on aria attributes and a reminder to write accessible code
 
 export default function Navbar() {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const handleClick = () => setDropdownOpen(!dropdownOpen);
+
   return (
-    <div className="navbar">
+    <nav className="navbar">
       <div className="headerWrapper">
-        <LeftBracket className="rightBracket" />
-        <h1 className="titleText">Curly Brackets</h1>
-        <Logo className="logo"/>
-        <RightBracket className="leftBracket"/>
+        <LeftBracket className="leftBracket" />
+        <NavLink className="titleText" to="/">
+          Curly Brackets
+        </NavLink>
+        <Logo className="logo" />
+        <RightBracket className="rightBracket" />
       </div>
+      
       <div className="linkWrapper">
+      <img id="elipses" src={Elipses} alt="navigation Elipses" />
         <span className="navbarLinks">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/blog">Blog</NavLink>
@@ -23,6 +35,6 @@ export default function Navbar() {
         </span>
       </div>
       <Outlet />
-    </div>
+    </nav>
   );
 }

@@ -5,21 +5,32 @@
   overflow: hidden;
   list-style-type: square;
 }
-.intro {
-  padding-left: 2rem;
-  padding-right: 2rem;
-  margin: 1rem;
-}
 
-/* For extremely small screen devices (670px and below) */
-@media only screen and (max-width: 300px) {
+/* For extremely small screen devices (500px and below) */
+@media screen and (max-width: 500px) {
+  .intro {
+    padding: 2rem;
+    display: block;
+    margin: auto;
+  }
   #hiRoz {
     font-family: $titleFont;
-    font-size: 5rem;
+    font-size: 3rem;
     text-align: center;
     padding-top: 0;
     padding-bottom: 0;
     margin: 0;
+  }
+
+  .leftBracket {
+    align-self: flex-start;
+  }
+  .rightBracket {
+    align-self: flex-end;
+  }
+
+  .logo {
+    opacity: 0;
   }
 
   #drop {
@@ -29,17 +40,14 @@
 
   .subtitle {
     font-family: $bodyFont;
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   #netrunner,
   #apollo {
-    height: 30rem;
-    width: auto;
+    max-width: 70vw;
+    height: auto;
     border-radius: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   #apollo {
@@ -52,20 +60,17 @@
 
   .hobbies {
     font-family: $subtitleFont;
-    font-size: 2rem;
-    font-weight: 100;
+    font-size: 1.5rem;
   }
 
   // Stack List Card
   .stackWrap {
     justify-items: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
   }
 
   .stack {
     display: inline-flex;
-    font-size: 4rem;
+    font-size: 3rem;
     font-family: $titleFont;
     text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
       -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
@@ -89,7 +94,6 @@
   .stackList {
     align-content: space-between;
     font-size: 1.5rem;
-    padding-right: 1em;
     font-family: $subtitleFont;
   }
 
@@ -124,8 +128,8 @@
   }
 }
 
-/* For extremely small screen devices (670px and below) */
-@media only screen and (max-width: 670px) {
+/* For extremely small screen devices (501px and below) */
+@media only screen and (min-width: 501px) {
   #hiRoz {
     font-family: $titleFont;
     font-size: 5rem;
@@ -518,10 +522,10 @@
     margin: 0;
   }
 
-  #topIntro, #hobbiesIntro {
+  #topIntro,
+  #hobbiesIntro {
     display: flex;
   }
-
 
   .introSpan > * {
     margin: 3rem;
@@ -654,18 +658,3 @@
     transition-delay: 0s !important;
   }
 }
-
-// /* For extremely small screen devices (595px and below) */
-// @media only screen and (max-width: 595px) {...}
-
-// /* Small screen devices (600px and above) */
-// @media only screen and (min-width: 600px) {...}
-
-// /* Medium screen devices (768px and above) */
-// @media only screen and (min-width: 768px) {...}
-
-// /* Big screen devices (889px and above) */
-// @media only screen and (min-width: 889px) {...}
-
-// /* Extra big screen devices (1200px and above) */
-// @media only screen and (min-width: 1200px) {...}
