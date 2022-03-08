@@ -24,8 +24,6 @@ $bodyFont2: "Comfortaa", cursive;
   transform: $property;
 }
 
-//SVGS
-
 //Buttons
 @mixin buttonStyle($background-color, $fontSize) {
   font-size: $fontSize;

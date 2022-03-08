@@ -1,0 +1,15 @@
+@import "../../Variables/Sass/SassVariables.scss";
+
+.apiWrapper {
+  color: $whiteColor;
+}
+
+.apiExplanation h3 {
+  font-family: $subtitleFont;
+  font-size: 3rem;
+}
+
+.apiExplanation h4 {
+  font-size: 2rem;
+  font-family: $bodyFont;
+}
