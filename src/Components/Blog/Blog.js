@@ -1,5 +1,6 @@
 import React from "react";
 import Title from "../Reusable/Title/Title";
+import Line from "../Reusable/Line/Line"
 import { blogData } from "../../data/blogData.js";
 import "./Blog.css";
 
@@ -32,6 +33,7 @@ export default function Blog() {
             return (
               <div className="entry" key={blogEntry.id}>
                 <BlogEntry blog={blogEntry} />
+                <Line></Line>
               </div>
             );
           })}

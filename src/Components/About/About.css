@@ -1,0 +1,16 @@
+.aboutWrapper {
+  color: #ffffff;
+}
+
+.innerAboutWrapper {
+  padding: 2rem;
+}
+
+.headline {
+  font-family: "Advent Pro", sans-serif;
+}
+
+.aboutBody {
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+}

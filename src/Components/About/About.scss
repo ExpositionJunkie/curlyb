@@ -1,0 +1,17 @@
+@import "../../Variables/Sass/SassVariables.scss";
+
+.aboutWrapper {
+  color: $whiteColor;
+}
+.innerAboutWrapper {
+    padding: 2rem;
+}
+
+.headline {
+    font-family: $subtitleFont;
+}
+
+.aboutBody {
+  font-family: $bodyFont;
+  font-size: 2rem;
+}

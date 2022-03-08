@@ -1,6 +1,7 @@
 import React, { useState, Suspense, useEffect } from "react";
 import "./App.css";
 import { Home } from "./Components/Home/Home";
+import About from "./Components/About/About"
 import Navbar from "./Components/Navbar/Navbar";
 import APIPractice from "./Components/APIPractice/APIPractice";
 import NASAPower from "./Components/APIPractice/InnerPages/NASA/NASAPower";
@@ -35,6 +36,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="apipractice" element={<APIPractice />} />
                 <Route path="blog" element={<Blog />} />
+                <Route path="about" element={<About />} />
                 <Route path="nameguesser" element={<NameGuess />} />
                 <Route path="nasapower" element={<NASAPower />} />
                 <Route path="isslocator" element={<ISSLocator />} />

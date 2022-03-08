@@ -21,6 +21,7 @@ export default function Navbar() {
         <NavLink className="titleText" to="/">
           Curly Brackets
         </NavLink>
+        
         <Logo className="logo" />
         <RightBracket className="rightBracket" />
       </div>

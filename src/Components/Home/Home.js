@@ -6,6 +6,7 @@ import rozNetrunner from "../../data/photos/Roz/profilePhotos/netrunner2.jpg";
 import apolloGlamour from "../../data/photos/Apollo/ApolloGlamourShot.jpg";
 import "./Home.css";
 
+
 export function Home(props) {
   return (
     <div className="homeWrapper">

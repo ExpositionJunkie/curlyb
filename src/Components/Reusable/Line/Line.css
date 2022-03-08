@@ -1,66 +1,39 @@
-.line {
+.invisibleText {
+  opacity: 0;
   max-width: 80vw;
   align-self: center;
   justify-self: center;
   overflow-x: hidden;
 }
 
-@-webkit-keyframes colorFade {
-  0% {
-    background-color: "rgb(255, 0, 0) ";
-  }
-  10% {
-    background-color: "rgb(255, 238, 0)";
-  }
-  20% {
-    background-color: "rgb(255, 238, 0)";
-  }
-  30% {
-    background-color: "rgb(21, 255, 0)";
-  }
-  40% {
-    background-color: "rgb(0, 255, 208)";
-  }
-  50% {
-    background-color: "rgb(0, 64, 255)";
-  }
-  60% {
-    background-color: "rgb(128, 0, 255)";
-  }
-  70% {
-    background-color: "rgb(255, 0, 140)";
-  }
-  100% {
-    background-color: "rgb(255, 0, 0) ";
-  }
+.rainbowLine {
+  display: block;
+  margin: auto;
+  max-width: 80%;
+  max-height: 5px;
+  overflow: hidden;
+  background: linear-gradient(45deg, #f17c58, #e94584, #24aadb, #27dbb1, #ffdc18, #ff3706);
+  background-size: 600% 100%;
+  -webkit-animation: gradient 16s linear infinite;
+          animation: gradient 16s linear infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  overflow-x: hidden;
 }
 
-@keyframes colorFade {
+@-webkit-keyframes gradient {
   0% {
-    background-color: "rgb(255, 0, 0) ";
-  }
-  10% {
-    background-color: "rgb(255, 238, 0)";
-  }
-  20% {
-    background-color: "rgb(255, 238, 0)";
-  }
-  30% {
-    background-color: "rgb(21, 255, 0)";
-  }
-  40% {
-    background-color: "rgb(0, 255, 208)";
-  }
-  50% {
-    background-color: "rgb(0, 64, 255)";
-  }
-  60% {
-    background-color: "rgb(128, 0, 255)";
-  }
-  70% {
-    background-color: "rgb(255, 0, 140)";
+    background-position: 0%;
   }
   100% {
-    background-color: "rgb(255, 0, 0) ";
+    background-position: 100%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
   }
 }

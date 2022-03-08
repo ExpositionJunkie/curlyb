@@ -8,7 +8,17 @@
 // Very small screens
 @media screen and (max-width: 500px) {
   #elipses {
-    height: 40px;
+    position: absolute;
+    display: flex;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    height: 60px;
+    align-self: center;
+    filter: drop-shadow(10px 10px 10px $blackColor);
+  }
+
+  .headerWrapper {
+    height: 10vh;
   }
 
   .titleText {
@@ -16,18 +26,27 @@
     position: relative;
     margin: 0;
     width: 100vw;
-    font-size: 2rem;
-    color: $yellowColor;
+    font-size: 1rem;
     font-family: $titleFont;
+    color: $yellowColor;
     text-align: center;
     z-index: 1;
+    padding-top: 2rem;
+    filter: drop-shadow(10px 5px 5px $blackColor);
   }
 
-  .leftBracket,
-  .rightBracket,
-  .logo,
-  .navbarLinks > * {
+  .navbarLinks >* {
     display: none;
+  }
+
+  .logo {
+    position: absolute;
+    align-self: center;
+    width: 100vw;
+    height: 5vh;
+    opacity: 1;
+    z-index: 1;
+    filter: drop-shadow(10px 5px 5px $purpleColor);
   }
 }
 
@@ -47,58 +66,56 @@
     font-family: $titleFont;
     text-align: center;
     z-index: 1;
+    filter: drop-shadow(10px 5px 5px $blackColor);
   }
 }
-  .headerWrapper {
-    background-image: url("../../data/photos/frontend/the-great-flood.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-  }
+.headerWrapper {
+  background-image: url("../../data/photos/frontend/the-great-flood.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+}
 
-  .leftBracket,
-  .rightBracket,
-  .logo {
-    height: 10vh;
-  }
+.leftBracket,
+.rightBracket,
+.logo {
+  height: 10vh;
+}
 
-  .logo {
-    position: absolute;
-    align-self: center;
-    width: 100vw;
-    z-index: 0;
-  }
+.logo {
+  position: absolute;
+  align-self: center;
+  width: 100vw;
+  z-index: 0;
+}
 
+.linkWrapper {
+  background-color: $blackColor;
+}
 
+.navbarLinks {
+  display: flex;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.5rem;
+  align-content: center;
+  justify-content: space-between;
+}
 
-  .linkWrapper {
-    background-color: $blackColor;
-  }
+.navbarLinks > * {
+  font-family: $subtitleFont;
+  text-decoration: none;
+  color: $whiteColor;
+  text-shadow: 2px 2px 5px black;
+  size: 2.5rem;
+  text-align: center;
+  flex-wrap: nowrap;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
 
-  .navbarLinks {
-    display: flex;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 0.5rem;
-    align-content: center;
-    justify-content: space-between;
-  }
-
-  .navbarLinks > * {
-    font-family: $subtitleFont;
-    text-decoration: none;
-    color: $whiteColor;
-    text-shadow: 2px 2px 5px black;
-    size: 2.5rem;
-    text-align: center;
-    flex-wrap: nowrap;
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-  }
-
-  .linkWrapper a:hover {
-    text-decoration: none;
-    color: $yellowColor;
-    text-shadow: 2px 2px 5px $yellowColor;
-  }
-
+.linkWrapper a:hover {
+  text-decoration: none;
+  color: $yellowColor;
+  text-shadow: 2px 2px 5px $yellowColor;
+}
