@@ -24,6 +24,9 @@ $bodyFont2: "Comfortaa", cursive;
   transform: $property;
 }
 
+//SVGS
+
+//Buttons
 @mixin buttonStyle($background-color, $fontSize) {
   font-size: $fontSize;
   width: inherit;
@@ -31,6 +34,7 @@ $bodyFont2: "Comfortaa", cursive;
   background-color: $background-color;
 }
 
+//Animations
 @mixin rainbow($max-width, $max-height) {
   display: block;
   margin: auto;

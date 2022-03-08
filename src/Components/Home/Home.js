@@ -6,7 +6,6 @@ import rozNetrunner from "../../data/photos/Roz/profilePhotos/netrunner2.jpg";
 import apolloGlamour from "../../data/photos/Apollo/ApolloGlamourShot.jpg";
 import "./Home.css";
 
-
 export function Home(props) {
   return (
     <div className="homeWrapper">
@@ -29,17 +28,24 @@ export function Home(props) {
               collecting.
             </h2>
             <h2 className="subtitle">Like what you see? Need code?</h2>
-            <h3 id="drop">Drop me a line</h3>
+            <h3 id="drop">
+              <a
+                className="plainLink"
+                href="mailto:rosalindavalbrecht@gmail.com?subject=I am interested in giving you money to do a thing you like"  
+              >
+                Drop me a line
+              </a>
+            </h3>
           </span>
         </span>
         <Line />
-        <span id="hobbiesIntro" className="introSpan">
+        <span id="hobbiesIntro" className="introSpan pad3">
           <span className="hobbies">
             <h2>Hobbies include</h2>
             <h3>
-              Cyberpunk RED, D&#38;D, FFXIV, SWTOR, backpacking, wire wrapping, painting,
-              epoxy, candlemaking, cosplay, walking the good boy in the photo,
-              and having money to eat!
+              Cyberpunk RED, D&#38;D, FFXIV, SWTOR, backpacking, wire wrapping,
+              painting, epoxy, candlemaking, cosplay, walking the good boy in
+              the photo, and having money to eat!
             </h3>
             <h3>(Hire me!)</h3>
           </span>
@@ -52,7 +58,7 @@ export function Home(props) {
           </span>
         </span>
         <Line />
-        <div className="stackWrap">
+        <div className="stackWrap pad3">
           <div className="stack">
             <div>
               <span aria-hidden="true">S</span>
@@ -92,38 +98,38 @@ export function Home(props) {
         </div>
       </div>
       <Line />
-      <div className="intro">
-        <div className="goals">
-          <h1>Site Goals</h1>
-          <h3>
-            For most recent updates and snarky dev commentary, please check out
-            my <NavLink to="/blog">Dev Blog</NavLink>.
-          </h3>
-          <p>Near Future Attainables:</p>
-          <ul>
-            <li>Blog Facelift</li>
-            <li>
-              Updates to existing API practice projects to build more robust
-              examples
-            </li>
-          </ul>
-          <p>Written but having technical difficulties hosting:</p>
-          <ul>
-            <li>Backend</li>
-            <li>Login ability</li>
-            <li>Ability for users to post blogs and comment</li>
-          </ul>
-
-          <p>Pie in the Sky Goals</p>
-          <ul>
-            <li>
-              Language Translation Support - Lofty Stretch Goal - infrastructure
-              in place but difficult to do automated and at scale until backend
-              installed properly
-            </li>
-          </ul>
-        </div>
+      <div className="pad2">
+      <div className="intro goals">
+        <h1>Site Goals</h1>
+        <h3>
+          For most recent updates and snarky dev commentary, please check out my{" "}
+          <NavLink to="/blog">Dev Blog</NavLink>.
+        </h3>
+        <p>Near Future Attainables:</p>
+        <ul>
+          <li>Blog Facelift</li>
+          <li>
+            Updates to existing API practice projects to build more robust
+            examples
+          </li>
+        </ul>
+        <p>Written but having technical difficulties hosting:</p>
+        <ul>
+          <li>Backend</li>
+          <li>Login ability</li>
+          <li>Ability for users to post blogs and comment</li>
+        </ul>
+        <p>Pie in the Sky Goals</p>
+        <ul>
+          <li>
+            Language Translation Support - Lofty Stretch Goal - infrastructure
+            in place but difficult to do automated and at scale until backend
+            installed properly
+          </li>
+        </ul>
       </div>
+      </div>
+      <Line />
     </div>
   );
 }

@@ -11,3 +11,69 @@ header {
   height: 100%;
   width: 100%;
 }
+
+.pad1 {
+  padding: 1rem;
+}
+
+.pad2 {
+  padding: 2rem;
+}
+
+.pad3 {
+  padding: 3rem;
+}
+
+.pad4 {
+  padding: 4rem;
+}
+
+.pad5 {
+  padding: 5rem;
+}
+
+.marg1 {
+  margin: 1rem;
+}
+
+.marg2 {
+  margin: 2rem;
+}
+
+.marg3 {
+  margin: 3rem;
+}
+
+.marg4 {
+  margin: 4rem;
+}
+
+.marg5 {
+  margin: 5rem;
+}
+
+.linkNoUnderline {
+  text-decoration: none;
+}
+
+.plainLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+::before,
+::after {
+    -webkit-animation-delay: -1ms !important;
+            animation-delay: -1ms !important;
+    -webkit-animation-duration: 1ms !important;
+            animation-duration: 1ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}

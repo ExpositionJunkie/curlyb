@@ -2,6 +2,8 @@
   color: #ffffff;
   overflow: hidden;
   list-style-type: square;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* For extremely small screen devices (500px and below) */
@@ -20,7 +22,9 @@
     margin: 0;
   }
 
-  .logo, .leftBracket, .rightBracket {
+  .logo,
+.leftBracket,
+.rightBracket {
     opacity: 0;
     height: 0;
   }
@@ -28,6 +32,7 @@
   #drop {
     font-size: 3rem;
     font-family: "Audiowide", cursive;
+    color: #ffffff;
   }
 
   .subtitle {
@@ -468,6 +473,12 @@
 }
 /* Huge screen devices (1086px and above) */
 @media only screen and (min-width: 1086px) {
+  .intro {
+    padding: 2rem;
+    display: block;
+    margin: auto;
+  }
+
   #hiRoz {
     font-family: "Audiowide", cursive;
     font-size: 6rem;
@@ -516,8 +527,6 @@
   }
 
   .stackWrap {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
     display: grid;
     grid-template-columns: 30% 70%;
     grid-column: auto;
@@ -556,6 +565,10 @@
     text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
     -webkit-animation: glitch 450ms infinite;
             animation: glitch 450ms infinite;
+  }
+
+  .goals {
+    padding: 2rem;
   }
 
   .goals h1 {
@@ -624,21 +637,5 @@
   }
   100% {
     text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75), -0.05em 0.025em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  *,
-::before,
-::after {
-    -webkit-animation-delay: -1ms !important;
-            animation-delay: -1ms !important;
-    -webkit-animation-duration: 1ms !important;
-            animation-duration: 1ms !important;
-    -webkit-animation-iteration-count: 1 !important;
-            animation-iteration-count: 1 !important;
-    background-attachment: initial !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0s !important;
-    transition-delay: 0s !important;
   }
 }

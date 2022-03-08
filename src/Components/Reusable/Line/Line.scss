@@ -8,7 +8,6 @@
   overflow-x: hidden;
 }
 
-
 .rainbowLine {
-  @include rainbow(80vw, 5px)
+  @include rainbow(80vw, 2px)
 }

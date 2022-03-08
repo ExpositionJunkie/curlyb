@@ -4,6 +4,8 @@
   color: $whiteColor;
   overflow: hidden;
   list-style-type: square;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* For extremely small screen devices (500px and below) */
@@ -31,6 +33,7 @@
   #drop {
     font-size: 3rem;
     font-family: $titleFont;
+    color: $whiteColor
   }
 
   .subtitle {
@@ -484,6 +487,11 @@
 
 /* Huge screen devices (1086px and above) */
 @media only screen and (min-width: 1086px) {
+  .intro {
+    padding: 2rem;
+    display: block;
+    margin: auto;
+  }
   #hiRoz {
     font-family: $titleFont;
     font-size: 6rem;
@@ -533,8 +541,6 @@
 
   // Stack List Card
   .stackWrap {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
     display: grid;
     grid-template-columns: 30% 70%;
     grid-column: auto;
@@ -577,6 +583,9 @@
   }
 
   //Goals Card
+  .goals {
+    padding: 2rem;
+  }
   .goals h1 {
     font-family: $titleFont;
     font-size: 5rem;
@@ -599,6 +608,8 @@
   }
 }
 
+//Not sure I love this but was a fun exercise.
+//Thought about making it reusable but in this case I'm just gonna leave it.
 @keyframes glitch {
   0% {
     text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
@@ -634,20 +645,5 @@
     text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
       -0.05em 0.025em 0 rgba(0, 255, 0, 0.75),
       0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
-  }
-}
-
-// in case user does not want to see animations for some reason
-@media (prefers-reduced-motion: reduce) {
-  *,
-  ::before,
-  ::after {
-    animation-delay: -1ms !important;
-    animation-duration: 1ms !important;
-    animation-iteration-count: 1 !important;
-    background-attachment: initial !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0s !important;
-    transition-delay: 0s !important;
   }
 }
