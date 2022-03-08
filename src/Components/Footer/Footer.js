@@ -15,6 +15,8 @@ import { ReactComponent as Html5Icon } from "../../data/photos/frontend/icons/ht
 
 import "./Footer.css";
 
+//reading for when I add symbols: https://fontawesome.com/v6/docs/web/add-icons/svg-symbols
+
 export default function Footer(props) {
   return (
     <div className="footerWrapper pad5">

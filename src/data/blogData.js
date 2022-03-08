@@ -406,6 +406,14 @@ export const blogData = [
       "polymorphism",
     ],
   },
+  {
+      "id": "26",
+      "date": "3/7/2022 11:29 PM",
+      "title": "Staying Sassy",
+      "subtitle": "Rainbow Fade & Major Facelifting",
+      "text": ["Very tired, have been working at this for hours. So this update will be quick. Made some encapsulation changes to my scss and came up with a pretty neat rainbow effect. Found that one from a youtube video here https://www.youtube.com/watch?v=wxwzyWNccYM. I then adapted it to SCSS in order to take advantage of SCSS being able to basically do anything.", "Tomorrow I need to flesh out the footer page and do some very basic SCSS on the api stuff to get it presentable tomorrow. Should be pretty easy. Was kind of hoping to have that done today, but I've done a ton of work aleady. Sometimes you need to sleep. Sometimes you need to save Eorzea. Sometimes you need to eat. Sometimes you need all three. That's me, choom. Update again soon."],
+      "tags": ["SCSS", "rainbowFade",]
+    },
 ];
 
 // {
