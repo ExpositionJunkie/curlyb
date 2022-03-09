@@ -129,7 +129,6 @@ export function Home(props) {
         </ul>
       </div>
       </div>
-      <Line />
     </div>
   );
 }
