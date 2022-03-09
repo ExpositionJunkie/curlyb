@@ -1,8 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Advent+Pro&family=Audiowide&family=Comfortaa&family=Raleway:wght@200&family=Staatliches&display=swap");
 .header {
-  width: 100vw;
+  width: 100%;
   margin: 0;
-  padding: 0;
+}
+
+html,
+body {
+  overflow-x: hidden;
 }
 
 .body {
@@ -68,10 +72,6 @@
 .plainLink {
   text-decoration: none;
   color: inherit;
-}
-
-.plainLink a:hover {
-  color: #f1e91c;
 }
 
 @media (prefers-reduced-motion: reduce) {

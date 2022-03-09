@@ -21,6 +21,9 @@ export default function Footer(props) {
   return (
     <div className="footerWrapper">
       <div>
+      <div className="lineDiv">
+            <Line />
+          </div>
         <span className="spanWrap marg4">
           <span className="contactWrap">
             <span className="contactLink">
@@ -89,19 +92,18 @@ export default function Footer(props) {
                 <SassIcon />
 
                 <NavLink to="/egg">
-                  <PiedPiperIcon width="55px" height="auto" />
+                  <PiedPiperIcon width="55px" height="auto" length="auto" />
                 </NavLink>
-                
               </div>
-              
             </div>
-            
           </span>
         </span>
 
-        <span><div className="lineDiv">
-                  <Line />
-                </div></span>
+        <span>
+          <div className="lineDiv">
+            <Line />
+          </div>
+        </span>
       </div>
     </div>
   );

@@ -27,9 +27,15 @@ $bodyFont2: "Comfortaa", cursive;
 //Buttons
 @mixin buttonStyle($background-color, $fontSize) {
   font-size: $fontSize;
-  width: inherit;
   align-self: center;
   background-color: $background-color;
+  border-radius: 20px;
+}
+
+@mixin textInputStyle($fontSize) {
+  font-size: $fontSize;
+  align-self: center;
+  border-radius: 10px;
 }
 
 //Animations

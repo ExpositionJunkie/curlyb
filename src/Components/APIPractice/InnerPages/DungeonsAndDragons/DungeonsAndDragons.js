@@ -2,14 +2,54 @@ import React, { useState, useEffect } from "react";
 import Title from "../../../Reusable/Title/Title";
 
 import "./DungeonsAndDragons.css";
-//Under construction
-
 //https://www.dnd5eapi.co/
 
-//TODO link the api url to the spell
+const queryUrl = "https://www.dnd5eapi.co/api/spells/";
 
-export function SearchDandD({ filteredList }) {
-  if (filteredList.length > 0) {
+export function SpellContents({ spellQuery, submitTrigger }) {
+  const [spellData, setSpellData] = useState({});
+  const [err, setErr] = useState(null);
+
+  useEffect(() => {
+    if (spellQuery && submitTrigger) {
+      fetch("https://www.dnd5eapi.co" + spellQuery)
+        .then((res) => res.json())
+        .then((result, error) => {
+          if (error) {
+            setErr({ message: error.message });
+          } else {
+            console.log("Spell Contents Result", result);
+            setSpellData((prevState) => ({ ...prevState, ...result }));
+            console.log("got to result!");
+          }
+        });
+    }
+  }, [spellQuery]);
+
+  if (spellData) {
+    return (
+      <div>
+        <h1>Spell Name: {spellData.name}</h1>
+        <h2>Casting Time:</h2> <p>{spellData.casting_time}</p>
+        <h2>Range:</h2> <p>{spellData.range}</p>
+        <h2>Duration:</h2> <p>{spellData.duration}</p>
+        <h2>Description: </h2>
+        <p>{spellData.desc}</p>
+        <h2>Higher Level:</h2>
+        <p>{spellData.higher_level}</p>
+        <h2>Materials Required:</h2> <p>{spellData.material}</p>
+        <h2>Level: </h2> <p>{spellData.level}</p>
+      </div>
+    );
+  } else if (err) {
+    return <>{err.message}</>;
+  } else {
+    return <></>;
+  }
+}
+
+export function SearchDandD({ filteredList, submitTrigger }) {
+  if (filteredList.length > 0 && submitTrigger) {
     return (
       <div>
         <h2>Spell Search Results</h2>
@@ -17,11 +57,10 @@ export function SearchDandD({ filteredList }) {
         {filteredList.map((spell) => {
           return (
             <div key={spell.index}>
-              <p>{spell.name}</p>
-              <p>
-                Api link:
-                <a> {spell.url}</a>
-              </p>
+              <SpellContents
+                spellQuery={spell.url}
+                submitTrigger={submitTrigger}
+              />
             </div>
           );
         })}
@@ -32,40 +71,40 @@ export function SearchDandD({ filteredList }) {
   }
 }
 
-export function Spells({ searchTerm }) {
+export function Spells({ searchTerm, submitTrigger }) {
   const [isLoading, setIsLoading] = useState(true);
-  const [queryUrl, setQueryUrl] = useState(
-    "https://www.dnd5eapi.co/api/spells"
-  );
   const [spells, setSpells] = useState({ spells: "" });
   const [filteredSpells, setFilteredSpells] = useState([]);
 
   useEffect(() => {
-    fetch(queryUrl)
-      .then((res) => res.json())
-      .then((result) => {
-        console.log(result);
-        setSpells({ spells: result.results });
-        console.log("spells", spells);
-        setIsLoading(false);
-      });
-    if (searchTerm && spells.spells) {
+    if (!spells.spells) {
+      fetch(queryUrl)
+        .then((res) => res.json())
+        .then((result) => {
+          setSpells({ spells: result.results });
+          setIsLoading(false);
+        });
+    }
+    if (searchTerm && spells.spells && submitTrigger) {
       setFilteredSpells(
         spells.spells.filter((spell) => spell.index.includes(searchTerm))
       );
-      console.log("filtered spells", filteredSpells);
     }
-  }, [searchTerm]);
+  }, [searchTerm, spells.spells, submitTrigger]);
 
   if (isLoading) {
     return <p>...Loading</p>;
   } else {
     return (
       <div className="dnd_spells">
-        <SearchDandD filteredList={filteredSpells} />
+        <h2>Matching Spells</h2>
+        <SearchDandD
+          filteredList={filteredSpells}
+          submitTrigger={submitTrigger}
+        />
         <h2>All Spells</h2>
         {spells.spells.map((spell) => {
-          return <p key={spell.index}>{spell.index}</p>;
+          return <p key={spell.index}>{spell.name}</p>;
         })}
       </div>
     );
@@ -74,16 +113,10 @@ export function Spells({ searchTerm }) {
 
 export default function DungeonsAndDragons() {
   const [submitTrigger, setSubmitTrigger] = useState(false);
-  const [queryUrl, setQueryUrl] = useState("");
   const [input, setInput] = useState({ spellSearch: "" });
 
   const handleSubmit = (evt) => {
-    if (!submitTrigger) {
-      setSubmitTrigger(true);
-    } else {
-      setSubmitTrigger(false);
-      setSubmitTrigger(true);
-    }
+    setSubmitTrigger(!submitTrigger);
     evt.preventDefault();
   };
 
@@ -96,42 +129,29 @@ export default function DungeonsAndDragons() {
   };
 
   return (
-    <div className="dnd_wrapper">
-      <Title titleStr="Dungeons and Dragons Spells" />
-      <div className="dnd_explanation">
-        <h2>
-          The API providing this as well as a wealth of D and D resources not
-          shown here can be found at{" "}
-          <a href="https://www.dnd5eapi.co/" target="_blank" rel="noreferrer">
-            this link
-          </a>
-          .
-        </h2>
-        <h3>
-          I had no idea this was available and it is a lovely resource for the
-          tabletop nerds in your life and probably a gateway drug to programming
-          for more than a few programmers.
-        </h3>
-        <h3>
-          Once I have more time, I do intend on pulling in just aobut all of
-          this data, simply becasue it is handy to have.
-        </h3>
-        <h4>
-          (However, I do believe that refactoring to keep things DRY will
-          probably take precedence in this case.)
-        </h4>
-        <h5>
-          (I will add the other modifiers on Monday but don't have the time to
-          do this at the current time. -2/19/2022)
-        </h5>
-      </div>
-      <div className="dnd_search_form">
-        <form onSubmit={(e) => handleSubmit(e)}>
-          <span>
-            <label htmlFor="spellSearch">Search Spells</label>
-          </span>
-          <span>
+    <div className="dnd-wrapper">
+      <Title titleStr="D&D Spells" />
+      <div className="inner-wrapper pad3">
+        <div className="dnd-explanation">
+          <h2>
+            The API providing this as well as a wealth of D&D resources not
+            shown here can be found at{" "}
+            <a href="https://www.dnd5eapi.co/" target="_blank" rel="noreferrer">
+              this link.
+            </a>
+          </h2>
+          <h3>
+            Once I have more time, I do intend on pulling in just aobut all of
+            this data, simply becasue it is handy to have.
+          </h3>
+        </div>
+        <div className="dnd-form-wrapper">
+          <form className="dnd-search-form" onSubmit={(e) => handleSubmit(e)}>
+            <label className="dnd-search-label pad1" htmlFor="spellSearch">
+              Search Spells
+            </label>
             <input
+              className="textInput pad1 marg1"
               type="text"
               id="spellSearch"
               value={input.spellSearch}
@@ -139,10 +159,11 @@ export default function DungeonsAndDragons() {
                 handleChange(e);
               }}
             />
-          </span>
-        </form>
+            <input className="button-dnd pad1" type="submit" value="Submit" />
+          </form>
+        </div>
+        <Spells searchTerm={input.spellSearch} submitTrigger={submitTrigger} />
       </div>
-      <Spells searchTerm={input.spellSearch} />
     </div>
   );
 }

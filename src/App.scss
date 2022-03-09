@@ -2,9 +2,14 @@
 @import "./Variables/Sass/SassVariables.scss";
 //TODO - put the generated css into a file just for it so that you stop clicking on the wrong thing.
 .header {
-  width: 100vw;
+  width: 100%;
   margin: 0;
-  padding: 0;
+}
+
+//weird break with galaxy fold if we don't do this.
+html,
+body {
+  overflow-x: hidden;
 }
 
 .body {
@@ -57,7 +62,7 @@
   margin: 5rem;
 }
 
-//Visibility
+//Link settings
 .linkNoUnderline a:link {
   text-decoration: none;
   color: $pinkColor;

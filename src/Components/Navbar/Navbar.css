@@ -5,35 +5,34 @@
 
 @media screen and (max-width: 500px) {
   #elipses {
-    position: absolute;
-    display: flex;
-    padding-right: 1rem;
-    padding-bottom: 1rem;
-    height: 60px;
-    align-self: center;
-    filter: drop-shadow(10px 10px 10px #000000);
-  }
-
-  .headerWrapper {
-    height: 10vh;
+    opacity: 0;
+    height: 0;
   }
 
   .titleText {
     text-decoration: none;
+    width: 100vw;
     position: relative;
     margin: 0;
-    width: 100vw;
-    font-size: 1rem;
-    font-family: "Audiowide", cursive;
+    font-size: 4rem;
     color: #f1e91c;
+    font-family: "Audiowide", cursive;
     text-align: center;
     z-index: 1;
-    padding-top: 2rem;
     filter: drop-shadow(10px 5px 5px #000000);
   }
 
-  .navbarLinks > * {
-    display: none;
+  .linkWrapper {
+    background-color: #000000;
+  }
+
+  .navbarLinks {
+    display: flex;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+    align-content: center;
+    justify-content: space-between;
   }
 
   .logo {
@@ -44,6 +43,24 @@
     opacity: 1;
     z-index: 1;
     filter: drop-shadow(10px 5px 5px #8335d0);
+  }
+
+  .navbarLinks > * {
+    font-family: "Advent Pro", sans-serif;
+    text-decoration: none;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px black;
+    size: 2.5rem;
+    text-align: center;
+    flex-wrap: nowrap;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .linkWrapper a:hover {
+    text-decoration: none;
+    color: #f1e91c;
+    text-shadow: 2px 2px 5px #f1e91c;
   }
 }
 @media screen and (min-width: 501px) {

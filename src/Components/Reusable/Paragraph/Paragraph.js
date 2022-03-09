@@ -1,8 +1,13 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
+import React from "react" 
 
-export default function Paragraph() {
-  const { t } = useTranslation();
+const Paragraph = ({ arr }) => {
+  if (arr) {
+    arr.map((paragraph, index) => {
+      return <p key={index}>{paragraph}</p>;
+    });
+  } else {
+    return <></>;
+  }
+};
 
-  return <h1>{t("text")}</h1>;
-}
+export default Paragraph;

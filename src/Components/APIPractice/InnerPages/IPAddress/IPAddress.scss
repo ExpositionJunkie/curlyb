@@ -1,45 +1,45 @@
 @import "../../../../Variables/Sass/SassVariables.scss";
 
-.iss-wrapper {
+.ip-wrapper {
   color: $whiteColor;
 }
 
-.iss-inner-wrapper h2 {
+.ip-inner-wrapper h2 {
   font-family: $subtitleFont;
   font-size: 2rem;
 }
 
-.iss-inner-wrapper h3 {
+.ip-inner-wrapper h3 {
   font-family: $bodyFont2;
 }
 
-.iss-inner-wrapper p {
+.ip-inner-wrapper p {
   font-family: $bodyFont;
   font-size: 2rem;
 }
 
-.iss-inner-wrapper input {
+.ip-inner-wrapper input {
   font-family: $bodyFont;
   width: 100%;
   @include textInputStyle(2rem);
 }
 
-.iss-inner-wrapper select {
+.ip-inner-wrapper select {
   font-family: $bodyFont;
   width: 100%;
   @include textInputStyle(2rem);
 }
 
-.iss-inner-wrapper label {
+.ip-inner-wrapper label {
   font-family: $bodyFont;
   font-size: 2rem;
 }
 
-.iss-inner-wrapper form >* {
+.ip-inner-wrapper form >* {
   margin: 2rem;
 }
 
-#iss-submit {
+#ip-submit {
     width: 100%;
     display: grid;
     grid-template-columns: 100%;
@@ -48,7 +48,8 @@
   @include buttonStyle($pinkColor, 2rem);
 }
 
-.iss-response {
+.ip-result {
+    margin-top: 3rem;
     display: grid;
     grid-template-columns: 100%;
     text-align: center;

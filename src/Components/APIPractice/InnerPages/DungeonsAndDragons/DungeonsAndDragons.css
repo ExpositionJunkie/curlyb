@@ -1,0 +1,71 @@
+.dnd-wrapper {
+  color: #ffffff;
+}
+
+.dnd-explanation {
+  font-family: "Raleway", sans-serif;
+}
+
+@media screen and (min-width: 100px) {
+  .text-input {
+    width: 100%;
+    font-size: 2rem;
+    align-self: center;
+    border-radius: 10px;
+  }
+
+  .dnd-search-form {
+    font-family: "Raleway", sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dnd-search-form > * {
+    text-align: center;
+    align-self: center;
+    width: 100%;
+  }
+
+  .dnd-search-label {
+    font-size: 1.5rem;
+  }
+
+  .button-dnd {
+    font-family: "Raleway", sans-serif;
+    color: #ffffff;
+    font-size: 1.5rem;
+    align-self: center;
+    background-color: #fa64d6;
+    border-radius: 20px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .dnd-search-form {
+    display: flex;
+  }
+
+  .button-dnd {
+    font-family: "Raleway", sans-serif;
+    color: #ffffff;
+    width: 100%;
+    font-size: 1.5rem;
+    align-self: center;
+    background-color: #fa64d6;
+    border-radius: 20px;
+  }
+}
+@media screen and (min-width: 700px) {
+  .dnd-search-form {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+  }
+
+  .button-dnd {
+    font-family: "Raleway", sans-serif;
+    color: #ffffff;
+    font-size: 1.5rem;
+    align-self: center;
+    background-color: #fa64d6;
+    border-radius: 20px;
+  }
+}

@@ -1,41 +1,44 @@
 import React from "react";
 import Title from "../Reusable/Title/Title";
+import Line from "../Reusable/Line/Line";
+import workshopRoz from "../../data/photos/Roz/profilePhotos/WorkshopRoz.jpg";
+import rozZoltar from "../../data/photos/Roz/profilePhotos/RozZoltar.jpg";
+import rozLake from "../../data/photos/Roz/profilePhotos/RozLake.jpg";
 import "./About.css";
 
 export default function About(props) {
-
   return (
-    <div className="aboutWrapper">
+    <div className="about-wrapper">
       <Title titleStr="About" />
-      <div className="innerAboutWrapper">
+      <div className="inner-about-wrapper">
         <div className="headline">
           <h2>
             Curly Brackets is a portfolio website and dev blog programmed and
             designed by Roz Albrecht.
           </h2>
         </div>
-        <div className="aboutBody">
+        <Line></Line>
+        <div className="about-img-div">
+        <img
+          src={workshopRoz}
+          alt="Smiling Roz in front of workbench with a galaxy painted on it."
+        />
+        <img
+          src={rozZoltar}
+          alt="Comicon Roz dressed as Elizabeth from Bioshock Infinite in 2015."
+        />
+        <img
+          src={rozLake}
+          alt="Roz holding up a rock shaped like a heart in front of a lake in Arizona. Sorry, forgot which one."
+        />
+        </div>
+        <Line></Line>
+        <div className="about-body">
           <h2>
             Roz hopes to be adopted by a nerdy dev team who will respect my
-            audacity, tenacity, and video game references. I am housebroken and
-            play well with others.
+            audacity, tenacity, and video game references. She is housebroken
+            and play well with others.
           </h2>
-          <p>
-            What I lack in experience, I make up for in moxxy and
-            resourcefulness.
-          </p>
-          <p>I like my martinis like I like my programming - DRY.</p>
-        </div>
-        <div className="aboutBody">
-          <p>
-            I was raised on 7 inch floppies and windows 3.1. My father was an
-            electronics design engineer who worked on semiconductor design into
-            the mid 2000s and programmed on punch cards. Unfortunately, I
-            wouldn't discover that I enjoyed programming until after he died.
-            Maybe some of that silicon runs in the blood or maybe I've just
-            spent too much time hanging around devs and had the hubris to give
-            it a shot.
-          </p>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Title from "../../../Reusable/Title/Title";
+import Line from "../../../Reusable/Line/Line";
 import "./ISSLocator.css";
 
 function ResponseInfo({ lat, long, alt, readyTrigger }) {
@@ -12,10 +13,10 @@ function ResponseInfo({ lat, long, alt, readyTrigger }) {
   }, [readyTrigger]);
 
   if (isLoading) {
-    return <div className="iss_response">Loading...</div>;
+    return <></>;
   } else {
     return (
-      <div className="iss_response">
+      <div className="iss-response">
         <h2>ISS is orbiting here:</h2>
         <p>Latitude: {lat}</p>
         <p>Longitude: {long}</p>
@@ -58,9 +59,9 @@ export default function ISSLocator() {
 
   return (
     <>
-      <div className="iss_wrapper">
+      <div className="iss-wrapper">
         <Title titleStr="ISS Locator" />
-        <div className="iss_explanation">
+        <div className="iss-inner-wrapper pad4">
           <h2>
             Shows the latitude, longitude and altitude of the ISS based on the
             moment the button is pressed
@@ -77,27 +78,31 @@ export default function ISSLocator() {
             though I have not been able to find the documentation website so
             this will return the json response."
           </h3>
-          <h4>Be sure to wave at your friendly neighborhood astronaut!</h4>
-        </div>
-        <div className="inner_body">
-          <span className="form_wrapper_center">
-            <form
-              onSubmit={(e) => {
-                handleSubmit(e);
-              }}
-            >
-              <button class="submitBtn" type="submit" value="Submit" id="iss_submit_button">
-                Show Me the ISS!
-              </button>
-            </form>
-          </span>
+          <h2>Be sure to wave at your friendly neighborhood astronaut!</h2>
 
-          <ResponseInfo
-            lat={issResponse.response.latitude}
-            long={issResponse.response.longitude}
-            alt={issResponse.response.altitude}
-            readyTrigger={issResponse.readyTrigger}
-          />
+          <div className="inner_body">
+            <span className="form_wrapper_center">
+              <form
+                onSubmit={(e) => {
+                  handleSubmit(e);
+                }}
+              >
+                <button type="submit" value="Submit" id="iss-submit">
+                  Show Me the ISS!
+                </button>
+              </form>
+            </span>
+            <div className="marg3"></div>
+            <Line></Line>
+              <ResponseInfo
+                lat={issResponse.response.latitude}
+                long={issResponse.response.longitude}
+                alt={issResponse.response.altitude}
+                readyTrigger={issResponse.readyTrigger}
+              />
+              <div className="marg3"></div>
+            <Line></Line>
+          </div>
         </div>
       </div>
     </>

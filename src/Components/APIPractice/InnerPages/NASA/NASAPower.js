@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Title from "../../../Reusable/Title/Title";
+import Line from "../../../Reusable/Line/Line";
 import AlbedoAPI from "./AlbedoAPI";
 import "./NASAPower.css";
 
@@ -33,7 +34,6 @@ export default function NASAPower() {
   }, []);
 
   const handleDateChange = (evt) => {
-    console.log("typeofdate: ", typeof evt.target.value);
     let dateStr = evt.target.value.slice(0, 10).replace(/-/g, "");
     setInput((prevState) => ({ ...prevState, [evt.target.id]: dateStr }));
     console.log(
@@ -89,8 +89,9 @@ export default function NASAPower() {
   };
 
   return (
-    <div className="nasa_wrapper">
+    <div className="nasa-wrapper">
       <Title titleStr="NASA Power API" />
+      <div className="nasa-inner-wrapper pad4">
       <h2>Albedo Readings by latitude and Longitude</h2>
       <h3>
         This provides select data for the{" "}
@@ -101,10 +102,10 @@ export default function NASAPower() {
         readings of an area by lattitude and longitude.
       </h3>
       <h3>Default values:</h3>
-      <h4>
+      <h3>
         Start Date = Yesterday | End Date = Today | Latitude and Longitude are
         set to the Fremont neighborhood in Seattle, WA
-      </h4>
+      </h3>
       <p>
         (For the uninitiated, Fremont is suopposed to be the{" "}
         <a
@@ -182,12 +183,15 @@ export default function NASAPower() {
           </div>
           <div>
             <span>
-              <input id="nasa_submit_button" type="submit" value="Submit" />
+              <input id="nasa-submit" type="submit" value="Submit" />
             </span>
           </div>
         </form>
-      </div>
+      </div><div className="marg3"><Line></Line></div><div className="nasa-response">
       <AlbedoAPI queryStr={albedoQuery} submitTrigger={submitTrigger} />
+      </div>
+      <div className="marg3"><Line></Line></div>
+      </div>
     </div>
   );
 }
