@@ -11,14 +11,97 @@
   padding-bottom: 2rem;
 }
 
-@media screen and (max-width: 500px) {
+
+// Very small screens
+@media screen and (min-width: 100px) {
   .spanWrap {
     display: flex;
     flex-direction: column;
   }
 
   .icons > * {
-    height: 10vh;
+    height: 50px;
+    width: auto;
+  }
+  .piedPiper > * {
+    height: 50px;
+    width: auto;
+  }
+
+  .contactWrap {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    text-align: center;
+  }
+  .contactLink {
+    display: inline-block;
+  }
+
+  //These go away below the highest breakpoint
+  .contactLabel,
+  .contactStr {
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+
+  .techStack {
+    display: inline-block;
+    text-align: center;
+    font-family: $bodyFont;
+    font-size: 1rem;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 600px) {
+  .spanWrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .icons > * {
+    height: 50px;
+    width: auto;
+  }
+  .piedPiper > * {
+    height: 50px;
+    width: auto;
+  }
+
+  .contactWrap {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    text-align: center;
+  }
+  .contactLink {
+    display: inline-block;
+  }
+
+  //These go away below the highest breakpoint
+  .contactLabel,
+  .contactStr {
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+
+  .techStack {
+    display: inline-block;
+    text-align: center;
+    font-family: $bodyFont;
+    font-size: 1rem;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 900px){
+  .spanWrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .icons > * {
+    height: 50px;
     width: auto;
   }
   .piedPiper > * {
@@ -51,47 +134,7 @@
   }
 }
 
-@media screen and (min-width: 900px) {
-  .spanWrap {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .icons > * {
-    height: 50px;
-    width: auto;
-  }
-  .piedPiper > * {
-    height: 50px;
-    width: auto;
-  }
-
-  .contactWrap {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    text-align: center;
-  }
-  .contactLink {
-    display: inline-block;
-  }
-
-  //These go away below the highest breakpoint
-  .contactLabel,
-  .contactStr {
-    opacity: 0;
-    height: 0;
-  }
-
-  .techStack {
-    display: inline-block;
-    text-align: center;
-    font-family: $bodyFont;
-    font-size: 1rem;
-    width: 100%;
-  }
-}
-
-@media screen and (min-width: 1352px) {
+@media screen and (min-width: 1300px) {
   .spanWrap {
     display: grid;
     grid-template-columns: 80% 30%;
