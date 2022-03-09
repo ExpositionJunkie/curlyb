@@ -70,6 +70,10 @@
   color: inherit;
 }
 
+.plainLink a:hover {
+  color: #f1e91c;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
 ::before,

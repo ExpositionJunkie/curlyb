@@ -4,6 +4,7 @@ import { Home } from "./Components/Home/Home";
 import About from "./Components/About/About";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
+import Egg from "./Components/Reusable/Egg/Egg";
 import APIPractice from "./Components/APIPractice/APIPractice";
 import NASAPower from "./Components/APIPractice/InnerPages/NASA/NASAPower";
 import DungeonsAndDragons from "./Components/APIPractice/InnerPages/DungeonsAndDragons/DungeonsAndDragons";
@@ -44,6 +45,7 @@ function App() {
                 <Route path="dnd" element={<DungeonsAndDragons />} />
                 <Route path="ip" element={<IPAddress />} />
                 <Route path="signup" element={<Signup />} />
+                <Route path="egg" element={<Egg />} />
               </Routes>
               <Footer />
             </div>
