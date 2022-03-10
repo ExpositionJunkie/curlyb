@@ -1,5 +1,4 @@
 .navbar {
-  width: 100vw;
   margin: 0;
 }
 
@@ -11,7 +10,7 @@
 
   .titleText {
     text-decoration: none;
-    width: 100vw;
+    width: 100%;
     position: relative;
     margin: 0;
     font-size: 4rem;
@@ -28,17 +27,16 @@
 
   .navbarLinks {
     display: flex;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 0.5rem;
-    align-content: center;
-    justify-content: space-between;
+    flex-direction: center;
+    flex-wrap: nowrap;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
   .logo {
     position: absolute;
     align-self: center;
-    width: 100vw;
+    width: 100%;
     height: 5vh;
     opacity: 1;
     z-index: 1;
@@ -52,9 +50,8 @@
     text-shadow: 2px 2px 5px black;
     size: 2.5rem;
     text-align: center;
-    flex-wrap: nowrap;
     font-size: 1.25rem;
-    margin-bottom: 1rem;
+    margin: 1rem;
   }
 
   .linkWrapper a:hover {
@@ -71,7 +68,7 @@
 
   .titleText {
     text-decoration: none;
-    width: 100vw;
+    width: 100%;
     position: relative;
     margin: 0;
     font-size: 4rem;
@@ -82,7 +79,7 @@
     filter: drop-shadow(10px 5px 5px #000000);
   }
 }
-.headerWrapper {
+.header-wrapper {
   background-image: url("../../data/photos/frontend/the-great-flood.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -98,7 +95,7 @@
 .logo {
   position: absolute;
   align-self: center;
-  width: 100vw;
+  width: 100%;
   z-index: 0;
 }
 
@@ -108,11 +105,11 @@
 
 .navbarLinks {
   display: flex;
-  padding-left: 2rem;
-  padding-right: 2rem;
   padding-top: 0.5rem;
   align-content: center;
   justify-content: space-between;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .navbarLinks > * {

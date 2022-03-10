@@ -35,17 +35,17 @@ function App() {
             <Navbar />
             <div className="body">
               <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="apipractice" element={<APIPractice />} />
-                <Route path="blog" element={<Blog />} />
-                <Route path="about" element={<About />} />
-                <Route path="nameguesser" element={<NameGuess />} />
-                <Route path="nasapower" element={<NASAPower />} />
-                <Route path="isslocator" element={<ISSLocator />} />
-                <Route path="dnd" element={<DungeonsAndDragons />} />
-                <Route path="ip" element={<IPAddress />} />
-                <Route path="signup" element={<Signup />} />
-                <Route path="egg" element={<Egg />} />
+                <Route exact path="/" element={<Home />} />
+                <Route exact path="apipractice" element={<APIPractice />} />
+                <Route exact path="blog" element={<Blog />} />
+                <Route exact path="about" element={<About />} />
+                <Route exact path="nameguesser" element={<NameGuess />} />
+                <Route exact path="nasapower" element={<NASAPower />} />
+                <Route exact path="isslocator" element={<ISSLocator />} />
+                <Route exact path="dnd" element={<DungeonsAndDragons />} />
+                <Route exact path="ip" element={<IPAddress />} />
+                <Route exact path="signup" element={<Signup />} />
+                <Route exact path="egg" element={<Egg />} />
               </Routes>
               <Footer />
             </div>

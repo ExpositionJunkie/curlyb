@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Title from "../../../Reusable/Title/Title";
 
+import Line from "../../../Reusable/Line/Line";
+
 import "./DungeonsAndDragons.css";
 //https://www.dnd5eapi.co/
 
@@ -92,16 +94,20 @@ export function Spells({ searchTerm, submitTrigger }) {
     }
   }, [searchTerm, spells.spells, submitTrigger]);
 
+  
+
   if (isLoading) {
     return <p>...Loading</p>;
   } else {
     return (
-      <div className="dnd_spells">
+      <div className="dnd-spells">
+        <div className="marg3"><Line></Line></div>
         <h2>Matching Spells</h2>
         <SearchDandD
           filteredList={filteredSpells}
           submitTrigger={submitTrigger}
         />
+        <div className="marg3"><Line></Line></div>
         <h2>All Spells</h2>
         {spells.spells.map((spell) => {
           return <p key={spell.index}>{spell.name}</p>;
@@ -131,7 +137,7 @@ export default function DungeonsAndDragons() {
   return (
     <div className="dnd-wrapper">
       <Title titleStr="D&D Spells" />
-      <div className="inner-wrapper pad3">
+      <div className="inner-wrapper marg3">
         <div className="dnd-explanation">
           <h2>
             The API providing this as well as a wealth of D&D resources not
@@ -147,11 +153,11 @@ export default function DungeonsAndDragons() {
         </div>
         <div className="dnd-form-wrapper">
           <form className="dnd-search-form" onSubmit={(e) => handleSubmit(e)}>
-            <label className="dnd-search-label pad1" htmlFor="spellSearch">
+            <label className="dnd-search-label" htmlFor="spellSearch">
               Search Spells
             </label>
             <input
-              className="textInput pad1 marg1"
+              className="text-input"
               type="text"
               id="spellSearch"
               value={input.spellSearch}
@@ -159,7 +165,7 @@ export default function DungeonsAndDragons() {
                 handleChange(e);
               }}
             />
-            <input className="button-dnd pad1" type="submit" value="Submit" />
+            <input className="button-dnd" type="submit" value="Submit" />
           </form>
         </div>
         <Spells searchTerm={input.spellSearch} submitTrigger={submitTrigger} />

@@ -101,7 +101,7 @@ export function Home(props) {
       <div className="pad2">
       <div className="intro goals">
         <h1>Site Goals</h1>
-        <h3>
+        <h3 className="linkNoUnderline">
           For most recent updates and snarky dev commentary, please check out my{" "}
           <NavLink to="/blog">Dev Blog</NavLink>.
         </h3>

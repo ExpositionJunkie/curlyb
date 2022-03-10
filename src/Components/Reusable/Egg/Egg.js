@@ -14,6 +14,7 @@ export default function Egg() {
             className="plainLink"
             href="https://en.wikipedia.org/wiki/Silicon_Valley_(TV_series)"
             target="_blank"
+            rel="noreferrer"
           >
             <div>
               <h2 className="eggHeader">Pied Piper</h2>

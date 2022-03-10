@@ -2,14 +2,19 @@
 
 .dnd-wrapper {
   color: $whiteColor;
+  width: 100vw;
 }
 
 .dnd-explanation {
   font-family: $bodyFont;
 }
 
+
 @media screen and (min-width: 100px) {
+  
   .text-input {
+    font-family: $bodyFont;
+    font-size: 2rem;
     width: 100%;
     @include textInputStyle(2rem);
   }
@@ -19,7 +24,7 @@
     flex-direction: column;
   }
 
-  .dnd-search-form >* {
+  .dnd-search-form > * {
     text-align: center;
     align-self: center;
     width: 100%;
@@ -36,27 +41,42 @@
 }
 
 @media screen and (min-width: 600px) {
-  //large
+  .text-input {
+    font-family: $bodyFont;
+    font-size: 2rem;
+    width: 100%;
+    @include textInputStyle(2rem);
+  }
   .dnd-search-form {
     display: flex;
   }
   .button-dnd {
     font-family: $bodyFont;
     color: $whiteColor;
-    width: 100%;
-    @include buttonStyle($pinkColor, 1.5rem);
+    @include buttonStyle($pinkColor, 2rem);
   }
 }
 
 @media screen and (min-width: 700px) {
-  //large
   .dnd-search-form {
-    display: grid;
-    grid-template-columns: 20% 60% 20%;
+    display: flex;
   }
-  .button-dnd {
+
+  .dnd-search-form > * {
     font-family: $bodyFont;
+  }
+
+  .dnd-search-label {
+    color: $pinkColor;
+  }
+
+  .text-input .button-dnd .dnd-search-label {
+    padding: 2rem;
+    margin: 2rem;
+  }
+
+  .button-dnd {
     color: $whiteColor;
-    @include buttonStyle($pinkColor, 1.5rem);
+    @include buttonStyle($pinkColor, 2rem);
   }
 }

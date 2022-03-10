@@ -151,8 +151,7 @@ export default function NameGuess() {
           <Line />
         </div>
         <NameData input={input} submitTrigger={submitTrigger} />
-        <div className="marg3"></div>
-          <Line />
+
       </div>
     </div>
   );

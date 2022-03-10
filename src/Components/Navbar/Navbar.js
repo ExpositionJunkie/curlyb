@@ -15,7 +15,7 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="headerWrapper">
+      <div className="header-wrapper">
       <img id="elipses" src={Elipses} alt="navigation Elipses" />
         <LeftBracket className="leftBracket" />
         <NavLink className="titleText" to="/">

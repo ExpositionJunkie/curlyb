@@ -1,6 +1,6 @@
 import React from "react";
 import Title from "../Reusable/Title/Title";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./APIPractice.css";
 
 export default function APIPractice() {
@@ -17,20 +17,17 @@ export default function APIPractice() {
         </div>
       <ul className="linkNoUnderline">
         <li>
-          <Link to="/nameguesser">Age Guesser</Link> (Complete 2/15/2022)
+          <NavLink to="/nameguesser">Age Guesser</NavLink> (Complete 2/15/2022)
         </li>
         <li>
-          <Link to="/nasapower">NASA Power Albedo API </Link>(Complete
+          <NavLink to="/nasapower">NASA Power Albedo API </NavLink>(Complete
           2/17/2022)
         </li>
         <li>
-          <Link to="/isslocator">ISS Locator</Link>(Complete 2/17/2022)
+          <NavLink to="/isslocator">ISS Locator</NavLink>(Complete 2/17/2022)
         </li>
         <li>
-          <Link to="/dnd">DND Spells List Search</Link>(Complete 2/18/2022)
-        </li>
-        <li>
-          <Link to="/ip">IP Address</Link>(Complete 2/18/2022)
+          <NavLink to="/dnd">DND Spells List Search</NavLink>(Complete 2/18/2022)
         </li>
         </ul>
       </div>

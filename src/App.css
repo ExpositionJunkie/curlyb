@@ -1,21 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Advent+Pro&family=Audiowide&family=Comfortaa&family=Raleway:wght@200&family=Staatliches&display=swap");
-.header {
-  width: 100%;
-  margin: 0;
-}
-
-html,
-body {
-  overflow-x: hidden;
-}
-
-.body {
-  background-color: black;
-  margin: 0;
-  height: 100%;
-  width: 100%;
-}
-
 .pad1 {
   padding: 1rem;
 }

@@ -1,7 +1,35 @@
 @import "../../Variables/Sass/SassVariables.scss";
 
+
+@media screen and (max-width: 500px) {
+  .apiWrapper {
+    color: $whiteColor;
+  }
+  
+  .apiWrapper li {
+    font-family: $bodyFont;
+    font-size: 2rem;
+  }
+  
+  .apiExplanation h3 {
+    font-family: $subtitleFont;
+    font-size: 2rem;
+  }
+  
+  .apiExplanation h4 {
+    font-size: 2rem;
+    font-family: $bodyFont;
+  }
+  }
+
+@media screen and (min-width: 501px) {
 .apiWrapper {
   color: $whiteColor;
+}
+
+.apiWrapper li {
+  font-family: $bodyFont;
+  font-size: 2rem;
 }
 
 .apiExplanation h3 {
@@ -12,4 +40,5 @@
 .apiExplanation h4 {
   font-size: 2rem;
   font-family: $bodyFont;
+}
 }

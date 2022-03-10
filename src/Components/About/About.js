@@ -17,27 +17,28 @@ export default function About(props) {
             designed by Roz Albrecht.
           </h2>
         </div>
-        <Line></Line>
+        <div className="marg3"></div><Line></Line>
+        <div className="marg3"></div>
         <div className="about-img-div">
-        <img
-          src={workshopRoz}
-          alt="Smiling Roz in front of workbench with a galaxy painted on it."
-        />
-        <img
-          src={rozZoltar}
-          alt="Comicon Roz dressed as Elizabeth from Bioshock Infinite in 2015."
-        />
-        <img
-          src={rozLake}
-          alt="Roz holding up a rock shaped like a heart in front of a lake in Arizona. Sorry, forgot which one."
-        />
+          <img
+            src={workshopRoz}
+            alt="Smiling Roz in front of workbench with a galaxy painted on it."
+          />
+          <img
+            src={rozZoltar}
+            alt="Comicon Roz dressed as Elizabeth from Bioshock Infinite in 2015."
+          />
+          <img
+            src={rozLake}
+            alt="Roz holding up a rock shaped like a heart in front of a lake in Arizona. Sorry, forgot which one."
+          />
         </div>
-        <Line></Line>
+        <div className="marg3"></div><Line></Line>
         <div className="about-body">
           <h2>
-            Roz hopes to be adopted by a nerdy dev team who will respect my
+            Roz hopes to be adopted by a nerdy dev team who will respect
             audacity, tenacity, and video game references. She is housebroken
-            and play well with others.
+            and plays well with others.
           </h2>
         </div>
       </div>

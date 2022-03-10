@@ -325,7 +325,7 @@ export const blogData = [
       "On second thought, that sentence. I just need to take a break.",
       "TODO: add unlisted feature to take off certain posts so that users can have private thoughts that aren't broadcast to their friends. Worried about impact both on equipment but also on privacy though. Need to make secure. Security only goes so far. Implications if data leaked, leads to bad things. But I feel a little over my head about the deployment stuff. I'm told cpanel isn't used for these kind of apps but I don't want to pay aws for it. What if I make some rookie mistake and leave a server on and have to pay? I'm doing this the poor man's route, all the way. Which means I need to find a way to do it cheap. I saw they have a link to github. But moreso than that people nest them. Def would want to unlist this. Luckily github is private.",
     ],
-    tags: ["unlisted"],
+    tags: ["cPanel", "backend", "datamodel", "blogTODO"],
   },
   {
     id: "23",
@@ -407,13 +407,50 @@ export const blogData = [
     ],
   },
   {
-      "id": "26",
-      "date": "3/7/2022 11:29 PM",
-      "title": "Staying Sassy",
-      "subtitle": "Rainbow Fade & Major Facelifting",
-      "text": ["Very tired, have been working at this for hours. So this update will be quick. Made some encapsulation changes to my scss and came up with a pretty neat rainbow effect. Found that one from a youtube video here https://www.youtube.com/watch?v=wxwzyWNccYM. I then adapted it to SCSS in order to take advantage of SCSS being able to basically do anything.", "Tomorrow I need to flesh out the footer page and do some very basic SCSS on the api stuff to get it presentable tomorrow. Should be pretty easy. Was kind of hoping to have that done today, but I've done a ton of work aleady. Sometimes you need to sleep. Sometimes you need to save Eorzea. Sometimes you need to eat. Sometimes you need all three. That's me, choom. Update again soon."],
-      "tags": ["SCSS", "rainbowFade",]
-    },
+    id: "26",
+    date: "3/7/2022 11:29 PM",
+    title: "Staying Sassy",
+    subtitle: "Rainbow Fade & Major Facelifting",
+    text: [
+      "Very tired, have been working at this for hours. So this update will be quick. Made some encapsulation changes to my scss and came up with a pretty neat rainbow effect. Found that one from a youtube video here https://www.youtube.com/watch?v=wxwzyWNccYM. I then adapted it to SCSS in order to take advantage of SCSS being able to basically do anything.",
+      "Tomorrow I need to flesh out the footer page and do some very basic SCSS on the api stuff to get it presentable tomorrow. Should be pretty easy. Was kind of hoping to have that done today, but I've done a ton of work aleady. Sometimes you need to sleep. Sometimes you need to save Eorzea. Sometimes you need to eat. Sometimes you need all three. That's me, choom. Update again soon.",
+    ],
+    tags: ["SCSS", "rainbowFade"],
+  },
+  {
+    id: "27",
+    date: "3/9/2022 4:16 PM",
+    title: "Nearly there",
+    subtitle: "QA",
+    text: [
+      "I did a hurculean 12 hour day yesterday working on all things SCSS for this site. I managed to get about every page laid out. I'm sure there's a way I can standardize it better and make it a bit more dry, but in reality MVP is bootstrapping this and getting it live. Which I was able to do with a few minor bugs here and there.",
+      "Luckily, I have just made a very kind friend who works in QA and was able to dress down the site in around 10 minutes and let me know what I need to fix. I've never understood the animosity between devs and QA on the subreddits I've been on - they're making your code better - my dude - calm down!",
+      "I have to imagine it is as manufactured as those guys who post things like 'just because you laugh at programmer memes doesn't make you a programmer'. Get all the way out of here with that attitude - as if we didn't all start somewhere. If you program, you're a programmer. If you develop, you're a dev. After all - it's not as if there aren't huge barriers to entry already in this field. Take the hundreds of applications you have to send out to get a callback (at least before you get that sweet sweet LinkedIn SEO that is) - or the tech interviews where Murphy's law comes into play the moment you start to type your first word. There's no reason to make any of that mess any harder for anyone. Any dev worth their salt knows that there are often more times when they don't at all feel qualified than when they do. The last thing beginners need to hear is more imposter syndrome.",
+      "Anyway, very thankful for his skill - can't believe how fast he found those bugs. Also, found the easter egg in an impressive amount of time. (If you haven't, look around, I hid something fun in here. You'll know when you find it!)",
+      "So bugs right now - the api page wasn't able to open new tabs in firefox. Fixed that easily, changed Link to NavLink in react-router-dom.",
+      "More minor fixes:",
+      "1.) About formatting",
+      "2.) Typo on egg and typo on about",
+      "3.) API practice page formatting",
+      "4.) IP address is also showing a network error in firefox - this one is a little more difficult. It did not work for my friend on firefox but I think that's a red herring because it also didn't work for CJ when I had shown it to him on my five by friday challenge on his phone. So I am beginning to think that perhaps it is due to a privacy setting. I'm also beginning to think that troubleshooting it is more trouble than it is worth as it is kind of a silly API in general. I mostly chose it because it was easy and I was very short on time and wasn't getting a whole lot of sleep that week. So I'm going to unlist it from the main page. If anyone wants to see it they should be able to type in /ip here - but I really don't know why it isn't working. I have a hunch it may have to do with VPNs.",
+      "5.) EXCEPT.... I have another more pressing bug that CJ discovered this morning. I actually can't get to any of my pages by typing / anything right now. So this is a problem. This I think is my main concern right now. Hopefully an easy fix. Time to go to the docs for react-router-dom 6. Annoying the first result is for 5 and you have to look it up again. Gonna build and see if my hotfix takes.",
+      "6.) Filter blog by date up or down button. Shouldn't be hard, but have been putting it off in favor of other fixes.",
+      "7.) My secondary concern to be addressed today or tomorrow is the D&D spell searcher wasn't working on his phone. I also need to tweak the layout and maybe break out the detailed view into another window. Also, I need to more carefully consider the layout there - considering the job I'm really wanting to jockey for here. How would I want it to appear if I were to put that little module on a character sheet? What is the least amount of information that will help players on the fly? Then I can have a modal or have it navigate to a sheet for a better view.",
+      "I may also want to consider implementing Redux now. I feel like this is the dirty laundry I've put off doing and now I have to fold every shirt I own. Gah - I even knew this was a concern. But I learn best from mistakes - right? I'll surely be excellent at redux after I have to bootstrap this whole project with it. But MVP here is a working spell search with the SCSS the right way.",
+      "In other stretch goals - once I get my backend connected - a project for next week - the people I'm looking to impress are looking for front end work - I want to look into this service worker business: https://developers.google.com/web/ilt/pwa/introduction-to-service-worker#:~:text=A%20service%20worker%20is%20a,cache%2C%20and%20delivering%20push%20messages. So I'm just leaving this here for future Roz.",
+    ],
+    tags: ["QA", "bugfix", "react-router-dom"],
+    photos: [
+      {
+        url: "../../data/photos/Blog/bugs/apilinks.png",
+        alt: "Api links can't be opened in new tab on firefox -error on ApiLinks page",
+      },
+      {
+        url: "../../data/photos/Blog/bugs/ipfirefox.png",
+        alt: "NetworkError when attempting to fetch resource - error on Ip Address project.",
+      },
+    ],
+  },
 ];
 
 // {

@@ -1,7 +1,6 @@
 @import "../../Variables/Sass/SassVariables.scss";
 
 .navbar {
-  width: 100vw;
   margin: 0;
 }
 
@@ -56,7 +55,7 @@
 
   .titleText {
     text-decoration: none;
-    width: 100vw;
+    width: 100%;
     position: relative;
     margin: 0;
     font-size: 4rem;
@@ -67,48 +66,44 @@
     filter: drop-shadow(10px 5px 5px $blackColor);
   }
 
-.linkWrapper {
-  background-color: $blackColor;
-}
+  .linkWrapper {
+    background-color: $blackColor;
+  }
 
-.navbarLinks {
-  display: flex;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 0.5rem;
-  align-content: center;
-  justify-content: space-between;
-}
+  .navbarLinks {
+    display: flex;
+    flex-direction: center;
+    flex-wrap: nowrap;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 
-.logo {
+  .logo {
     position: absolute;
     align-self: center;
-    width: 100vw;
+    width: 100%;
     height: 5vh;
     opacity: 1;
     z-index: 1;
     filter: drop-shadow(10px 5px 5px $purpleColor);
   }
 
+  .navbarLinks > * {
+    font-family: $subtitleFont;
+    text-decoration: none;
+    color: $whiteColor;
+    text-shadow: 2px 2px 5px black;
+    size: 2.5rem;
+    text-align: center;
+    font-size: 1.25rem;
+    margin: 1rem;
+  }
 
-.navbarLinks > * {
-  font-family: $subtitleFont;
-  text-decoration: none;
-  color: $whiteColor;
-  text-shadow: 2px 2px 5px black;
-  size: 2.5rem;
-  text-align: center;
-  flex-wrap: nowrap;
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-}
-
-.linkWrapper a:hover {
-  text-decoration: none;
-  color: $yellowColor;
-  text-shadow: 2px 2px 5px $yellowColor;
-}
-
+  .linkWrapper a:hover {
+    text-decoration: none;
+    color: $yellowColor;
+    text-shadow: 2px 2px 5px $yellowColor;
+  }
 }
 
 @media screen and (min-width: 501px) {
@@ -119,7 +114,7 @@
 
   .titleText {
     text-decoration: none;
-    width: 100vw;
+    width: 100%;
     position: relative;
     margin: 0;
     font-size: 4rem;
@@ -130,7 +125,7 @@
     filter: drop-shadow(10px 5px 5px $blackColor);
   }
 }
-.headerWrapper {
+.header-wrapper {
   background-image: url("../../data/photos/frontend/the-great-flood.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -146,7 +141,7 @@
 .logo {
   position: absolute;
   align-self: center;
-  width: 100vw;
+  width: 100%;
   z-index: 0;
 }
 
@@ -156,11 +151,11 @@
 
 .navbarLinks {
   display: flex;
-  padding-left: 2rem;
-  padding-right: 2rem;
   padding-top: 0.5rem;
   align-content: center;
   justify-content: space-between;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .navbarLinks > * {
