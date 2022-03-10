@@ -20,6 +20,9 @@ import { Route, Routes } from "react-router-dom";
 //https://www.geeksforgeeks.org/how-to-connect-node-js-with-react-js/#:~:text=export%20default%20App%3B,ReactJS%20is%20connected%20with%20NodeJS
 //pause in devtools before it can load the overlay to avoid the sign in bs.
 
+//https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-a-subdomain
+//for when I get back to this
+
 function App() {
   const [locale, setLocale] = useState(i18n.language);
 
