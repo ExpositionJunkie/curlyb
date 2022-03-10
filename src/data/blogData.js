@@ -6,6 +6,7 @@ export const blogData = [
     subtitle: "Reaching Across Disciplines",
     text: ["Human & JS"],
     tags: ["poetry", "code", "template", "templatehaiku", "haiku", "json"],
+    photos: [{}],
   },
   {
     id: "1",
@@ -14,6 +15,7 @@ export const blogData = [
     subtitle: "Subtitle Haiku",
     text: ["Sample Paragraph (first line)", "Sans the CSS"],
     tags: ["poetry", "code", "template", "templatehaiku", "haiku", "json"],
+    photos: [{}],
   },
   {
     id: "2",
@@ -33,6 +35,7 @@ export const blogData = [
       "I not only was able to get the age guessing app using the agify api (there has to be a shorter description of this somewhere!) up and running but was able to get routing and start entering data for this blog as well as a rudimentary skeleton format for it. Pretty good day, even if my name is apparently approaching an age where it can collect social security.",
     ],
     tags: ["interviewfail", "api", "fivebyfriday"],
+    photos: [{}],
   },
   {
     id: "3",
@@ -48,6 +51,7 @@ export const blogData = [
       "I did really have my heart set on the one that studied yeast infections in space, but the homepage for it wouldn't load and I can't have another crashdata on my hands. Especially not when I'm up at 5:07 in the morning.",
     ],
     tags: ["apis", "fivebyfriday", "overworked", "uptoolate"],
+    photos: [{}],
   },
   {
     id: "4",
@@ -60,6 +64,7 @@ export const blogData = [
       "What is thrashing? https://practice.geeksforgeeks.org/problems/what-is-the-cause-of-thrashing. That's nto what I meant. Geez. Too tired to summarize or rubber duck. But I am proud of my template haiku.",
     ],
     tags: ["thrashing", "overworked"],
+    photos: [{}],
   },
   {
     id: "5",
@@ -72,6 +77,7 @@ export const blogData = [
       "I'm happy to report that part of why I got started so late today was that I had an interview. And I have a few more calls scheduled soon, so that's good. Trying not to get hung up on any one opportunity as this is all a numbers game. Someone's gotta see I've got moxy though. Will keep sharpening my skills until they do. Stay hungry, choombatta.",
     ],
     tags: ["apis", "fivebyfriday", "balance"],
+    photos: [{}],
   },
   {
     id: "6",
@@ -86,6 +92,7 @@ export const blogData = [
       "Clock is ticking.",
     ],
     tags: ["fivebyfriday", "api", "CORS"],
+    photos: [{}],
   },
   {
     id: "7",
@@ -100,6 +107,7 @@ export const blogData = [
       "Of the stretch goals that I am really looking forward to is that blog editor. Really wishing I had a better interface than JSON. Don't get me wrong, I appreciate what it does, but not so easy on the eyes. Or the quotation marks.",
     ],
     tags: ["easywin", "fivebyfriday", "api"],
+    photos: [{}],
   },
   {
     id: "8",
@@ -114,6 +122,7 @@ export const blogData = [
       "And let's face it, I thrive on spite, and on being told no. I've climbed mountains because I was told I couldn't. I've learned things in record time because people told me it would be difficult. I thrive on that. I don't thrive on inactivity though. I wither there. It's been really freeing to get my mind back. And honestly to give my thoughts an outlet. JSON data, you're not so bad.",
     ],
     tags: ["thrashing", "overworking", "balance"],
+    photos: [{}],
   },
   {
     id: "9",
@@ -129,6 +138,7 @@ export const blogData = [
       "Zenith out.",
     ],
     tags: ["easywin", "css", "apipractice", "fivebyfriday"],
+    photos: [{}],
   },
   {
     id: "10",
@@ -156,6 +166,7 @@ export const blogData = [
       "I think this is true with code. But it's not something you can lose forever. Soemtimes it is something you forget from time to time. I think I forgot it for a while.",
     ],
     tags: ["mantra", "venting", "personal"],
+    photos: [{}],
   },
   {
     id: "11",
@@ -172,6 +183,7 @@ export const blogData = [
       "Zenith out. :)",
     ],
     tags: ["inspiration", "enemyofgood", "perfectionism"],
+    photos: [{}],
   },
   {
     id: "12",
@@ -190,6 +202,7 @@ export const blogData = [
       "Got it up and running. I did a bunch of stuff I didn't need to, it turns out. https://davenewman.tech/blog/host-react-namecheap/. This will be helpful wehn I add the node server. Not sure that htaccess file I made does anything at all tbh. Will prob need to config when I get around to that.",
     ],
     tags: ["cPanel", "devGroan", "bogwitch"],
+    photos: [{}],
   },
   {
     id: "13",
@@ -209,6 +222,7 @@ export const blogData = [
       "If it didn't work and you're now considering a career making artisinal bread instead, let me know. (I really like sourdough.)",
     ],
     tags: ["cPanel", "tutorial"],
+    photos: [{}],
   },
   {
     id: "14",
@@ -220,6 +234,7 @@ export const blogData = [
       "So here is what I'm thinking. I found this API called yandex for translating. I'm trying to keep this cheap, and they seem to be pretty robust and offer a range of services from this. Gonna look more into this. But for right now I should probably reign it in. I've made a dynamic dropdown and began setting up for that kind of support but don't have the energy to run this thing through an API. Gonna start with the code I have for 1:18 though. If I wanted to do it without an API I could probably run this through google translate. But still, awful lot of work wehn I could just do it automated in the start. A little bit of upfront for a lot less work later on. Plus if I do end up trying to sling some shopify sites on the side, this will make qualifying for translation a ton easier.",
     ],
     tags: ["language", "i18Next"],
+    photos: [{}],
   },
   {
     id: "15",
@@ -231,6 +246,7 @@ export const blogData = [
       "Also this is assuaging a little bit of my guilt for being an American who can't rub two sentences together in anythign other than javascript. I took French for four years. The only thing I know how to say in it is 'do you want to rollerblade with me' and I'm not even confident enough to type that in French here without a translator.",
     ],
     tags: ["language", "i18Next"],
+    photos: [{}],
   },
   {
     id: "16",
@@ -244,6 +260,7 @@ export const blogData = [
       "I also came across this article on react interview questions if anyone is needing them that pretty succinctly sums up a few functions that weren't coverd much in bootcamp: https://www.freecodecamp.org/news/react-interview-questions-to-know/. useCallback, useRef, and useMemo in particular it was a good jumping off point for and made me realize that I was doing some of these things in a way that could have been a lot easier had I known. I now know that I need to refactor a few things. Add it to the ever growing list, I suppose.",
     ],
     tags: ["SASS", "SCSS"],
+    photos: [{}],
   },
   {
     id: "17",
@@ -256,6 +273,7 @@ export const blogData = [
       "But really I'm putting off doing a node server. But I need a node server. I could take one of my old ones and refactor the code for it. Truthfully, I'd like a fresh start now that I've had some time to think about architecture. My blog template right now requires a place for tags. And I will have to edit this whole thing. I don't want to scrub away all of the truth of my experience here though. I have the luxury of knowing that devs are made through trial and error and failure. That doing things wrong is sometimes more valuable than doing things right. If you've had to fix it - you've found out intimately how it's broken. That the best part of this job is getting done with doing something really hard and getting to be proud of it and later avoiding that mistake.",
     ],
     tags: [],
+    photos: [{}],
   },
   {
     id: "18",
@@ -268,6 +286,7 @@ export const blogData = [
       "Either way, I got it started and set up a bit of middleware for logging. Made sure to take off that header that says it's a node server. I mean, you'll know that from this blog entry. But still, best practice, you know. I was really really tempted to call it curlybooty. Like really really tempted. I may change the name later. Not sure I want people to see that on github though. Or maybe I do. Could be a conversation starter. Oh well, I can call it booty to myself either way. There are ruder words than that floating around.",
     ],
     tags: ["Mongo", "Mongoose", "Backend", "CurlyBooty", "Node", "Express"],
+    photos: [{}],
   },
   {
     id: "19",
@@ -289,6 +308,7 @@ export const blogData = [
       "Express",
       "LegionOfCode",
     ],
+    photos: [{}],
   },
   {
     id: "20",
@@ -301,6 +321,7 @@ export const blogData = [
       "Anyway, I don't want to stay here all night, I still have to move a bunch of books and furniture as the carpet people come out tomorrow to air things out. Unfortunately the flood preparation is very important. But I will at least be able to work from the room I have set up. It's been kind of our lab/workshop for art things, and I've spent some time fixing it up not too long ago, so it makes a fair sanctuary from the flood nightmare in which I can work. So I will be on tomorrow but wanted to write a bit for myself at least and fix this update I didn't have a chance to before I had to move the electronics unexpectedly.",
     ],
     tags: ["Flood", "Balance", "MVP", "WorkLife"],
+    photos: [{}],
   },
   {
     id: "21",
@@ -314,6 +335,7 @@ export const blogData = [
       "Also, I have to say I'm sure glad that facebook makes you show your work that you are deleting user data for their OAuth API. Finally. Upsetting that wasn't the case when I was learning to use it. Does mean I have a few ethical problems to figure out with myself when I'm making my privacy policies though.",
     ],
     tags: ["frontend", "backend", "routing"],
+    photos: [{}],
   },
   {
     id: "22",
@@ -326,6 +348,7 @@ export const blogData = [
       "TODO: add unlisted feature to take off certain posts so that users can have private thoughts that aren't broadcast to their friends. Worried about impact both on equipment but also on privacy though. Need to make secure. Security only goes so far. Implications if data leaked, leads to bad things. But I feel a little over my head about the deployment stuff. I'm told cpanel isn't used for these kind of apps but I don't want to pay aws for it. What if I make some rookie mistake and leave a server on and have to pay? I'm doing this the poor man's route, all the way. Which means I need to find a way to do it cheap. I saw they have a link to github. But moreso than that people nest them. Def would want to unlist this. Luckily github is private.",
     ],
     tags: ["cPanel", "backend", "datamodel", "blogTODO"],
+    photos: [{}],
   },
   {
     id: "23",
@@ -341,6 +364,7 @@ export const blogData = [
       "How the hell do I fix localhost?",
     ],
     tags: ["devfail", "cors", "node", "cpanel", "hosting", "cursewords"],
+    photos: [{}],
   },
 
   {
@@ -357,6 +381,7 @@ export const blogData = [
       "I just realized you can set a successor in github. Which is rather sweet but also a curse to whoever has to figure out where the sweet spot was on each project that I still showed it to people. Oh no! My variables are showing!",
     ],
     tags: ["localhost", "devfail", "bug"],
+    photos: [{}],
   },
   {
     id: "25",
@@ -368,6 +393,7 @@ export const blogData = [
       "Now that this is handled, time to put in some work on the home page and get this baby cleaned up a bit!",
     ],
     tags: ["localhost", "cookies", "chrome"],
+    photos: [{}],
   },
   {
     id: "25",
@@ -405,6 +431,7 @@ export const blogData = [
       "encapsulation",
       "polymorphism",
     ],
+    photos: [{}],
   },
   {
     id: "26",
@@ -416,6 +443,7 @@ export const blogData = [
       "Tomorrow I need to flesh out the footer page and do some very basic SCSS on the api stuff to get it presentable tomorrow. Should be pretty easy. Was kind of hoping to have that done today, but I've done a ton of work aleady. Sometimes you need to sleep. Sometimes you need to save Eorzea. Sometimes you need to eat. Sometimes you need all three. That's me, choom. Update again soon.",
     ],
     tags: ["SCSS", "rainbowFade"],
+    photos: [{}],
   },
   {
     id: "27",
@@ -440,16 +468,20 @@ export const blogData = [
       "In other stretch goals - once I get my backend connected - a project for next week - the people I'm looking to impress are looking for front end work - I want to look into this service worker business: https://developers.google.com/web/ilt/pwa/introduction-to-service-worker#:~:text=A%20service%20worker%20is%20a,cache%2C%20and%20delivering%20push%20messages. So I'm just leaving this here for future Roz.",
     ],
     tags: ["QA", "bugfix", "react-router-dom"],
-    photos: [
-      {
-        url: "../../data/photos/Blog/bugs/apilinks.png",
-        alt: "Api links can't be opened in new tab on firefox -error on ApiLinks page",
-      },
-      {
-        url: "../../data/photos/Blog/bugs/ipfirefox.png",
-        alt: "NetworkError when attempting to fetch resource - error on Ip Address project.",
-      },
+    photos: [{}],
+  },
+  {
+    id: "28",
+    date: "3/9/2022 9:36 AM",
+    title: "Hash Browns",
+    subtitle: "",
+    text: [
+      "So it turns out that routing is hard. And I'm going to have to once again overcome my objections to reach MVP. It happens.",
+      "But I really really don't want to try hash router. But I think that's the only way I get this thing out without connecting a back end. I'm torn. But I need a quick fix. And 'I don't wanna' doesn't really seem like a good excuse. But I don't wanna.",
+      "Either way, looks better than seeing a dead link on the page. MVP. Then we fix the backend.",
     ],
+    tags: ["hashrouter"],
+    photos: [{}],
   },
 ];
 
@@ -459,7 +491,8 @@ export const blogData = [
 //   "title": "New Template Haiku",
 //   "subtitle": "Reaching Across Disciplines",
 //   "text": ["Human & JS"],
-//   "tags": ["poetry", "code", "template", "templatehaiku", "haiku", "json"]
+//   "tags": ["poetry", "code", "template", "templatehaiku", "haiku", "json"],
+// "photos": [{}],
 // },
 
 // {"id": "0", "date": "2/20/2022 1:32 AM", "title": "New Template Haiku", "subtitle":"Reaching Across Disciplines", "text": ["Human & JS", ]},
