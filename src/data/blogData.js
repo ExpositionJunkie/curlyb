@@ -483,6 +483,23 @@ export const blogData = [
     tags: ["hashrouter"],
     photos: [{}],
   },
+  {
+    id: "29",
+    date: "3/10/2022 3:16 PM",
+    title: "Vellum",
+    subtitle: "",
+    text: [
+      "Seriously, after the last week of back and forth trhashing with github/cpanel etc I think this is what I'm going to go back to - vellum, paper, anything but computers. I think I may now have a good deployment strategy but I am thinking that github pages takes a little bit to load in. I inadvertantly fixed my SSL issue, which is nice though. Definitely a win. Maybe next week is actually a reasonable deadline for the node part of this after all. If I have the ssl, that's a lot of the heavy lifting out of the way. Routing issue seems that it may be related to how html5 routes things, there are a few different workarounds for this. Was hoping that the github pages and redirect would be a good route to go. Cpanel has some sort of interface for this as well as github pages. Not sure if they are the same thing or parts of them are unrelated. Will be elated when the build is no longer a concern. I love programming but I can't say I am as excited about deployment. I did get to learn some novel git commands for when things get fubar though today.",
+      "Still, I think I need a good long break soon. My brain is fried from this last code sprint and I haven't really taken a day off since the flood started.",
+      "I am back in the code dojo, though, which is nice. I was in the crafts room last week which felt like it was forcing me to be always coding when I would normally get some time offline for crafts. Living room is still a nightmare though. Poor CJ, all he wants to do is play Elden Ring and lay down because of his back and he has to do it cramped between all of the furniture that has been shoved to that side of the room due to the flood. We've been calling the property managers to find out if they can send someone out to shampoo - it's been like this for more than a week and it smells like musty gym sneakers in here. Feel like we've been losing our minds a little becuase no one can relax in here. My solution has been to throw myself into code but all work and no play makes Roz overstimulated and overwhelmed. For all my talk of going to go play FFXIV I normally end up stuck on a bug all night just wanting to make 'one more change' and suddenly it is 3:00 AM here. It'd be nice if I was able to have a true work schedule - but being unemployed - all I can think is that I need to be doing as much as I can so I don't stay unemployed.",
+      "In spite of the long employment gap here due to the career change, I have never been unemployed nearly this long. Before CJ, I was the breadwinner. I vowed not to let what happened to my father happen to me. My father, brilliant in some areas, wasn't employed much after I turned about 7-ish. I saw the cycle of unemployment turn into depression and it just gets worse from there. He was very hard on himself. I remember finding his journals when I was around that age and they were quite dark. I think it gets really difficult when you tie your worth to what you do. I'm trying very hard to do all I can to get back into working but I have to remember that just as important is not letting this get to me because that will become a self fulfilling prophecy.",
+      "Still, I'd be lying if I said it didn't get to me at all. I try to tell myself that we are different people and I have different skills than he has. I have friends and people who want to be around me. I am kind to myself. I have a support system. I have backup skills. And I know that I can do this. Sure, I have imposter syndrome - but I also know a lot of devs and know that everyone goes through this point right here where things are terrifying and you're just trying to take up as little space as possible because you can't afford to do anything else and you feel bad about the resources it takes to keep you housed and healthy in the mean time. I'm so terribly lucky to be able to have the opportunity to do this without having to live in my car. But the guilt is immeasurable. I cannot wait to repay this kindness in full and it tugs on me at all times.",
+      "So chooms, if you are also feeling exhausted and overwhelmed or are trying to land your first official Dev gig capital D - be kind to yourselves. I don't often allow myself the time to process some of the fear associated with being out of work becuase I don't find it constructive. But I do feel better now after having a good cry. I think this is a good sign it is time to pack in for today though. Can fix the rest of this mess soon enough.",
+      "Catch you async, choombatta."
+    ],
+    tags: ["overwhelmed"],
+    photos: [{}],
+  },
 ];
 
 // {

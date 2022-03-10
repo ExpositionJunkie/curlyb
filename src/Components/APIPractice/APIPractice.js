@@ -9,7 +9,6 @@ export default function APIPractice() {
       <Title titleStr="Api Practice List" />
       <div className="innerWrapper pad4">
         <div className="apiExplanation">
-          <h2>TEST TO SEE IF DEPLOY WORKING CORRECTLY</h2>
           <h3>List of various API practice pages aggregated here.</h3>
           <h4>
             If you want to see what got completed during what weeks, check out
