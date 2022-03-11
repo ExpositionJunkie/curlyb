@@ -7,23 +7,20 @@ export default function AlbedoAPI({ queryStr, submitTrigger }) {
   const [apiData, setApiData] = useState({albedo: {}})
 
   useEffect(() => {
-    if (submitTrigger) {
+    if (submitTrigger && queryStr) {
       fetch(queryStr)
         .then((res) => res.json())
         .then((result) => {
           console.log(result.properties)
           setApiData((prevState) => ({...prevState, albedo: result.properties.parameter.ALLSKY_SRF_ALB}))
-          console.log("AlbedoAPI", apiData)
           setIsLoading(false);
         },(error) => {
           setError((prevState) => ({...prevState, message: error.message}));
           setIsLoading(false);
         })
-    } else {
-      console.log("in the else of useEffect AlbedoAPI queryStr", queryStr)
     }
 
-  }, [submitTrigger])
+  }, [submitTrigger, queryStr])
 
   if (!isLoading) {
     if (error) {

@@ -41,7 +41,6 @@ export default function ISSLocator() {
         .then((response) => {
           JSON.stringify(response);
           setIssResponse({ response: response, readyTrigger: true });
-          console.log(issResponse);
         });
     }
   }, [submitTrigger]);

@@ -13,7 +13,7 @@ function NameData({ input, submitTrigger }) {
 
   useEffect(() => {
     let url;
-    if (submitTrigger) {
+    if (submitTrigger && input.country && input.firstName) {
       if (input.country === "All") {
         url = `https://api.agify.io/?name=${input.firstName}`;
       } else {
@@ -46,7 +46,7 @@ function NameData({ input, submitTrigger }) {
           }
         );
     }
-  }, [submitTrigger]);
+  }, [submitTrigger, input.firstName, input.country, apiResponse]);
 
   if (!isLoaded) {
     return <></>;

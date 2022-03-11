@@ -26,7 +26,7 @@ export function SpellContents({ spellQuery, submitTrigger }) {
           }
         });
     }
-  }, [spellQuery]);
+  }, [spellQuery, submitTrigger]);
 
   if (spellData) {
     return (
@@ -89,7 +89,7 @@ export function Spells({ searchTerm, submitTrigger }) {
     }
     if (searchTerm && spells.spells && submitTrigger) {
       setFilteredSpells(
-        spells.spells.filter((spell) => spell.index.includes(searchTerm))
+        spells.spells.filter((spell) => spell.index.includes(searchTerm.toLowerCase()))
       );
     }
   }, [searchTerm, spells.spells, submitTrigger]);

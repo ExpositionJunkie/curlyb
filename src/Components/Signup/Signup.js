@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 export default function Signup(props) {
   const [input, setInput] = useState({ email: "", username: "", password: "" });
-  const [error, setError] = useState(null);
+  //const [error, setError] = useState(null);
 
 
   const handleChange = (evt) => {

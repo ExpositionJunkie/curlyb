@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import "./Navbar.css";
 import { ReactComponent as Logo } from "../../data/photos/frontend/logo.svg";
@@ -9,9 +9,6 @@ import Elipses from "../../data/photos/frontend/Elipses.svg";
 //Good article on aria attributes and a reminder to write accessible code
 
 export default function Navbar() {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  const handleClick = () => setDropdownOpen(!dropdownOpen);
 
   return (
     <nav className="navbar">

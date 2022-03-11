@@ -1,4 +1,4 @@
-import React, { useState, Suspense, useEffect } from "react";
+import React, { Suspense } from "react";
 import "./App.css";
 import { Home } from "./Components/Home/Home";
 import About from "./Components/About/About";
@@ -13,8 +13,6 @@ import IPAddress from "./Components/APIPractice/InnerPages/IPAddress/IPAddress";
 import NameGuess from "./Components/APIPractice/InnerPages/NameGuess/NameGuess";
 import Blog from "./Components/Blog/Blog";
 import Signup from "./Components/Signup/Signup";
-import i18n from "./Language/i18n";
-import LocaleContext from "./LocaleContext";
 import { Route, Routes } from "react-router-dom";
 
 //https://www.geeksforgeeks.org/how-to-connect-node-js-with-react-js/#:~:text=export%20default%20App%3B,ReactJS%20is%20connected%20with%20NodeJS
@@ -24,21 +22,15 @@ import { Route, Routes } from "react-router-dom";
 //for when I get back to this
 
 function App() {
-  const [locale, setLocale] = useState(i18n.language);
-
-  useEffect(() => {
-    i18n.on("languageChanged", (lng) => setLocale(i18n.language));
-  });
 
   return (
-    <LocaleContext.Provider value={{ locale, setLocale }}>
       <div className="App">
         <Suspense fallback={<p>...Loading</p>}>
           <header className="App-header">
             <Navbar />
             <div className="body">
               <Routes>
-                <Route exact path="/" element={<Home />} />
+                <Route path="/" element={<Home />} />
                 <Route exact path="apipractice" element={<APIPractice />} />
                 <Route exact path="blog" element={<Blog />} />
                 <Route exact path="about" element={<About />} />
@@ -55,7 +47,6 @@ function App() {
           </header>
         </Suspense>
       </div>
-    </LocaleContext.Provider>
   );
 }
 
