@@ -21,7 +21,7 @@
   width: 100%;
   font-size: 2rem;
   align-self: center;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .nasa-inner-wrapper select {
@@ -29,7 +29,7 @@
   width: 100%;
   font-size: 2rem;
   align-self: center;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .nasa-inner-wrapper label {
