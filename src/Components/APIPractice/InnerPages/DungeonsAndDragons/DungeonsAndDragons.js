@@ -30,7 +30,7 @@ export function SpellContents({ spellQuery, submitTrigger }) {
 
   if (spellData) {
     return (
-      <div>
+      <div className="shadow-box">
         <h1>Spell Name: {spellData.name}</h1>
         <h2>Casting Time:</h2> <p>{spellData.casting_time}</p>
         <h2>Range:</h2> <p>{spellData.range}</p>
