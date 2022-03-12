@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Title from "../../../Reusable/Title/Title";
-
 import Line from "../../../Reusable/Line/Line";
 
 import "./DungeonsAndDragons.css";
 //https://www.dnd5eapi.co/
 
 const queryUrl = "https://www.dnd5eapi.co/api/spells/";
+
+//TODO - write custom code to handle damage function and put in ability to click on components to get the spell card.
 
 export function SpellContents({ spellQuery, submitTrigger }) {
   const [spellData, setSpellData] = useState({});
@@ -22,7 +23,6 @@ export function SpellContents({ spellQuery, submitTrigger }) {
           } else {
             console.log("Spell Contents Result", result);
             setSpellData((prevState) => ({ ...prevState, ...result }));
-            console.log("got to result!");
           }
         });
     }
@@ -30,7 +30,8 @@ export function SpellContents({ spellQuery, submitTrigger }) {
 
   if (spellData) {
     return (
-      <div className="shadow-box">
+      <div className="shadow-box marg2">
+        <div className="pad4">
         <h1>Spell Name: {spellData.name}</h1>
         <h2>Casting Time:</h2> <p>{spellData.casting_time}</p>
         <h2>Range:</h2> <p>{spellData.range}</p>
@@ -41,6 +42,7 @@ export function SpellContents({ spellQuery, submitTrigger }) {
         <p>{spellData.higher_level}</p>
         <h2>Materials Required:</h2> <p>{spellData.material}</p>
         <h2>Level: </h2> <p>{spellData.level}</p>
+        </div>
       </div>
     );
   } else if (err) {
@@ -110,7 +112,7 @@ export function Spells({ searchTerm, submitTrigger }) {
         <div className="marg3"><Line></Line></div>
         <h2>All Spells</h2>
         {spells.spells.map((spell) => {
-          return <p key={spell.index}>{spell.name}</p>;
+          return <p className="shadow-box marg4 pad2" key={spell.index}>{spell.name}</p>;
         })}
       </div>
     );

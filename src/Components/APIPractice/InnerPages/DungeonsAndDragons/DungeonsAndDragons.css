@@ -7,6 +7,27 @@
   font-family: "Raleway", sans-serif;
 }
 
+.dnd-wrapper p {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.25rem;
+}
+
+.inner-wrapper h1 {
+  font-family: "Staatliches", cursive;
+  font-size: 4rem;
+  color: #e94584;
+}
+
+.dnd-wrapper h2 {
+  font-family: "Advent Pro", sans-serif;
+  font-size: 3rem;
+}
+
+.dnd-wrapper h3 {
+  font-family: "Comfortaa", cursive;
+  font-size: 2rem;
+}
+
 @media screen and (min-width: 100px) {
   .text-input {
     font-family: "Raleway", sans-serif;
@@ -38,7 +59,7 @@
     color: #ffffff;
     font-size: 1.5rem;
     align-self: center;
-    background-color: #fa64d6;
+    background-color: #e94584;
     border-radius: 20px;
   }
 }
@@ -61,7 +82,7 @@
     color: #ffffff;
     font-size: 2rem;
     align-self: center;
-    background-color: #fa64d6;
+    background-color: #e94584;
     border-radius: 20px;
   }
 }
@@ -75,7 +96,7 @@
   }
 
   .dnd-search-label {
-    color: #fa64d6;
+    color: #e94584;
   }
 
   .text-input .button-dnd .dnd-search-label {
@@ -87,7 +108,7 @@
     color: #ffffff;
     font-size: 2rem;
     align-self: center;
-    background-color: #fa64d6;
+    background-color: #e94584;
     border-radius: 20px;
   }
 }

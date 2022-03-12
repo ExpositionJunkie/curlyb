@@ -5,7 +5,6 @@
   background-color: $blackColor;
   justify-content: center;
   padding-bottom: 0.5rem;
-
 }
 
 .lineDiv {
@@ -95,7 +94,7 @@
   }
 }
 
-@media screen and (min-width: 900px){
+@media screen and (min-width: 900px) {
   .spanWrap {
     display: flex;
     flex-direction: column;

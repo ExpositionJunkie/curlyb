@@ -16,7 +16,7 @@ export function Home(props) {
         <h1 id="hiRoz">Hi, I'm Roz.</h1>
         <span id="topIntro" className="introSpan">
           <span className="introPic">
-            <img
+            <img 
               id="netrunner"
               src={rozNetrunner}
               alt="Cosplay Roz with fake tattoos wearing a glowing yellow visor with an atom stenciled in the center. (The react logo is an atom. It seemed fitting.)"
@@ -28,7 +28,8 @@ export function Home(props) {
               collecting.
             </h2>
             <h2 className="subtitle">Like what you see? Need code?</h2>
-            <h3 id="drop">
+            
+            <h3 id="drop" className="shadow-box pad2">
               <a
                 className="plainLink"
                 href="mailto:rosalindavalbrecht@gmail.com?subject=I am interested in giving you money to do a thing you like"  
@@ -36,6 +37,7 @@ export function Home(props) {
                 Drop me a line
               </a>
             </h3>
+          
           </span>
         </span>
         <Line />

@@ -1,10 +1,16 @@
 //Colors
 $blackColor: #000000;
-$yellowColor: #f1e91c;
+$yellowColor: #ffdc18;
 $purpleColor: #8335d0;
-$pinkColor: #fa64d6;
+$lightPinkColor: #fa64d6;
+$pinkColor: #e94584;
 $whiteColor: #ffffff;
-$blueColor: #0931d0;
+$blueColor: #24aadb;
+$orangeColor: #f17c58;
+$tealColor: #27dbb1;
+$redColor: #ff3706;
+$transparentColor: rgba(0,0,0,0);
+
 //links
 $linkColor: rgba(251, 63, 182, 1);
 $hoverLinkColor: rgba(34, 193, 195, 1);
@@ -65,6 +71,35 @@ $bodyFont2: "Comfortaa", cursive;
     }
     100% {
       background-position: 100%;
+    }
+  }
+}
+
+@mixin rainbow-shadow($px1, $px2, $px3) {
+  animation: shadow-fade 16s linear infinite;
+  animation-direction: alternate;
+
+  @include keyframes(shadow-fade) {
+    0% {
+      box-shadow: $px1 $px2 $px3 $orangeColor;
+    }
+    16% {
+      box-shadow: $px1 $px2 $px3 $yellowColor;
+    }
+    32% {
+      box-shadow: $px1 $px2 $px3 $tealColor;
+    }
+    48% {
+      box-shadow: $px1 $px2 $px3 $blueColor;
+    }
+    64% {
+      box-shadow: $px1 $px2 $px3 $purpleColor;
+    }
+    84% {
+      box-shadow: $px1 $px2 $px3 $pinkColor
+    }
+    100% {
+      box-shadow: $px1 $px2 $px3 $redColor;
     }
   }
 }

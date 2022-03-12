@@ -15,6 +15,11 @@
   color: black;
 }
 
+.blog_wrapper p {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.25rem;
+}
+
 .blog_wrapper li {
   list-style-type: square;
 }

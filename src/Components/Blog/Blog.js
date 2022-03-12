@@ -1,5 +1,6 @@
 import React from "react";
 import Title from "../Reusable/Title/Title";
+import Subtitle from "../Reusable/Subtitle/Subtitle";
 import Line from "../Reusable/Line/Line";
 import { blogData } from "../../data/blogData.js";
 import "./Blog.css";
@@ -8,10 +9,7 @@ function BlogEntry({ blog }) {
   if (blog) {
     return (
       <div id="inner_entry_wrapper">
-        <div className="blog_title">
-          <h1>{blog.title}</h1>
-          <h2>{blog.subtitle}</h2>
-        </div>
+        <Subtitle titleStr={blog.title} subtitleStr={blog.subtitle}></Subtitle>
         {blog.text.map((paragraph, index) => {
           return <p key={index}>{paragraph}</p>;
         })}
@@ -19,10 +17,13 @@ function BlogEntry({ blog }) {
         <div className="tags">
           <p>Tags: </p>
           {blog.tags.map((paragraph, index) => {
-            return <p className="tag" key={index}>{paragraph}</p>;
+            return (
+              <p className="tag" key={index}>
+                {paragraph}
+              </p>
+            );
           })}
         </div>
-        
       </div>
     );
   } else {
@@ -38,9 +39,12 @@ export default function Blog() {
         <div>
           {blogData.map((blogEntry) => {
             return (
-              <div className="entry" key={blogEntry.id}>
+              <div>
+              <div className="entry shadow-box marg3" key={blogEntry.id}>
                 <BlogEntry blog={blogEntry} />
-                <Line></Line>
+                
+                </div>
+                <div className="pad2"><Line/></div>
               </div>
             );
           })}

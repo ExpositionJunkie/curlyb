@@ -9,6 +9,26 @@
   font-family: $bodyFont;
 }
 
+.dnd-wrapper p {
+  font-family: $bodyFont;
+  font-size: 1.25rem;
+}
+.inner-wrapper h1 {
+  font-family: $subtitleFont2;
+  font-size: 4rem;
+  color: $pinkColor;
+}
+
+.dnd-wrapper h2 {
+  font-family: $subtitleFont;
+  font-size: 3rem;
+}
+
+.dnd-wrapper h3 {
+  font-family: $bodyFont2;
+  font-size: 2rem;
+}
+
 
 @media screen and (min-width: 100px) {
   
