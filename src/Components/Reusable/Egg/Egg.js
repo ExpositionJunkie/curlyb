@@ -21,7 +21,7 @@ export default function Egg() {
               <PiedPiperIcon className="piedPiper" />
 
               <p className="yolk">
-                This website could not have been designed by Pied Piper becuase
+                This website could not have been designed with Pied Piper becuase
                 this is a fictional technology from the HBO series "Silicon
                 Valley"
               </p>
