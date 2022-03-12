@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/curlyb/static/css/main.be450a1e.css",
+    "main.js": "/curlyb/static/js/main.12211061.js",
+    "static/media/the-great-flood.jpg": "/curlyb/static/media/the-great-flood.30ebef797428840eac4a.jpg",
+    "static/media/RozZoltar.jpg": "/curlyb/static/media/RozZoltar.e73ceabc70d29c5932dd.jpg",
+    "static/media/ApolloGlamourShot.jpg": "/curlyb/static/media/ApolloGlamourShot.734f7496e7b076d056e6.jpg",
+    "static/media/RozLake.jpg": "/curlyb/static/media/RozLake.a6622ac229e51a0c69c9.jpg",
+    "static/media/WorkshopRoz.jpg": "/curlyb/static/media/WorkshopRoz.414192ff0eceb9c030f1.jpg",
+    "static/media/netrunner2.jpg": "/curlyb/static/media/netrunner2.cae2a3f593c010e873f1.jpg",
+    "static/media/Elipses.svg": "/curlyb/static/media/Elipses.8d519f04421f9854e91bb1e77c7b3145.svg",
+    "static/media/logo.svg": "/curlyb/static/media/logo.4a3da65cfe97b22f9ab5aeb08813b984.svg",
+    "static/media/sass.svg": "/curlyb/static/media/sass.321b2edad0c70a8332cf1a22ba2ef430.svg",
+    "static/media/react.svg": "/curlyb/static/media/react.f6fb1759e0fc4bce6aa9872d99cabfd5.svg",
+    "static/media/leftbracket.svg": "/curlyb/static/media/leftbracket.41a076d453ed88b9d5ea96f6debae09b.svg",
+    "static/media/rightbracket.svg": "/curlyb/static/media/rightbracket.d1f4081788c874fca1d577785402ad14.svg",
+    "static/media/github.svg": "/curlyb/static/media/github.f1c392a6a5fb4c941283c5edd681e2d8.svg",
+    "static/media/javascript.svg": "/curlyb/static/media/javascript.11546d4aa962f5fe5320b42532d8ea40.svg",
+    "static/media/twitterUncaged.svg": "/curlyb/static/media/twitterUncaged.59cd2588693a504d6aa3ebfb83d302a1.svg",
+    "static/media/piedPiper.svg": "/curlyb/static/media/piedPiper.a483a71c24b33068dabc20d06921e559.svg",
+    "index.html": "/curlyb/index.html",
+    "static/media/envelope.svg": "/curlyb/static/media/envelope.e441d5215bdabe978ccaa3631da6c656.svg",
+    "static/media/linkedIn.svg": "/curlyb/static/media/linkedIn.bf00913dc77d0de97d51e9b723abc05f.svg",
+    "static/media/css3.svg": "/curlyb/static/media/css3.f40adea72026a24a549a62082ce10ea8.svg",
+    "static/media/html5.svg": "/curlyb/static/media/html5.b2df6907108c1c1f71ca0581196c32bf.svg",
+    "main.be450a1e.css.map": "/curlyb/static/css/main.be450a1e.css.map",
+    "main.12211061.js.map": "/curlyb/static/js/main.12211061.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.be450a1e.css",
+    "static/js/main.12211061.js"
+  ]
+}
