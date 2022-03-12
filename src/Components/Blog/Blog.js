@@ -1,6 +1,6 @@
 import React from "react";
 import Title from "../Reusable/Title/Title";
-import Line from "../Reusable/Line/Line"
+import Line from "../Reusable/Line/Line";
 import { blogData } from "../../data/blogData.js";
 import "./Blog.css";
 
@@ -16,6 +16,7 @@ function BlogEntry({ blog }) {
           return <p key={index}>{paragraph}</p>;
         })}
         <p className="date"> - {blog.date}</p>
+        <Line></Line>
       </div>
     );
   } else {
@@ -33,7 +34,6 @@ export default function Blog() {
             return (
               <div className="entry" key={blogEntry.id}>
                 <BlogEntry blog={blogEntry} />
-                <Line></Line>
               </div>
             );
           })}
