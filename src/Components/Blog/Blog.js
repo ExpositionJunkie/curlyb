@@ -16,7 +16,13 @@ function BlogEntry({ blog }) {
           return <p key={index}>{paragraph}</p>;
         })}
         <p className="date"> - {blog.date}</p>
-        <Line></Line>
+        <div className="tags">
+          <p>Tags: </p>
+          {blog.tags.map((paragraph, index) => {
+            return <p className="tag" key={index}>{paragraph}</p>;
+          })}
+        </div>
+        
       </div>
     );
   } else {
@@ -34,6 +40,7 @@ export default function Blog() {
             return (
               <div className="entry" key={blogEntry.id}>
                 <BlogEntry blog={blogEntry} />
+                <Line></Line>
               </div>
             );
           })}

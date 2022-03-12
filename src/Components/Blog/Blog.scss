@@ -17,8 +17,6 @@
   color: black;
 }
 
-
-
 .blog_wrapper li {
   list-style-type: square;
 }
@@ -36,9 +34,6 @@
   color: $linkVisitedColor;
 }
 
-/* ~~~~~~~~~~~~~~~***|! Page SPECIFIC !|***~~~~~~~~~~~~~~~ */
-/*https://www.w3.org/TR/selectors-3/#first-of-type-pseudo */
-
 .date {
   font-size: 1rem;
   justify-self: flex-end;
@@ -55,3 +50,15 @@
   border-radius: 40px;
   z-index: 4;
 }
+
+.tags {
+  display: flex;
+  flex-wrap: nowrap;
+  font-family: $bodyFont;
+  font-size: 0.75rem;
+}
+
+.tags >* {
+  margin-left: 1rem;
+}
+

@@ -503,7 +503,7 @@ export const blogData = [
 
   {
     id: "30",
-    date: "3/10/2022 4:31",
+    date: "3/10/2022 4:31 PM",
     title: "Lint Trap",
     subtitle: "Quick notes",
     text: [
@@ -512,6 +512,21 @@ export const blogData = [
       "Anyway, mostly writing to explain the routing issue and to test this against what I just deployed so I have a good indicator of if this is still running on my cpanel stuff or on github. Peace, chooms!",
     ],
     tags: ["linting", "springnpmcleaning", "deployment"],
+    photos: [{}],
+  },
+  {
+    id: "31",
+    date: "3/12/2022 12:13 PM",
+    title: "Murphy",
+    subtitle: "",
+    text: [
+      "I'm beginning to think that as much of development is googling, it is equally outwitting murphy and his confounding law. Someone really ought to revoke his bar membership one of these days. I had left this project yesterday waiting for ssls and records from my DNS server and being blissfully unaware this thing probably broke 15 minutes after I sent the link to everyone. Embarrassing!",
+      "But I was able to get it fixed, deployment is now stupid simple easy. And I have my precious lock icon. You have no idea how much it bothered me not to have that.",
+      "The moment I say this though I wouldn't be surprised if the whole thing bursts into flames just to chastize me for the hubris to think I know what I'm doing. I am icarus, and I have flown too close to the A-name files.",
+      "For now, at least, I remain unscorched though. CJ is sleeping in right now so I may try to get a few cosmetics updated but mainly I wanted my site not to be a gaping hole on the internet this morning. Barring further updates, achieved.",
+      "I am very very excited for next week though. Next week I get to put together this with my node server and redux and break it all over again. Huzzah! But seriously, I've been dying without a backend here. Looking forward to getting this thing proper set up.",
+    ],
+    tags: ["deployment", "github pages", "build"],
     photos: [{}],
   },
 ];
