@@ -529,6 +529,16 @@ export const blogData = [
     tags: ["deployment", "github pages", "build"],
     photos: [{}],
   },
+
+  {
+  "id": "32",
+  "date": "3/12/2022 1:25 PM",
+  "title": "Hash Browns",
+  "subtitle": "Part Deux",
+  "text": ["Well I sure feel dumb. For some reason I thought that hash router took a lot more config than it did. Was two lines of code and an attribute. Egg on my face to go with these hash browns.", "Also, broke my build trying to config so that github pages will remember where I want this routed. Man, figured it out but this build stuff has been harder than the actual writing of code. Still - an automated deployment pipeline is worth the embarrassment between renders I think."],
+  "tags": ["hash router", "deployment", "build"],
+"photos": [{}],
+},
 ];
 
 // {
