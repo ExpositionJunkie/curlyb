@@ -495,9 +495,23 @@ export const blogData = [
       "In spite of the long employment gap here due to the career change, I have never been unemployed nearly this long. Before CJ, I was the breadwinner. I vowed not to let what happened to my father happen to me. My father, brilliant in some areas, wasn't employed much after I turned about 7-ish. I saw the cycle of unemployment turn into depression and it just gets worse from there. He was very hard on himself. I remember finding his journals when I was around that age and they were quite dark. I think it gets really difficult when you tie your worth to what you do. I'm trying very hard to do all I can to get back into working but I have to remember that just as important is not letting this get to me because that will become a self fulfilling prophecy.",
       "Still, I'd be lying if I said it didn't get to me at all. I try to tell myself that we are different people and I have different skills than he has. I have friends and people who want to be around me. I am kind to myself. I have a support system. I have backup skills. And I know that I can do this. Sure, I have imposter syndrome - but I also know a lot of devs and know that everyone goes through this point right here where things are terrifying and you're just trying to take up as little space as possible because you can't afford to do anything else and you feel bad about the resources it takes to keep you housed and healthy in the mean time. I'm so terribly lucky to be able to have the opportunity to do this without having to live in my car. But the guilt is immeasurable. I cannot wait to repay this kindness in full and it tugs on me at all times.",
       "So chooms, if you are also feeling exhausted and overwhelmed or are trying to land your first official Dev gig capital D - be kind to yourselves. I don't often allow myself the time to process some of the fear associated with being out of work becuase I don't find it constructive. But I do feel better now after having a good cry. I think this is a good sign it is time to pack in for today though. Can fix the rest of this mess soon enough.",
-      "Catch you async, choombatta."
+      "Catch you async, choombatta.",
     ],
     tags: ["overwhelmed"],
+    photos: [{}],
+  },
+
+  {
+    id: "30",
+    date: "3/10/2022 4:31",
+    title: "Lint Trap",
+    subtitle: "Quick notes",
+    text: [
+      "Still working out the kinks with github pages and deployment. Got a stable version up now, cleaned up some variables and dependencies I didn't need for now. Nothing broken yet. We'll see.",
+      "Probably take the next few days off for CJ's birthday. After all it's the weekend. My goal was to work 40 hours a week on this like I would a real job, but at some point I started going a bit overboard and I'm sure it is good for my mental health to take a break from time to time. Figured I'd try and work on deployment today and if time routing. I feel like I understand a little more about some of the kinks and problems I'm running into here, but haven't found the perfect answer on how to fix them. Still, hurculean effort here getting the whole site formatted in a few days.",
+      "Anyway, mostly writing to explain the routing issue and to test this against what I just deployed so I have a good indicator of if this is still running on my cpanel stuff or on github. Peace, chooms!",
+    ],
+    tags: ["linting", "springnpmcleaning", "deployment"],
     photos: [{}],
   },
 ];
