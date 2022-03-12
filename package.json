@@ -2,7 +2,7 @@
   "name": "curlyb",
   "version": "0.1.0",
   "private": true,
-  "homepage": "",
+  "homepage": "https://ExpositionJunkie.github.io/curlyb",
   "dependencies": {
     "gh-pages": "^3.2.3",
     "react": "^17.0.2",
@@ -13,7 +13,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -b bob -d build",
     "start": "set PORT=3000 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
