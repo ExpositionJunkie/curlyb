@@ -150,7 +150,7 @@ export default function DungeonsAndDragons() {
           </h2>
           <h3>
             Once I have more time, I do intend on pulling in just aobut all of
-            this data, simply becasue it is handy to have. However, there may be some gaps because of the API that this data comes from. For instance, friends is not listed but animal friendship is.
+            this data, simply becasue it is handy to have.
           </h3>
         </div>
         <div className="dnd-form-wrapper">

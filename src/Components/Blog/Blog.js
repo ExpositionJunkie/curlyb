@@ -14,7 +14,9 @@ function BlogEntry({ blog }) {
           return <p key={index}>{paragraph}</p>;
         })}
         <p className="date"> - {blog.date}</p>
-        <div className="marg3"><Line></Line></div>
+        <div className="marg3">
+          <Line></Line>
+        </div>
         <div className="tags">
           {blog.tags.map((paragraph, index) => {
             return (
@@ -40,11 +42,12 @@ export default function Blog() {
           {blogData.map((blogEntry) => {
             return (
               <div>
-              <div className="entry shadow-box marg3" key={blogEntry.id}>
-                <BlogEntry blog={blogEntry} />
-                
+                <div className="entry shadow-box marg3" key={blogEntry.id}>
+                  <BlogEntry blog={blogEntry} />
                 </div>
-                <div className="pad2"><Line/></div>
+                <div className="pad2">
+                  <Line />
+                </div>
               </div>
             );
           })}

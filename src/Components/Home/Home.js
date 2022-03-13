@@ -29,7 +29,7 @@ export function Home(props) {
             </h2>
             <h2 className="subtitle">Like what you see? Need code?</h2>
             
-            <h3 id="drop" className="shadow-box pad2">
+            <h3 id="drop">
               <a
                 className="plainLink"
                 href="mailto:rosalindavalbrecht@gmail.com?subject=I am interested in giving you money to do a thing you like"  
