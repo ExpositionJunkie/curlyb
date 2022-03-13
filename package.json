@@ -12,8 +12,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "add-domain": "echo \"curlybrackets.me\" > build/CNAME",
-    "predeploy": "npm run build npm run add-domain",
+    
+    "predeploy": "npm run build",
     "deploy": "gh-pages -b bob -d build",
     "start": "set PORT=3000 && react-scripts start",
     "build": "react-scripts build",
