@@ -14,8 +14,8 @@ function BlogEntry({ blog }) {
           return <p key={index}>{paragraph}</p>;
         })}
         <p className="date"> - {blog.date}</p>
+        <div className="marg3"><Line></Line></div>
         <div className="tags">
-          <p>Tags: </p>
           {blog.tags.map((paragraph, index) => {
             return (
               <p className="tag" key={index}>

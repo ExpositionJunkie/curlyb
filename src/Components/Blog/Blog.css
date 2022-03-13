@@ -56,9 +56,9 @@
 
 .tags {
   display: flex;
-  flex-wrap: nowrap;
   font-family: "Raleway", sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.5rem;
+  text-transform: uppercase;
 }
 
 .tags > * {
