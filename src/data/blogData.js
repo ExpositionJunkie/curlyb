@@ -531,14 +531,29 @@ export const blogData = [
   },
 
   {
-  "id": "32",
-  "date": "3/12/2022 1:25 PM",
-  "title": "Hash Browns",
-  "subtitle": "Part Deux",
-  "text": ["Well I sure feel dumb. For some reason I thought that hash router took a lot more config than it did. Was two lines of code and an attribute. Egg on my face to go with these hash browns.", "Also, broke my build trying to config so that github pages will remember where I want this routed. Man, figured it out but this build stuff has been harder than the actual writing of code. Still - an automated deployment pipeline is worth the embarrassment between renders I think."],
-  "tags": ["hash router", "deployment", "build"],
-"photos": [{}],
-},
+    id: "32",
+    date: "3/12/2022 1:25 PM",
+    title: "Hash Browns",
+    subtitle: "Part Deux",
+    text: [
+      "Well I sure feel dumb. For some reason I thought that hash router took a lot more config than it did. Was two lines of code and an attribute. Egg on my face to go with these hash browns.",
+      "Also, broke my build trying to config so that github pages will remember where I want this routed. Man, figured it out but this build stuff has been harder than the actual writing of code. Still - an automated deployment pipeline is worth the embarrassment between renders I think.",
+    ],
+    tags: ["hash router", "deployment", "build"],
+    photos: [{}],
+  },
+  {
+    id: "33",
+    date: "3/12/2022 5:32 PM",
+    title: "36 Ways to Eat Crow",
+    subtitle: "The DNS Has Ears",
+    text: [
+      "I give up on trying to give updates here on hosting stuff. I was at the pharmacy showing off when I realized the site had been down on every computer but mine.",
+      "I give up. Thank god I'm not applying for SRE positions. If you're reading this, then that's a good indication this thing is working.",
+    ],
+    tags: ["hosting", "devfail", "deployment"],
+    photos: [{}],
+  },
 ];
 
 // {
