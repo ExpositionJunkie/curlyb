@@ -25,6 +25,9 @@ export default function Egg() {
                 this is a fictional technology from the HBO series "Silicon
                 Valley"
               </p>
+              <p className="yolk">
+                Egg Test
+              </p>
             </div>
           </a>
         </div>
