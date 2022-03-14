@@ -35,14 +35,14 @@ function BlogEntry({ blog }) {
 
 export default function Blog() {
   return (
-    <div className="blog_wrapper">
+    <div className="blog-wrapper">
       <Title titleStr="Dev Blog" />
-      <div className="entry_wrapper">
+      <div className="entry-wrapper">
         <div>
           {blogData.map((blogEntry) => {
             return (
               <div>
-                <div className="entry shadow-box marg3" key={blogEntry.id}>
+                <div className="entry shadow-box" key={blogEntry.id}>
                   <BlogEntry blog={blogEntry} />
                 </div>
                 <div className="pad2">
