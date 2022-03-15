@@ -554,6 +554,22 @@ export const blogData = [
     tags: ["hosting", "devfail", "deployment"],
     photos: [{}],
   },
+  {
+    id: "34",
+    date: "3/14/2022 5:11 PM",
+    title: "This and That",
+    subtitle: "",
+    text: [
+      "So done with the nightmare flood. We finally moved our stuff back to the other side of the room today after the property managers sent out someone to take out the carpet instead of clean it. We still have a gaping hole in the front yard thanks to the HOA. Spent the weekend sick from the covid shot and am still not quite feeling my best.",
+      "Made some minor updates to the blog. Thought I had set breakpoints on it, but realized in the midst of being far too sick to do anything about it that I had not. Easy fix. Now what?",
+      "Backend stuff. Got set up with Atlas on the mongo end, started cleaning stuff up so that it can be presentable. Got a pipeline to heroku for this one. Misunderstood that github pages only does static sites and couldn't handle the server stuff. That said, this is yet another build process I've gotta learn and pipeline. So it will probably be a bit messy for a week. Doesn't work right now and I have a few guesses as to why - env variables possibly? Not setting up for prod properly? That said, I need that pipeline before I really expand anything here. I suppose not a bad thing that I have to keep up on the Node side of things.",
+      "I also have a request to implement an RSS feed. Found this article: https://www.contentful.com/blog/2021/03/05/generate-blog-rss-feed-with-javascript-and-netlify/ which I am leaving here for notes. Not sure if it will be the one I go with but a lot of the articles on this are related to wordpress sites that have this built in. May not be a bad idea to implement since one of my side projects may well be implementing SEO. I wonder if adding something like this could help them as well. Not a bad idea to try implementing this on my own anyway so I can work out the kinks.",
+      "Either way, today is done, I'm going to give myself a little leisure time. After all, I worked even on Saturday of last week so I think I have earned it. Tomorrow back to the grind again and work on the server and the RSS feed.",
+      "Catch you on the async, chooms!",
+    ],
+    tags: ["heroku", "rss", "node", "mongodb"],
+    photos: [{}],
+  },
 ];
 
 // {
