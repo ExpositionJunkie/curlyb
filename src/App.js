@@ -14,6 +14,7 @@ import NameGuess from "./Components/APIPractice/InnerPages/NameGuess/NameGuess";
 import Blog from "./Components/Blog/Blog";
 import Signup from "./Components/Signup/Signup";
 import { Route, Routes } from "react-router-dom";
+import CookieConsent from "react-cookie-consent";
 
 //https://www.geeksforgeeks.org/how-to-connect-node-js-with-react-js/#:~:text=export%20default%20App%3B,ReactJS%20is%20connected%20with%20NodeJS
 //pause in devtools before it can load the overlay to avoid the sign in bs.
@@ -24,29 +25,35 @@ import { Route, Routes } from "react-router-dom";
 function App() {
 
   return (
-      <div className="App">
-        <Suspense fallback={<p>...Loading</p>}>
-          <header className="App-header">
-            <Navbar />
-            <div className="body">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route exact path="apipractice" element={<APIPractice />} />
-                <Route exact path="blog" element={<Blog />} />
-                <Route exact path="about" element={<About />} />
-                <Route exact path="nameguesser" element={<NameGuess />} />
-                <Route exact path="nasapower" element={<NASAPower />} />
-                <Route exact path="isslocator" element={<ISSLocator />} />
-                <Route exact path="dnd" element={<DungeonsAndDragons />} />
-                <Route exact path="ip" element={<IPAddress />} />
-                <Route exact path="signup" element={<Signup />} />
-                <Route exact path="egg" element={<Egg />} />
-              </Routes>
-              <Footer />
+    <div className="App">
+      <Suspense fallback={<p>...Loading</p>}>
+        <header className="App-header">
+          <Navbar />
+          <div className="body">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route exact path="apipractice" element={<APIPractice />} />
+              <Route exact path="blog" element={<Blog />} />
+              <Route exact path="about" element={<About />} />
+              <Route exact path="nameguesser" element={<NameGuess />} />
+              <Route exact path="nasapower" element={<NASAPower />} />
+              <Route exact path="isslocator" element={<ISSLocator />} />
+              <Route exact path="dnd" element={<DungeonsAndDragons />} />
+              <Route exact path="ip" element={<IPAddress />} />
+              <Route exact path="signup" element={<Signup />} />
+              <Route exact path="egg" element={<Egg />} />
+            </Routes>
+            <Footer />
+            <div className="cookie-consent">
+              <h1>Hello World!</h1>
+              <CookieConsent enableDeclineButton>
+                This website uses cookies to enhance the user experience.
+              </CookieConsent>
             </div>
-          </header>
-        </Suspense>
-      </div>
+          </div>
+        </header>
+      </Suspense>
+    </div>
   );
 }
 

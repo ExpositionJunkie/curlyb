@@ -6,6 +6,7 @@
   #elipses {
     opacity: 0;
     height: 0;
+    width: 0;
   }
 
   .titleText {
@@ -14,7 +15,7 @@
     position: relative;
     margin: 0;
     font-size: 4rem;
-    color: #f1e91c;
+    color: #ffdc18;
     font-family: "Audiowide", cursive;
     text-align: center;
     z-index: 1;
@@ -56,8 +57,8 @@
 
   .linkWrapper a:hover {
     text-decoration: none;
-    color: #f1e91c;
-    text-shadow: 2px 2px 5px #f1e91c;
+    color: #ffdc18;
+    text-shadow: 2px 2px 5px #ffdc18;
   }
 }
 @media screen and (min-width: 501px) {
@@ -72,7 +73,7 @@
     position: relative;
     margin: 0;
     font-size: 4rem;
-    color: #f1e91c;
+    color: #ffdc18;
     font-family: "Audiowide", cursive;
     text-align: center;
     z-index: 1;
@@ -126,6 +127,6 @@
 
 .linkWrapper a:hover {
   text-decoration: none;
-  color: #f1e91c;
-  text-shadow: 2px 2px 5px #f1e91c;
+  color: #ffdc18;
+  text-shadow: 2px 2px 5px #ffdc18;
 }
