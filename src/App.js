@@ -14,8 +14,7 @@ import NameGuess from "./Components/APIPractice/InnerPages/NameGuess/NameGuess";
 import Blog from "./Components/Blog/Blog";
 import Signup from "./Components/Signup/Signup";
 import { Route, Routes } from "react-router-dom";
-import CookieConsent from "react-cookie-consent";
-
+import Cookie from "./Components/Reusable/Cookie/Cookie";
 //https://www.geeksforgeeks.org/how-to-connect-node-js-with-react-js/#:~:text=export%20default%20App%3B,ReactJS%20is%20connected%20with%20NodeJS
 //pause in devtools before it can load the overlay to avoid the sign in bs.
 
@@ -46,9 +45,7 @@ function App() {
             <Footer />
             <div className="cookie-consent">
               <h1>Hello World!</h1>
-              <CookieConsent enableDeclineButton>
-                This website uses cookies to enhance the user experience.
-              </CookieConsent>
+              <Cookie />
             </div>
           </div>
         </header>

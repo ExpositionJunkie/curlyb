@@ -1,0 +1,57 @@
+@import "../../../Variables/Sass/SassVariables.scss";
+
+@media screen and (max-width: 800px) {
+  .cookie-text {
+    font-size: 1rem;
+    font-family: $bodyFont;
+    text-align: center;
+    align-content: center;
+  }
+
+  .accept-button {
+    font-family: $bodyFont;
+    font-size: 1.5rem;
+  }
+
+  .decline-button {
+    font-family: $bodyFont;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 800px) {
+    .cookie-text {
+      font-size: 1rem;
+      font-family: $bodyFont;
+      justify-content: center;
+    }
+  
+    .accept-button {
+      font-family: $bodyFont;
+      font-size: 1rem;
+    }
+  
+    .decline-button {
+      font-family: $bodyFont;
+      font-size: 1rem;
+    }
+  }
+  
+
+@media screen and (min-width: 1200px) {
+  .cookie-text {
+    font-size: 2rem;
+    font-family: $bodyFont;
+    padding: 1rem;
+  }
+
+  .accept-button {
+    font-family: $bodyFont;
+    font-size: 1.5rem;
+  }
+
+  .decline-button {
+    font-family: $bodyFont;
+    font-size: 1.5rem;
+  }
+}

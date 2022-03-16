@@ -4,6 +4,7 @@ import CookieConsent, {
   Cookies,
 } from "react-cookie-consent";
 import { initGA } from "./ga-utils";
+import "./Cookie.css"
 //This code is set up so that a user must opt in to recieve the google analytics cookies.
 //Helmet is designed to write non traditional html to the head. Also fun fact, made by the NFL.
 //https://github.com/nfl/react-helmet
@@ -35,10 +36,14 @@ export default function Cookie() {
       enableDeclineButton
       onAccept={handleAcceptCookie}
       onDecline={handleDeclineCookie}
+      containerClasses="cookie-wrap"
+      contentClasses="cookie-text"
+      buttonClasses="accept-button"
+      declineButtonClasses="decline-button"
     >
       This website uses third party cookies from Google Analytics to enhance
       user experience. You can decline this either by clicking the decline
-      button or by continuing your browsing.
+      button or just by continuing your browsing without selecting anything at all.
     </CookieConsent>
   );
 }
