@@ -313,11 +313,14 @@
     text-align: center;
   }
 
-  .accept-button {
+  #rcc-confirm-button {
     margin-top: 1rem;
     margin-bottom: 1rem;
-    text-align: center;
     background-color: #e94584;
+    padding-right: auto;
+    padding-left: auto;
+    justify-content: center !important;
+    text-align: center;
   }
 
   .accept-button ::after {

@@ -5,12 +5,10 @@ import CookieConsent, {
 } from "react-cookie-consent";
 import { initGA } from "./ga-utils";
 import "./Cookie.css"
-//This code is set up so that a user must opt in to recieve the google analytics cookies.
-//Helmet is designed to write non traditional html to the head. Also fun fact, made by the NFL.
-//https://github.com/nfl/react-helmet
 
+
+//https://dev.to/ramonak/react-enable-google-analytics-after-a-user-grants-consent-5bg3
 export default function Cookie() {
-  //defaults to true for open modal, is closed once user makes choice.
   useEffect(() => {
     const isConsent = getCookieConsentValue();
     if (isConsent === "true") {
@@ -39,8 +37,6 @@ export default function Cookie() {
       enableDeclineButton
       expires={999} 
       overlay
-      style={{background: "black", color: "white", fontSize: "30px", height: "10%"}}
-
       onAccept={handleAcceptCookie}
       onDecline={handleDeclineCookie}
       containerClasses="cookie-dialog"
