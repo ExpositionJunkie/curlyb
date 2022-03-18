@@ -17,8 +17,9 @@ export default function Cookie() {
   }, []);
 
   const handleAcceptCookie = () => {
+    console.log(window.gtag)
     if (process.env.GA) {
-      initGA(process.env.GA);
+      initGA(window.gtag, process.env.GA);
     }
   };
 
@@ -34,20 +35,22 @@ export default function Cookie() {
       <div className="inner-cookie-wrap">
     <CookieConsent
       disableStyles={true}
+      disableButtonStyles={true}
       enableDeclineButton
       expires={999} 
       overlay
+      cookieSecurity={true}
       onAccept={handleAcceptCookie}
       onDecline={handleDeclineCookie}
       containerClasses="cookie-dialog"
       contentClasses="cookie-text"
-      buttonClasses="accept-button"
-      declineButtonClasses="decline-button"
+      buttonWrapperClasses="button-wrap"
+      buttonClasses="accept-button shadow-box"
+      declineButtonClasses="decline-button shadow-box"
     >
       <p>
       This website uses third party cookies from Google Analytics to enhance
-      user experience. You can decline this either by clicking the decline
-      button or just by continuing your browsing without selecting anything at all.
+      user experience.
       </p>
     </CookieConsent>
     </div>

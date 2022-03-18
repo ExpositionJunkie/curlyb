@@ -1,23 +1,37 @@
-import GA4 from "react-ga4";
-
-export const initGA = (id) => {
-  if (process.env.NODE_ENV === "development") {
-    GA4.initialize([{
-      trackingId: id,
-      gaOptions: {
-        anonymizeIp: true,
-      }
-    }]);
-    GA4.send("pageview")
-  }  
+export const initGA = (gtag, id) => {
+  // if (process.env.NODE_ENV === "development") {
+  //   gtag('config', id);
+  //   gtag('consent', 'update', {'analytics_storage':'granted'});
+  //   gtag('set', id, {'allow_google_signals': true});
+  //   gtag('config', id, {'allow_ad_personalization_signals': true });
+  //   gtag('set', id, { 'send_page_view': true });
+  // }
 
   if (process.env.NODE_ENV === "production") {
-    GA4.initialize([{
-      trackingId: id,
-      gaOptions: {
-        anonymizeIp: true,
-      }
-    }]);
-    GA4.send("pageview")
+    gtag('config', id);
+    gtag('consent', 'update', {'analytics_storage':'granted'});
+    gtag('set', id, {'allow_google_signals': true});
+    gtag('config', id, {'allow_ad_personalization_signals': true });
+    gtag('set', id, { 'send_page_view': true });
   }
 };
+
+export const declineGA = (gtag, id) => {
+  // if (process.env.NODE_ENV === "development") {
+  //   gtag('config', id);
+  //   gtag('consent', 'update', {'analytics_storage':'denied'});
+  //   gtag('set', id, {'allow_google_signals': false});
+  //   gtag('config', id, {'allow_ad_personalization_signals': false });
+  //   gtag('set', id, { 'send_page_view': false });
+  //   gtag('set', id, {'ads_data_redaction': true});//further redacts ads
+  // }
+
+  if (process.env.NODE_ENV === "production") {
+    gtag('config', id);
+    gtag('consent', 'update', {'analytics_storage':'denied'});
+    gtag('set', id, {'allow_google_signals': false});
+    gtag('config', id, {'allow_ad_personalization_signals': false });
+    gtag('set', id, { 'send_page_view': false });
+    gtag('set', id, {'ads_data_redaction': true});//further redacts ads
+  }
+}
