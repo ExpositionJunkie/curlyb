@@ -22,7 +22,6 @@ import Cookie from "./Components/Reusable/Cookie/Cookie";
 //for when I get back to this
 
 function App() {
-
   return (
     <div className="App">
       <Suspense fallback={<p>...Loading</p>}>
@@ -43,10 +42,8 @@ function App() {
               <Route exact path="egg" element={<Egg />} />
             </Routes>
             <Footer />
-            <div className="cookie-consent">
-              <h1>Hello World!</h1>
-              <Cookie />
-            </div>
+
+            <Cookie />
           </div>
         </header>
       </Suspense>

@@ -40,8 +40,8 @@
   -webkit-animation-direction: alternate;
           animation-direction: alternate;
   overflow-x: hidden;
-  text-shadow: 3px 3px 10px #f1e91c;
-  filter: drop-shadow(10px 10px 300px #f1e91c);
+  text-shadow: 3px 3px 10px #ffdc18;
+  filter: drop-shadow(10px 10px 300px #ffdc18);
 }
 @-webkit-keyframes gradient {
   0% {

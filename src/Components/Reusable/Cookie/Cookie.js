@@ -32,18 +32,29 @@ export default function Cookie() {
   };
 
   return (
+    <div className="cookie-wrap">
+      <div className="inner-cookie-wrap">
     <CookieConsent
+      disableStyles={true}
       enableDeclineButton
+      expires={999} 
+      overlay
+      style={{background: "black", color: "white", fontSize: "30px", height: "10%"}}
+
       onAccept={handleAcceptCookie}
       onDecline={handleDeclineCookie}
-      containerClasses="cookie-wrap"
+      containerClasses="cookie-dialog"
       contentClasses="cookie-text"
       buttonClasses="accept-button"
       declineButtonClasses="decline-button"
     >
+      <p>
       This website uses third party cookies from Google Analytics to enhance
       user experience. You can decline this either by clicking the decline
       button or just by continuing your browsing without selecting anything at all.
+      </p>
     </CookieConsent>
+    </div>
+    </div>
   );
 }
