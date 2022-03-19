@@ -7,6 +7,21 @@
   background-color: none;
 }
 
+.cookie-wrap a {
+  text-decoration: none;
+  color: $pinkColor;
+}
+
+.cookie-wrap a:hover {
+  text-decoration: none;
+  color: $yellowColor;
+}
+
+.cookie-wrap a:visited {
+  text-decoration: none;
+  color: $purpleColor;
+}
+
 @media screen and (max-width: 500px) {
   .inner-cookie-wrap {
     position: fixed;
@@ -238,6 +253,8 @@
     font-family: $bodyFont;
     text-align: center;
     align-content: center;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
   .button-wrap{

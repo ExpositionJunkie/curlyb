@@ -5,6 +5,21 @@
   background-color: none;
 }
 
+.cookie-wrap a {
+  text-decoration: none;
+  color: #e94584;
+}
+
+.cookie-wrap a:hover {
+  text-decoration: none;
+  color: #ffdc18;
+}
+
+.cookie-wrap a:visited {
+  text-decoration: none;
+  color: #8335d0;
+}
+
 @media screen and (max-width: 500px) {
   .inner-cookie-wrap {
     position: fixed;
@@ -577,6 +592,8 @@
     font-family: "Raleway", sans-serif;
     text-align: center;
     align-content: center;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
   .button-wrap {

@@ -3,6 +3,7 @@ import CookieConsent, {
   getCookieConsentValue,
   Cookies,
 } from "react-cookie-consent";
+import {NavLink} from "react-router-dom";
 import { initGA } from "./ga-utils";
 import "./Cookie.css"
 
@@ -51,7 +52,7 @@ export default function Cookie() {
       <p>
       This website uses third party cookies from Google Analytics to enhance
       user experience.
-      </p>
+      For information regarding cookie usage, please refer to CB's <NavLink to="/csp">Cookie Security Policy Documentation</NavLink></p>
     </CookieConsent>
     </div>
     </div>
