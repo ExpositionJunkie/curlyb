@@ -11,7 +11,8 @@ import DungeonsAndDragons from "./Components/APIPractice/InnerPages/DungeonsAndD
 import ISSLocator from "./Components/APIPractice/InnerPages/ISSLocator/ISSLocator";
 import IPAddress from "./Components/APIPractice/InnerPages/IPAddress/IPAddress";
 import NameGuess from "./Components/APIPractice/InnerPages/NameGuess/NameGuess";
-import Blog from "./Components/Blog/Blog";
+import Blog from "./Components/Blog/Blogs";
+import BlogEntry from "./Components/Blog/Blog"
 import CSP from "./Components/CSP/CSP"
 import Signup from "./Components/Signup/Signup";
 import { Route, Routes } from "react-router-dom";
@@ -42,6 +43,7 @@ function App() {
               <Route exact path="signup" element={<Signup />} />
               <Route exact path="egg" element={<Egg />} />
               <Route exact path="csp" element={<CSP />} />
+              <Route path="blog/#/:blogId" element={<Blog />} />
             </Routes>
             <Footer />
 

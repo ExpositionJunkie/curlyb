@@ -16,7 +16,7 @@ export function Home(props) {
         <h1 id="hiRoz">Hi, I'm Roz.</h1>
         <span id="topIntro" className="introSpan">
           <span className="introPic">
-            <img 
+            <img
               id="netrunner"
               src={rozNetrunner}
               alt="Cosplay Roz with fake tattoos wearing a glowing yellow visor with an atom stenciled in the center. (The react logo is an atom. It seemed fitting.)"
@@ -28,16 +28,15 @@ export function Home(props) {
               collecting.
             </h2>
             <h2 className="subtitle">Like what you see? Need code?</h2>
-            
+
             <h3 id="drop">
               <a
                 className="plainLink"
-                href="mailto:rosalindavalbrecht@gmail.com?subject=I am interested in giving you money to do a thing you like"  
+                href="mailto:rosalindavalbrecht@gmail.com?subject=I am interested in giving you money to do a thing you like"
               >
                 Drop me a line
               </a>
             </h3>
-          
           </span>
         </span>
         <Line />
@@ -101,35 +100,37 @@ export function Home(props) {
       </div>
       <Line />
       <div className="pad2">
-      <div className="intro goals">
-        <h1>Site Goals</h1>
-        <h3 className="linkNoUnderline">
-          For most recent updates and snarky dev commentary, please check out my{" "}
-          <NavLink to="/blog">Dev Blog</NavLink>.
-        </h3>
-        <p>Near Future Attainables:</p>
-        <ul>
-          <li>Blog Facelift</li>
-          <li>
-            Updates to existing API practice projects to build more robust
-            examples
-          </li>
-        </ul>
-        <p>Written but having technical difficulties hosting:</p>
-        <ul>
-          <li>Backend</li>
-          <li>Login ability</li>
-          <li>Ability for users to post blogs and comment</li>
-        </ul>
-        <p>Pie in the Sky Goals</p>
-        <ul>
-          <li>
-            Language Translation Support - Lofty Stretch Goal - infrastructure
-            in place but difficult to do automated and at scale until backend
-            installed properly
-          </li>
-        </ul>
-      </div>
+        <div className="intro goals">
+          <h1>Site Goals</h1>
+          <h3 className="linkNoUnderline">
+            For most recent updates and snarky dev commentary, please check out
+            my <NavLink to="/blog">Dev Blog</NavLink>.
+          </h3>
+          <p>Recently Completed</p>
+          <ul>
+            <li>Cookie policy</li>
+            <li>Blog Facelift</li>
+            <li>More info on DND Spells</li>
+          </ul>
+          <p>Near Future Attainables:</p>
+          <ul>
+            <li>Blog Individual Rendering</li>
+          </ul>
+          <p>Written but having technical difficulties hosting:</p>
+          <ul>
+            <li>Backend</li>
+            <li>Login ability</li>
+            <li>Ability for users to post blogs and comment</li>
+          </ul>
+          <p>Pie in the Sky Goals</p>
+          <ul>
+            <li>
+              Language Translation Support - Lofty Stretch Goal - infrastructure
+              in place but difficult to do automated and at scale until backend
+              installed properly
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
