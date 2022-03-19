@@ -1,6 +1,7 @@
 import React from "react";
 import Title from "../Reusable/Title/Title";
 import Line from "../Reusable/Line/Line";
+import {NavLink} from "react-router-dom";
 import workshopRoz from "../../data/photos/Roz/profilePhotos/WorkshopRoz.jpg";
 import rozZoltar from "../../data/photos/Roz/profilePhotos/RozZoltar.jpg";
 import rozLake from "../../data/photos/Roz/profilePhotos/RozLake.jpg";
@@ -39,6 +40,12 @@ export default function About(props) {
             Roz hopes to be adopted by a nerdy dev team who will respect
             audacity, tenacity, and video game references. She is housebroken
             and plays well with others.
+          </h2>
+        </div>
+        <Line></Line>
+        <div className="about-body">
+          <h2>
+            For information regarding cookie usage, please refer to CB's <NavLink className="linkNoUnderline" to="/csp">Cookie Security Policy Documentation</NavLink>.
           </h2>
         </div>
       </div>

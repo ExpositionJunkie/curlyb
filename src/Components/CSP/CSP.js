@@ -6,7 +6,7 @@ import "./CSP.css";
 export default function Csp(props) {
   return (
     <>
-      <Title titleStr="Content Security Policy"></Title>
+      <Title titleStr="Cookie Security Policy"></Title>
       <div className="inner-csp-wrap">
         <div className="intro-csp">
           <h1>Your privacy matters, choom!</h1>

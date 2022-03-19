@@ -2,6 +2,21 @@
   color: #ffffff;
 }
 
+.about-wrapper a {
+  text-decoration: none;
+  color: #e94584;
+}
+
+.about-wrapper a:hover {
+  text-decoration: none;
+  color: #ffdc18;
+}
+
+.about-wrapper a:visited {
+  text-decoration: none;
+  color: #8335d0;
+}
+
 .inner-about-wrapper {
   padding: 2rem;
 }
@@ -82,5 +97,10 @@
     margin: 1rem;
     border-width: 1rem;
     margin: 1rem;
+  }
+
+  .about-body {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
   }
 }

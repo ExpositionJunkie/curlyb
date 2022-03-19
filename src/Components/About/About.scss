@@ -3,6 +3,22 @@
 .about-wrapper {
   color: $whiteColor;
 }
+
+.about-wrapper a {
+  text-decoration: none;
+  color: $pinkColor;
+}
+
+.about-wrapper a:hover {
+  text-decoration: none;
+  color: $yellowColor;
+}
+
+.about-wrapper a:visited {
+  text-decoration: none;
+  color: $purpleColor;
+}
+
 .inner-about-wrapper {
   padding: 2rem;
 }
@@ -84,5 +100,10 @@
     margin: 1rem;
     border-width: 1rem;
     margin: 1rem;
+  }
+
+  .about-body {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
   }
 }
