@@ -51,10 +51,12 @@
 }
 
 .linkNoUnderline a:hover {
+  text-decoration: none;
   color: $yellowColor;
 }
 
 .linkNoUnderline a:visited {
+  text-decoration: none;
   color: $purpleColor;
 }
 

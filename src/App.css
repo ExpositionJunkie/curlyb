@@ -45,10 +45,12 @@
 }
 
 .linkNoUnderline a:hover {
+  text-decoration: none;
   color: #ffdc18;
 }
 
 .linkNoUnderline a:visited {
+  text-decoration: none;
   color: #8335d0;
 }
 
