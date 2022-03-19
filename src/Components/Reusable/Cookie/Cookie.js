@@ -4,7 +4,7 @@ import CookieConsent, {
   Cookies,
 } from "react-cookie-consent";
 import {NavLink} from "react-router-dom";
-import { initGA } from "./ga-utils";
+import { initGA, declineGA } from "./ga-utils";
 import "./Cookie.css"
 
 
@@ -26,9 +26,11 @@ export default function Cookie() {
 
   const handleDeclineCookie = () => {
     //remove google analytics cookies
+    declineGA(process.env.GA)
     Cookies.remove("_ga");
     Cookies.remove("_gat");
     Cookies.remove("_gid");
+
   };
 
   return (
@@ -38,7 +40,7 @@ export default function Cookie() {
       disableStyles={true}
       disableButtonStyles={true}
       enableDeclineButton
-      expires={999} 
+      expires={600} 
       overlay
       cookieSecurity={true}
       onAccept={handleAcceptCookie}

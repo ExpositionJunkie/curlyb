@@ -570,6 +570,36 @@ export const blogData = [
     tags: ["heroku", "rss", "node", "mongodb"],
     photos: [{}],
   },
+  {
+    id: "35",
+    date: "3/18/2022 8:35 PM",
+    title: "All Work and No Play",
+    subtitle: "Makes a Poor Conversationalist",
+    text: [
+      "Long time, no type. Well, a lot of typing actually. Just not published in a while.",
+      "I've havd some poor github hygeine if I'm being honest. A few things I should have broken off and built from but feared that I would be exposing my users to too much risk.",
+      "After all, how would Cyberpunk Me think about that? She'd be apalled if she knew I was running code I didn't know. So I've been taking my time to figure out how it all runs, and I'm not going to lie - Google Analytics has been kind of a lot for me.",
+      "So here's the difficult thing about programming in React if you have most of your javascript experience in it. The code camps taught us using a lot of extra packages. But I have a feeling this may not be the best idea if you are trying to really learn how to make things work well. After all, every one of those packages comes with risks. Risks that don't get talked about enough.","For instance, this package relied on by Vue comes with a surprise for anyone not running docker in Ukraine/Belarus:  https://www.bleepingcomputer.com/news/security/big-sabotage-famous-npm-package-deletes-files-to-protest-ukraine-war/. This is how I finally took out the carats from my packages on this project. How do security analysts track this stuff, anyway?",
+      "So I've been trying to keep my stuff really lean and make sure that I really know what I'm doing before I release anything involving cookies to the public. I want to test it out becuase I have a friend needing to figure out SEO for their business. I kind of put off learning about it becuase I became more interested in programming than analytics. When I was first starting off, I thought it was the data I craved. Really I just like telling computers what to do and having them listen and render nice experiences for my users.",
+      "Either way, our paths have converged again. I opted to use react-cookie-consent as my cookie processor. I did try vanilla and I think I must have just missed something. Integrating with the way they handle their ui for the CSS was no picnic. Thank god for DevTools. If you have a flex item, devtools will pop up with a little grid icon that will allow you to preview styles. For some reason text-align: center just would not work on the accept button. It was driving me insane. Finally, with some help from DevTools I was able to see that I should have set it to align-items: stretch. I'm not even going to lie, I spent a few hours on this before I realized the issue. Sometimes walking away from the problem and coming back to it is better.",
+      "I certainly had some time to walk away from it, because I realized that I didn't feel comfortable handing off my Google Analytics to some random 3rd party npm package to handle GA4. You see, the original react-ga package I was using was depricated and doesn't work with the new analytics.",
+      "I think there was some part of my brain that wasn't wrapping around the fact that google analytics comes with it's own built gtag.js architecture. Also, importantly,  that there are ways to disable it from reporting and even actively report it not to on instantiation. My big hangup was that people weren't talking about implementation for GDPR. I know that you can get in big trouble for not enforcing privacy stringently enough - and more importantly I don't want to ever make someone sign up for something they don't want. Honestly, a lot of the samples out there are so lax it makes my head spin. Not only as a programmer, but as an advocate for ethical programming and security. (PLEASE NOTE: I am IN NO WAY a security or law expert. Please google everything yourself and consult lawyers.)",
+      "I did find answers for these things here and followed their guide: https://support.google.com/analytics/answer/9019185?hl=en#zippy=%2Cin-this-article. If I have missed anything, please let me know as I would like to correct this immediately.",
+      "I really value your privacy, chooms. I don't want to live in a dystopia, after all. I only play that character at the gaming table.",
+      "I even opted out of the dark patterns that are usually used in operations like this. If you don't know what I am talking about, check out: https://www.darkpatterns.org/ These are used to get people to opt in to things like email mailing lists, cookies, etc. Stuff that benefits you that you don't want people to think too much about. While these things are very useful in business... I can't bring myself to psychologically manipulate my readers. To be honest, as someone who was at least in the know enough to know what they were doing before programming this myself, I always respected websites that didn't do this and made a mental note that they weren't trying to decieve me. Honestly, I clicked more on the ones that didn't than the ones that did. Also, if you know devtools well enough, you can find some neat ways around that sort of thing a lot of the time.",
+      "So here are my settings to protect you if you deny access:",
+      "Analytics storage is denied",
+      "Google Signals set to false",
+      "Send page view set to false",
+      "Ad Personalization and Signals set to false (Just wanted to be explicit about that)",
+      "Ads Data is Redacted (again, explicitly setting this)",
+      "And, in order to protect people who like me, find loopholes around that sort of thing, I have set anonymization of IP to true by default and configured it not to store analytics or ad data if no one selects anything.",
+      "If there is anything else I can do to shore up security, I would very much like to hear about it. Please let me know, I want to look out for all of my choombattas gracing me with their digital presence here.",
+      "Anyway, it's late and I know a very cute dog that just turned 14 years old who needs my love and attention."
+    ],
+    tags: ["cookies", "googleanalytics", "updates", "privacy", "GDPR", "notalawyer", "notasecurityexpert"],
+    photos: [{}],
+  },
 ];
 
 // {
@@ -583,3 +613,4 @@ export const blogData = [
 // },
 
 // {"id": "0", "date": "2/20/2022 1:32 AM", "title": "New Template Haiku", "subtitle":"Reaching Across Disciplines", "text": ["Human & JS", ]},
+
