@@ -12,8 +12,9 @@ import ISSLocator from "./Components/APIPractice/InnerPages/ISSLocator/ISSLocato
 import IPAddress from "./Components/APIPractice/InnerPages/IPAddress/IPAddress";
 import NameGuess from "./Components/APIPractice/InnerPages/NameGuess/NameGuess";
 import Blog from "./Components/Blog/Blogs";
-import BlogEntry from "./Components/Blog/Blog"
-import CSP from "./Components/CSP/CSP"
+import BlogEntryStandalone from "./Components/Blog/BlogEntryStandalone";
+import BlogList from "./Components/Blog/BlogList";
+import CSP from "./Components/CSP/CSP";
 import Signup from "./Components/Signup/Signup";
 import { Route, Routes } from "react-router-dom";
 import Cookie from "./Components/Reusable/Cookie/Cookie";
@@ -33,17 +34,19 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route exact path="apipractice" element={<APIPractice />} />
-              <Route exact path="blog" element={<Blog />} />
-              <Route exact path="about" element={<About />} />
-              <Route exact path="nameguesser" element={<NameGuess />} />
-              <Route exact path="nasapower" element={<NASAPower />} />
-              <Route exact path="isslocator" element={<ISSLocator />} />
-              <Route exact path="dnd" element={<DungeonsAndDragons />} />
-              <Route exact path="ip" element={<IPAddress />} />
-              <Route exact path="signup" element={<Signup />} />
-              <Route exact path="egg" element={<Egg />} />
-              <Route exact path="csp" element={<CSP />} />
-              <Route path="blog/#/:blogId" element={<Blog />} />
+              <Route path="blog/*" element={<Blog />}>
+                <Route index element={<BlogList />} />
+                <Route path=":blogId" element={<BlogEntryStandalone />} />
+              </Route>
+              <Route path="about" element={<About />} />
+              <Route path="nameguesser" element={<NameGuess />} />
+              <Route path="nasapower" element={<NASAPower />} />
+              <Route path="isslocator" element={<ISSLocator />} />
+              <Route path="dnd" element={<DungeonsAndDragons />} />
+              <Route path="ip" element={<IPAddress />} />
+              <Route path="signup" element={<Signup />} />
+              <Route path="egg" element={<Egg />} />
+              <Route path="csp" element={<CSP />} />
             </Routes>
             <Footer />
 

@@ -9,7 +9,6 @@
       name="description"
       content="Curly Brackets - portfolio and dev blog of Roz Albrecht - who is currently searching for interesting work."
     />
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self'" >
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.svg" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -30,7 +29,7 @@
       }
       window.gtag = gtag;
       gtag("js", new Date());
-      gtag('config', "G-RWVLYS3GQ3", {'anonymize_ip': true});
+      gtag('config', "G-RWVLYS3GQ3", {'anonymize_ip': true, 'allow_ad_personalization_signals': true, cookie_flags: 'max-age=7200;secure;samesite=none'});
       gtag("consent", "default", { ad_storage: "denied", analytics_storage: "denied" });
     </script>
   </head>

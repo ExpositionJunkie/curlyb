@@ -1,5 +1,10 @@
 @import "../../Variables/Sass/SassVariables.scss";
 
+#link-wrap a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .blog-wrapper {
   color: $whiteColor;
   overflow: hidden;
