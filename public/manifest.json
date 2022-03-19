@@ -1,6 +1,6 @@
 {
   "short_name": "Curly Brackets",
-  "name": "Curly BRackets",
+  "name": "Curly Brackets",
   "icons": ["%PUBLIC_URL%/logo.svg"],
   "start_url": ".",
   "display": "standalone",
