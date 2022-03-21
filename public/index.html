@@ -18,9 +18,23 @@
 
     <title>Curly Brackets</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <script>
+      //defines dataLayer and the gtag function
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      window.gtag = gtag;
+      //defaults analytics and ad storage to default
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        analytics_storage: "denied",
+      });
+    </script>
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=G-RWVLYS3GQ3" 
+      src="https://www.googletagmanager.com/gtag/js?id=G-RWVLYS3GQ3"
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -29,8 +43,26 @@
       }
       window.gtag = gtag;
       gtag("js", new Date());
-      gtag('config', "G-RWVLYS3GQ3", {'anonymize_ip': true, 'allow_ad_personalization_signals': true, cookie_flags: 'max-age=7200;secure;samesite=none'});
-      gtag("consent", "default", { ad_storage: "denied", analytics_storage: "denied" });
+      gtag("config", "G-RWVLYS3GQ3", {
+        anonymize_ip: true,
+        cookie_flags: "max-age=7200;secure;samesite=strict",
+      });
+    </script>
+    <script>
+      function consentGranted() {
+        gtag("consent", "update", {
+          ad_storage: "granted",
+          analytics_storage: "granted",
+        });
+      }
+    </script>
+    <script>
+      function consentRevoked() {
+        gtag("consent", "update", {
+          ad_storage: "denied",
+          analytics_storage: "denied"
+        })
+      }
     </script>
   </head>
   <body>

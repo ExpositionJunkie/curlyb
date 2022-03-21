@@ -4,7 +4,7 @@ import CookieConsent, {
   Cookies,
 } from "react-cookie-consent";
 import { NavLink } from "react-router-dom";
-import { initGA, declineGA } from "./ga-utils";
+
 import "./Cookie.css";
 
 //https://dev.to/ramonak/react-enable-google-analytics-after-a-user-grants-consent-5bg3
@@ -17,15 +17,16 @@ export default function Cookie() {
   }, []);
 
   const handleAcceptCookie = () => {
-    console.log(window.gtag);
-    if (process.env.GA) {
-      initGA(window.gtag, process.env.GA);
-    }
+    //allows google analytics to update and allow consent.
+    window.consentGranted();
+    window.gtag("set", process.env.GA, { allow_google_signals: true });
+    window.gtag("set", process.env.GA, { send_page_view: true });
+    document.getElementById("cookie-consent").className = "disappear";
   };
 
   const handleDeclineCookie = () => {
     //remove google analytics cookies
-    declineGA(window.gtag, process.env.GA);
+    window.consentRevoked();
     Cookies.remove("_ga");
     Cookies.remove("_gat");
     Cookies.remove("_gid");
