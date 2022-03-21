@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import CookieConsent, {
   getCookieConsentValue,
-  Cookies, setDeclineCookie
+  Cookies,
 } from "react-cookie-consent";
 import { NavLink } from "react-router-dom";
 import { initGA, declineGA } from "./ga-utils";
@@ -24,21 +24,20 @@ export default function Cookie() {
   };
 
   const handleDeclineCookie = () => {
-    setDeclineCookie(true)
     //remove google analytics cookies
     declineGA(process.env.GA);
     Cookies.remove("_ga");
     Cookies.remove("_gat");
     Cookies.remove("_gid");
+    document.getElementById("cookie-consent").className = "disappear";
   };
 
   return (
-    <div className="cookie-wrap">
+    <div id="cookie-consent" className="cookie-wrap">
       <div className="inner-cookie-wrap">
         <CookieConsent
           disableStyles={true}
           disableButtonStyles={true}
-          visible="byCookieValue"
           enableDeclineButton
           expires={365}
           cookieSecurity={true}

@@ -6,6 +6,10 @@
   position: relative;
   background-color: none;
 }
+.disappear {
+  z-index: -1;
+  opacity: 0;
+}
 
 .cookie-wrap a {
   text-decoration: none;
