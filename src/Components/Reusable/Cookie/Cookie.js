@@ -52,7 +52,7 @@ export default function Cookie() {
           <p>
             This website uses third party cookies from Google Analytics to
             enhance user experience. For information regarding cookie usage,
-            please refer to CB's
+            please refer to CB's{" "}
             <NavLink to="/csp">Cookie Security Policy Documentation</NavLink>
           </p>
         </CookieConsent>
