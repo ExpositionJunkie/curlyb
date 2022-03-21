@@ -10,15 +10,14 @@ import { Link } from "react-router-dom";
 export default function BlogList() {
   return (
     <>
-      {blogData.map((blogEntry, index) => {
+      {blogData.map((blogEntry) => {
         return (
-          <div key={index}>
+          <div key={blogEntry.id}>
             <div className="entry shadow-box">
-              <Link id="link-wrap" to={`/blog/#/${index}`}>
+              <Link id="link-wrap" to={`./${blogEntry.id}`}>
                 <BlogEntry blog={blogEntry} />
               </Link>
             </div>
-
             <div className="pad2">
               <Line />
             </div>

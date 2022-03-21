@@ -1,236 +1,157 @@
 @import "../../../Variables/Sass/SassVariables.scss";
 
-.cookie-wrap {
+.i-cookie-wrap {
   display: flex;
   flex-direction: column;
-  position: relative;
   background-color: none;
+  justify-content: space-between;
 }
 
-.cookie-wrap a {
+.i-cookie-wrap a {
   text-decoration: none;
   color: $pinkColor;
 }
 
-.cookie-wrap a:hover {
+.i-cookie-wrap a:hover {
   text-decoration: none;
   color: $yellowColor;
 }
 
-.cookie-wrap a:visited {
+.i-cookie-wrap a:visited {
   text-decoration: none;
   color: $purpleColor;
 }
 
-
 @media screen and (max-width: 500px) {
-  .inner-cookie-wrap {
-    position: fixed;
-    top: 40vh;
-    background-color: none;
-    width: 100vw;
-  }
-
-  .cookie-dialog {
+  .cookie-inner-dialog {
     display: flex;
     flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
+
+    margin: 2rem;
     background-color: $blackColor;
     color: $whiteColor;
     border-radius: 20px;
     border-color: $blackColor;
     width: 80vw;
-    position: sticky;
-    @include rainbow-shadow(0px, 0px, 15px);
   }
 
-  .cookie-dialog :nth-child(2) {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .cookie-text {
-    font-size: 1.5rem;
+  .cookie-inner-text {
+    padding: 1rem;
+    font-size: 1rem;
     font-family: $bodyFont;
     text-align: center;
     align-content: center;
   }
 
-  .button-wrap{
+  .inner-button-wrap {
     margin-left: 3rem;
     margin-right: 3rem;
-    display: grid !important;
-    grid-template-rows: 50% 50%;
+    display: flex;
+    flex-direction: column;
   }
 
-  .accept-button,
-  .decline-button {
+  .inner-accept-button,
+  .inner-decline-button {
     font-family: $bodyFont;
     font-size: 1.5rem;
     border-radius: 20px;
     padding: 0.5rem;
-    color: $whiteColor; 
+    color: $whiteColor;
     justify-content: center;
-    margin-top: 0.5rem;
+
     margin-bottom: 2rem;
     padding: 1rem;
   }
 
-  .decline-button {
+  .inner-decline-button {
     background-color: $blackColor;
     align-items: stretch;
   }
 
- .accept-button {
+  .inner-accept-button {
     background-color: $blackColor;
     align-items: stretch;
   }
 
-  .accept-button ::after, .decline-button ::after {
+  .inner-accept-button ::after,
+  .inner-decline-button ::after {
     @include rainbow-shadow(0px, 0px, 15px);
   }
 }
 
 @media screen and (min-width: 500px) {
   .inner-cookie-wrap {
-    position: fixed;
-    top: 40vh;
     background-color: none;
-    width: 100vw;
+    width: 100%;
   }
 
-  .cookie-dialog {
+  .cookie-inner-dialog {
     display: flex;
     flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
     background-color: $blackColor;
     color: $whiteColor;
     border-radius: 20px;
     border-color: $blackColor;
     width: 80vw;
-    position: sticky;
-    @include rainbow-shadow(0px, 0px, 15px);
+   
   }
 
-  .cookie-dialog :nth-child(2) {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .cookie-text {
+  .cookie-inner-text {
     font-size: 1.5rem;
     font-family: $bodyFont;
     text-align: center;
     align-content: center;
   }
 
-  .button-wrap{
+  .inner-button-wrap {
     margin-left: 3rem;
     margin-right: 3rem;
     align-content: stretch;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
 
-  .accept-button,
-  .decline-button {
+  .inner-accept-button,
+  .inner-decline-button {
+    width: 100%;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
     font-family: $bodyFont;
     font-size: 1.5rem;
     border-radius: 20px;
     padding: 0.5rem;
-    color: $whiteColor; 
+    color: $whiteColor;
     justify-content: center;
     margin-top: 0.5rem;
     margin-bottom: 2rem;
-    
   }
 
-  .decline-button {
+  .inner-decline-button {
     background-color: $blackColor;
     padding: 2rem;
   }
 
- .accept-button {
+  .inner-accept-button {
     background-color: $blackColor;
     padding: 2rem;
     align-items: stretch;
   }
 
-  .accept-button ::after, .decline-button ::after {
+  .inner-accept-button ::after,
+  .inner-decline-button ::after {
     @include rainbow-shadow(0px, 0px, 15px);
   }
 }
 
 @media screen and (min-width: 800px) {
-    .inner-cookie-wrap {
-      position: fixed;
-      top: 50vh;
-      background-color: none;
-      width: 100vw;
-    }
-  
-    .cookie-dialog {
-      display: flex;
-      flex-direction: column;
-      margin-left: auto;
-      margin-right: auto;
-      background-color: $blackColor;
-      color: $whiteColor;
-      border-radius: 20px;
-      border-color: $blackColor;
-      width: 80vw;
-      position: sticky;
-      @include rainbow-shadow(0px, 0px, 15px);
-    }
-  
-  
-    .cookie-text {
-      font-size: 1.5rem;
-      font-family: $bodyFont;
-      text-align: center;
-    }
-  
-    .button-wrap{
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-    }
-  
-    .accept-button,
-    .decline-button {
-      font-family: $bodyFont;
-      font-size: 1.5rem;
-      border-radius: 20px;
-      color: $whiteColor; 
-      padding: 1rem;
-    }
-  
-    .decline-button {
-      background-color: $blackColor;
-      margin-right: 0;
-    }
-  
-   .accept-button {
-      background-color: $blackColor;
-      margin-left: 0;
-      align-items: stretch;
-    }
-  
-    .accept-button ::after, .decline-button ::after {
-      @include rainbow-shadow(0px, 0px, 15px);
-    }
-  
-}
-
-@media screen and (min-width: 1200px) {
   .inner-cookie-wrap {
-    position: fixed;
-    top: 70vh;
+    top: 50vh;
     background-color: none;
     width: 100vw;
   }
 
-  .cookie-dialog {
+  .cookie-inner-dialog {
     display: flex;
     flex-direction: column;
     margin-left: auto;
@@ -240,16 +161,59 @@
     border-radius: 20px;
     border-color: $blackColor;
     width: 80vw;
-    position: sticky;
-    @include rainbow-shadow(0px, 0px, 15px);
   }
 
-  .cookie-dialog :nth-child(2) {
+  .cookie-inner-text {
+    font-size: 1.5rem;
+    font-family: $bodyFont;
+    text-align: center;
+  }
+
+  .inner-button-wrap {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
   }
 
-  .cookie-text {
+  .inner-accept-button,
+  .inner-decline-button {
+    font-family: $bodyFont;
+    font-size: 1.5rem;
+    border-radius: 20px;
+    color: $whiteColor;
+    padding: 1rem;
+  }
+
+  .inner-decline-button {
+    background-color: $blackColor;
+    margin-right: 0;
+  }
+
+  .inner-accept-button {
+    background-color: $blackColor;
+    margin-left: 0;
+    align-items: stretch;
+  }
+
+  .inner-accept-button ::after,
+  .inner-decline-button ::after {
+    @include rainbow-shadow(0px, 0px, 15px);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .cookie-inner-dialog {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: $blackColor;
+    color: $whiteColor;
+    border-radius: 20px;
+    border-color: $blackColor;
+    width: 80vw;
+  }
+
+  .cookie-inner-text {
     font-size: 1.5rem;
     font-family: $bodyFont;
     text-align: center;
@@ -258,38 +222,36 @@
     padding-right: 3rem;
   }
 
-  .button-wrap{
+  .inner-button-wrap {
     margin-left: 3rem;
     margin-right: 3rem;
-    display: grid !important;
-    grid-template-columns: 50% 50%;
+    display: flex;
   }
 
-  .accept-button,
-  .decline-button {
+  .inner-accept-button,
+  .inner-decline-button {
     font-family: $bodyFont;
     font-size: 1.5rem;
     border-radius: 20px;
     padding: 0.5rem;
-    color: $whiteColor; 
+    color: $whiteColor;
     justify-content: center;
     margin-top: 0.5rem;
     margin-bottom: 2rem;
   }
 
-  .decline-button {
+  .inner-decline-button {
     background-color: $blackColor;
-    margin-right: 1rem;
   }
 
- .accept-button {
+  .inner-accept-button {
     background-color: $blackColor;
     display: flex;
     align-items: stretch;
-    margin-left: 1rem;
   }
 
-  .accept-button ::after, .decline-button ::after {
+  .inner-accept-button ::after,
+  .inner-decline-button ::after {
     @include rainbow-shadow(0px, 0px, 15px);
   }
 }

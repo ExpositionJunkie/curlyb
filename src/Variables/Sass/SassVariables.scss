@@ -103,6 +103,20 @@ $bodyFont2: "Comfortaa", cursive;
   }
 }
 
+@mixin fade($duration) {
+
+  animation: gradient $duration;
+
+  @include keyframes(fade) {
+    0% {
+      opacity: 100%;
+    }
+    100% {
+      opacity: 0%;
+    }
+  }
+}
+
 @mixin rainbow-shadow($px1, $px2, $px3) {
   animation: shadow-fade 16s linear infinite;
   animation-direction: alternate;

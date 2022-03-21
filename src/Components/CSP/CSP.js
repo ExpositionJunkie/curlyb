@@ -1,6 +1,7 @@
 import React from "react";
 import Title from "../Reusable/Title/Title";
 import Line from "../Reusable/Line/Line";
+import CookieInner from "../../Components/Reusable/Cookie/CookieInner";
 import "./CSP.css";
 
 export default function Csp(props) {
@@ -168,11 +169,18 @@ export default function Csp(props) {
                       Google Page Views Docs
                     </a>
                   </p>
+                  <div className="line-pad"><Line></Line></div>
+                 
+         
+          
                 </div>
+               
               </div>
+              <CookieInner />  
             </div>
           </div>
         </div>
+        
       </div>
     </>
   );

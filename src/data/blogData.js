@@ -396,7 +396,7 @@ export const blogData = [
     photos: [{}],
   },
   {
-    id: "25",
+    id: "26",
     date: "3/6/2022 5:33 PM",
     title: "Weekend R&D",
     subtitle: "Tabletop Games",
@@ -434,7 +434,7 @@ export const blogData = [
     photos: [{}],
   },
   {
-    id: "26",
+    id: "27",
     date: "3/7/2022 11:29 PM",
     title: "Staying Sassy",
     subtitle: "Rainbow Fade & Major Facelifting",
@@ -446,7 +446,7 @@ export const blogData = [
     photos: [{}],
   },
   {
-    id: "27",
+    id: "28",
     date: "3/9/2022 4:16 PM",
     title: "Nearly there",
     subtitle: "QA",
@@ -471,7 +471,7 @@ export const blogData = [
     photos: [{}],
   },
   {
-    id: "28",
+    id: "29",
     date: "3/9/2022 9:36 AM",
     title: "Hash Browns",
     subtitle: "",
@@ -484,7 +484,7 @@ export const blogData = [
     photos: [{}],
   },
   {
-    id: "29",
+    id: "30",
     date: "3/10/2022 3:16 PM",
     title: "Vellum",
     subtitle: "",
@@ -502,7 +502,7 @@ export const blogData = [
   },
 
   {
-    id: "30",
+    id: "31",
     date: "3/10/2022 4:31 PM",
     title: "Lint Trap",
     subtitle: "Quick notes",
@@ -515,7 +515,7 @@ export const blogData = [
     photos: [{}],
   },
   {
-    id: "31",
+    id: "32",
     date: "3/12/2022 12:13 PM",
     title: "Murphy",
     subtitle: "",
@@ -531,7 +531,7 @@ export const blogData = [
   },
 
   {
-    id: "32",
+    id: "33",
     date: "3/12/2022 1:25 PM",
     title: "Hash Browns",
     subtitle: "Part Deux",
@@ -543,7 +543,7 @@ export const blogData = [
     photos: [{}],
   },
   {
-    id: "33",
+    id: "34",
     date: "3/12/2022 5:32 PM",
     title: "36 Ways to Eat Crow",
     subtitle: "The DNS Has Ears",
@@ -555,7 +555,7 @@ export const blogData = [
     photos: [{}],
   },
   {
-    id: "34",
+    id: "35",
     date: "3/14/2022 5:11 PM",
     title: "This and That",
     subtitle: "",
@@ -571,7 +571,7 @@ export const blogData = [
     photos: [{}],
   },
   {
-    id: "35",
+    id: "36",
     date: "3/18/2022 8:35 PM",
     title: "All Work and No Play",
     subtitle: "Makes a Poor Conversationalist",
