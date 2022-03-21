@@ -25,7 +25,7 @@ export default function Cookie() {
 
   const handleDeclineCookie = () => {
     //remove google analytics cookies
-    declineGA(process.env.GA);
+    declineGA(window.gtag, process.env.GA);
     Cookies.remove("_ga");
     Cookies.remove("_gat");
     Cookies.remove("_gid");
