@@ -84,6 +84,10 @@ export default function Csp(props) {
                   Google Analytics 4 Documentation
                 </a>
               </p>
+              <p>A simpler explanation can be found <a className="linkNoUnderline"
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://policies.google.com/technologies/cookies">here</a>.</p>
               <div className="line-pad">
                 <Line></Line>
               </div>
