@@ -108,26 +108,23 @@ export function Home(props) {
           </h3>
           <p>Recently Completed</p>
           <ul>
-            <li>Cookie policy</li>
+            <li>Cookie policy/Google Analytics</li>
             <li>Blog Facelift</li>
             <li>More info on DND Spells</li>
+            <li>NPM cleanup - 0 vulnerabilities on audit for front and back end! :D</li>
+            <li>Blog Individual Rendering</li>
           </ul>
           <p>Near Future Attainables:</p>
           <ul>
-            <li>Blog Individual Rendering</li>
-          </ul>
-          <p>Written but having technical difficulties hosting:</p>
-          <ul>
-            <li>Backend</li>
+            <li>Working backend - in process of getting SSL certs/hosting</li>
+            <li>Redux - want to set up once server is running as this connects intimately with it.</li>
             <li>Login ability</li>
-            <li>Ability for users to post blogs and comment</li>
+            <li>Blogging ability for users too as well as comments</li>
           </ul>
-          <p>Pie in the Sky Goals</p>
+          <p>Further Future Attainables</p>
           <ul>
             <li>
-              Language Translation Support - Lofty Stretch Goal - infrastructure
-              in place but difficult to do automated and at scale until backend
-              installed properly
+              RSS feed (This is waiting due to it being a better idea to do this programmatically than writing by hand)
             </li>
           </ul>
         </div>

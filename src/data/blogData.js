@@ -579,7 +579,8 @@ export const blogData = [
       "Long time, no type. Well, a lot of typing actually. Just not published in a while.",
       "I've havd some poor github hygeine if I'm being honest. A few things I should have broken off and built from but feared that I would be exposing my users to too much risk.",
       "After all, how would Cyberpunk Me think about that? She'd be apalled if she knew I was running code I didn't know. So I've been taking my time to figure out how it all runs, and I'm not going to lie - Google Analytics has been kind of a lot for me.",
-      "So here's the difficult thing about programming in React if you have most of your javascript experience in it. The code camps taught us using a lot of extra packages. But I have a feeling this may not be the best idea if you are trying to really learn how to make things work well. After all, every one of those packages comes with risks. Risks that don't get talked about enough.","For instance, this package relied on by Vue comes with a surprise for anyone not running docker in Ukraine/Belarus:  https://www.bleepingcomputer.com/news/security/big-sabotage-famous-npm-package-deletes-files-to-protest-ukraine-war/. This is how I finally took out the carats from my packages on this project. How do security analysts track this stuff, anyway?",
+      "So here's the difficult thing about programming in React if you have most of your javascript experience in it. The code camps taught us using a lot of extra packages. But I have a feeling this may not be the best idea if you are trying to really learn how to make things work well. After all, every one of those packages comes with risks. Risks that don't get talked about enough.",
+      "For instance, this package relied on by Vue comes with a surprise for anyone not running docker in Ukraine/Belarus:  https://www.bleepingcomputer.com/news/security/big-sabotage-famous-npm-package-deletes-files-to-protest-ukraine-war/. This is how I finally took out the carats from my packages on this project. How do security analysts track this stuff, anyway?",
       "So I've been trying to keep my stuff really lean and make sure that I really know what I'm doing before I release anything involving cookies to the public. I want to test it out becuase I have a friend needing to figure out SEO for their business. I kind of put off learning about it becuase I became more interested in programming than analytics. When I was first starting off, I thought it was the data I craved. Really I just like telling computers what to do and having them listen and render nice experiences for my users.",
       "Either way, our paths have converged again. I opted to use react-cookie-consent as my cookie processor. I did try vanilla and I think I must have just missed something. Integrating with the way they handle their ui for the CSS was no picnic. Thank god for DevTools. If you have a flex item, devtools will pop up with a little grid icon that will allow you to preview styles. For some reason text-align: center just would not work on the accept button. It was driving me insane. Finally, with some help from DevTools I was able to see that I should have set it to align-items: stretch. I'm not even going to lie, I spent a few hours on this before I realized the issue. Sometimes walking away from the problem and coming back to it is better.",
       "I certainly had some time to walk away from it, because I realized that I didn't feel comfortable handing off my Google Analytics to some random 3rd party npm package to handle GA4. You see, the original react-ga package I was using was depricated and doesn't work with the new analytics.",
@@ -595,9 +596,33 @@ export const blogData = [
       "Ads Data is Redacted (again, explicitly setting this)",
       "And, in order to protect people who like me, find loopholes around that sort of thing, I have set anonymization of IP to true by default and configured it not to store analytics or ad data if no one selects anything.",
       "If there is anything else I can do to shore up security, I would very much like to hear about it. Please let me know, I want to look out for all of my choombattas gracing me with their digital presence here.",
-      "Anyway, it's late and I know a very cute dog that just turned 14 years old who needs my love and attention."
+      "Anyway, it's late and I know a very cute dog that just turned 14 years old who needs my love and attention.",
     ],
-    tags: ["cookies", "googleanalytics", "updates", "privacy", "GDPR", "notalawyer", "notasecurityexpert"],
+    tags: [
+      "cookies",
+      "googleanalytics",
+      "updates",
+      "privacy",
+      "GDPR",
+      "notalawyer",
+      "notasecurityexpert",
+    ],
+    photos: [{}],
+  },
+
+  {
+    id: "37",
+    date: "3/22/2022 12:34 PM",
+    title: "Safety First",
+    subtitle: "Shrinkwrap",
+    text: [
+      "So it has been a huge pet peeve of me to see these npm build warnings. I know that I'm not focusing entirely on build, but as a lone wolf right now, I don't have the luxury of passing this off to someone else. I've heard that it is somewhat impressive to have a build with 0 vulnerability warnings, and by god, I wanted that gold star.",
+      "So I've been going through some of the common ones to make sure that everything is cleaned up. The problem is that the build of React that comes from create-react-app comes with not only a lot of bloat, but a lot of holes in security - dependencies that have nested dependencies that cause problems. Nth-check has been the bane of my existence on this, as well as a package called svgo or svgr used for svg transformations. Thing is, some of the dependencies causing that audit warning have long since been fixed.",
+      "So I went through and set up npm shrinkwrap to take care of stuff like this on this part of the site, but also the backend that I am getting set up. Shrinkwrap is amazing. It's like your package lock file, only you are able to edit dependencies there and have NPM respect your decisions. Implementation is dead easy, too. You type npm shrinkwrap, then it changes your package-lock file to package-shrinkwrap. Operates exactly the same, except that you can edit it right there. Go into your node modules and delete the offending module, then search your package-shrinkwrap file to see where the offending package is and note the version numbers for the fixed packages. This does take some googling, because you will need to search for vulnerabilities and fixes for whatever package this is. You have to be a bit creative and drill down to see what is causing the problem. Anyway, once you have that done, you test it and the program still works, type git rm package-lock.json (otherwise you will get errors when you try to build - this happened on heroku yesterday) and then make your commits like normal.",
+      "I think Eric may have set this up before, when I was still drowning in React class and drowning in all of the other things we had to do back then, he was always so knowledgable about the build. I would mess it up a bunch, and he, wizard that he was, was able to somehow pull it all together and make it work in spite of me. I seem to remember this being something he did. Wish I could ask him, but he's been awol from our group chat for a while now, as is Tonny, so I'm a bit on my own. In bootcamp, those guys were a cut above and worked so dilligently. I was working my butt off then too, but they had a grasp on things I wouldn't figure out until much later. I think maybe life got in the way, because we fell out of contact, but I've been thinking about them every day as I continue putting in my time on this site.",
+      "It's a bit lonely out here these days, I'll be excited to have a new group of devs to speak with when I get a job that can point me in the right direction. Luckily, my node teacher has been kind enough to answer a few silly questions I've had regarding the process of getting this set up and has been an invaluable resource recently. Once I get my node portion up and running and this thing pointed to it, I need to make an RSS feed for him to read this stuff on his terms. I'm lucky, he has some crazy deep graybeard knowledge of the web and I can always use some sage advice.",
+    ],
+    tags: ["npm", "shrinkwrap", "0vulnerabilities"],
     photos: [{}],
   },
 ];
@@ -613,4 +638,3 @@ export const blogData = [
 // },
 
 // {"id": "0", "date": "2/20/2022 1:32 AM", "title": "New Template Haiku", "subtitle":"Reaching Across Disciplines", "text": ["Human & JS", ]},
-
