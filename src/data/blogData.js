@@ -625,6 +625,19 @@ export const blogData = [
     tags: ["npm", "shrinkwrap", "0vulnerabilities"],
     photos: [{}],
   },
+  {
+    id: "38",
+    date: "3/23/2022 3:51 PM",
+    title: "Junior React Developer Needed",
+    subtitle: "10+ Years Experience in Angular Experience (not react??)",
+    text: [
+      "Job applications",
+      "do not spark joy - want to code",
+      "dread recurring forms",
+    ],
+    tags: ["poetry", "code", "jobhuntblues", "haiku", "devhaiku"],
+    photos: [{}],
+  },
 ];
 
 // {
