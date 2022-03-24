@@ -2,6 +2,8 @@ import React from "react";
 import Title from "../Reusable/Title/Title";
 import { NavLink } from "react-router-dom";
 import "./APIPractice.css";
+
+//redux
 import { useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../../Redux/reduxIndex";

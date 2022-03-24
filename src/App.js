@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import "./App.css";
 import { Home } from "./Components/Home/Home";
 import About from "./Components/About/About";
@@ -18,13 +18,45 @@ import CSP from "./Components/CSP/CSP";
 import Signup from "./Components/Signup/Signup";
 import { Route, Routes } from "react-router-dom";
 import Cookie from "./Components/Reusable/Cookie/Cookie";
+
+//redux
+import { connect, useSelector, useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import * as actionCreators from "./Redux/reduxIndex";
+import {Blogs} from "./Redux/Reducers/blogsReducer";
+
+
 //https://www.geeksforgeeks.org/how-to-connect-node-js-with-react-js/#:~:text=export%20default%20App%3B,ReactJS%20is%20connected%20with%20NodeJS
 //pause in devtools before it can load the overlay to avoid the sign in bs.
 
 //https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-a-subdomain
 //for when I get back to this
 
-function App() {
+function AppComponent() {
+  const blogs = useSelector((state) => state.blogs)
+  const account = useSelector((state) => state.account)
+  const dispatch = useDispatch();
+  const fetchBlogs = () => (fetchBlogs());
+
+  const { getAllBlogs } = bindActionCreators(
+    actionCreators,
+    dispatch
+  )
+
+  // const {getAllBlogs} = bindActionCreators(
+  //   actionCreators,
+  //   dispatch
+  // );
+
+  useEffect(() => {
+    getAllData()
+    console.log(blogs)
+  }, [])
+
+  function getAllData() {
+    fetchBlogs()
+  }
+
   return (
     <div className="App">
       <Suspense fallback={<p>...Loading</p>}>
@@ -58,4 +90,4 @@ function App() {
   );
 }
 
-export default App;
+export const App = connect(null, null)(AppComponent);

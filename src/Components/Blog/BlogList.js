@@ -5,9 +5,13 @@ import BlogEntry from "./BlogEntry";
 import "./Blogs.css";
 import { Link } from "react-router-dom";
 
+
+
 //https://blog.logrocket.com/react-router-v6/
 
 export default function BlogList() {
+
+
   return (
     <>
       {blogData.map((blogEntry) => {
@@ -27,3 +31,4 @@ export default function BlogList() {
     </>
   );
 }
+

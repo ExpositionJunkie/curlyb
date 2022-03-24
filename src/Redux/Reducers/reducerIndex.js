@@ -3,9 +3,11 @@
 //Common sense approach
 import { combineReducers } from "redux";
 import accountReducer from "./accountReducer";
+import {Blogs} from "./blogsReducer";
 
 const reducers = combineReducers({
   account: accountReducer,
+  blogs: Blogs,
 });
 
 export default reducers;
