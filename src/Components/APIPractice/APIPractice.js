@@ -3,35 +3,14 @@ import Title from "../Reusable/Title/Title";
 import { NavLink } from "react-router-dom";
 import "./APIPractice.css";
 
-//redux
-import { useSelector, useDispatch } from "react-redux";
-import { bindActionCreators } from "redux";
-import { actionCreators } from "../../Redux/reduxIndex";
-
 export default function APIPractice() {
-  const account = useSelector((state) => state.account);
-  const dispatch = useDispatch();
 
-  const {depositMoney, withdrawMoney} = bindActionCreators(
-    actionCreators,
-    dispatch
-  );
-
-  console.log(depositMoney)
-  console.log(withdrawMoney)
-  
   return (
     <div className="apiWrapper">
       <Title titleStr="Api Practice List" />
       <div className="innerWrapper pad4">
         <div className="apiExplanation">
-          <div>
-            <h1>Testing Div</h1>
-            <h2>{account}</h2>
-            <button onClick={() => depositMoney(1000)}>Deposit</button>
-            <button onClick={() => withdrawMoney(1000)}>Withdraw</button>
-            
-          </div>
+
           <h3>List of various API practice pages aggregated here.</h3>
           <h4>
             If you want to see what got completed during what weeks, check out

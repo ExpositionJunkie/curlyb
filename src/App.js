@@ -22,46 +22,32 @@ import Cookie from "./Components/Reusable/Cookie/Cookie";
 //redux
 import { connect, useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
-import * as actionCreators from "./Redux/reduxIndex";
-import {Blogs} from "./Redux/Reducers/blogsReducer";
-
-
+import {ActionCreators} from "./Redux/reduxIndex";
 //https://www.geeksforgeeks.org/how-to-connect-node-js-with-react-js/#:~:text=export%20default%20App%3B,ReactJS%20is%20connected%20with%20NodeJS
 //pause in devtools before it can load the overlay to avoid the sign in bs.
 
-//https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-a-subdomain
-//for when I get back to this
+//https://egghead.io/lessons/react-replacing-mapdispatchtoprops-with-the-usedispatch-hook
+//redux to hooks
 
 function AppComponent() {
-  const blogs = useSelector((state) => state.blogs)
-  const account = useSelector((state) => state.account)
   const dispatch = useDispatch();
-  const fetchBlogs = () => (fetchBlogs());
+  //dispatches for blogs
+  dispatch({type: "fetchBlogs"})
+  const blogs = useSelector((state) => state.blogs)
 
-  const { getAllBlogs } = bindActionCreators(
-    actionCreators,
-    dispatch
-  )
-
-  // const {getAllBlogs} = bindActionCreators(
-  //   actionCreators,
-  //   dispatch
-  // );
+  const {fetchBlogs} = bindActionCreators(ActionCreators, dispatch)
 
   useEffect(() => {
-    getAllData()
-    console.log(blogs)
-  }, [])
-
-  function getAllData() {
     fetchBlogs()
-  }
+    console.log("useEffect log", blogs);
+  }, []);
 
   return (
     <div className="App">
       <Suspense fallback={<p>...Loading</p>}>
         <header className="App-header">
           <Navbar />
+          
           <div className="body">
             <Routes>
               <Route path="/" element={<Home />} />
@@ -81,7 +67,6 @@ function AppComponent() {
               <Route path="csp" element={<CSP />} />
             </Routes>
             <Footer />
-
             <Cookie />
           </div>
         </header>
@@ -90,4 +75,4 @@ function AppComponent() {
   );
 }
 
-export const App = connect(null, null)(AppComponent);
+export const App = connect(null,null)(AppComponent);

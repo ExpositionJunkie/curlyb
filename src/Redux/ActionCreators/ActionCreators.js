@@ -2,32 +2,11 @@ import {baseUrl} from "../../shared/baseUrl";
 import * as ActionTypes from './ActionTypes';
 
 
-//account example
-export const depositMoney = (amount) => {
-  return (dispatch) => {
-    dispatch({
-      type: "deposit",
-      payload: amount,
-    });
-  };
-};
-
-export const withdrawMoney = (amount) => {
-  return (dispatch) => {
-    dispatch({
-      type: "withdraw",
-      payload: amount,
-    });
-  };
-};
-
-
 //blogs
-
 export const fetchBlogs = () => dispatch => {
   dispatch(blogsLoading());
 
-  return fetch(baseUrl + 'blogs')
+  return fetch(baseUrl + 'blog')
       .then(response => {
               if (response.ok) {
                   return response;
@@ -99,12 +78,11 @@ export const addComment = comment => ({
   payload: comment
 });
 
-export const postComment = (campsiteId, rating, text) => dispatch => {
+export const postComment = (text, blogId) => dispatch => {
 
   const newComment = {
-      campsite: campsiteId,
-      rating: rating,
-      text: text
+      text: text,
+      blog: blogId,
   }
   console.log('Comment ', newComment);
 
@@ -221,11 +199,11 @@ export const logoutUser = () => dispatch => {
   dispatch(receiveLogout())
 }
 
-export const postFavorite = campsiteId => dispatch => {
+export const postFavorite = blogId => dispatch => {
 
   const bearer = 'Bearer ' + localStorage.getItem('token');
 
-  return fetch(baseUrl + 'favorites/' + campsiteId, {
+  return fetch(baseUrl + 'favorites/' + blogId, {
       method: 'POST',
       headers: {
           'Authorization': bearer
@@ -251,11 +229,11 @@ export const postFavorite = campsiteId => dispatch => {
   .catch(error => dispatch(favoritesFailed(error.message)));
 }
 
-export const deleteFavorite = campsiteId => dispatch => {
+export const deleteFavorite = blogId => dispatch => {
 
   const bearer = 'Bearer ' + localStorage.getItem('token');
 
-  return fetch(baseUrl + 'favorites/' + campsiteId, {
+  return fetch(baseUrl + 'favorites/' + blogId, {
       method: 'DELETE',
       headers: {
           'Authorization': bearer

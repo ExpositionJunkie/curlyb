@@ -3,7 +3,7 @@ import * as ActionTypes from '../ActionCreators/ActionTypes';
 export const Blogs = (state = {
         isLoading: true,
         errMess: null,
-        campsites: []
+        blogs: []
     }, action) => {
     switch (action.type) {
         case ActionTypes.ADD_BLOGS:
@@ -19,3 +19,4 @@ export const Blogs = (state = {
             return state;
     }
 };
+

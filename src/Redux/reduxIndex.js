@@ -1,1 +1,1 @@
-export * as actionCreators from "./ActionCreators/ActionCreators";
+export * as ActionCreators from "./ActionCreators/ActionCreators";
