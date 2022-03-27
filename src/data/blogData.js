@@ -638,6 +638,21 @@ export const blogData = [
     tags: ["poetry", "code", "jobhuntblues", "haiku", "devhaiku"],
     photos: [{}],
   },
+  {
+    id: "39",
+    date: "3/26/2022 5:11 PM",
+    title: "Redux!",
+    subtitle: "And Freelance!",
+    text: [
+      "Was a bit tricky trying to figure out new redux using hooks. Spent a lot of time banging my head on the same documentation before something finally clicked today. Wouldn't say it was any one article that did it so much as looking back and forth at the old nucamp implementation then looking at criminally simple tutorial versions. I think I have it set up properly now. I need to work on my sign in page next and get that set up. I know that one is going to be a bit tricky because I need to implement validation and protections for xss. Ugh. Trying to stay away from libraries, though, do it right and be a better dev.",
+      "But I have some even more exciting news than the Redux. What could be more exciting than redux, you ask?",
+      "Well, my nerdy friend, I've been a little afraid of advertising my services freelance for a while now because 1.) it requires negotiating, which I hate 2.) I have to ask for money, which I hate and 3.) I want to make sure I can deliver on what I say I can. However, I am happy to announce that yours truly is now a kept developer available for freelance work. I put together this massive presenation on all things shopify SEO after doing a TON of research on it for some new friends who own a leather shop. At the end of this, I mentioned my pricing and we're working out a deal for me to fix up their shop and maintain it. I am very excited, becuase this will include some exciting opportunities for me to automate and improve and measure results. Since I was able to study the problem ahead of time, I feel 150% confident I can deliver. This is a very nice feeling.",
+      "So I'm in business for myself for a change. Which means I can dress however I want and work whenever I want as long as I produce results and put out fires when they happen. This is a massive improvement from being tethered to an office or answering phones. I'll need to get some more contracts though to be able to survive off of freelance work though.",
+      "Been working my butt off though, so I'm off to Eorzea for some much needed R&R."
+    ],
+    tags: ["freelance", "redux"],
+    photos: [{}],
+  },
 ];
 
 // {
