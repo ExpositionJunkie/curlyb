@@ -24,12 +24,12 @@
   .cookie-inner-dialog {
     display: flex;
     flex-direction: column;
-    margin: 2rem;
     background-color: #000000;
     color: #ffffff;
     border-radius: 20px;
     border-color: #000000;
     width: 80vw;
+    justify-content: flex-start;
   }
 
   .cookie-inner-text {

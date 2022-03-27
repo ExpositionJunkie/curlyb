@@ -1,6 +1,7 @@
 import Subtitle from "../Reusable/Subtitle/Subtitle";
 import Line from "../Reusable/Line/Line";
 
+// this component is for rendering the inner entries when blogs are listed out
 export default function BlogEntry({ blog }) {
   if (blog) {
     return (

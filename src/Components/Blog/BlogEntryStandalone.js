@@ -2,11 +2,19 @@
 import Subtitle from "../Reusable/Subtitle/Subtitle";
 import Line from "../Reusable/Line/Line";
 import { useParams } from "react-router-dom";
-import { blogData } from "../../data/blogData.js";
 
-export default function BlogEntryStandalone() {
+//redux
+import { connect, useSelector } from "react-redux";
+
+//https://overreacted.io/a-complete-guide-to-useeffect/
+//https://www.robinwieruch.de/react-hooks-fetch-data/
+
+export function BlogEntryS() {
+  //dispatches for blogs
+  const blogs = useSelector((state) => state.blogs)
+
   let { blogId } = useParams();
-  let blog = blogData[blogId]
+  let blog = blogs.blogs.find(blog => blog._id === blogId)
 
   if (blog) {
     return (
@@ -34,3 +42,7 @@ export default function BlogEntryStandalone() {
     return <div>Oops, there's nothing here! Better call Roz</div>;
   }
 }
+
+const BlogEntryStandalone = connect(null,null)(BlogEntryS);
+
+export default BlogEntryStandalone

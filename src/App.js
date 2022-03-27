@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect } from "react";
+import React, { Suspense } from "react";
 import "./App.css";
 import { Home } from "./Components/Home/Home";
 import About from "./Components/About/About";
@@ -20,9 +20,8 @@ import { Route, Routes } from "react-router-dom";
 import Cookie from "./Components/Reusable/Cookie/Cookie";
 
 //redux
-import { connect, useSelector, useDispatch } from "react-redux";
-import { bindActionCreators } from "redux";
-import {ActionCreators} from "./Redux/reduxIndex";
+import { connect } from "react-redux";
+
 //https://www.geeksforgeeks.org/how-to-connect-node-js-with-react-js/#:~:text=export%20default%20App%3B,ReactJS%20is%20connected%20with%20NodeJS
 //pause in devtools before it can load the overlay to avoid the sign in bs.
 
@@ -30,17 +29,6 @@ import {ActionCreators} from "./Redux/reduxIndex";
 //redux to hooks
 
 function AppComponent() {
-  const dispatch = useDispatch();
-  //dispatches for blogs
-  dispatch({type: "fetchBlogs"})
-  const blogs = useSelector((state) => state.blogs)
-
-  const {fetchBlogs} = bindActionCreators(ActionCreators, dispatch)
-
-  useEffect(() => {
-    fetchBlogs()
-    console.log("useEffect log", blogs);
-  }, []);
 
   return (
     <div className="App">

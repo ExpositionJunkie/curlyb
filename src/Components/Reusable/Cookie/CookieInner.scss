@@ -26,13 +26,12 @@
   .cookie-inner-dialog {
     display: flex;
     flex-direction: column;
-
-    margin: 2rem;
     background-color: $blackColor;
     color: $whiteColor;
     border-radius: 20px;
     border-color: $blackColor;
     width: 80vw;
+    justify-content: flex-start;
   }
 
   .cookie-inner-text {
