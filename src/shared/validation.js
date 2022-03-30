@@ -1,6 +1,6 @@
 //validates email adapted from https://www.w3resource.com/javascript/form/email-validation.php
 export function checkEmail(inputText) {
-  const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
   if (inputText.value.match(emailRegex)) {
     return true;
   } else {

@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
+import { ActionCreators } from "../../Redux/reduxIndex";
+import Title from "../Reusable/Title/Title";
 import * as validate from "../../shared/validation.js";
 
-export default function Signup(props) {
+export default function Signup() {
   const [input, setInput] = useState({ email: "", username: "", password: "" });
   const [validatedData, setValidatedData] = useState({
     email: false,
     password: false,
     username: false,
   });
-  const [labelText, setLabelText] = useState({
-    email: "Email",
-    password: "Password",
-    username: "Username",
+  const [errorText, setErrorText] = useState({
+    status: "",
+    message: ""
   });
 
   const dispatch = useDispatch();
@@ -30,53 +31,29 @@ export default function Signup(props) {
     evt.preventDefault();
   };
 
-  //this will check that the validation information is correct as typed
-  //and dynamically update label names
-  const scrubData = (inputData) => {
-    if (validate.checkEmail(inputData.email)) {
-      setValidatedData((prevState = { ...prevState, email: true }));
-    } else {
-      setLabelText(
-        (prevState = { ...prevState, email: "Email not validated." })
-      );
-    }
-    if (validate.checkPassword(inputData.password)) {
-      setValidatedData((prevState = { ...prevState, password: true }));
-    } else {
-      setLabelText(
-        (prevState = { ...prevState, email: "Email not validated." })
-      );
-    }
-    if (validate.isBetween(inputData.username, 8, 30)) {
-      setValidatedData((prevState = { ...prevState, username: true }));
-    } else {
-      setLabelText(
-        (prevState = { ...prevState, email: "Email not validated." })
-      );
-    }
-  };
+
 
   const handleSignup = (evt) => {
-    scrubData(input);
-    if (
-      validatedData.email &&
-      validatedData.password &&
-      validatedData.username
-    ) {
-      signupUser(input);
-    } else {
-      //just don't want to reset the labels since these are set dynamically
-      evt.preventDefault();
-    }
+      signupUser(input).then(
+        (response) => {
+          if (response.Error) {
+            evt.preventDefault()
+            setErrorText({status: Error.status, message: Error.message})
+          }
+        }
+      )
+
   };
 
   return (
     <>
+    <Title titleStr="Signup"></Title>
       <div className="signupWrapper">
-        <h1>Sign Up</h1>
+        <h2>{errorText.status}</h2>
+        <h2>{errorText.message}</h2>
         <div className="signupForm">
-          <form>
-            <label htmlFor="email">{labelText.email}</label>
+          <form onSubmit={(evt) => handleSignup(evt)}>
+            <label htmlFor="email">Email</label>
             <input
               type="text"
               name="email"
@@ -84,7 +61,7 @@ export default function Signup(props) {
               value={input.email}
               onChange={(e) => handleChange(e)}
             />
-            <label htmlFor="username">{labelText.username}</label>
+            <label htmlFor="username">Username</label>
             <input
               type="text"
               name="username"
@@ -92,7 +69,7 @@ export default function Signup(props) {
               value={input.username}
               onChange={(e) => handleChange(e)}
             />
-            <label htmlFor="password">{labelText.password}</label>
+            <label htmlFor="password">Password</label>
             <input
               type="text"
               name="password"
