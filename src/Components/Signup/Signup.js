@@ -7,14 +7,9 @@ import * as validate from "../../shared/validation.js";
 
 export default function Signup() {
   const [input, setInput] = useState({ email: "", username: "", password: "" });
-  const [validatedData, setValidatedData] = useState({
-    email: false,
-    password: false,
-    username: false,
-  });
   const [errorText, setErrorText] = useState({
     status: "",
-    message: ""
+    message: "",
   });
 
   const dispatch = useDispatch();
@@ -31,23 +26,15 @@ export default function Signup() {
     evt.preventDefault();
   };
 
-
-
   const handleSignup = (evt) => {
-      signupUser(input).then(
-        (response) => {
-          if (response.Error) {
-            evt.preventDefault()
-            setErrorText({status: Error.status, message: Error.message})
-          }
-        }
-      )
-
+    evt.preventDefault()
+    signupUser(input)
+    
   };
 
   return (
     <>
-    <Title titleStr="Signup"></Title>
+      <Title titleStr="Signup"></Title>
       <div className="signupWrapper">
         <h2>{errorText.status}</h2>
         <h2>{errorText.message}</h2>

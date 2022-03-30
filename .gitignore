@@ -24,3 +24,14 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#keys (old mkcert)
+curlybrackets.me+3-key.pem
+curlybrackets.me+3.pem
+
+#keys (localhost only with powershell command)
+##https://dev.to/wozzo/using-https-with-react-create-app-windows-fn8
+localhost.pfx
+localhost.pem
+localhost-key.pem
+certificates.ps1

@@ -145,8 +145,6 @@ export const loginError = (message) => {
 
 export const signupUser = (userInfo) => (dispatch) => {
     // We dispatch requestLogin to kickoff the call to the API
-
-  
     return fetch(baseUrl + "users/signup", {
       method: "POST",
       headers: {

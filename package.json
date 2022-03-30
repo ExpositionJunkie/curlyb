@@ -21,7 +21,8 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -b bob -d build",
-    "start": "set PORT=3001 && react-scripts start",
+    "start": "react-scripts start",
+    "prestart": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./certificates.ps1",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -42,5 +43,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2"
   }
 }
