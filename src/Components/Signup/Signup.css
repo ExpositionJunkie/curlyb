@@ -1,4 +1,56 @@
-.signupWrapper {
+.signup-wrapper {
   color: #ffffff;
   background-color: #000000;
+  min-height: 100vh;
+  display: flex;
+}
+
+.signup-form-inner-wrap {
+  display: flex;
+  flex-direction: column;
+  font-family: "Raleway", sans-serif;
+  padding-top: 3rem;
+  margin: 4rem;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  font-family: "Raleway", sans-serif;
+  padding-top: 3rem;
+  text-align: center;
+  align-items: center;
+}
+
+.signup-form label {
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  margin: 1rem;
+  font-size: 2rem;
+  align-self: center;
+  border-radius: 20px;
+}
+
+.signup-form input {
+  width: 100%;
+  font-size: 2rem;
+  align-self: center;
+  border-radius: 20px;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.signup-submit {
+  margin-top: 3rem;
+  border-radius: 15px;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5rem;
+  background-color: #e94584;
+  color: #ffffff;
+}
+
+.inner-form {
+  display: flex;
+  flex-direction: column;
 }

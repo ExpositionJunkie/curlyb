@@ -1,6 +1,54 @@
 @import "../../Variables/Sass/SassVariables.scss";
 
-.signupWrapper {
-    color: $whiteColor;
-    background-color: $blackColor;
+.signup-wrapper {
+  color: $whiteColor;
+  background-color: $blackColor;
+  min-height: 100vh;
+  display: flex;
+}
+
+.signup-form-inner-wrap {
+  display: flex;
+  flex-direction: column;
+  font-family: $bodyFont;
+  padding-top: 3rem;
+  margin: 4rem;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  font-family: $bodyFont;
+  padding-top: 3rem;
+  text-align: center;
+  align-items: center;
+}
+
+.signup-form label {
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  margin: 1rem;
+  @include textInputStyle(2rem);
+}
+
+.signup-form input {
+  width: 100%;
+  @include textInputStyle(2rem);
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.signup-submit {
+  margin-top: 3rem;
+  border-radius: 15px;
+  font-family: $bodyFont;
+  font-size: 1.5rem;
+  background-color: $pinkColor;
+  color: $whiteColor;
+}
+
+.inner-form {
+  display: flex;
+  flex-direction: column;
 }
