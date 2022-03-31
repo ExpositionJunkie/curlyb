@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { ActionCreators } from "../../Redux/reduxIndex";
 import Title from "../Reusable/Title/Title";
-import * as validate from "../../shared/validation.js";
 
 export default function Signup() {
   const [input, setInput] = useState({ email: "", username: "", password: "" });
@@ -29,7 +28,6 @@ export default function Signup() {
   const handleSignup = (evt) => {
     evt.preventDefault()
     signupUser(input)
-    
   };
 
   return (

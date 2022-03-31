@@ -35,3 +35,6 @@ localhost.pfx
 localhost.pem
 localhost-key.pem
 certificates.ps1
+www_curlybrackets_me.ca-bundle
+www_curlybrackets_me.crt
+www_curlybrackets_me.p7b

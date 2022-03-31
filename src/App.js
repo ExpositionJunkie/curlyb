@@ -28,9 +28,6 @@ import { connect } from "react-redux";
 //https://egghead.io/lessons/react-replacing-mapdispatchtoprops-with-the-usedispatch-hook
 //redux to hooks
 
-//SSL cert stuff
-//https://dev.to/wozzo/using-https-with-react-create-app-windows-fn8
-
 function AppComponent() {
 
   return (
@@ -38,7 +35,6 @@ function AppComponent() {
       <Suspense fallback={<p>...Loading</p>}>
         <header className="App-header">
           <Navbar />
-          
           <div className="body">
             <Routes>
               <Route path="/" element={<Home />} />

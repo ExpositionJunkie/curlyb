@@ -1,4 +1,4 @@
-import { baseUrl } from "../../shared/baseUrl";
+import { baseUrl } from "../../Variables/shared/baseUrl";
 import * as ActionTypes from "./ActionTypes";
 
 //blogs
