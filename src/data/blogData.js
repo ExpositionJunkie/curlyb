@@ -673,6 +673,20 @@ export const blogData = [
     tags: ["CORS", "SSLcerts", "redux", "nodejs", "webpack"],
     photos: [{}],
   },
+  {
+    id: "41",
+    date: "3/31/2022 11:13 PM",
+    title: "Puzzle Pieces",
+    subtitle: "",
+    text: [
+      "Spent most of my day looking over contract stipulations and doing other business minusha like job applications and message responses. Looks like no business license is required to operate out of Oregon, and in Washington, if I make under 12k, no business license is required. One less barrier to entry, I guess. So for now, things are kind of easy on that side of things. Still, if they get better, I'll need to look into finally forming an LLC. Turns out this is pretty cheap in Washington, $200 for an LLC and this includes the $18 business license. Good to see that associates degree wasn't entirely wasted.",
+      "Even so, contract reading is far from my favorite part of the job. Looking forward to being able to code more now that I've hashed out the details of the job with my clients. Should be exciting to get paid for what I do officially and get some valuable experience. That, my chooms, has been the hardest hurdle to cross so far - getting paid for what I know. I guess it's not like I don't know why. I've seen some terrible code in the wild and some really lazy hacks. Heck, I used to do them when I was a younger dev. Heck, such a huge part of development is realizing that the code you wrote yesterday was garbage and knowing how to do it better the next.",
+      "Speaking of, here is a lecture I've been watching that soundsd a lot like the rants I make to CJ about npm packages and variable names: https://youtu.be/FyCYva9DhsI. Kind of glad to get some backup on this.",
+      "So what time I had left I've spent trying to work out the redux, but I think I've changed the model of how the server responds a few too many times and need a break. Did some minor editing in pug to make things look a little prettier. Hopefully I get a chance to get this thing updated rather soon, I'm getting antsy about putting out something new here and being able to get the rest of the functionality built out. Unfortunately, the ability to sign in and sign up is kind of crucial and I'm somehow not fitting this round block through the round hole and instead created a star shaped peg somewhere along the way. So it is time for me to be done for today. Legalese melts the brain, my friends.",
+    ],
+    tags: ["freelance", "redux", "pug"],
+    photos: [{}],
+  },
 ];
 
 // {

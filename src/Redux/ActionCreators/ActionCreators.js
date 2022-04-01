@@ -1,7 +1,7 @@
 import { baseUrl } from "../../Variables/shared/baseUrl";
 import * as ActionTypes from "./ActionTypes";
 
-//blogs
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Blogs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export const fetchBlogs = () => (dispatch) => {
   dispatch(blogsLoading());
   return fetch(baseUrl + "blog")
@@ -40,8 +40,9 @@ export const addBlogs = (blogs) => ({
   type: ActionTypes.ADD_BLOGS,
   payload: blogs,
 });
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Blogs End ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-//comments
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Comments ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export const fetchComments = () => (dispatch) => {
   return fetch(baseUrl + "/comments")
     .then(
@@ -120,6 +121,81 @@ export const postComment = (text, blogId) => (dispatch) => {
       alert("Your comment could not be posted\nError: " + error.message);
     });
 };
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Comments End ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Signup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+export const requestSingup = (userInfo) => {
+  return {
+    type: ActionTypes.SIGNUP_REQUEST,
+    userInfo,
+  };
+};
+
+export const recieveSignup = (response) => {
+  return {
+    type: ActionTypes.SIGNUP_SUCCESS,
+    payload: response,
+  };
+};
+
+export const signupError = (response) => {
+  return {
+    type: ActionTypes.SIGNUP_FAILURE,
+    payload: response,
+  };
+};
+
+export const signupUser = (userInfo) => (dispatch) => {
+  return fetch(baseUrl + "users/signup", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userInfo),
+  })
+    .then(
+      (response) => {
+        if (response.statusCode === 201) {
+          return response;
+        } else if (response.statusCode === 202) {
+          console.info(response);
+          var error = new Error(
+            `Error ${response.status}: ${response.message}`
+          );
+          throw error;
+        } else {
+          error = new Error(
+            `Error ${response.status}: ${response.message}`
+          );
+
+          throw error;
+        }
+      },
+      (error) => {
+        throw error;
+      }
+    )
+    .then((response) => response.json())
+    .then((response) => {
+      if (response.success) {
+        // If login was successful, set the token in local storage
+        console.info(response);
+        dispatch(loginUser(userInfo.username, userInfo.password));
+        return response;
+      } else {
+        var error = new Error({
+          status: response.status,
+          message: response.message,
+        });
+        throw error;
+      }
+    })
+    .catch((error) => dispatch(signupError(error)));
+};
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Signup End ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Login ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 export const requestLogin = (creds) => {
   return {
@@ -141,47 +217,6 @@ export const loginError = (message) => {
     message,
   };
 };
-
-
-export const signupUser = (userInfo) => (dispatch) => {
-    // We dispatch requestLogin to kickoff the call to the API
-    return fetch(baseUrl + "users/signup", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(userInfo),
-    })
-      .then(
-        (response) => {
-          if (response.ok) {
-            return response;
-          } else {
-            const error = new Error(
-              `Error ${response.status}: ${response.statusText}`
-            );
-            error.response = response;
-            throw error;
-          }
-        },
-        (error) => {
-          throw error;
-        }
-      )
-      .then((response) => response.json())
-      .then((response) => {
-        if (response.success) {
-          // If login was successful, set the token in local storage
-        dispatch(loginUser(userInfo.username, userInfo.password))
-        } else {
-          const error = new Error("Error " + response.status);
-          error.response = response;
-          throw error;
-        }
-      })
-      .catch((error) => dispatch(loginError(error.message)));
-  };
-  
 
 export const loginUser = (creds) => (dispatch) => {
   // We dispatch requestLogin to kickoff the call to the API
@@ -217,7 +252,8 @@ export const loginUser = (creds) => (dispatch) => {
         localStorage.setItem("token", response.token);
         localStorage.setItem("creds", JSON.stringify(creds));
         // Dispatch the success action
-        dispatch(fetchFavorites());
+        //TODO - uncomment once favorites logic is in place proper
+        //dispatch(fetchFavorites());
         dispatch(receiveLogin(response));
       } else {
         const error = new Error("Error " + response.status);
@@ -249,6 +285,9 @@ export const logoutUser = () => (dispatch) => {
   dispatch(receiveLogout());
 };
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Login End ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Favorites ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 export const postFavorite = (blogId) => (dispatch) => {
   const bearer = "Bearer " + localStorage.getItem("token");
 
@@ -361,3 +400,5 @@ export const addFavorites = (favorites) => ({
   type: ActionTypes.ADD_FAVORITES,
   payload: favorites,
 });
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Favorites End ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

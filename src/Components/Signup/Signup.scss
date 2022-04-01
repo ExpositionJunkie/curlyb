@@ -4,12 +4,10 @@
   color: $whiteColor;
   background-color: $blackColor;
   min-height: 100vh;
-  display: flex;
 }
 
 .signup-form-inner-wrap {
   display: flex;
-  flex-direction: column;
   font-family: $bodyFont;
   padding-top: 3rem;
   margin: 4rem;
@@ -51,4 +49,17 @@
 .inner-form {
   display: flex;
   flex-direction: column;
+}
+
+.signup-error h1 {
+  color: $pinkColor;
+  font-family: $bodyFont;
+  font-size: 3rem;
+
+}
+.signup-error h2 {
+  color: $whiteColor;
+  font-family: $bodyFont;
+  font-size: 1rem;
+  
 }
