@@ -8,6 +8,8 @@ export const Signup = (
     singupSucces: false,
     status: "",
     message: "",
+    validationErr: false,
+    errMess: null,
   },
   action
 ) => {
@@ -32,8 +34,16 @@ export const Signup = (
         ...state,
         isLoading: false,
         signupSuccess: false,
-        status: action.payload,
-        message: action.payload,
+        errMess: action.message,
+      };
+      case ActionTypes.SIGNUP_VALIDATION_NEEDED:
+      return {
+        ...state,
+        isLoading: false,
+        signupSuccess: false,
+        validationErr: true,
+        status: action.status,
+        message: action.message,
       };
     default:
       return state;

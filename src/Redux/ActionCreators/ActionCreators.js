@@ -134,16 +134,26 @@ export const requestSingup = (userInfo) => {
 export const recieveSignup = (response) => {
   return {
     type: ActionTypes.SIGNUP_SUCCESS,
-    payload: response,
+    status: response.status,
+    message: response.message,
   };
 };
 
-export const signupError = (response) => {
+export const recieveValidationErr = (response) => {
   return {
-    type: ActionTypes.SIGNUP_FAILURE,
-    payload: response,
+    type: ActionTypes.SIGNUP_VALIDATION_NEEDED,
+    status: response.status,
+    message: response.message,
   };
 };
+
+export const signupError = (message) => {
+  return {
+    type: ActionTypes.SIGNUP_FAILURE,
+    message,
+  };
+};
+
 
 export const signupUser = (userInfo) => (dispatch) => {
   return fetch(baseUrl + "users/signup", {
@@ -155,17 +165,11 @@ export const signupUser = (userInfo) => (dispatch) => {
   })
     .then(
       (response) => {
-        if (response.statusCode === 201) {
+        if (response.ok) {
           return response;
-        } else if (response.statusCode === 202) {
-          console.info(response);
-          var error = new Error(
-            `Error ${response.status}: ${response.message}`
-          );
-          throw error;
         } else {
-          error = new Error(
-            `Error ${response.status}: ${response.message}`
+          const error = new Error(
+            `Error ${response.status}: ${response.statusText}`
           );
 
           throw error;
@@ -179,18 +183,12 @@ export const signupUser = (userInfo) => (dispatch) => {
     .then((response) => {
       if (response.success) {
         // If login was successful, set the token in local storage
-        console.info(response);
-        dispatch(loginUser(userInfo.username, userInfo.password));
-        return response;
+        dispatch(recieveSignup(response));
       } else {
-        var error = new Error({
-          status: response.status,
-          message: response.message,
-        });
-        throw error;
+        dispatch(recieveValidationErr(response));
       }
     })
-    .catch((error) => dispatch(signupError(error)));
+    .catch((error) => dispatch(signupError(error.message)));
 };
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Signup End ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
