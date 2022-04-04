@@ -4,7 +4,7 @@
   min-height: 100vh;
 }
 
-.signup-form-inner-wrap {
+.signup-form-inner-wrapper {
   display: flex;
   font-family: "Raleway", sans-serif;
   padding-top: 3rem;

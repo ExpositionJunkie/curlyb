@@ -19,6 +19,9 @@ export const Signup = (
         ...state,
         isLoading: true,
         signupSuccess: false,
+        validationErr: false,
+        status: "",
+        message: "",
         user: action.userInfo,
       };
     case ActionTypes.SIGNUP_SUCCESS:
@@ -28,12 +31,16 @@ export const Signup = (
         signupSuccess: true,
         status: action.payload,
         message: action.payload,
+        validationErr: false,
       };
     case ActionTypes.SIGNUP_FAILURE:
       return {
         ...state,
         isLoading: false,
         signupSuccess: false,
+        validationErr: false,
+        status: "",
+        messgae: "",
         errMess: action.message,
       };
       case ActionTypes.SIGNUP_VALIDATION_NEEDED:

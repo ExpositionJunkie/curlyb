@@ -154,7 +154,6 @@ export const signupError = (message) => {
   };
 };
 
-
 export const signupUser = (userInfo) => (dispatch) => {
   return fetch(baseUrl + "users/signup", {
     method: "POST",

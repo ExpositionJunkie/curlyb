@@ -687,6 +687,20 @@ export const blogData = [
     tags: ["freelance", "redux", "pug"],
     photos: [{}],
   },
+  {
+    id: "42",
+    date: "4/3/2022 5:10 PM",
+    title: "Signup Blues",
+    subtitle: "",
+    text: [
+      "Been working on getting the signup running for a while now, keep running into stupid problems. It should be so easy, right? Except I want to avoid using MUI components etc in favor of a DIY approach. Validation has been frustrating, some of the regex gets too complex and modern password managers don't always account for special characters. Been a right headache. And I think I've been at it too long, because I somehow broke things that were working earlier trying to streamline. Frustrating.",
+      "I think I know what is happening right now that is preventing it. I think that when you put in the wrong qualifiers for password and email it loses all of the previous info when you go to change things over. So I keep getting this error for missing username even though it is in the box. Thing is, I think React has forgotten the username because the dom refreshed on that area or reset the state of the username. This is made all the more frustrating since it is down all of these layers of redux that I've added in. I think I need to look at the lifecycle of this component, but I know I don't have the brainpower to troubleshoot any more today. So frustrating because on the package, this all seems like such an easy thing to do. There aren't even that many fields, how can three little boxes be so needlessly complex. Ugh. I'm sure the answer is dead simple but I don't have the bandwith to do any more today. Did learn some neat things about pattern validation and autocomplete though. Nice of google to have the autocomplete stuff. Just wish I could feed them my regex. Also, the pattern matching seems to glitch in react due to its life cycle as well.",
+      "Also, want to add in a way for people to see if their username is taken before the error goes through. Thinking I need to rework my responses as well to the validation. I bet I went about this all wrong and can just do it from Mongo instead, within the schema itself. This is so silly but I'm frustrated because it took so much work to get it functioning in the first place through redux.",
+      "Looks like tomorrow it is back to react basics for me to figure this out. Hoping that I get that contract back though, would be a welcome distraction. So I guess for now I'm stuck writing in JSON for another day at least.",
+    ],
+    tags: ["html", "patternmatching", "mongodb", "node", "express"],
+    photos: [{}],
+  },
 ];
 
 // {
