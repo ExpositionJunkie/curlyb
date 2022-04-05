@@ -87,6 +87,7 @@ export function SignupForm() {
           type="text"
           name="email"
           required
+          maxLength="320"
           id="email"
           autocomplete="email"
           placeholder="email"
@@ -99,6 +100,7 @@ export function SignupForm() {
           name="username"
           required
           id="username"
+          maxLength="320"
           autocomplete="username"
           placeholder="username"
           value={input.username}
