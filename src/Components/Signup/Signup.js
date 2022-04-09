@@ -13,7 +13,7 @@ function SignupWrap() {
   dispatch({ type: "signupUser" });
 
   useEffect(() => {
-    if (signup.validationErr) {
+    if (!signup.signupSuccess) {
       validate();
     }
     if (signup.signupSuccess) {
@@ -22,11 +22,11 @@ function SignupWrap() {
   }, [signup]);
 
   const successMessage = () => {
-    setValidationText("Registration successful");
+    setValidationText(signup.message);
   };
 
   const validate = () => {
-    setValidationText(signup.message);
+    setValidationText(signup.errMess);
   };
 
   if (!signup.signupSuccess) {

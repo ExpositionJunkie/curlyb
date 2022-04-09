@@ -8,7 +8,6 @@ export const Signup = (
     singupSucces: false,
     status: "",
     message: "",
-    validationErr: false,
     errMess: null,
   },
   action
@@ -19,7 +18,6 @@ export const Signup = (
         ...state,
         isLoading: true,
         signupSuccess: false,
-        validationErr: false,
         status: "",
         message: "",
         user: action.userInfo,
@@ -31,26 +29,16 @@ export const Signup = (
         signupSuccess: true,
         status: action.payload,
         message: action.payload,
-        validationErr: false,
+
       };
     case ActionTypes.SIGNUP_FAILURE:
       return {
         ...state,
         isLoading: false,
         signupSuccess: false,
-        validationErr: false,
         status: "",
         messgae: "",
         errMess: action.message,
-      };
-      case ActionTypes.SIGNUP_VALIDATION_NEEDED:
-      return {
-        ...state,
-        isLoading: false,
-        signupSuccess: false,
-        validationErr: true,
-        status: action.status,
-        message: action.message,
       };
     default:
       return state;

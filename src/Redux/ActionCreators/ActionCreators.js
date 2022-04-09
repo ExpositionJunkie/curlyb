@@ -139,14 +139,6 @@ export const recieveSignup = (response) => {
   };
 };
 
-export const recieveValidationErr = (response) => {
-  return {
-    type: ActionTypes.SIGNUP_VALIDATION_NEEDED,
-    status: response.status,
-    message: response.message,
-  };
-};
-
 export const signupError = (message) => {
   return {
     type: ActionTypes.SIGNUP_FAILURE,
@@ -160,18 +152,18 @@ export const signupUser = (userInfo) => (dispatch) => {
     headers: {
       "Content-Type": "application/json",
     },
-    mode: "cors",
+
     body: JSON.stringify(userInfo),
   })
     .then(
       (response) => {
         if (response.ok) {
+          console.log("response fine.")
           return response;
         } else {
           const error = new Error(
             `Error ${response.status}: ${response.statusText}`
           );
-
           throw error;
         }
       },
@@ -184,8 +176,6 @@ export const signupUser = (userInfo) => (dispatch) => {
       if (response.success) {
         // If login was successful, set the token in local storage
         dispatch(recieveSignup(response));
-      } else {
-        dispatch(recieveValidationErr(response));
       }
     })
     .catch((error) => dispatch(signupError(error.message)));
