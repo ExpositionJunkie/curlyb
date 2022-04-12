@@ -2,6 +2,7 @@ import React from "react";
 import Title from "../Reusable/Title/Title";
 import { connect, useSelector } from "react-redux";
 import Line from "../Reusable/Line/Line";
+import Post from "../Reusable/Post/Post";
 import { NavLink } from "react-router-dom";
 
 import "./Home.css";
@@ -26,11 +27,11 @@ function VariableBanner() {
   const auth = useSelector((state) => state.auth);
 
   if (auth.isAuthenticated) {
-    return <div>Hello User!</div>;
+    return <Post />;
   } else {
     return (
       <div>
-        <h3>Want to start sharing your own thoughts?</h3>
+        <h3 className="tagline">Want to start sharing your own thoughts?</h3>
         <h2>
           <div className="linkNoUnderline">
             <NavLink to="/signup">Sign Up</NavLink> or{" "}

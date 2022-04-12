@@ -1,0 +1,39 @@
+.editor-button-wrap > * {
+  background-color: black;
+  color: #ffffff;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.is-active {
+  background-color: #e94584;
+}
+
+.submit-button {
+  margin-top: 3rem;
+  border-radius: 15px;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5rem;
+  background-color: #e94584;
+  color: #ffffff;
+  padding: 1rem;
+  width: 80%;
+}
+
+.post-wrapper {
+  padding: 2rem;
+}
+
+.editor {
+  padding-right: 4rem;
+  padding-left: 4rem;
+}
+
+.title {
+  font-size: 2rem;
+  align-self: center;
+  border-radius: 20px;
+  font-family: "Staatliches", cursive;
+  width: 100%;
+  padding-left: 3rem;
+}

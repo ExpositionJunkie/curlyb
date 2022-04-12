@@ -65,7 +65,7 @@ export default function About(props) {
             <img
               id="netrunner"
               src={workshopRoz}
-              alt="Cosplay Roz with fake tattoos wearing a glowing yellow visor with an atom stenciled in the center. (The react logo is an atom. It seemed fitting.)"
+              alt="Roz in front of her workbench that features a painted galaxy design."
             />
           </span>
           <span className="introText">
@@ -103,13 +103,6 @@ export default function About(props) {
             />
           </span>
         </span>
-        </div><Line></Line>
-        <div className="about-body">
-          <h2>
-            Roz hopes to be adopted by a nerdy dev team who will respect
-            audacity, tenacity, and video game references. She is housebroken
-            and plays well with others.
-          </h2>
         </div>
         <div className="marg3"></div><Line></Line>
         <div className="about-body">
