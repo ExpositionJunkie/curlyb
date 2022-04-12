@@ -1,17 +1,203 @@
 @import "../../../Variables/Sass/SassVariables.scss";
 
-.editor-button-wrap >* {
+@media screen and (max-width: 500px) {
+  .tooltip {
     background-color: black;
     color: $whiteColor;
     padding: 0.5rem;
     border-radius: 10px;
-}
+  }
 
-.is-active {
+  .editor-button-wrap > * {
+    display: flex;
+    max-width: 100%;
+  }
+
+  .is-active {
     background-color: $pinkColor;
+  }
+
+  .submit-button {
+    margin-top: 1rem;
+    border-radius: 15px;
+    font-family: $bodyFont;
+    font-size: 1.5rem;
+    background-color: $pinkColor;
+    color: $whiteColor;
+    padding: 1rem;
+  }
+
+  .post-wrapper {
+    padding: 2rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .editor {
+    @include textInputStyle(1.5rem);
+    font-family: $bodyFont;
+    text-align: left;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .title,
+  .subtitle,
+  .editor {
+    background-color: $grayColor;
+    padding: 1rem;
+    margin: 0.5rem;
+    width: 100%;
+  }
+
+  .title {
+    @include textInputStyle(3rem);
+    font-family: $subtitleFont2;
+    font-size: 3rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-family: $subtitleFont;
+    margin-bottom: 3rem;
+    @include textInputStyle(2rem);
+  }
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+
+  .tooltip .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: $blackColor;
+    color: $pinkColor;
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 15px;
+  }
+
+  .tooltip:hover .tooltip-text {
+    visibility: visible;
+  }
 }
 
-.submit-button {
+@media screen and (min-width: 500px) {
+  .tooltip button {
+    background-color: black;
+    color: $whiteColor;
+    padding: 0.5rem;
+    border-radius: 10px;
+  }
+
+  .editor-button-wrap {
+    justify-content: space-between;
+    display: flex;
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .is-active {
+    background-color: $pinkColor;
+  }
+
+  .submit-button {
+    margin-top: 1rem;
+    border-radius: 15px;
+    font-family: $bodyFont;
+    font-size: 1.5rem;
+    background-color: $pinkColor;
+    color: $whiteColor;
+    padding: 1rem;
+  }
+
+  .post-wrapper {
+    padding: 2rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .editor {
+    @include textInputStyle(1.5rem);
+    font-family: $bodyFont;
+    text-align: left;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .title,
+  .subtitle,
+  .editor {
+    background-color: $grayColor;
+    padding: 1rem;
+    margin: 0.5rem;
+    width: 100%;
+  }
+
+  .title {
+    @include textInputStyle(3rem);
+    font-family: $subtitleFont2;
+    font-size: 3rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-family: $subtitleFont;
+    margin-bottom: 3rem;
+    @include textInputStyle(2rem);
+  }
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+
+  .tooltip .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: $blackColor;
+    color: $pinkColor;
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 15px;
+  }
+
+  .tooltip:hover .tooltip-text {
+    visibility: visible;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .editor-button-wrap > * {
+    background-color: black;
+    color: $whiteColor;
+    padding: 0.5rem;
+    border-radius: 10px;
+    max-width: 80%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .is-active {
+    background-color: $pinkColor;
+  }
+
+  .submit-button {
     margin-top: 3rem;
     border-radius: 15px;
     font-family: $bodyFont;
@@ -19,21 +205,250 @@
     background-color: $pinkColor;
     color: $whiteColor;
     padding: 1rem;
-    width: 80%;
-}
-
-.post-wrapper {
-    padding: 2rem;
-}
-
-.editor {
-    padding-right: 4rem;
-    padding-left: 4rem;
-}
-
-.title {
-    @include textInputStyle(2rem);
-    font-family: $subtitleFont2;
     width: 100%;
-    padding-left: 3rem;
+  }
+
+  .post-wrapper {
+    padding: 4rem;
+    margin: 3rem;
+  }
+
+  .editor {
+    @include textInputStyle(1.5rem);
+    font-family: $bodyFont;
+    text-align: left;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .title,
+  .subtitle,
+  .editor {
+    background-color: $grayColor;
+    padding: 1rem;
+    margin: 0.5rem;
+    width: 100%;
+  }
+
+  .title {
+    @include textInputStyle(3rem);
+    font-family: $subtitleFont2;
+    font-size: 3rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-family: $subtitleFont;
+    margin-bottom: 3rem;
+    @include textInputStyle(2rem);
+  }
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+  }
+
+  .tooltip .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: $blackColor;
+    color: $pinkColor;
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 15px;
+  }
+
+  .tooltip:hover .tooltip-text {
+    visibility: visible;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .editor-button-wrap > * {
+    background-color: black;
+    color: $whiteColor;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .editor-button-wrap {
+    justify-content: space-between;
+    display: flex;
+    max-width: 100%;
+    flex-wrap: nowrap;
+  }
+
+  .is-active {
+    background-color: $pinkColor;
+  }
+
+  .submit-button {
+    margin-top: 3rem;
+    border-radius: 15px;
+    font-family: $bodyFont;
+    font-size: 1.5rem;
+    background-color: $pinkColor;
+    color: $whiteColor;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .post-wrapper {
+    padding: 4rem;
+    margin: 3rem;
+  }
+
+  .editor {
+    @include textInputStyle(1.5rem);
+    font-family: $bodyFont;
+    text-align: left;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .title,
+  .subtitle,
+  .editor {
+    background-color: $grayColor;
+    padding: 1rem;
+    margin: 0.5rem;
+    width: 100%;
+  }
+
+  .title {
+    @include textInputStyle(3rem);
+    font-family: $subtitleFont2;
+    font-size: 3rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-family: $subtitleFont;
+    margin-bottom: 3rem;
+    @include textInputStyle(2rem);
+  }
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+
+  .tooltip .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: $blackColor;
+    color: $pinkColor;
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 15px;
+  }
+
+  .tooltip:hover .tooltip-text {
+    visibility: visible;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .editor-button-wrap > * {
+    background-color: black;
+    color: $whiteColor;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+  }
+
+  .editor-button-wrap {
+    justify-content: space-between;
+    display: flex;
+    max-width: 100%;
+    flex-wrap: nowrap;
+  }
+
+  .is-active {
+    background-color: $pinkColor;
+  }
+
+  .submit-button {
+    margin-top: 3rem;
+    border-radius: 15px;
+    font-family: $bodyFont;
+    font-size: 1.5rem;
+    background-color: $pinkColor;
+    color: $whiteColor;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .post-wrapper {
+    padding: 4rem;
+    margin: 3rem;
+  }
+
+  .editor {
+    @include textInputStyle(1.5rem);
+    font-family: $bodyFont;
+    text-align: left;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .title,
+  .subtitle,
+  .editor {
+    background-color: $grayColor;
+    padding: 1rem;
+    margin: 0.5rem;
+    width: 100%;
+  }
+
+  .title {
+    @include textInputStyle(3rem);
+    font-family: $subtitleFont2;
+    font-size: 3rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-family: $subtitleFont;
+    margin-bottom: 3rem;
+    @include textInputStyle(2rem);
+  }
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+
+  .tooltip .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: $blackColor;
+    color: $pinkColor;
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 15px;
+  }
+
+  .tooltip:hover .tooltip-text {
+    visibility: visible;
+  }
 }
