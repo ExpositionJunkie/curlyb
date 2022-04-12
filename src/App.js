@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import "./App.css";
-import { Home } from "./Components/Home/Home";
+import Home from "./Components/Home/Home";
 import About from "./Components/About/About";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
@@ -14,6 +14,7 @@ import NameGuess from "./Components/APIPractice/InnerPages/NameGuess/NameGuess";
 import Blog from "./Components/Blog/Blogs";
 import BlogEntryStandalone from "./Components/Blog/BlogEntryStandalone";
 import BlogList from "./Components/Blog/BlogList";
+import Login from "./Components/Login/Login";
 import CSP from "./Components/CSP/CSP";
 import Signup from "./Components/Signup/Signup";
 import { Route, Routes } from "react-router-dom";
@@ -22,14 +23,7 @@ import Cookie from "./Components/Reusable/Cookie/Cookie";
 //redux
 import { connect } from "react-redux";
 
-//https://www.geeksforgeeks.org/how-to-connect-node-js-with-react-js/#:~:text=export%20default%20App%3B,ReactJS%20is%20connected%20with%20NodeJS
-//pause in devtools before it can load the overlay to avoid the sign in bs.
-
-//https://egghead.io/lessons/react-replacing-mapdispatchtoprops-with-the-usedispatch-hook
-//redux to hooks
-
 function AppComponent() {
-
   return (
     <div className="App">
       <Suspense fallback={<p>...Loading</p>}>
@@ -50,6 +44,7 @@ function AppComponent() {
               <Route path="dnd" element={<DungeonsAndDragons />} />
               <Route path="ip" element={<IPAddress />} />
               <Route path="signup" element={<Signup />} />
+              <Route path="login" element={<Login />} />
               <Route path="egg" element={<Egg />} />
               <Route path="csp" element={<CSP />} />
             </Routes>
@@ -62,4 +57,4 @@ function AppComponent() {
   );
 }
 
-export const App = connect(null,null)(AppComponent);
+export const App = connect(null, null)(AppComponent);

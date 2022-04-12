@@ -152,7 +152,6 @@ export const signupUser = (userInfo) => (dispatch) => {
     headers: {
       "Content-Type": "application/json",
     },
-
     body: JSON.stringify(userInfo),
   })
     .then(

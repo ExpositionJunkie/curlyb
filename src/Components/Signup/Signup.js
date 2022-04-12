@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import { connect, useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { ActionCreators } from "../../Redux/reduxIndex";
+import { NavLink } from "react-router-dom";
 import Title from "../Reusable/Title/Title";
+import LoginForm from "../Login/LoginForm"
 import "./Signup.css";
 
 function SignupWrap() {
@@ -41,6 +43,7 @@ function SignupWrap() {
             </h1>
             <h2>{validationText}</h2>
             <SignupForm></SignupForm>
+            <p>Already have an account? <NavLink to="/login">Login here.</NavLink></p>
           </div>
         </div>
       </div>
@@ -48,10 +51,12 @@ function SignupWrap() {
   } else {
     return (
       <div className="signup-wrapper">
-        <Title titleStr="Sign Up"></Title>
+        <Title titleStr="Login"></Title>
         <div className="signup-form-inner-wrapper">
           <div className="signup-form">
             <h1>Registration Successful!</h1>
+            <h2>Login Below</h2>
+            <LoginForm></LoginForm>
           </div>
         </div>
       </div>

@@ -1,0 +1,72 @@
+@import "../../Variables/Sass/SassVariables.scss";
+
+.login-wrapper {
+  color: $whiteColor;
+  background-color: $blackColor;
+  min-height: 100vh;
+}
+
+.login-form-inner-wrapper {
+  justify-content: center;
+  display: flex;
+  font-family: $bodyFont;
+  margin: 4rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  font-family: $bodyFont;
+  text-align: center;
+  align-items: center;
+}
+
+.login-form label {
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  margin: 1rem;
+  @include textInputStyle(2rem);
+}
+
+.login-form input {
+  width: 100%;
+  @include textInputStyle(2rem);
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.login-submit {
+  margin-top: 3rem;
+  border-radius: 15px;
+  font-family: $bodyFont;
+  font-size: 1.5rem;
+  background-color: $pinkColor;
+  color: $whiteColor;
+}
+
+.logout-button {
+  margin-top: 3rem;
+  border-radius: 15px;
+  font-family: $bodyFont;
+  font-size: 1.5rem;
+  background-color: $pinkColor;
+  color: $whiteColor;
+  padding: 1.5rem;
+}
+
+.inner-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-error h1 {
+  color: $pinkColor;
+  font-family: $bodyFont;
+  font-size: 3rem;
+}
+.login-error h2 {
+  color: $whiteColor;
+  font-family: $bodyFont;
+  font-size: 1rem;
+}
