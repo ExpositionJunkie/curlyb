@@ -1,18 +1,75 @@
 @media screen and (max-width: 500px) {
-  .tooltip {
+  .tooltip button {
     background-color: black;
     color: #ffffff;
-    padding: 0.5rem;
+    padding: 0.75rem;
     border-radius: 10px;
   }
 
-  .editor-button-wrap > * {
+  .editor-button {
+    font-size: 0.75rem;
+  }
+
+  .editor-button-wrap {
     display: flex;
     max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
   }
 
   .is-active {
+    -webkit-animation: shadow-fade 16s linear infinite;
+            animation: shadow-fade 16s linear infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
     background-color: #e94584;
+  }
+  @-webkit-keyframes shadow-fade {
+    0% {
+      box-shadow: 5px 5px 15px #f17c58;
+    }
+    16% {
+      box-shadow: 5px 5px 15px #ffdc18;
+    }
+    32% {
+      box-shadow: 5px 5px 15px #27dbb1;
+    }
+    48% {
+      box-shadow: 5px 5px 15px #24aadb;
+    }
+    64% {
+      box-shadow: 5px 5px 15px #8335d0;
+    }
+    84% {
+      box-shadow: 5px 5px 15px #e94584;
+    }
+    100% {
+      box-shadow: 5px 5px 15px #ff3706;
+    }
+  }
+  @keyframes shadow-fade {
+    0% {
+      box-shadow: 5px 5px 15px #f17c58;
+    }
+    16% {
+      box-shadow: 5px 5px 15px #ffdc18;
+    }
+    32% {
+      box-shadow: 5px 5px 15px #27dbb1;
+    }
+    48% {
+      box-shadow: 5px 5px 15px #24aadb;
+    }
+    64% {
+      box-shadow: 5px 5px 15px #8335d0;
+    }
+    84% {
+      box-shadow: 5px 5px 15px #e94584;
+    }
+    100% {
+      box-shadow: 5px 5px 15px #ff3706;
+    }
   }
 
   .submit-button {
@@ -26,20 +83,17 @@
   }
 
   .post-wrapper {
-    padding: 2rem;
-    margin: 1rem;
+    margin: 0px;
     display: flex;
     flex-direction: column;
   }
 
   .editor {
-    font-size: 1.5rem;
+    font-size: 1rem;
     align-self: center;
     border-radius: 20px;
     font-family: "Raleway", sans-serif;
     text-align: left;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
     margin-top: 0.5rem;
   }
 
@@ -49,23 +103,21 @@
     background-color: #262624;
     color: #ffffff;
     padding: 1rem;
-    margin: 0.5rem;
+    margin-bottom: 1rem;
     width: 100%;
   }
 
   .title {
-    font-size: 3rem;
+    font-size: 1rem;
     align-self: center;
     border-radius: 20px;
     font-family: "Staatliches", cursive;
-    font-size: 3rem;
     padding-bottom: 0.5rem;
   }
 
   .subtitle {
     font-family: "Advent Pro", sans-serif;
-    margin-bottom: 3rem;
-    font-size: 2rem;
+    font-size: 1rem;
     align-self: center;
     border-radius: 20px;
   }
@@ -102,15 +154,70 @@
     border-radius: 10px;
   }
 
+  .editor-button {
+    font-size: 2rem;
+  }
+
   .editor-button-wrap {
-    justify-content: space-between;
     display: flex;
     max-width: 100%;
     flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
   }
 
   .is-active {
+    -webkit-animation: shadow-fade 16s linear infinite;
+            animation: shadow-fade 16s linear infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
     background-color: #e94584;
+  }
+  @-webkit-keyframes shadow-fade {
+    0% {
+      box-shadow: 5px 5px 15px #f17c58;
+    }
+    16% {
+      box-shadow: 5px 5px 15px #ffdc18;
+    }
+    32% {
+      box-shadow: 5px 5px 15px #27dbb1;
+    }
+    48% {
+      box-shadow: 5px 5px 15px #24aadb;
+    }
+    64% {
+      box-shadow: 5px 5px 15px #8335d0;
+    }
+    84% {
+      box-shadow: 5px 5px 15px #e94584;
+    }
+    100% {
+      box-shadow: 5px 5px 15px #ff3706;
+    }
+  }
+  @keyframes shadow-fade {
+    0% {
+      box-shadow: 5px 5px 15px #f17c58;
+    }
+    16% {
+      box-shadow: 5px 5px 15px #ffdc18;
+    }
+    32% {
+      box-shadow: 5px 5px 15px #27dbb1;
+    }
+    48% {
+      box-shadow: 5px 5px 15px #24aadb;
+    }
+    64% {
+      box-shadow: 5px 5px 15px #8335d0;
+    }
+    84% {
+      box-shadow: 5px 5px 15px #e94584;
+    }
+    100% {
+      box-shadow: 5px 5px 15px #ff3706;
+    }
   }
 
   .submit-button {
@@ -198,13 +305,68 @@
     color: #ffffff;
     padding: 0.5rem;
     border-radius: 10px;
-    max-width: 80%;
+  }
+
+  .editor-button-wrap {
     display: flex;
+    max-width: 100%;
+    flex-wrap: wrap;
     justify-content: space-between;
+    flex-direction: row;
   }
 
   .is-active {
+    -webkit-animation: shadow-fade 16s linear infinite;
+            animation: shadow-fade 16s linear infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
     background-color: #e94584;
+  }
+  @-webkit-keyframes shadow-fade {
+    0% {
+      box-shadow: 5px 5px 15px #f17c58;
+    }
+    16% {
+      box-shadow: 5px 5px 15px #ffdc18;
+    }
+    32% {
+      box-shadow: 5px 5px 15px #27dbb1;
+    }
+    48% {
+      box-shadow: 5px 5px 15px #24aadb;
+    }
+    64% {
+      box-shadow: 5px 5px 15px #8335d0;
+    }
+    84% {
+      box-shadow: 5px 5px 15px #e94584;
+    }
+    100% {
+      box-shadow: 5px 5px 15px #ff3706;
+    }
+  }
+  @keyframes shadow-fade {
+    0% {
+      box-shadow: 5px 5px 15px #f17c58;
+    }
+    16% {
+      box-shadow: 5px 5px 15px #ffdc18;
+    }
+    32% {
+      box-shadow: 5px 5px 15px #27dbb1;
+    }
+    48% {
+      box-shadow: 5px 5px 15px #24aadb;
+    }
+    64% {
+      box-shadow: 5px 5px 15px #8335d0;
+    }
+    84% {
+      box-shadow: 5px 5px 15px #e94584;
+    }
+    100% {
+      box-shadow: 5px 5px 15px #ff3706;
+    }
   }
 
   .submit-button {
@@ -295,14 +457,65 @@
   }
 
   .editor-button-wrap {
-    justify-content: space-between;
     display: flex;
     max-width: 100%;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
   }
 
   .is-active {
+    -webkit-animation: shadow-fade 16s linear infinite;
+            animation: shadow-fade 16s linear infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
     background-color: #e94584;
+  }
+  @-webkit-keyframes shadow-fade {
+    0% {
+      box-shadow: 5px 5px 15px #f17c58;
+    }
+    16% {
+      box-shadow: 5px 5px 15px #ffdc18;
+    }
+    32% {
+      box-shadow: 5px 5px 15px #27dbb1;
+    }
+    48% {
+      box-shadow: 5px 5px 15px #24aadb;
+    }
+    64% {
+      box-shadow: 5px 5px 15px #8335d0;
+    }
+    84% {
+      box-shadow: 5px 5px 15px #e94584;
+    }
+    100% {
+      box-shadow: 5px 5px 15px #ff3706;
+    }
+  }
+  @keyframes shadow-fade {
+    0% {
+      box-shadow: 5px 5px 15px #f17c58;
+    }
+    16% {
+      box-shadow: 5px 5px 15px #ffdc18;
+    }
+    32% {
+      box-shadow: 5px 5px 15px #27dbb1;
+    }
+    48% {
+      box-shadow: 5px 5px 15px #24aadb;
+    }
+    64% {
+      box-shadow: 5px 5px 15px #8335d0;
+    }
+    84% {
+      box-shadow: 5px 5px 15px #e94584;
+    }
+    100% {
+      box-shadow: 5px 5px 15px #ff3706;
+    }
   }
 
   .submit-button {
@@ -387,20 +600,74 @@
   .editor-button-wrap > * {
     background-color: black;
     color: #ffffff;
-    padding: 1rem;
     border-radius: 10px;
     font-size: 1.5rem;
   }
 
+  .editor-button {
+    font-size: 3rem;
+    margin: 1rem;
+  }
+
   .editor-button-wrap {
-    justify-content: space-between;
     display: flex;
     max-width: 100%;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .is-active {
+    -webkit-animation: shadow-fade 16s linear infinite;
+            animation: shadow-fade 16s linear infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
     background-color: #e94584;
+  }
+  @-webkit-keyframes shadow-fade {
+    0% {
+      box-shadow: 5px 5px 15px #f17c58;
+    }
+    16% {
+      box-shadow: 5px 5px 15px #ffdc18;
+    }
+    32% {
+      box-shadow: 5px 5px 15px #27dbb1;
+    }
+    48% {
+      box-shadow: 5px 5px 15px #24aadb;
+    }
+    64% {
+      box-shadow: 5px 5px 15px #8335d0;
+    }
+    84% {
+      box-shadow: 5px 5px 15px #e94584;
+    }
+    100% {
+      box-shadow: 5px 5px 15px #ff3706;
+    }
+  }
+  @keyframes shadow-fade {
+    0% {
+      box-shadow: 5px 5px 15px #f17c58;
+    }
+    16% {
+      box-shadow: 5px 5px 15px #ffdc18;
+    }
+    32% {
+      box-shadow: 5px 5px 15px #27dbb1;
+    }
+    48% {
+      box-shadow: 5px 5px 15px #24aadb;
+    }
+    64% {
+      box-shadow: 5px 5px 15px #8335d0;
+    }
+    84% {
+      box-shadow: 5px 5px 15px #e94584;
+    }
+    100% {
+      box-shadow: 5px 5px 15px #ff3706;
+    }
   }
 
   .submit-button {
@@ -420,7 +687,7 @@
   }
 
   .editor {
-    font-size: 1.5rem;
+    font-size: 2rem;
     align-self: center;
     border-radius: 20px;
     font-family: "Raleway", sans-serif;

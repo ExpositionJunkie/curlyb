@@ -1,19 +1,27 @@
 @import "../../../Variables/Sass/SassVariables.scss";
 
 @media screen and (max-width: 500px) {
-  .tooltip {
+  .tooltip button {
     background-color: black;
     color: $whiteColor;
-    padding: 0.5rem;
+    padding: 0.75rem;
     border-radius: 10px;
   }
 
-  .editor-button-wrap > * {
+  .editor-button {
+    font-size: 0.75rem;
+  }
+
+  .editor-button-wrap {
     display: flex;
     max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
   }
 
   .is-active {
+    @include rainbow-shadow(5px, 5px, 15px);
     background-color: $pinkColor;
   }
 
@@ -28,18 +36,15 @@
   }
 
   .post-wrapper {
-    padding: 2rem;
-    margin: 1rem;
+    margin: 0px;
     display: flex;
     flex-direction: column;
   }
 
   .editor {
-    @include textInputStyle(1.5rem);
+    @include textInputStyle(1rem);
     font-family: $bodyFont;
     text-align: left;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
     margin-top: 0.5rem;
   }
 
@@ -49,21 +54,19 @@
     background-color: $grayColor;
     color: $whiteColor;
     padding: 1rem;
-    margin: 0.5rem;
+    margin-bottom: 1rem;
     width: 100%;
   }
 
   .title {
-    @include textInputStyle(3rem);
+    @include textInputStyle(1rem);
     font-family: $subtitleFont2;
-    font-size: 3rem;
     padding-bottom: 0.5rem;
   }
 
   .subtitle {
     font-family: $subtitleFont;
-    margin-bottom: 3rem;
-    @include textInputStyle(2rem);
+    @include textInputStyle(1rem);
   }
 
   .tooltip {
@@ -89,6 +92,7 @@
   .tooltip:hover .tooltip-text {
     visibility: visible;
   }
+
 }
 
 @media screen and (min-width: 500px) {
@@ -99,14 +103,20 @@
     border-radius: 10px;
   }
 
+  .editor-button {
+    font-size: 2rem;
+  }
+
   .editor-button-wrap {
-    justify-content: space-between;
     display: flex;
     max-width: 100%;
     flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
   }
 
   .is-active {
+    @include rainbow-shadow(5px, 5px, 15px);
     background-color: $pinkColor;
   }
 
@@ -185,17 +195,25 @@
 }
 
 @media screen and (min-width: 950px) {
+
+
   .editor-button-wrap > * {
     background-color: black;
     color: $whiteColor;
     padding: 0.5rem;
     border-radius: 10px;
-    max-width: 80%;
+  }
+
+  .editor-button-wrap {
     display: flex;
+    max-width: 100%;
+    flex-wrap: wrap;
     justify-content: space-between;
+    flex-direction: row;
   }
 
   .is-active {
+    @include rainbow-shadow(5px, 5px, 15px);
     background-color: $pinkColor;
   }
 
@@ -282,13 +300,15 @@
   }
 
   .editor-button-wrap {
-    justify-content: space-between;
     display: flex;
     max-width: 100%;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
   }
 
   .is-active {
+    @include rainbow-shadow(5px, 5px, 15px);
     background-color: $pinkColor;
   }
 
@@ -369,19 +389,24 @@
   .editor-button-wrap > * {
     background-color: black;
     color: $whiteColor;
-    padding: 1rem;
     border-radius: 10px;
     font-size: 1.5rem;
   }
 
+  .editor-button {
+    font-size: 3rem;
+    margin: 1rem;
+  }
+
   .editor-button-wrap {
-    justify-content: space-between;
     display: flex;
     max-width: 100%;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .is-active {
+    @include rainbow-shadow(5px, 5px, 15px);
     background-color: $pinkColor;
   }
 
@@ -402,7 +427,7 @@
   }
 
   .editor {
-    @include textInputStyle(1.5rem);
+    @include textInputStyle(2rem);
     font-family: $bodyFont;
     text-align: left;
     padding-top: 1rem;
