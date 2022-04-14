@@ -27,6 +27,45 @@ export const fetchBlogs = () => (dispatch) => {
     .catch((error) => dispatch(blogsFailed(error.message)));
 };
 
+export const postBlog = (input) => (dispatch) => {
+  const newBlog = {
+    ...input
+  };
+  console.log("Blog ", newBlog);
+  const bearer = "Bearer " + localStorage.getItem("token");
+  return fetch(baseUrl + "blog", {
+    method: "POST",
+    body: JSON.stringify(newBlog),
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: bearer,
+    },
+    credentials: "same-origin",
+  })
+    .then(
+      (response) => {
+        if (response.ok) {
+          return response;
+        } else {
+          const error = new Error(
+            `Error ${response.status}: ${response.statusText}`
+          );
+          error.response = response;
+          throw error;
+        }
+      },
+      (error) => {
+        throw error;
+      }
+    )
+    .then((response) => response.json())
+    .then((response) => dispatch(addBlog(response)))
+    .catch((error) => {
+      console.log("post blog", error.message);
+      alert("Your blog could not be posted\nError: " + error.message);
+    });
+};
+
 export const blogsLoading = () => ({
   type: ActionTypes.BLOGS_LOADING,
 });
@@ -39,6 +78,11 @@ export const blogsFailed = (errMess) => ({
 export const addBlogs = (blogs) => ({
   type: ActionTypes.ADD_BLOGS,
   payload: blogs,
+});
+
+export const addBlog = (blog) => ({
+  type: ActionTypes.ADD_BLOG,
+  payload: blog,
 });
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Blogs End ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

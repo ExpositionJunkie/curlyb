@@ -156,6 +156,7 @@
 
   .editor-button {
     font-size: 2rem;
+    margin: 0.25rem;
   }
 
   .editor-button-wrap {
@@ -225,14 +226,14 @@
     border-radius: 15px;
     font-family: "Raleway", sans-serif;
     font-size: 1.5rem;
+    width: 100%;
     background-color: #e94584;
     color: #ffffff;
     padding: 1rem;
   }
 
   .post-wrapper {
-    padding: 2rem;
-    margin: 1rem;
+    margin: 2rem;
     display: flex;
     flex-direction: column;
   }

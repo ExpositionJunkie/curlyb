@@ -5,6 +5,7 @@ export const Blogs = (
     isLoading: true,
     errMess: null,
     blogs: [],
+    blog: {},
   },
   action
 ) => {
@@ -16,7 +17,13 @@ export const Blogs = (
         errMess: null,
         blogs: action.payload,
       };
-
+    case ActionTypes.ADD_BLOG:
+      return {
+        ...state,
+        isLoading: false,
+        errMess: null,
+        blog: action.payload,
+      };
     case ActionTypes.BLOGS_LOADING:
       return { ...state, isLoading: true, errMess: null, blogs: [] };
 

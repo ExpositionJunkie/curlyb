@@ -1,22 +1,42 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro"; // <-- import styles to be used
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { solid } from "@fortawesome/fontawesome-svg-core/import.macro"; // <-- import styles to be used
-
+import DOMPurify from "dompurify";
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { ActionCreators } from "../../../Redux/reduxIndex";
+import { useNavigate } from "react-router-dom";
 import "./Post.css";
 
 function Post(props) {
-  const [input, setInput] = useState({title: "", subtitle: "", text: {}})
+  const [input, setInput] = useState({
+    title: "",
+    subtitle: "",
+    text: "",
+  });
+  //redux dispatch
+  const dispatch = useDispatch();
+  dispatch({ type: "postBlog" });
+  const { postBlog } = bindActionCreators(ActionCreators, dispatch);
 
-  //https://stackoverflow.com/questions/54188389/how-to-create-a-mongoose-schema-that-saves-input-as-html-in-mongodb
+  //for sending you to the blog after this posts
+  let navigate = useNavigate();
 
   const editor = useEditor({
     extensions: [StarterKit],
     type: "doc",
-    content: "<p>Write your hello world or your magnum opus here.</p>",
+    emitUpdate: true,
+    content: "",
+    onUpdate: ({ editor }) => {
+      const html = editor.getHTML();
+      setInput((prevState) => ({
+        ...prevState,
+        text: DOMPurify.sanitize(html),
+      }));
+    },
   });
-
 
   const handleChange = (evt) => {
     setInput((prevState) => ({
@@ -27,38 +47,51 @@ function Post(props) {
   };
 
   const handleSubmit = (evt) => {
-    console.log(editor.getJSON())
-    evt.preventDefault();
+    postBlog(input);
+    navigate("/blog");
   };
-  
+
+  //otherwise this will send the blog every time you press enter
+  //not ideal for those of us who like to write a lot.
+  const checkKeyDown = (e) => {
+    if (e.key === "Enter") e.preventDefault();
+  };
 
   return (
     <div className="post-wrapper">
-      <form onSubmit={(evt) => handleSubmit(evt)}>
-      <input
-        type="text"
-        id="title"
-        className="title"
-        autoComplete="none"
-        placeholder="Title"
-        value={input.title}
-        onChange={(evt) => handleChange(evt)}
-      ></input>
-      <input
-        type="text"
-        id="subtitle"
-        className="subtitle"
-        autoComplete="none"
-        placeholder="Subtitle"
-        value={input.subtitle}
-        onChange={(evt) => handleChange(evt)}
-      ></input>
-      <div className="editor">
-        <EditorContent editor={editor} />
-      </div>
-      <EditorButtons editor={editor}></EditorButtons>
-      <input type="submit" name="submit" value="Submit" className="submit-button">
-      </input>
+      <h1>Write your magnum opus or hello world below:</h1>
+      <form
+        onSubmit={(evt) => handleSubmit(evt)}
+        onKeyDown={(e) => checkKeyDown(e)}
+      >
+        <input
+          type="text"
+          id="title"
+          className="title"
+          autoComplete="none"
+          placeholder="Title"
+          value={input.title}
+          onChange={(evt) => handleChange(evt)}
+        ></input>
+        <input
+          type="text"
+          id="subtitle"
+          className="subtitle"
+          autoComplete="none"
+          placeholder="Subtitle"
+          value={input.subtitle}
+          onChange={(evt) => handleChange(evt)}
+        ></input>
+        <div className="editor">
+          <EditorContent id="text" editor={editor} />
+        </div>
+        <EditorButtons editor={editor}></EditorButtons>
+        <input
+          type="submit"
+          name="submit"
+          value="Submit"
+          className="submit-button"
+        ></input>
       </form>
     </div>
   );

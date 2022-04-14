@@ -1,4 +1,5 @@
 export const ADD_BLOGS = "ADD_BLOGS";
+export const ADD_BLOG = "ADD_BLOG";
 export const BLOGS_LOADING = "BLOGS_LOADING";
 export const BLOGS_FAILED = "BLOGS_FAILED";
 
@@ -9,8 +10,6 @@ export const ADD_COMMENT = "ADD_COMMENT";
 export const SIGNUP_REQUEST = "SIGNUP_REQUEST";
 export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
 export const SIGNUP_FAILURE = "SIGNUP_FAILURE";
-
-
 
 export const LOGIN_REQUEST = "LOGIN_REQUEST";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";

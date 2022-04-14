@@ -105,6 +105,7 @@
 
   .editor-button {
     font-size: 2rem;
+    margin: 0.25rem;
   }
 
   .editor-button-wrap {
@@ -125,14 +126,14 @@
     border-radius: 15px;
     font-family: $bodyFont;
     font-size: 1.5rem;
+    width: 100%;
     background-color: $pinkColor;
     color: $whiteColor;
     padding: 1rem;
   }
 
   .post-wrapper {
-    padding: 2rem;
-    margin: 1rem;
+    margin: 2rem;
     display: flex;
     flex-direction: column;
   }

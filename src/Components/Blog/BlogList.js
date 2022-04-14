@@ -22,10 +22,10 @@ export function Blogs() {
     fetchBlogs()
   }, []);
 
-
   if (blogs.isLoading || blogs.errMess) {
     return <></>
   } else if (!blogs.isLoading && !blogs.errMess) {
+
     return (
       <>
         {blogs.blogs.map((blogEntry) => {
