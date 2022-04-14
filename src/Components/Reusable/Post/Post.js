@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,33 +7,59 @@ import { solid } from "@fortawesome/fontawesome-svg-core/import.macro"; // <-- i
 import "./Post.css";
 
 function Post(props) {
+  const [input, setInput] = useState({title: "", subtitle: "", text: {}})
+
+  //https://stackoverflow.com/questions/54188389/how-to-create-a-mongoose-schema-that-saves-input-as-html-in-mongodb
+
   const editor = useEditor({
     extensions: [StarterKit],
+    type: "doc",
     content: "<p>Write your hello world or your magnum opus here.</p>",
   });
+
+
+  const handleChange = (evt) => {
+    setInput((prevState) => ({
+      ...prevState,
+      [evt.target.id]: evt.target.value,
+    }));
+    evt.preventDefault();
+  };
+
+  const handleSubmit = (evt) => {
+    console.log(editor.getJSON())
+    evt.preventDefault();
+  };
+  
+
   return (
     <div className="post-wrapper">
+      <form onSubmit={(evt) => handleSubmit(evt)}>
       <input
         type="text"
         id="title"
         className="title"
-        autocomplete="none"
+        autoComplete="none"
         placeholder="Title"
+        value={input.title}
+        onChange={(evt) => handleChange(evt)}
       ></input>
       <input
         type="text"
         id="subtitle"
         className="subtitle"
-        autocomplete="none"
+        autoComplete="none"
         placeholder="Subtitle"
+        value={input.subtitle}
+        onChange={(evt) => handleChange(evt)}
       ></input>
       <div className="editor">
         <EditorContent editor={editor} />
       </div>
       <EditorButtons editor={editor}></EditorButtons>
-      <button className="submit-button">
-        This button does not do anything yet.
-      </button>
+      <input type="submit" name="submit" value="Submit" className="submit-button">
+      </input>
+      </form>
     </div>
   );
 }
