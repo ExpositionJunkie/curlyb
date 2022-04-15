@@ -13,7 +13,7 @@ import IPAddress from "./Components/APIPractice/InnerPages/IPAddress/IPAddress";
 import NameGuess from "./Components/APIPractice/InnerPages/NameGuess/NameGuess";
 import Blog from "./Components/Blog/Blogs";
 import BlogEntryStandalone from "./Components/Blog/BlogEntryStandalone";
-import BlogList from "./Components/Blog/BlogList";
+import BlogPage from "./Components/Blog/BlogPage";
 import Login from "./Components/Login/Login";
 import CSP from "./Components/CSP/CSP";
 import Signup from "./Components/Signup/Signup";
@@ -34,7 +34,7 @@ function AppComponent() {
               <Route path="/" element={<Home />} />
               <Route exact path="apipractice" element={<APIPractice />} />
               <Route path="blog/*" element={<Blog />}>
-                <Route index element={<BlogList />} />
+                <Route index element={<BlogPage />} />
                 <Route path=":blogId" element={<BlogEntryStandalone />} />
               </Route>
               <Route path="about" element={<About />} />

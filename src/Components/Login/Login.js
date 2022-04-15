@@ -32,7 +32,6 @@ function LoginPage() {
                       <p>Hi choom, you are currently logged in!</p>
                       <p>Have to go? We're sad to see you go, but we'll catch you on the async!</p>
                   <button className="logout-button" onClick={() => handleLogout()}>Logout for now.</button>
-                  
                   </div>
               </div>
             </div>
@@ -44,7 +43,9 @@ function LoginPage() {
               <div className="login-form-inner-wrapper" >
                   <div className="login-form">
                   <LoginForm />
-                  <p>Don't have an account yet? No problem, you can <NavLink to="/signup">signup here.</NavLink></p>
+                  <div className="signup-call">
+                  <p>Don't have an account yet? No problem, choombatta, you can <NavLink to="/signup">signup here.</NavLink></p>
+                  </div>
                   </div>
               </div>
               

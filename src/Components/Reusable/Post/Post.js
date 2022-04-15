@@ -4,17 +4,18 @@ import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DOMPurify from "dompurify";
-import { useDispatch } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { ActionCreators } from "../../../Redux/reduxIndex";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import "./Post.css";
 
-function Post(props) {
+function PostWrapper({location}) {
   const [input, setInput] = useState({
     title: "",
     subtitle: "",
     text: "",
+    tags: "",
   });
   //redux dispatch
   const dispatch = useDispatch();
@@ -27,8 +28,7 @@ function Post(props) {
   const editor = useEditor({
     extensions: [StarterKit],
     type: "doc",
-    emitUpdate: true,
-    content: "",
+    content: "Speak your mind",
     onUpdate: ({ editor }) => {
       const html = editor.getHTML();
       setInput((prevState) => ({
@@ -46,21 +46,26 @@ function Post(props) {
     evt.preventDefault();
   };
 
-  const handleSubmit = (evt) => {
-    postBlog(input);
-    navigate("/blog");
+  const checkKeyDown = (e) => {
+    if (e.code === "Enter" || e.code === "NumpadEnter") {
+      e.preventDefault();
+    }
   };
 
-  //otherwise this will send the blog every time you press enter
-  //not ideal for those of us who like to write a lot.
-  const checkKeyDown = (e) => {
-    if (e.key === "Enter") e.preventDefault();
+  const handleSubmit = (evt) => {
+    postBlog(input);
+    if (location === "home") {
+      navigate("/blog")
+    } else if (location === "blog") {
+      navigate("/")
+    }
   };
 
   return (
     <div className="post-wrapper">
       <h1>Write your magnum opus or hello world below:</h1>
       <form
+        autoComplete="off"
         onSubmit={(evt) => handleSubmit(evt)}
         onKeyDown={(e) => checkKeyDown(e)}
       >
@@ -68,7 +73,6 @@ function Post(props) {
           type="text"
           id="title"
           className="title"
-          autoComplete="none"
           placeholder="Title"
           value={input.title}
           onChange={(evt) => handleChange(evt)}
@@ -76,22 +80,32 @@ function Post(props) {
         <input
           type="text"
           id="subtitle"
-          className="subtitle"
-          autoComplete="none"
+          className="post-subtitle"
           placeholder="Subtitle"
           value={input.subtitle}
           onChange={(evt) => handleChange(evt)}
         ></input>
+        <input
+          type="text"
+          id="tags"
+          className="post-subtitle"
+          placeholder="tags separated by spaces"
+          value={input.tags}
+          onChange={(evt) => handleChange(evt)}
+        ></input>
+        <EditorButtons editor={editor}></EditorButtons>
         <div className="editor">
           <EditorContent id="text" editor={editor} />
         </div>
-        <EditorButtons editor={editor}></EditorButtons>
-        <input
-          type="submit"
-          name="submit"
-          value="Submit"
-          className="submit-button"
-        ></input>
+        <div>
+          <input
+            type="submit"
+            name="submit"
+            value="Submit"
+            className="submit-button"
+          >
+          </input>
+        </div>
       </form>
     </div>
   );
@@ -106,6 +120,7 @@ function EditorButtons({ editor }) {
     <div className="editor-button-wrap">
       <div className="tooltip small-formatting-hide">
         <button
+          type="button"
           onClick={() => editor.chain().focus().setParagraph().run()}
           className={
             editor.isActive("paragraph")
@@ -119,6 +134,7 @@ function EditorButtons({ editor }) {
       </div>
       <div className="tooltip small-formatting-hide">
         <button
+          type="button"
           onClick={() =>
             editor.chain().focus().toggleHeading({ level: 1 }).run()
           }
@@ -134,6 +150,7 @@ function EditorButtons({ editor }) {
       </div>
       <div className="tooltip small-formatting-hide">
         <button
+          type="button"
           onClick={() =>
             editor.chain().focus().toggleHeading({ level: 2 }).run()
           }
@@ -152,6 +169,7 @@ function EditorButtons({ editor }) {
 
       <div className="tooltip small-formatting-hide">
         <button
+          type="button"
           onClick={() =>
             editor.chain().focus().toggleHeading({ level: 3 }).run()
           }
@@ -168,6 +186,7 @@ function EditorButtons({ editor }) {
 
       <div className="tooltip small-formatting-hide">
         <button
+          type="button"
           onClick={() =>
             editor.chain().focus().toggleHeading({ level: 4 }).run()
           }
@@ -184,6 +203,7 @@ function EditorButtons({ editor }) {
 
       <div className="tooltip small-formatting-hide">
         <button
+          type="button"
           onClick={() =>
             editor.chain().focus().toggleHeading({ level: 5 }).run()
           }
@@ -200,6 +220,7 @@ function EditorButtons({ editor }) {
 
       <div className="tooltip small-formatting-hide">
         <button
+          type="button"
           onClick={() =>
             editor.chain().focus().toggleHeading({ level: 6 }).run()
           }
@@ -215,6 +236,7 @@ function EditorButtons({ editor }) {
       </div>
       <div className="tooltip">
         <button
+          type="button"
           className="editor-button"
           onClick={() => editor.chain().focus().unsetAllMarks().run()}
         >
@@ -227,6 +249,7 @@ function EditorButtons({ editor }) {
 
       <div className="tooltip">
         <button
+          type="button"
           onClick={() => editor.chain().focus().toggleBold().run()}
           className={
             editor.isActive("bold")
@@ -241,6 +264,7 @@ function EditorButtons({ editor }) {
 
       <div className="tooltip">
         <button
+          type="button"
           onClick={() => editor.chain().focus().toggleItalic().run()}
           className={
             editor.isActive("italic")
@@ -255,6 +279,7 @@ function EditorButtons({ editor }) {
 
       <div className="tooltip">
         <button
+          type="button"
           onClick={() => editor.chain().focus().toggleStrike().run()}
           className={
             editor.isActive("strike")
@@ -269,6 +294,7 @@ function EditorButtons({ editor }) {
 
       <div className="tooltip">
         <button
+          type="button"
           onClick={() => editor.chain().focus().toggleBulletList().run()}
           className={
             editor.isActive("bulletList")
@@ -285,6 +311,7 @@ function EditorButtons({ editor }) {
 
       <div className="tooltip">
         <button
+          type="button"
           onClick={() => editor.chain().focus().toggleOrderedList().run()}
           className={
             editor.isActive("orderedList")
@@ -301,6 +328,7 @@ function EditorButtons({ editor }) {
 
       <div className="tooltip">
         <button
+          type="button"
           onClick={() => editor.chain().focus().toggleCodeBlock().run()}
           className={
             editor.isActive("codeBlock")
@@ -315,6 +343,7 @@ function EditorButtons({ editor }) {
 
       <div className="tooltip">
         <button
+          type="button"
           onClick={() => editor.chain().focus().toggleCode().run()}
           className={
             editor.isActive("code")
@@ -329,6 +358,7 @@ function EditorButtons({ editor }) {
 
       <div className="tooltip">
         <button
+          type="button"
           onClick={() => editor.chain().focus().toggleBlockquote().run()}
           className={
             editor.isActive("blockquote")
@@ -343,6 +373,7 @@ function EditorButtons({ editor }) {
 
       <div className="tooltip">
         <button
+          type="button"
           className="editor-button"
           onClick={() => editor.chain().focus().setHorizontalRule().run()}
         >
@@ -353,6 +384,7 @@ function EditorButtons({ editor }) {
 
       <div className="tooltip">
         <button
+          type="button"
           className="editor-button"
           onClick={() => editor.chain().focus().setHardBreak().run()}
         >
@@ -363,6 +395,7 @@ function EditorButtons({ editor }) {
 
       <div className="tooltip">
         <button
+          type="button"
           className="editor-button"
           onClick={() => editor.chain().focus().undo().run()}
         >
@@ -372,6 +405,7 @@ function EditorButtons({ editor }) {
       </div>
       <div className="tooltip">
         <button
+          type="button"
           className="editor-button"
           onClick={() => editor.chain().focus().redo().run()}
         >
@@ -382,5 +416,7 @@ function EditorButtons({ editor }) {
     </div>
   );
 }
+
+const Post = connect(null, null)(PostWrapper);
 
 export default Post;

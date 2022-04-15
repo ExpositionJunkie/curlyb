@@ -1,9 +1,10 @@
 import React from "react";
 import Title from "../Reusable/Title/Title";
-import { connect, useSelector } from "react-redux";
+import BlogList from "../Blog/BlogList";
+import { connect } from "react-redux";
 import Line from "../Reusable/Line/Line";
-import Post from "../Reusable/Post/Post";
-import { NavLink } from "react-router-dom";
+import VariablePost from "../Reusable/Post/VariablePost";
+
 
 import "./Home.css";
 
@@ -17,30 +18,11 @@ function HomePage(props) {
           <h2>Blog in Dark Mode</h2>
         </div>
         <Line></Line>
-        <VariableBanner />
+        <VariablePost location={"home"}/>
+        <div className="plain-link"><BlogList /></div>
       </div>
     </div>
   );
-}
-
-function VariableBanner() {
-  const auth = useSelector((state) => state.auth);
-
-  if (auth.isAuthenticated) {
-    return <Post />;
-  } else {
-    return (
-      <div>
-        <h3 className="tagline">Want to start sharing your own thoughts?</h3>
-        <h2>
-          <div className="linkNoUnderline">
-            <NavLink to="/signup">Sign Up</NavLink> or{" "}
-            <NavLink to="/login">Log In</NavLink>
-          </div>
-        </h2>
-      </div>
-    );
-  }
 }
 
 const Home = connect(null, null)(HomePage);

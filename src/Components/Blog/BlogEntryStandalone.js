@@ -27,8 +27,14 @@ export function BlogEntryS() {
     return (
       <div key={blogId} id="inner_entry_wrapper">
         <Subtitle titleStr={blog.title} subtitleStr={blog.subtitle}></Subtitle>
-        <div dangerouslySetInnerHTML={sanitizedData()} />
+        <Line />
+        <span className="author-details">
+        <div className="author"><h2>Author: {blog.author.username}</h2></div>
         <p className="date"> - {date.toLocaleString()}</p>
+        </span>
+        <Line />
+        <div dangerouslySetInnerHTML={sanitizedData()} />
+        
         <div className="marg3">
           <Line></Line>
         </div>
@@ -44,7 +50,7 @@ export function BlogEntryS() {
       </div>
     );
   } else {
-    return <div>Oops, there's nothing here! Better call Roz</div>;
+    return <div>Oops, there's nothing here! Better call Zenith</div>;
   }
 }
 

@@ -15,12 +15,15 @@ export default function BlogEntry({ blog }) {
     return (
       <div id="inner_entry_wrapper">
         <Subtitle titleStr={blog.title} subtitleStr={blog.subtitle}></Subtitle>
-        <div dangerouslySetInnerHTML={sanitizedData()} />
+        <Line></Line>
+        <div className="author"><h2>Author: {blog.author.username}</h2></div>
         <p className="date"> - {date.toLocaleString()}</p>
+        <Line></Line>
+        <div className="blog-entry-body" dangerouslySetInnerHTML={sanitizedData()} />
         <div className="marg3">
           <Line></Line>
         </div>
-        <div className="tags">
+        <div className="tags"><div><p>Tags:</p></div>
           {blog.tags.map((paragraph, index) => {
             return (
               <p className="tag" key={index}>

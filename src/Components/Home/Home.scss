@@ -10,15 +10,20 @@
 
 .inner-home-wrapper {
   padding: 2rem;
-  text-align: center;
 }
 
 .tagline {
   font-family: $bodyFont;
   font-size: 2rem;
+  text-align: center;
 }
 
 .headline {
   padding: 2rem;
   text-align: center;
+}
+
+.home-wrapper a {
+  text-decoration: none;
+  color: inherit;
 }

@@ -31,13 +31,17 @@ export default function About(props) {
             <li>Working backend - SSL certs and all!</li>
             <li>Redux</li>
             <li>Login ability</li>
+            <li>Blogging ability for users too as well as comments</li>
           </ul>
           <p>Near Future Attainables:</p>
           <ul>
-            <li>Blogging ability for users too as well as comments</li>
+            <li>Put/Delete Buttons</li>
+            <li>Comments</li>
           </ul>
           <p>Further Future Attainables</p>
           <ul>
+          <li>Favorites</li>
+            <li>Friends</li>
             <li>
               RSS feed (This is waiting due to it being a better idea to do this programmatically than writing by hand)
             </li>

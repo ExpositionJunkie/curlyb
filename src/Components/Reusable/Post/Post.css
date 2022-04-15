@@ -1,3 +1,7 @@
+.ProseMirror:focus {
+  outline: none;
+}
+
 @media screen and (max-width: 500px) {
   .tooltip button {
     background-color: black;
@@ -11,10 +15,11 @@
   }
 
   .editor-button-wrap {
+    margin-top: 1rem;
     display: flex;
     max-width: 100%;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-direction: row;
   }
 
@@ -73,19 +78,25 @@
   }
 
   .submit-button {
+    display: flex;
     margin-top: 1rem;
     border-radius: 15px;
     font-family: "Raleway", sans-serif;
     font-size: 1.5rem;
     background-color: #e94584;
     color: #ffffff;
-    padding: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    width: 100%;
   }
 
   .post-wrapper {
-    margin: 0px;
-    display: flex;
-    flex-direction: column;
+    display: block;
+    color: #ffffff;
+    margin: 2rem;
+    align-items: center;
+    max-width: 80vw;
   }
 
   .editor {
@@ -94,17 +105,23 @@
     border-radius: 20px;
     font-family: "Raleway", sans-serif;
     text-align: left;
-    margin-top: 0.5rem;
+    max-width: 100%;
+    outline: none;
   }
 
   .title,
-.subtitle,
+.post-subtitle,
 .editor {
+    box-sizing: border-box;
+    padding: 1rem;
+    display: flex;
     background-color: #262624;
     color: #ffffff;
-    padding: 1rem;
-    margin-bottom: 1rem;
     width: 100%;
+    max-width: 100%;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   .title {
@@ -113,9 +130,10 @@
     border-radius: 20px;
     font-family: "Staatliches", cursive;
     padding-bottom: 0.5rem;
+    max-width: 100%;
   }
 
-  .subtitle {
+  .post-subtitle {
     font-family: "Advent Pro", sans-serif;
     font-size: 1rem;
     align-self: center;
@@ -129,7 +147,6 @@
 
   .tooltip .tooltip-text {
     visibility: hidden;
-    width: 200px;
     background-color: #000000;
     color: #e94584;
     position: absolute;
@@ -155,7 +172,7 @@
   }
 
   .editor-button {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 0.25rem;
   }
 
@@ -163,7 +180,7 @@
     display: flex;
     max-width: 100%;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-direction: row;
   }
 
@@ -246,16 +263,15 @@
     text-align: left;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    margin-top: 0.5rem;
   }
 
   .title,
-.subtitle,
+.post-subtitle,
 .editor {
     background-color: #262624;
     color: #ffffff;
     padding: 1rem;
-    margin: 0.5rem;
+    margin-top: 1rem;
     width: 100%;
   }
 
@@ -265,12 +281,10 @@
     border-radius: 20px;
     font-family: "Staatliches", cursive;
     font-size: 3rem;
-    padding-bottom: 0.5rem;
   }
 
-  .subtitle {
+  .post-subtitle {
     font-family: "Advent Pro", sans-serif;
-    margin-bottom: 3rem;
     font-size: 2rem;
     align-self: center;
     border-radius: 20px;
@@ -312,7 +326,7 @@
     display: flex;
     max-width: 100%;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-direction: row;
   }
 
@@ -382,7 +396,6 @@
   }
 
   .post-wrapper {
-    padding: 4rem;
     margin: 3rem;
   }
 
@@ -398,7 +411,7 @@
   }
 
   .title,
-.subtitle,
+.post-subtitle,
 .editor {
     background-color: #262624;
     color: #ffffff;
@@ -416,7 +429,7 @@
     padding-bottom: 0.5rem;
   }
 
-  .subtitle {
+  .post-subtitle {
     font-family: "Advent Pro", sans-serif;
     margin-bottom: 3rem;
     font-size: 2rem;
@@ -461,7 +474,7 @@
     display: flex;
     max-width: 100%;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-direction: row;
   }
 
@@ -531,7 +544,6 @@
   }
 
   .post-wrapper {
-    padding: 4rem;
     margin: 3rem;
   }
 
@@ -547,7 +559,7 @@
   }
 
   .title,
-.subtitle,
+.post-subtitle,
 .editor {
     background-color: #262624;
     color: #ffffff;
@@ -565,7 +577,7 @@
     padding-bottom: 0.5rem;
   }
 
-  .subtitle {
+  .post-subtitle {
     font-family: "Advent Pro", sans-serif;
     margin-bottom: 3rem;
     font-size: 2rem;
@@ -606,15 +618,14 @@
   }
 
   .editor-button {
-    font-size: 3rem;
-    margin: 1rem;
+    font-size: 1rem;
   }
 
   .editor-button-wrap {
     display: flex;
     max-width: 100%;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
 
   .is-active {
@@ -683,12 +694,11 @@
   }
 
   .post-wrapper {
-    padding: 4rem;
     margin: 3rem;
   }
 
   .editor {
-    font-size: 2rem;
+    font-size: 1.5rem;
     align-self: center;
     border-radius: 20px;
     font-family: "Raleway", sans-serif;
@@ -699,7 +709,7 @@
   }
 
   .title,
-.subtitle,
+.post-subtitle,
 .editor {
     background-color: #262624;
     color: #ffffff;
@@ -709,7 +719,7 @@
   }
 
   .title {
-    font-size: 3rem;
+    font-size: 1.5rem;
     align-self: center;
     border-radius: 20px;
     font-family: "Staatliches", cursive;
@@ -717,10 +727,10 @@
     padding-bottom: 0.5rem;
   }
 
-  .subtitle {
+  .post-subtitle {
     font-family: "Advent Pro", sans-serif;
     margin-bottom: 3rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     align-self: center;
     border-radius: 20px;
   }

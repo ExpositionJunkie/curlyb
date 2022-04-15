@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Line from "../Reusable/Line/Line";
 import BlogEntry from "./BlogEntry";
 import { Link } from "react-router-dom";
+import VariablePost from "../Reusable/Post/VariablePost";
 import "./Blogs.css";
 //redux
 import { connect, useSelector, useDispatch } from "react-redux";
@@ -26,6 +27,9 @@ export function Blogs() {
   } else if (!blogs.isLoading && !blogs.errMess) {
     return (
       <div className="entry-wrapper">
+        <div className="post-list-wrapper">
+          <VariablePost location="blog" />
+        </div>
         <div>
           {blogs.blogs.map((blogEntry) => {
             return (
@@ -47,6 +51,6 @@ export function Blogs() {
   }
 }
 
-const BlogList = connect(null, null)(Blogs);
+const BlogPage = connect(null, null)(Blogs);
 
-export default BlogList;
+export default BlogPage;
