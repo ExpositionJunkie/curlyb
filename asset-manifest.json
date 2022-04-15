@@ -1,13 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.803af154.css",
-    "main.js": "/static/js/main.1f993b7d.js",
+    "main.css": "/static/css/main.d2e6287a.css",
+    "main.js": "/static/js/main.ac420a36.js",
     "static/media/the-great-flood.jpg": "/static/media/the-great-flood.30ebef797428840eac4a.jpg",
-    "static/media/RozZoltar.jpg": "/static/media/RozZoltar.e73ceabc70d29c5932dd.jpg",
     "static/media/ApolloGlamourShot.jpg": "/static/media/ApolloGlamourShot.734f7496e7b076d056e6.jpg",
-    "static/media/RozLake.jpg": "/static/media/RozLake.a6622ac229e51a0c69c9.jpg",
     "static/media/WorkshopRoz.jpg": "/static/media/WorkshopRoz.414192ff0eceb9c030f1.jpg",
-    "static/media/netrunner2.jpg": "/static/media/netrunner2.cae2a3f593c010e873f1.jpg",
     "static/media/Elipses.svg": "/static/media/Elipses.8d519f04421f9854e91bb1e77c7b3145.svg",
     "static/media/logo.svg": "/static/media/logo.4a3da65cfe97b22f9ab5aeb08813b984.svg",
     "static/media/sass.svg": "/static/media/sass.321b2edad0c70a8332cf1a22ba2ef430.svg",
@@ -23,11 +20,11 @@
     "static/media/linkedIn.svg": "/static/media/linkedIn.bf00913dc77d0de97d51e9b723abc05f.svg",
     "static/media/css3.svg": "/static/media/css3.f40adea72026a24a549a62082ce10ea8.svg",
     "static/media/html5.svg": "/static/media/html5.b2df6907108c1c1f71ca0581196c32bf.svg",
-    "main.803af154.css.map": "/static/css/main.803af154.css.map",
-    "main.1f993b7d.js.map": "/static/js/main.1f993b7d.js.map"
+    "main.d2e6287a.css.map": "/static/css/main.d2e6287a.css.map",
+    "main.ac420a36.js.map": "/static/js/main.ac420a36.js.map"
   },
   "entrypoints": [
-    "static/css/main.803af154.css",
-    "static/js/main.1f993b7d.js"
+    "static/css/main.d2e6287a.css",
+    "static/js/main.ac420a36.js"
   ]
 }
