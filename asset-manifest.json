@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.d2e6287a.css",
-    "main.js": "/static/js/main.ac420a36.js",
+    "main.css": "/static/css/main.71ce1733.css",
+    "main.js": "/static/js/main.1338409a.js",
     "static/media/the-great-flood.jpg": "/static/media/the-great-flood.30ebef797428840eac4a.jpg",
     "static/media/ApolloGlamourShot.jpg": "/static/media/ApolloGlamourShot.734f7496e7b076d056e6.jpg",
     "static/media/WorkshopRoz.jpg": "/static/media/WorkshopRoz.414192ff0eceb9c030f1.jpg",
@@ -20,11 +20,11 @@
     "static/media/linkedIn.svg": "/static/media/linkedIn.bf00913dc77d0de97d51e9b723abc05f.svg",
     "static/media/css3.svg": "/static/media/css3.f40adea72026a24a549a62082ce10ea8.svg",
     "static/media/html5.svg": "/static/media/html5.b2df6907108c1c1f71ca0581196c32bf.svg",
-    "main.d2e6287a.css.map": "/static/css/main.d2e6287a.css.map",
-    "main.ac420a36.js.map": "/static/js/main.ac420a36.js.map"
+    "main.71ce1733.css.map": "/static/css/main.71ce1733.css.map",
+    "main.1338409a.js.map": "/static/js/main.1338409a.js.map"
   },
   "entrypoints": [
-    "static/css/main.d2e6287a.css",
-    "static/js/main.ac420a36.js"
+    "static/css/main.71ce1733.css",
+    "static/js/main.1338409a.js"
   ]
 }
