@@ -48,8 +48,6 @@ export function BlogEntryS() {
             );
           })}
         </div>
-        <Line></Line>
-        <BlogFooter />
       </div>
     );
   } else {
