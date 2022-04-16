@@ -9,7 +9,7 @@ import { bindActionCreators } from "redux";
 import { ActionCreators } from "../../Redux/reduxIndex";
 
 
-export function Blogs() {
+export function Blogs({}) {
   const dispatch = useDispatch();
   //dispatches for blogs
   dispatch({ type: "fetchBlogs" });
@@ -21,6 +21,7 @@ export function Blogs() {
     fetchBlogs();
   }, []);
 
+
   if (blogs.isLoading || blogs.errMess) {
     return <></>;
   } else if (!blogs.isLoading && !blogs.errMess) {
@@ -31,7 +32,7 @@ export function Blogs() {
             return (
               <div key={blogEntry._id}>
                 <div className="entry shadow-box">
-                  <Link id="link-wrap" to={`./${blogEntry._id}`}>
+                  <Link id="link-wrap" to={`blog/${blogEntry._id}`}>
                     <BlogEntry blog={blogEntry} />
                   </Link>
                 </div>

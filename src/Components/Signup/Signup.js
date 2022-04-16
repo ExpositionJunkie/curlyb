@@ -4,7 +4,8 @@ import { bindActionCreators } from "redux";
 import { ActionCreators } from "../../Redux/reduxIndex";
 import { NavLink } from "react-router-dom";
 import Title from "../Reusable/Title/Title";
-import LoginForm from "../Login/LoginForm"
+import LoginForm from "../Login/LoginForm";
+import DOMPurify from "dompurify";
 import "./Signup.css";
 
 function SignupWrap() {
@@ -74,7 +75,7 @@ export function SignupForm() {
   const handleChange = (evt) => {
     setInput((prevState) => ({
       ...prevState,
-      [evt.target.id]: evt.target.value,
+      [evt.target.id]: DOMPurify.sanitize(evt.target.value),
     }));
     evt.preventDefault();
   };

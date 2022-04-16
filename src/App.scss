@@ -68,7 +68,7 @@
 //Shadow Containers
 //Explanation of why we are using this type of box shadow - adapted this for use across site.
 //https://tobiasahlin.com/blog/how-to-animate-box-shadow/
-.shadow-box-no-zoom{
+.shadow-box-no-zoom {
   position: relative;
   width: inherit;
   height: inherit;
@@ -93,7 +93,6 @@
 .shadow-box-noz-zoom:hover::after {
   opacity: 1;
 }
-
 
 .shadow-box {
   position: relative;
@@ -127,6 +126,38 @@
 }
 
 .shadow-box:hover::after {
+  opacity: 1;
+}
+
+.shadow-icon {
+  position: relative;
+  background-color: none;
+  border-radius: 20px;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.shadow-icon::after {
+  content: "";
+  border-radius: 20px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.shadow-icon:hover {
+  @include rainbow-svg-shadow(2px, 5px, 15px);
+  -webkit-transform: scale(0.95, 0.95);
+  transform: scale(0.95, 0.95);
+}
+
+.shadow-icon:hover::after {
   opacity: 1;
 }
 

@@ -3,11 +3,11 @@ import Post from "./Post";
 import { NavLink } from "react-router-dom";
 import "./VariablePost.css"
 
-function VariablePostWrap({location}) {
+function VariablePostWrap({location, content}) {
     const auth = useSelector((state) => state.auth);
   
     if (auth.isAuthenticated) {
-      return <Post location={location} />;
+      return <Post location={location} content={content}/>;
     } else {
       return (
         <div className="unverified-post">

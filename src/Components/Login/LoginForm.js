@@ -3,6 +3,7 @@ import { connect, useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { ActionCreators } from "../../Redux/reduxIndex";
 import {useNavigate} from "react-router-dom";
+import DOMPurify from "dompurify";
 
 function LoginFormOnly() {
   const [input, setInput] = useState({ email: "", username: "", password: "" });
@@ -22,7 +23,7 @@ function LoginFormOnly() {
   const handleChange = (evt) => {
     setInput((prevState) => ({
       ...prevState,
-      [evt.target.id]: evt.target.value,
+      [evt.target.id]: DOMPurify.sanitize(evt.target.value),
     }));
     evt.preventDefault();
   };

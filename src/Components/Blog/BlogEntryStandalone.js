@@ -3,6 +3,7 @@ import Subtitle from "../Reusable/Subtitle/Subtitle";
 import Line from "../Reusable/Line/Line";
 import { useParams } from "react-router-dom";
 import DOMPurify from "dompurify"
+import BlogFooter from "./BlogFooter"
 
 //redux
 import { connect, useSelector } from "react-redux";
@@ -25,7 +26,7 @@ export function BlogEntryS() {
 
   if (blog) {
     return (
-      <div key={blogId} id="inner_entry_wrapper">
+      <div key={blogId} id="inner_entry_wrapper" className="standalone">
         <Subtitle titleStr={blog.title} subtitleStr={blog.subtitle}></Subtitle>
         <Line />
         <span className="author-details">
@@ -47,6 +48,8 @@ export function BlogEntryS() {
             );
           })}
         </div>
+        <Line></Line>
+        <BlogFooter />
       </div>
     );
   } else {
