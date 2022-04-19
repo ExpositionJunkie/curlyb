@@ -38,11 +38,11 @@ function SignupWrap() {
         <Title titleStr="Sign Up"></Title>
         <div className="signup-form-inner-wrapper">
           <div className="signup-form">
-            <h1>
+            <h1 className="signup-tagline">
               Want to start your own blog or leave a comment? Sign Up to leave
               your mark between the curly brackets.
             </h1>
-            <h2>{validationText}</h2>
+            <div className="signup-validation-text">{validationText}</div>
             <SignupForm></SignupForm>
             <p>Already have an account? <NavLink to="/login">Login here.</NavLink></p>
           </div>

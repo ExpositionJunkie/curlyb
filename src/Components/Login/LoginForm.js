@@ -40,7 +40,7 @@ function LoginFormOnly() {
 
   return (
     <div className="login-form">
-      <h1>{validationText}</h1>
+      <div>{validationText}</div>
       <form onSubmit={(evt) => handleLogin(evt)}>
         <span className="inner-form">
           <label htmlFor="username">Username</label>
