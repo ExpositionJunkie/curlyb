@@ -116,8 +116,10 @@
     border-radius: 20px;
     font-family: "Raleway", sans-serif;
     text-align: left;
-    max-width: 100%;
-    outline: none;
+  }
+
+  .editor:hover, .editor:active {
+    outline: auto;
   }
 
   .title,
@@ -133,6 +135,59 @@
     margin-top: 1rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
+  }
+
+  .title:hover, .title:active, .post-subtitle:hover, .post-subtitle:active, .editor:hover, .editor:active {
+    -webkit-animation: shadow-fade 16s linear infinite;
+            animation: shadow-fade 16s linear infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+  }
+  @-webkit-keyframes shadow-fade {
+    0% {
+      box-shadow: 5px 5px 15px #f17c58;
+    }
+    16% {
+      box-shadow: 5px 5px 15px #ffdc18;
+    }
+    32% {
+      box-shadow: 5px 5px 15px #27dbb1;
+    }
+    48% {
+      box-shadow: 5px 5px 15px #24aadb;
+    }
+    64% {
+      box-shadow: 5px 5px 15px #8335d0;
+    }
+    84% {
+      box-shadow: 5px 5px 15px #e94584;
+    }
+    100% {
+      box-shadow: 5px 5px 15px #ff3706;
+    }
+  }
+  @keyframes shadow-fade {
+    0% {
+      box-shadow: 5px 5px 15px #f17c58;
+    }
+    16% {
+      box-shadow: 5px 5px 15px #ffdc18;
+    }
+    32% {
+      box-shadow: 5px 5px 15px #27dbb1;
+    }
+    48% {
+      box-shadow: 5px 5px 15px #24aadb;
+    }
+    64% {
+      box-shadow: 5px 5px 15px #8335d0;
+    }
+    84% {
+      box-shadow: 5px 5px 15px #e94584;
+    }
+    100% {
+      box-shadow: 5px 5px 15px #ff3706;
+    }
   }
 
   .title {

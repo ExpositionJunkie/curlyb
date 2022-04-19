@@ -13,10 +13,8 @@ function VariablePostWrap({location, content}) {
         <div className="unverified-post">
           <h3 className="tagline">Want to start sharing your own thoughts?</h3>
           <h2>
-            <div className="action-call-heading">
-              <NavLink className="linkNoUnderline" to="/signup">Sign Up</NavLink> or{" "}
-              <NavLink className="linkNoUnderline" to="/login">Log In</NavLink>
-            </div>
+
+
           </h2>
         </div>
       );

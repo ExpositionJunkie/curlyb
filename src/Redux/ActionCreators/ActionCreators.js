@@ -133,7 +133,7 @@ export const postComment = (text, blogId) => (dispatch) => {
   };
   console.log("Comment ", newComment);
   const bearer = "Bearer " + localStorage.getItem("token");
-  return fetch(baseUrl + "comments", {
+  return fetch(baseUrl + "blog/" + blogId+ "/comments", {
     method: "POST",
     body: JSON.stringify(newComment),
     headers: {

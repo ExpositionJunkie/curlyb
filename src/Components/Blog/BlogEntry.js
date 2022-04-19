@@ -1,10 +1,12 @@
+import {NavLink} from "react-router-dom"
 import Subtitle from "../Reusable/Subtitle/Subtitle";
 import Line from "../Reusable/Line/Line";
 import DOMPurify from "dompurify";
 import BlogFooter from "./BlogFooter"
 
 // this component is for rendering the inner entries when blogs are listed out
-export default function BlogEntry({ blog }) {
+export default function BlogEntry({ blog, location }) {
+
   const sanitizedData = () => ({
     __html: DOMPurify.sanitize(blog.text),
   });
@@ -14,6 +16,7 @@ export default function BlogEntry({ blog }) {
   if (blog) {
     return (
       <div id="inner_entry_wrapper">
+        <NavLink id="link-wrap" to={`${location}/${blog._id}`}>
         <Subtitle titleStr={blog.title} subtitleStr={blog.subtitle}></Subtitle>
         <Line></Line>
         <div className="author-details">
@@ -44,7 +47,8 @@ export default function BlogEntry({ blog }) {
             );
           })}
         </div>
-        
+        </NavLink>
+        <BlogFooter blog={blog} />
       </div>
     );
   } else {

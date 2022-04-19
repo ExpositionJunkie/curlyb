@@ -95,9 +95,7 @@ function PostWrapper({location, content}) {
           onChange={(evt) => handleChange(evt)}
         ></input>
         <EditorButtons editor={editor}></EditorButtons>
-   
           <EditorContent className="editor" id="text" editor={editor} />
-
   
           <input
             type="submit"
