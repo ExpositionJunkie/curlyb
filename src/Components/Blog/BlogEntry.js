@@ -23,10 +23,12 @@ export default function BlogEntry({ blog }) {
           <p className="date"> - {date.toLocaleString()}</p>
         </div>
         <Line></Line>
+        <div className="blog-body-wrap">
         <div
           className="blog-entry-body"
           dangerouslySetInnerHTML={sanitizedData()}
         />
+        </div>
         <div className="marg3">
           <Line></Line>
         </div>

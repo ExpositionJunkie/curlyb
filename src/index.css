@@ -6,7 +6,7 @@ body {
   margin: 0;
 }
 
-.body {
+.body, .main {
   background-color: black;
   margin: 0;
   height: 100%;

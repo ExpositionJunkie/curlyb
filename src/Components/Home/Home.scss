@@ -18,12 +18,25 @@
   text-align: center;
 }
 
-.headline {
-  padding: 2rem;
-  text-align: center;
-}
 
 .home-wrapper a {
   text-decoration: none;
   color: inherit;
 }
+
+
+@media screen and (max-width: 500px) {
+  .headline {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .home-title {
+    font-size: 3rem;
+
+  }
+  .home-subtitle {
+    font-size: 2rem;
+  }
+}
+

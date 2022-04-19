@@ -1,10 +1,22 @@
 @import "../../../Variables/Sass/SassVariables.scss";
 
 .ProseMirror:focus {
-  outline: none;
+  overflow-x: auto;
+  outline-offset: 1rem;
 }
 
+.ProseMirror {
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+
+
 @media screen and (max-width: 500px) {
+  .post-header {
+    font-size: 1.5rem;
+    font-family: $bodyFont;
+  }
+
   .tooltip button {
     background-color: black;
     color: $whiteColor;
@@ -32,7 +44,9 @@
 
   .submit-button {
     display: flex;
+    justify-content: space-evenly;
     margin-top: 1rem;
+    margin-bottom: 1rem;
     border-radius: 15px;
     font-family: $bodyFont;
     font-size: 1.5rem;
@@ -40,17 +54,14 @@
     color: $whiteColor;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    text-align: center;
-    width: 100%;
+    width: 95%;
   }
 
   .post-wrapper {
     display: block;
-
     color: $whiteColor;
-    margin: 2rem;
     align-items: center;
-    max-width: 80vw;
+    max-width: 90vw;
   }
 
   .editor {

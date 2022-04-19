@@ -1,4 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Advent+Pro&family=Audiowide&family=Comfortaa&family=Raleway:wght@200&family=Staatliches&display=swap");
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #e94584;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #27dbb1;
+}
+
 .pad1 {
   padding: 1rem;
 }

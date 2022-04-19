@@ -15,7 +15,7 @@ function BlogFooter({blog}) {
     return (
         <div className="blog-footer-wrapper">
             <div className="blog-footer-icons">
-            <FontAwesomeIcon icon={solid("heart")} className="shadow-icon blog-footer-icon" />
+            <FontAwesomeIcon icon={solid("reply")} className="shadow-icon blog-footer-icon" />
             <FontAwesomeIcon icon={solid("message")} className="shadow-icon blog-footer-icon" onClick={(evt) => handleComment(evt)}/>
             <FontAwesomeIcon icon={solid("pen-to-square")} className="shadow-icon blog-footer-icon"/>
             <FontAwesomeIcon icon={solid("eraser")} className="shadow-icon blog-footer-icon"/>

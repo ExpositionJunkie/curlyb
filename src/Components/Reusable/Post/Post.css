@@ -1,8 +1,19 @@
 .ProseMirror:focus {
-  outline: none;
+  overflow-x: auto;
+  outline-offset: 1rem;
+}
+
+.ProseMirror {
+  overflow-wrap: break-word;
+  word-break: break-all;
 }
 
 @media screen and (max-width: 500px) {
+  .post-header {
+    font-size: 1.5rem;
+    font-family: "Raleway", sans-serif;
+  }
+
   .tooltip button {
     background-color: black;
     color: #ffffff;
@@ -79,7 +90,9 @@
 
   .submit-button {
     display: flex;
+    justify-content: space-evenly;
     margin-top: 1rem;
+    margin-bottom: 1rem;
     border-radius: 15px;
     font-family: "Raleway", sans-serif;
     font-size: 1.5rem;
@@ -87,16 +100,14 @@
     color: #ffffff;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    text-align: center;
-    width: 100%;
+    width: 95%;
   }
 
   .post-wrapper {
     display: block;
     color: #ffffff;
-    margin: 2rem;
     align-items: center;
-    max-width: 80vw;
+    max-width: 90vw;
   }
 
   .editor {

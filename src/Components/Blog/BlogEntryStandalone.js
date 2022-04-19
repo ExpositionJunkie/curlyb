@@ -52,8 +52,9 @@ export function BlogEntryS() {
         <p className="date"> - {date.toLocaleString()}</p>
         </span>
         <Line />
-        <div dangerouslySetInnerHTML={sanitizedData()} />
-        
+        <div className="blog-body-wrap">
+        <div className="blog-entry-body" dangerouslySetInnerHTML={sanitizedData()} />
+        </div>
         <div className="marg3">
           <Line></Line>
         </div>

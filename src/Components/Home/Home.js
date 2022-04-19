@@ -14,8 +14,8 @@ function HomePage(props) {
       <Title titleStr="Home" />
       <div className="inner-home-wrapper">
         <div className="headline">
-          <h1>Welcome to Curlybrackets.</h1>
-          <h2>Blog in Dark Mode</h2>
+          <h1 className="home-title">Welcome to Curlybrackets.</h1>
+          <h2 className="home-subtitle">Blog in Dark Mode</h2>
         </div>
         <Line></Line>
         <VariablePost location={"home"}/>

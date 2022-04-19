@@ -19,14 +19,6 @@
   color: $purpleColor;
 }
 
-.inner-about-wrapper {
-  padding: 2rem;
-}
-
-.headline {
-  font-family: $subtitleFont;
-  font-size: 2rem;
-}
 
 .about-body {
   font-family: $bodyFont;
@@ -34,9 +26,14 @@
 }
 
 @media screen and (max-width: 500px) {
-  .about-body h2 {
+  .inner-about-wrapper {
+    padding: 0.5rem;
+  }
+
+  .about-body {
     font-size: 1.5rem;
   }
+
   .about-img-div {
     display: grid;
     grid-template-rows: 30% 30% 30%;
@@ -58,7 +55,7 @@
 
   #hiRoz {
     font-family: $titleFont;
-    font-size: 5rem;
+    font-size: 4rem;
     text-align: center;
     padding-top: 0;
     padding-bottom: 0;
@@ -66,18 +63,18 @@
   }
 
   #drop {
-    font-size: 3rem;
+    font-size: 2rem;
     font-family: $titleFont;
   }
 
   .subtitle {
     font-family: $bodyFont;
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   #netrunner,
   #apollo {
-    height: 30rem;
+    height: 20rem;
     width: auto;
     border-radius: 20px;
     display: block;
@@ -95,20 +92,20 @@
 
   .hobbies {
     font-family: $subtitleFont;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 100;
+    text-align: left;
   }
 
   // Stack List Card
   .stackWrap {
-    display: grid;
-    grid-template-columns: 30% 70%;
-    grid-column: auto;
+    display: flex;
+    padding: 1rem;
   }
 
   .stack {
-    font-size: 8vw;
-    padding-left: 1em;
+    font-size: 3rem;
+    padding-right: 1rem;
     font-family: $titleFont;
     text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
       -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
@@ -131,8 +128,8 @@
   }
   .stackList {
     align-content: space-between;
-    font-size: 3.5vw;
-    padding-right: 1em;
+    font-size: 1.5rem;
+    padding-right: 1rem;
     font-family: $subtitleFont;
   }
 
@@ -145,9 +142,6 @@
   }
 
   //Goals Card
-  .goals {
-    padding: 2rem;
-  }
   .goals h1 {
     font-family: $titleFont;
     font-size: 3rem;
@@ -167,9 +161,18 @@
     font-family: $subtitleFont;
     font-size: 1.5rem;
   }
+
+  .headline {
+    font-family: $subtitleFont;
+    font-size: 1.5rem;
+  }
 }
 
-@media screen and (min-width: 599px) {
+@media screen and (min-width: 500px) {
+  .inner-about-wrapper {
+    padding: 2rem;
+  }
+  
   .about-body h2 {
     font-size: 1.5rem;
   }

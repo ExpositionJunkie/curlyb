@@ -13,8 +13,6 @@ export default function About(props) {
     <div className="about-wrapper">
       <Title titleStr="About" />
       <div className="inner-about-wrapper">
-      
-      <div className="pad2">
         <div className="intro goals">
           <h1>Site Goals</h1>
           <h3 className="linkNoUnderline">
@@ -47,7 +45,7 @@ export default function About(props) {
             </li>
           </ul>
         </div>
-      </div>
+     
       <Line></Line>
         <div className="about-body">
           <h2>

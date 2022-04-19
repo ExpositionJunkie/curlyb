@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-
+import React, { useState } from "react";
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import EditorButtons from "./EditorButtons"
@@ -65,7 +64,7 @@ function PostWrapper({location, content}) {
 
   return (
     <div className="post-wrapper">
-      <h1>Write your magnum opus or hello world below:</h1>
+      <h1 className="post-header">Write your magnum opus or hello world below:</h1>
       <form
         autoComplete="off"
         onSubmit={(evt) => handleSubmit(evt)}
@@ -96,10 +95,10 @@ function PostWrapper({location, content}) {
           onChange={(evt) => handleChange(evt)}
         ></input>
         <EditorButtons editor={editor}></EditorButtons>
-        <div className="editor">
-          <EditorContent id="text" editor={editor} />
-        </div>
-        <div>
+   
+          <EditorContent className="editor" id="text" editor={editor} />
+
+  
           <input
             type="submit"
             name="submit"
@@ -107,7 +106,7 @@ function PostWrapper({location, content}) {
             className="submit-button"
           >
           </input>
-        </div>
+ 
       </form>
     </div>
   );
