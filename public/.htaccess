@@ -7,5 +7,7 @@
     RewriteCond %{REQUEST_FILENAME} !-l
     RewriteRule ^.*$ /myapp/index.html [QSA,L]
     # Fallback all other routes to index.html
-RewriteRule ^ /path/to/subfolder/index.html [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_URI} !/index\.html$ [NC]
+    RewriteRule ^blog/(?:(.+)/?)?$ /blog/$1/index.html [L,NC,R=301]
 </IfModule>

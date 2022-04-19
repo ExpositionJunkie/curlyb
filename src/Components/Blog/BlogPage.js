@@ -35,7 +35,7 @@ export function Blogs() {
             return (
               <div key={blogEntry._id}>
                 <div className="entry shadow-box">
-                  <Link id="link-wrap" to={`./${blogEntry._id}`}>
+                  <Link id="link-wrap" to={`/blog/${blogEntry._id}`}>
                     <BlogEntry blog={blogEntry} />
                   </Link>
                 </div>
