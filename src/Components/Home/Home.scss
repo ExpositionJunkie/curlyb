@@ -40,3 +40,17 @@
   }
 }
 
+@media screen and (min-width: 500px) {
+  .headline {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .home-title {
+    font-size: 3rem;
+
+  }
+  .home-subtitle {
+    font-size: 2rem;
+  } 
+}

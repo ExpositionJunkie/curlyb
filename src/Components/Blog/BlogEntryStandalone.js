@@ -67,6 +67,7 @@ export function BlogEntryS() {
             );
           })}
         </div>
+
       </div>
     );
   } else {

@@ -44,7 +44,7 @@ export default function BlogEntry({ blog }) {
             );
           })}
         </div>
-
+        
       </div>
     );
   } else {
