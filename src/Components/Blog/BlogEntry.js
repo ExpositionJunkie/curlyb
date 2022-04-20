@@ -48,7 +48,7 @@ export default function BlogEntry({ blog, location }) {
           })}
         </div>
         </NavLink>
-        <BlogFooter blog={blog} />
+        <BlogFooter blog={blog} comments={false} />
       </div>
     );
   } else {

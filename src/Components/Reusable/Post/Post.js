@@ -72,9 +72,6 @@ function PostWrapper({ title, subtitle, tags, text, edit, blogId }) {
 
   return (
     <div className="post-wrapper">
-      <h1 className="post-header">
-        Write your magnum opus or hello world below:
-      </h1>
       <form
         autoComplete="off"
         onSubmit={(evt) => handleSubmit(evt)}

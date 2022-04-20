@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Post from "../Reusable/Post/Post";
+import Line from "../Reusable/Line/Line";
 import AddComment from "../Reusable/Comment/AddComment";
 import Comments from "../Reusable/Comment/Comments";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro"; // <-- import styles to be used
@@ -10,11 +11,23 @@ import { bindActionCreators } from "redux";
 import { ActionCreators } from "../../Redux/reduxIndex";
 import { connect, useSelector, useDispatch } from "react-redux";
 
-function BlogF({ blog }) {
+function BlogF({ blog, comments }) {
   const [commentActive, setCommentActive] = useState(false);
   const [replyActive, setReplyActive] = useState(false);
-  const [editActive, setEditActive] = useState(false);
+
   const auth = useSelector((state) => state.auth);
+  const [editActive, setEditActive] = useState(false);
+
+  useEffect(() => {
+    if (comments) {
+      setCommentActive(!commentActive);
+    }
+  }, []);
+
+  const handleEdit = (evt) => {
+    evt.preventDefault();
+    setEditActive(!editActive);
+  };
 
   const handleComment = (evt) => {
     evt.preventDefault();
@@ -26,10 +39,20 @@ function BlogF({ blog }) {
     setReplyActive(!replyActive);
   };
 
-  const handleEdit = (evt) => {
-    evt.preventDefault();
-    setEditActive(!editActive);
-  };
+  let editSymbol;
+  if (auth.user) {
+    if (auth.user.username === blog.author.username) {
+      editSymbol = (
+        <FontAwesomeIcon
+          icon={solid("pen-to-square")}
+          className="shadow-icon blog-footer-icon"
+          onClick={(evt) => handleEdit(evt)}
+        />
+      );
+    } else {
+      editSymbol = <></>;
+    }
+  } else editSymbol = <></>;
 
   return (
     <div className="blog-footer-wrapper">
@@ -44,16 +67,12 @@ function BlogF({ blog }) {
           className="shadow-icon blog-footer-icon"
           onClick={(evt) => handleComment(evt)}
         />
-        <FontAwesomeIcon
-          icon={solid("pen-to-square")}
-          className="shadow-icon blog-footer-icon"
-          onClick={(evt) => handleEdit(evt)}
-        />
         <DeleteAuth auth={auth} blog={blog} />
+        {editSymbol}
       </div>
+      <EditDrop auth={auth} blog={blog} editActive={editActive} />
       <ReplyDrop auth={auth} blog={blog} replyActive={replyActive} />
       <CommentDrop blog={blog} commentActive={commentActive} />
-      <EditDrop auth={auth} blog={blog} editActive={editActive} />
     </div>
   );
 }
@@ -67,11 +86,15 @@ function DeleteAuth({ auth, blog }) {
   const navigate = useNavigate();
 
   function deleteAlert(evt) {
-    evt.preventDefault()
-    if (window.confirm(`Are you sure you want to delete post titled ${blog.title}?`)) {
-      handleDelete(evt)
+    evt.preventDefault();
+    if (
+      window.confirm(
+        `Are you sure you want to delete post titled ${blog.title}?`
+      )
+    ) {
+      handleDelete(evt);
     } else {
-      evt.preventDefault()
+      evt.preventDefault();
     }
   }
 
@@ -106,11 +129,16 @@ function ReplyDrop({ auth, blog, replyActive }) {
   if (auth) {
     if (replyActive) {
       return (
-        <AddComment
-          location={`blog`}
-          blog={blog}
-          active={replyActive}
-        ></AddComment>
+        <div classNam="footer-drop">
+          <Line></Line>
+          <h1 className="edit-header">Add Comment</h1>
+
+          <AddComment
+            location={`blog`}
+            blog={blog}
+            active={replyActive}
+          ></AddComment>
+        </div>
       );
     } else {
       return <></>;
@@ -137,37 +165,24 @@ function CommentDrop({ blog, commentActive }) {
 }
 
 function EditDrop({ auth, blog, editActive }) {
-  if (auth.user) {
-    if (auth.user.username === blog.author.username) {
-      if (editActive) {
-        return (
-          <Post
-            title={blog.title}
-            subtitle={blog.subtitle}
-            tags={blog.tags}
-            text={blog.text}
-            edit={true}
-            blogId={blog._id}
-          ></Post>
-        );
-      } else {
-        return <></>;
-      }
-    } else {
-      return (
-        <>Sorry, you don't have permission to edit other people's posts.</>
-      );
-    }
-  } else {
+  if (editActive) {
     return (
-      <div className="unverified-post">
-        <h3 className="tagline">Want to start sharing your own thoughts?</h3>
-        <h2 className="linkNoUnderline">
-          <NavLink to="/signup">Signup</NavLink> or{" "}
-          <NavLink to="/login">Login</NavLink> to join the conversation.
-        </h2>
+      <div className="footer-drop">
+        <Line></Line>
+        <h1 className="edit-header">Edit Blog Entry</h1>
+
+        <Post
+          title={blog.title}
+          subtitle={blog.subtitle}
+          tags={blog.tags}
+          text={blog.text}
+          edit={true}
+          blogId={blog._id}
+        ></Post>
       </div>
     );
+  } else {
+    return <></>;
   }
 }
 

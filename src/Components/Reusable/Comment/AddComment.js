@@ -1,6 +1,6 @@
-import React, { useState, useRef } from "react";
-import { NavLink } from "react-router-dom";
-import { useEditor, EditorContent, callOrReturn } from "@tiptap/react";
+import React, { useState } from "react";
+import { useNavigate, NavLink } from "react-router-dom";
+import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import EditorButtons from "../Post/EditorButtons";
 import DOMPurify from "dompurify";
@@ -14,15 +14,13 @@ function CommentEditor({ content, blog, active }) {
   const [input, setInput] = useState({
     text: "",
   });
-  const [replyActive, setReplyActive] = useState(active);
 
   //redux dispatch
   const dispatch = useDispatch();
   dispatch({ type: "postComment" });
   const { postComment } = bindActionCreators(ActionCreators, dispatch);
   const auth = useSelector((state) => state.auth);
-  const comments = useSelector((state) => state.comments);
-  
+  const navigate = useNavigate();
   const editor = useEditor({
     extensions: [StarterKit],
     type: "doc",
@@ -36,14 +34,6 @@ function CommentEditor({ content, blog, active }) {
     },
   });
 
-  const handleChange = (evt) => {
-    setInput((prevState) => ({
-      ...prevState,
-      [evt.target.id]: evt.target.value,
-    }));
-    evt.preventDefault();
-  };
-
   const checkKeyDown = (e) => {
     if (e.code === "Enter" || e.code === "NumpadEnter") {
       e.preventDefault();
@@ -52,57 +42,50 @@ function CommentEditor({ content, blog, active }) {
 
   const handleSubmit = (evt) => {
     postComment(input.text, blog._id)
-    .then((res) =>{
-      
-    }
-    ).then((res) =>{
-      setReplyActive(!replyActive)
-    })
-
+      .then((res) => {})
+      .then((res) => {
+        navigate(0);
+      });
   };
 
-  if (replyActive) {
-    if (auth) {
-      return (
-        <div className="post-wrapper">
-          <form
-            autoComplete="off"
-            onSubmit={(evt) => handleSubmit(evt)}
-            onKeyDown={(e) => checkKeyDown(e)}
-          >
-            <EditorButtons editor={editor}></EditorButtons>
+  if (auth) {
+    return (
+      <div className="post-wrapper">
+        <form
+          autoComplete="off"
+          onSubmit={(evt) => handleSubmit(evt)}
+          onKeyDown={(e) => checkKeyDown(e)}
+        >
+          <EditorButtons editor={editor}></EditorButtons>
 
-            <EditorContent className="editor" id="text" editor={editor} />
+          <EditorContent className="editor" id="text" editor={editor} />
 
-            <input
-              type="submit"
-              name="submit"
-              value="Submit"
-              className="submit-button"
-            ></input>
-          </form>
-        </div>
-      );
-    } else {
-      return (
-        <div className="unverified-post">
-          <h3 className="tagline">Want to start sharing your own thoughts?</h3>
-          <h2>
-            <div className="action-call-heading">
-              <NavLink className="linkNoUnderline" to="/signup">
-                Sign Up
-              </NavLink>{" "}
-              or{" "}
-              <NavLink className="linkNoUnderline" to="/login">
-                Log In
-              </NavLink>
-            </div>
-          </h2>
-        </div>
-      );
-    }
+          <input
+            type="submit"
+            name="submit"
+            value="Submit"
+            className="submit-button"
+          ></input>
+        </form>
+      </div>
+    );
   } else {
-    return <></>;
+    return (
+      <div className="unverified-post">
+        <h3 className="tagline">Want to start sharing your own thoughts?</h3>
+        <h2>
+          <div className="action-call-heading">
+            <NavLink className="linkNoUnderline" to="/signup">
+              Sign Up
+            </NavLink>{" "}
+            or{" "}
+            <NavLink className="linkNoUnderline" to="/login">
+              Log In
+            </NavLink>
+          </div>
+        </h2>
+      </div>
+    );
   }
 }
 

@@ -67,7 +67,7 @@ export function BlogEntryS() {
             );
           })}
         </div>
-          <BlogFooter blog={blog} />
+          <BlogFooter blog={blog} comments={true} />
       </div>
     );
   } else {

@@ -2,23 +2,23 @@ import React, { useState } from "react";
 import { connect, useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { ActionCreators } from "../../Redux/reduxIndex";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import DOMPurify from "dompurify";
 
 function LoginFormOnly() {
   const [input, setInput] = useState({ email: "", username: "", password: "" });
-  const [validationText, setValidationText] = useState("")
+  const [validationText, setValidationText] = useState("");
   //redux
   const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   dispatch({ type: "loginUser" });
   const { loginUser } = bindActionCreators(ActionCreators, dispatch);
 
-  let navigate = useNavigate()
+  let navigate = useNavigate();
 
   const errMess = () => {
-    setValidationText(auth.errMess)
-  }
+    setValidationText(auth.errMess);
+  };
 
   const handleChange = (evt) => {
     setInput((prevState) => ({
@@ -29,13 +29,16 @@ function LoginFormOnly() {
   };
 
   const handleLogin = (evt) => {
-    loginUser(input);
-    if (auth.isAuthenticated) {
-      navigate("/")
-    } else {
-      errMess()
-      evt.preventDefault();
-    }
+    evt.preventDefault();
+    loginUser(input)
+      .then((res) => {
+        if (auth.errMess) {
+          errMess();
+        }
+      })
+      .then((res) => {
+        navigate(-1);
+      });
   };
 
   return (
