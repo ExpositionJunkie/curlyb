@@ -73,7 +73,7 @@ function LoginFormOnly() {
             name="submit"
             id="login-submit"
             value="Submit"
-            className="login-submit"
+            className="login-submit shadow-icon"
           ></input>
         </span>
       </form>

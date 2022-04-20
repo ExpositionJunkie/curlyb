@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Line from "../Reusable/Line/Line";
 import BlogEntry from "./BlogEntry";
-import { Link } from "react-router-dom";
 import VariablePost from "../Reusable/Post/VariablePost";
 import "./Blogs.css";
 //redux

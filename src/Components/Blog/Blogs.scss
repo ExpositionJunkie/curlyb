@@ -1,10 +1,5 @@
 @import "../../Variables/Sass/SassVariables.scss";
 
-#link-wrap a {
-  text-decoration: none;
-  color: inherit;
-}
-
 .blog-body-wrap {
   display: flex;
   flex-wrap: wrap;
@@ -24,10 +19,10 @@
   overflow: hidden;
   list-style-type: square;
 }
+
 .author {
   font-family: $subtitleFont;
 }
-
 
 
 /* ui elements */
@@ -42,16 +37,18 @@
 .blog-wrapper li {
   list-style-type: square;
 }
-.blog-wrapper a:link {
+#link-wrap:link {
   text-decoration: none;
   color: $whiteColor;
 }
-.blog-wrapper a:hover {
+#link-wrap:hover {
   color: $whiteColor;
+  text-decoration: none;
 }
 
-.blog-wrapper a:visited {
+#link-wrap:visited {
   color: $whiteColor;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 500px) {

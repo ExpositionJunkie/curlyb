@@ -147,6 +147,35 @@ $bodyFont2: "Comfortaa", cursive;
   }
 }
 
+@mixin rainbow-text-shadow($px1, $px2, $px3) {
+  animation: shadow-fade 16s linear infinite;
+  animation-direction: alternate;
+
+  @include keyframes(shadow-fade) {
+    0% {
+      text-shadow: $px1 $px2 $px3 $orangeColor;
+    }
+    16% {
+      text-shadow: $px1 $px2 $px3 $yellowColor;
+    }
+    32% {
+      text-shadow: $px1 $px2 $px3 $tealColor;
+    }
+    48% {
+      text-shadow: $px1 $px2 $px3 $blueColor;
+    }
+    64% {
+      text-shadow: $px1 $px2 $px3 $purpleColor;
+    }
+    84% {
+      text-shadow: $px1 $px2 $px3 $pinkColor
+    }
+    100% {
+      text-shadow: $px1 $px2 $px3 $redColor;
+    }
+  }
+}
+
 @mixin rainbow-svg-shadow($px1, $px2, $px3) {
   animation: shadow-svg-fade 16s linear infinite;
   animation-direction: alternate;

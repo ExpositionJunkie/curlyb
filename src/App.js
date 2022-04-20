@@ -17,11 +17,13 @@ import BlogPage from "./Components/Blog/BlogPage";
 import Login from "./Components/Login/Login";
 import CSP from "./Components/CSP/CSP";
 import Signup from "./Components/Signup/Signup";
+import NothinghHere from "./Components/Reusable/404/NothingHere";
 import { Route, Routes } from "react-router-dom";
 import Cookie from "./Components/Reusable/Cookie/Cookie";
 
 //redux
 import { connect } from "react-redux";
+
 
 function AppComponent() {
   return (
@@ -33,6 +35,7 @@ function AppComponent() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route exact path="apipractice" element={<APIPractice />} />
+              
               <Route path="blog/*" element={<Blog />}>
                 <Route index element={<BlogPage />} />
                 <Route path=":blogId" element={<BlogEntryStandalone />} />
@@ -47,6 +50,7 @@ function AppComponent() {
               <Route path="login" element={<Login />} />
               <Route path="egg" element={<Egg />} />
               <Route path="csp" element={<CSP />} />
+              <Route path="*" element={<NothinghHere />} />
             </Routes>
             <Footer />
             <Cookie />

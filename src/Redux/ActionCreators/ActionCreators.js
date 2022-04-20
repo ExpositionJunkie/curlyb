@@ -66,6 +66,81 @@ export const postBlog = (input) => (dispatch) => {
     });
 };
 
+export const editBlog = (input, blogId) => (dispatch) => {
+  const newBlog = {
+    ...input,
+  };
+  console.log("Blog ", newBlog);
+  const bearer = "Bearer " + localStorage.getItem("token");
+  return fetch(baseUrl + "blog/" + blogId, {
+    method: "PUT",
+    body: JSON.stringify(newBlog),
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: bearer,
+    },
+    credentials: "same-origin",
+  })
+    .then(
+      (response) => {
+        if (response.ok) {
+          return response;
+        } else {
+          const error = new Error(
+            `Error ${response.status}: ${response.statusText}`
+          );
+          error.response = response;
+          throw error;
+        }
+      },
+      (error) => {
+        throw error;
+      }
+    )
+    .then((response) => response.json())
+    .then((response) => dispatch(addBlog(response)))
+    .catch((error) => {
+      console.log("post blog", error.message);
+      alert("Your blog could not be posted\nError: " + error.message);
+    });
+};
+
+export const deleteBlog = (blogId) => (dispatch) => {
+  const bearer = "Bearer " + localStorage.getItem("token");
+  return fetch(baseUrl + "blog/" + blogId, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: bearer,
+    },
+    credentials: "same-origin",
+  })
+    .then(
+      (response) => {
+        if (response.ok) {
+          return response;
+        } else {
+          const error = new Error(
+            `Error ${response.status}: ${response.statusText}`
+          );
+          error.response = response;
+          throw error;
+        }
+      },
+      (error) => {
+        throw error;
+      }
+    )
+    .then((response) => response.json())
+    .then((response) => dispatch(addBlog(response)))
+    .catch((error) => {
+      console.log("post blog", error.message);
+      alert("Your blog could not be posted\nError: " + error.message);
+    });
+};
+
+
+
 export const blogsLoading = () => ({
   type: ActionTypes.BLOGS_LOADING,
 });

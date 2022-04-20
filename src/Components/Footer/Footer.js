@@ -92,7 +92,7 @@ export default function Footer(props) {
                 <SassIcon />
 
                 <NavLink to="/egg">
-                  <PiedPiperIcon width="55px" height="auto" length="auto" />
+                  <PiedPiperIcon width="55px" height="55px" />
                 </NavLink>
               </div>
             </div>

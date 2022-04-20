@@ -18,7 +18,6 @@ export default function Comment({ comment }) {
             className="comment-entry-body"
             dangerouslySetInnerHTML={sanitizedData()}
           />
-        
         <div className="comment-author-details">
           <div className="comment-author">
             <p>Author: {comment.author.username}</p>
