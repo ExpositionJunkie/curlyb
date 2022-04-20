@@ -11,10 +11,10 @@ import "./Post.css";
 
 function PostWrapper({ title, subtitle, tags, text, edit, blogId }) {
   const [input, setInput] = useState({
-    title: title,
-    subtitle: subtitle,
-    text: text,
-    tags: tags,
+    title: title || "",
+    subtitle: subtitle || "",
+    text: text || "",
+    tags: tags || "",
   });
 
   //redux dispatch
