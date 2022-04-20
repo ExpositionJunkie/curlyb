@@ -1,30 +1,28 @@
 import React, { useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
-import { useEditor, EditorContent } from "@tiptap/react";
+import { useEditor, EditorContent, callOrReturn } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import EditorButtons from "../Post/EditorButtons";
 import DOMPurify from "dompurify";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 import { ActionCreators } from "../../../Redux/reduxIndex";
-import { useNavigate } from "react-router-dom";
 import "../Post/Post.css";
 import "./AddComment.css";
 
-function CommentEditor({ content, blog, replyActive }) {
+function CommentEditor({ content, blog, active }) {
   const [input, setInput] = useState({
     text: "",
   });
+  const [replyActive, setReplyActive] = useState(active);
 
   //redux dispatch
   const dispatch = useDispatch();
   dispatch({ type: "postComment" });
   const { postComment } = bindActionCreators(ActionCreators, dispatch);
   const auth = useSelector((state) => state.auth);
-
-  //for sending you to the blog after this posts
-  let navigate = useNavigate();
-
+  const comments = useSelector((state) => state.comments);
+  
   const editor = useEditor({
     extensions: [StarterKit],
     type: "doc",
@@ -53,9 +51,15 @@ function CommentEditor({ content, blog, replyActive }) {
   };
 
   const handleSubmit = (evt) => {
-    postComment(input.text, blog._id);
-  };
+    postComment(input.text, blog._id)
+    .then((res) =>{
+      
+    }
+    ).then((res) =>{
+      setReplyActive(!replyActive)
+    })
 
+  };
 
   if (replyActive) {
     if (auth) {

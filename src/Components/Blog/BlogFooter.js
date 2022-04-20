@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import VariablePost from "../Reusable/Post/VariablePost";
 import AddComment from "../Reusable/Comment/AddComment";
+import Comments from "../Reusable/Comment/Comments";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro"; // <-- import styles to be used
 import "./BlogFooter.css";
 import { bindActionCreators } from "redux";
@@ -43,6 +44,7 @@ function BlogF({ blog }) {
         <EditDeleteAuth auth={auth} blog={blog} />
       </div>
       <ReplyDrop blog={blog} replyActive={replyActive} />
+      <CommentDrop blog={blog} commentActive={commentActive} />
     </div>
   );
 }
@@ -90,12 +92,22 @@ function ReplyDrop({ blog, replyActive }) {
       <AddComment
         location={`blog`}
         blog={blog}
-        replyActive={replyActive}
+        active={replyActive}
       ></AddComment>
     );
   } else {
     return <></>;
   }
+}
+
+function CommentDrop({blog, commentActive}) {
+    if (commentActive) {
+        return (
+            <Comments blogId={blog._id} />
+        )
+    } else {
+        return <></>
+    }
 }
 
 const BlogFooter = connect(null, null)(BlogF);

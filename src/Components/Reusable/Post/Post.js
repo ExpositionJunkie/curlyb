@@ -96,6 +96,7 @@ function PostWrapper({location, content}) {
         ></input>
         <EditorButtons editor={editor}></EditorButtons>
           <EditorContent className="editor" id="text" editor={editor} />
+
   
           <input
             type="submit"

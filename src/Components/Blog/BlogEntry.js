@@ -52,6 +52,6 @@ export default function BlogEntry({ blog, location }) {
       </div>
     );
   } else {
-    return <div>Oops, there's nothing here! Better call Roz</div>;
+    return <></>
   }
 }

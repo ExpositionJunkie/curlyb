@@ -29,7 +29,7 @@ export const fetchBlogs = () => (dispatch) => {
 
 export const postBlog = (input) => (dispatch) => {
   const newBlog = {
-    ...input
+    ...input,
   };
   console.log("Blog ", newBlog);
   const bearer = "Bearer " + localStorage.getItem("token");
@@ -87,8 +87,8 @@ export const addBlog = (blog) => ({
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Blogs End ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Comments ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-export const fetchComments = () => (dispatch) => {
-  return fetch(baseUrl + "/comments")
+export const fetchComments = (blogId) => (dispatch) => {
+  return fetch(baseUrl + "blog/" + blogId + "/comments", { method: "GET" })
     .then(
       (response) => {
         if (response.ok) {
@@ -133,7 +133,7 @@ export const postComment = (text, blogId) => (dispatch) => {
   };
   console.log("Comment ", newComment);
   const bearer = "Bearer " + localStorage.getItem("token");
-  return fetch(baseUrl + "blog/" + blogId+ "/comments", {
+  return fetch(baseUrl + "blog/" + blogId + "/comments", {
     method: "POST",
     body: JSON.stringify(newComment),
     headers: {
@@ -201,7 +201,7 @@ export const signupUser = (userInfo) => (dispatch) => {
     .then(
       (response) => {
         if (response.ok) {
-          console.log("response fine.")
+          console.log("response fine.");
           return response;
         } else {
           const error = new Error(
