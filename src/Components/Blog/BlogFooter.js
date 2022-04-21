@@ -97,10 +97,11 @@ function DeleteAuth({ auth, blog }) {
   }
 
   const handleDelete = (evt) => {
+    evt.preventDefault()
     deleteBlog(blog._id)
       .then((res) => {})
       .then((res) => {
-        navigate(-1);
+        navigate(0);
       });
   };
 
