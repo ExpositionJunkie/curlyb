@@ -101,7 +101,7 @@ function DeleteAuth({ auth, blog }) {
     deleteBlog(blog._id)
       .then((res) => {})
       .then((res) => {
-        navigate(0);
+        navigate(1);
       });
   };
 
