@@ -10,17 +10,21 @@ import { ActionCreators } from "../../../Redux/reduxIndex";
 import "../Post/Post.css";
 import "./AddComment.css";
 
-function CommentEditor({ content, blog, active }) {
+function CommentEditor({ auth, content, blog  }) {
   const [input, setInput] = useState({
     text: "",
   });
+  
+  const [validationText, setValidationText] = useState("");
 
   //redux dispatch
   const dispatch = useDispatch();
   dispatch({ type: "postComment" });
   const { postComment } = bindActionCreators(ActionCreators, dispatch);
-  const auth = useSelector((state) => state.auth);
+  const comments = useSelector((state) => state.comments);
+
   const navigate = useNavigate();
+
   const editor = useEditor({
     extensions: [StarterKit],
     type: "doc",
@@ -40,17 +44,30 @@ function CommentEditor({ content, blog, active }) {
     }
   };
 
+  const errMess = () => {
+    setValidationText(comments.errMess);
+  };
+
   const handleSubmit = (evt) => {
+    evt.preventDefault()
     postComment(input.text, blog._id)
-      .then((res) => {})
-      .then((res) => {
-        navigate(0);
+      .then(() => {
+        if (comments.errMess) {
+          errMess();
+        }
+      })
+      .then(() => {
+        if (!comments.errMess) {
+          navigate(0);
+        }
+        
       });
   };
 
-  if (auth) {
+  if (auth.isAuthenticated) {
     return (
       <div className="post-wrapper">
+        {validationText}
         <form
           autoComplete="off"
           onSubmit={(evt) => handleSubmit(evt)}

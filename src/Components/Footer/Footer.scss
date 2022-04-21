@@ -29,8 +29,8 @@
   }
 
   .contactWrap {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    display: flex;
+    justify-content: space-evenly;
     text-align: center;
   }
   .contactLink {
@@ -69,8 +69,8 @@
   }
 
   .contactWrap {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    display: flex;
+    justify-content: space-evenly;
     text-align: center;
   }
   .contactLink {
@@ -110,8 +110,8 @@
   }
 
   .contactWrap {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    display: flex;
+    justify-content: space-evenly;
     text-align: center;
   }
   .contactLink {
@@ -150,8 +150,9 @@
     width: auto;
   }
   .contactWrap {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
     overflow: hidden;
     font-family: $subtitleFont;
   }

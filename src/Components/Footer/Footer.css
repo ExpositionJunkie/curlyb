@@ -26,8 +26,8 @@
   }
 
   .contactWrap {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    display: flex;
+    justify-content: space-evenly;
     text-align: center;
   }
 
@@ -67,8 +67,8 @@
   }
 
   .contactWrap {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    display: flex;
+    justify-content: space-evenly;
     text-align: center;
   }
 
@@ -108,8 +108,8 @@
   }
 
   .contactWrap {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    display: flex;
+    justify-content: space-evenly;
     text-align: center;
   }
 
@@ -150,8 +150,9 @@
   }
 
   .contactWrap {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
     overflow: hidden;
     font-family: "Advent Pro", sans-serif;
   }

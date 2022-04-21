@@ -12,7 +12,7 @@ import { ActionCreators } from "../../Redux/reduxIndex";
 
 //This component does not have the post included in it and is separate.
 
-export function Blogs({}) {
+export function Blogs({auth}) {
   const dispatch = useDispatch();
   //dispatches for blogs
   dispatch({ type: "fetchBlogs" });
@@ -34,7 +34,7 @@ export function Blogs({}) {
             return (
               <div key={blogEntry._id}>
                 <div className="entry shadow-box">
-                  <BlogEntry blog={blogEntry} location={"blog"} />
+                  <BlogEntry blog={blogEntry} location={"blog"} auth={auth} />
                 </div>
                 <div className="pad2">
                   <Line />

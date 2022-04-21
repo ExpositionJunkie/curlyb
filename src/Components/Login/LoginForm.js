@@ -31,12 +31,12 @@ function LoginFormOnly() {
   const handleLogin = (evt) => {
     evt.preventDefault();
     loginUser(input)
-      .then((res) => {
+      .then(() => {
         if (auth.errMess) {
           errMess();
         }
       })
-      .then((res) => {
+      .then(() => {
         navigate(-1);
       });
   };
@@ -53,7 +53,7 @@ function LoginFormOnly() {
             required
             id="username"
             maxLength="320"
-            autocomplete="username"
+            autocComplete="username"
             placeholder="username"
             value={input.username}
             onChange={(e) => handleChange(e)}
@@ -65,8 +65,8 @@ function LoginFormOnly() {
             id="password"
             required
             minLength="8"
-            maxLength="15"
-            autocomplete="current-password"
+            maxLength="320"
+            autoComplete="current-password"
             placeholder="password"
             value={input.password}
             onChange={(e) => handleChange(e)}

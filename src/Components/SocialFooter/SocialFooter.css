@@ -9,6 +9,11 @@
   padding-bottom: 2rem;
 }
 
+.contact-header {
+  font-family: "Advent Pro", sans-serif;
+  text-align: center;
+}
+
 @media screen and (min-width: 100px) {
   .spanWrap {
     display: flex;

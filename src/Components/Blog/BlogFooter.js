@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Post from "../Reusable/Post/Post";
 import Line from "../Reusable/Line/Line";
@@ -9,13 +9,11 @@ import { solid } from "@fortawesome/fontawesome-svg-core/import.macro"; // <-- i
 import "./BlogFooter.css";
 import { bindActionCreators } from "redux";
 import { ActionCreators } from "../../Redux/reduxIndex";
-import { connect, useSelector, useDispatch } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 
-function BlogF({ blog, comments }) {
+function BlogF({ blog, comments, auth }) {
   const [commentActive, setCommentActive] = useState(false);
   const [replyActive, setReplyActive] = useState(false);
-
-  const auth = useSelector((state) => state.auth);
   const [editActive, setEditActive] = useState(false);
 
   useEffect(() => {
@@ -126,32 +124,23 @@ function DeleteAuth({ auth, blog }) {
 }
 
 function ReplyDrop({ auth, blog, replyActive }) {
-  if (auth) {
-    if (replyActive) {
+  if (replyActive) {
       return (
         <div classNam="footer-drop">
           <Line></Line>
           <h1 className="edit-header">Add Comment</h1>
-
           <AddComment
             location={`blog`}
             blog={blog}
             active={replyActive}
+            auth={auth}
           ></AddComment>
         </div>
       );
-    } else {
-      return <></>;
-    }
+    
   } else {
     return (
-      <div className="unverified-post">
-        <h3 className="tagline">Want to start sharing your own thoughts?</h3>
-        <h2 className="linkNoUnderline">
-          <NavLink to="/signup">Signup</NavLink> or{" "}
-          <NavLink to="/login">Login</NavLink> to join the conversation.
-        </h2>
-      </div>
+      <></>
     );
   }
 }
@@ -177,6 +166,7 @@ function EditDrop({ auth, blog, editActive }) {
           tags={blog.tags}
           text={blog.text}
           edit={true}
+          auth={auth}
           blogId={blog._id}
         ></Post>
       </div>

@@ -54,6 +54,7 @@ function PostWrapper({ title, subtitle, tags, text, edit, blogId }) {
   };
 
   const handleSubmit = (evt) => {
+    evt.preventDefault()
     if (!edit) {
       postBlog(input)
       .then((res) => {})

@@ -14,7 +14,7 @@ import { ActionCreators } from "../../Redux/reduxIndex";
 //https://overreacted.io/a-complete-guide-to-useeffect/
 //https://www.robinwieruch.de/react-hooks-fetch-data/
 
-export function BlogEntryS() {
+export function BlogEntryS({auth}) {
   //dispatches for blogs
   const dispatch = useDispatch();
   //dispatches for blogs
@@ -25,6 +25,7 @@ export function BlogEntryS() {
 
   useEffect(() => {
     fetchBlogs();
+
   }, []);
 
   const sanitizedData = () => ({
@@ -67,7 +68,7 @@ export function BlogEntryS() {
             );
           })}
         </div>
-          <BlogFooter blog={blog} comments={true} />
+          <BlogFooter blog={blog} comments={true} auth={auth} />
       </div>
     );
   } else {

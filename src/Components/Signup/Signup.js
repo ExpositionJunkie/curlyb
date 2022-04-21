@@ -1,36 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { connect, useSelector, useDispatch } from "react-redux";
+import React, { useState } from "react";
+import { connect, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { ActionCreators } from "../../Redux/reduxIndex";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Title from "../Reusable/Title/Title";
 import LoginForm from "../Login/LoginForm";
 import DOMPurify from "dompurify";
 import "./Signup.css";
 
-function SignupWrap() {
-  const [validationText, setValidationText] = useState("");
-  const signup = useSelector((state) => state.signup);
+function SignupWrap({signup}) {
+
   //redux actions
   const dispatch = useDispatch();
   dispatch({ type: "signupUser" });
 
-  useEffect(() => {
-    if (!signup.signupSuccess) {
-      validate();
-    }
-    if (signup.signupSuccess) {
-      successMessage();
-    }
-  }, [signup]);
-
-  const successMessage = () => {
-    setValidationText(signup.message);
-  };
-
-  const validate = () => {
-    setValidationText(signup.errMess);
-  };
 
   if (!signup.signupSuccess) {
     return (
@@ -42,7 +25,8 @@ function SignupWrap() {
               Want to start your own blog or leave a comment? Sign Up to leave
               your mark between the curly brackets.
             </h1>
-            <div className="signup-validation-text">{validationText}</div>
+            <div className="signup-validation-text">{signup.errMess}</div>
+            <div className="signup-validation-text">{signup.message}</div>
             <SignupForm></SignupForm>
             <p>Already have an account? <NavLink to="/login">Login here.</NavLink></p>
           </div>
@@ -65,12 +49,15 @@ function SignupWrap() {
   }
 }
 
-export function SignupForm() {
+export function SignupForm({signup}) {
   const [input, setInput] = useState({ email: "", username: "", password: "" });
+  const [validationText, setValidationText] = useState("");
   //redux actions
   const dispatch = useDispatch();
   dispatch({ type: "signupUser" });
   const { signupUser } = bindActionCreators(ActionCreators, dispatch);
+
+  let navigate = useNavigate();
 
   const handleChange = (evt) => {
     setInput((prevState) => ({
@@ -80,13 +67,27 @@ export function SignupForm() {
     evt.preventDefault();
   };
 
+  
+  const errMess = () => {
+    setValidationText(signup.errMess);
+  };
+
   const handleSignup = (evt) => {
-    signupUser(input);
-    evt.preventDefault();
+    evt.preventDefault()
+    signupUser(input)
+    .then((res) => {
+      if (signup.errMess) {
+        errMess();
+      }
+    })
+    .then((res) => {
+      navigate("/login");
+    });
   };
 
   return (
     <form onSubmit={(evt) => handleSignup(evt)}>
+      <div>{validationText}</div>
       <span className="inner-form">
         <label htmlFor="email">Email</label>
         <input
@@ -95,7 +96,7 @@ export function SignupForm() {
           required
           maxLength="320"
           id="email"
-          autocomplete="email"
+          autoComplete="email"
           placeholder="email"
           value={input.email}
           onChange={(e) => handleChange(e)}
@@ -107,7 +108,7 @@ export function SignupForm() {
           required
           id="username"
           maxLength="320"
-          autocomplete="username"
+          autoComplete="username"
           placeholder="username"
           value={input.username}
           onChange={(e) => handleChange(e)}
@@ -119,7 +120,7 @@ export function SignupForm() {
           id="password"
           required
           minLength="8"
-          maxLength="15"
+          maxLength="320"
           autocomplete="new-password"
           placeholder="password"
           value={input.password}

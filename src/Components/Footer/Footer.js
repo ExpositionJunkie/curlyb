@@ -1,17 +1,17 @@
 import React from "react";
 import Line from "../Reusable/Line/Line";
+import { NavLink } from "react-router-dom";
 //Icons from FontAwesome but not relying on their library
 import { ReactComponent as ReactIcon } from "../../data/photos/frontend/icons/react.svg";
 import { ReactComponent as PiedPiperIcon } from "../../data/photos/frontend/icons/piedPiper.svg";
-import { ReactComponent as GithubIcon } from "../../data/photos/frontend/icons/github.svg";
-import { ReactComponent as LinkedInIcon } from "../../data/photos/frontend/icons/linkedIn.svg";
+
 import { ReactComponent as Css3 } from "../../data/photos/frontend/icons/css3.svg";
-import { ReactComponent as TwitterIcon } from "../../data/photos/frontend/icons/twitterUncaged.svg";
 import { ReactComponent as JavascriptIcon } from "../../data/photos/frontend/icons/javascript.svg";
 import { ReactComponent as SassIcon } from "../../data/photos/frontend/icons/sass.svg";
-import { ReactComponent as EnvelopeIcon } from "../../data/photos/frontend/icons/envelope.svg";
+
 import { ReactComponent as Html5Icon } from "../../data/photos/frontend/icons/html5.svg";
-import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro"; // <-- import styles to be used
 
 import "./Footer.css";
 
@@ -21,64 +21,50 @@ export default function Footer(props) {
   return (
     <div className="footerWrapper">
       <div>
-      <div className="lineDiv">
-            <Line />
-          </div>
+        <div className="lineDiv">
+          <Line />
+        </div>
         <span className="spanWrap marg4">
           <span className="contactWrap">
-            <span className="contactLink">
-              <a
-                className="plainLink"
-                href="mailto:rosalindavalbrecht@gmail.com?subject=I am interested in..."
-              >
-                <EnvelopeIcon />
+            <span className="contactLink shadow-icon linkNoUnderline">
+              <NavLink to="csp">
+                <FontAwesomeIcon icon={solid("cookie-bite")} />
                 <div className="contactLabel">
-                  <p>Email:</p>
-                  <p>rosalindavalbrecht@gmail.com</p>
+                  <p>Cookie Policy</p>
                 </div>
-              </a>
+              </NavLink>
             </span>
-            <span className="contactLink">
-              <a
-                className="plainLink"
-                href="https://github.com/ExpositionJunkie"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <GithubIcon />
+            <span className="contactLink shadow-icon linkNoUnderline">
+              <NavLink to="signup">
+                <FontAwesomeIcon icon={solid("user-plus")} />
                 <div className="contactLabel">
-                  <p>Github:</p>
-                  <p>github.com/ExpositionJunkie</p>
+                  <p>Sign Up</p>
                 </div>
-              </a>
+              </NavLink>
             </span>
-            <span className="contactLink">
-              <a
-                className="plainLink"
-                href="https://www.linkedin.com/in/rozalbrecht/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <LinkedInIcon />
+            <span className="contactLink shadow-icon linkNoUnderline">
+              <NavLink to="login">
+                <FontAwesomeIcon icon={solid("user-astronaut")} />
                 <div className="contactLabel">
-                  <p>LinkedIn:</p>
-                  <p>linkedin.com/in/rozalbrecht</p>
+                  <p>Login</p>
                 </div>
-              </a>
+              </NavLink>
             </span>
-            <span className="contactLink">
-              <a
-                className="plainLink"
-                href="https://twitter.com/Zenith_zer"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <TwitterIcon />
+            <span className="contactLink shadow-icon linkNoUnderline">
+              <NavLink to="blog" >
+                <FontAwesomeIcon icon={solid("blog")} />
                 <div className="contactLabel">
-                  <p>Twitter:</p>
-                  <p>twitter.com/Zenith_zer</p>
+                  <p>Blog</p>
                 </div>
-              </a>
+              </NavLink>
+            </span>
+            <span className="contactLink shadow-icon linkNoUnderline">
+              <NavLink to="about" >
+                <FontAwesomeIcon icon={solid("address-card")} />
+                <div className="contactLabel">
+                  <p>About</p>
+                </div>
+              </NavLink>
             </span>
           </span>
           <span className="techStack ">

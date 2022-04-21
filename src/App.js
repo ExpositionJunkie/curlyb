@@ -22,23 +22,42 @@ import { Route, Routes } from "react-router-dom";
 import Cookie from "./Components/Reusable/Cookie/Cookie";
 
 //redux
-import { connect } from "react-redux";
+import { connect, useSelector, useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { ActionCreators } from "./Redux/reduxIndex";
 
 
 function AppComponent() {
+  const auth = useSelector((state) => state.auth);
+  const comments = useSelector((state) => state.comments)
+  const signup = useSelector((state) => state.signup);
+  const blogs = useSelector((state) => state.blogs);
+
+  const dispatch = useDispatch();
+  dispatch({ type: "postBlog" });
+  dispatch({ type: "editBlog" });
+  dispatch({ type: "fetchBlogs" });
+  dispatch({ type: "signupUser" });
+  const { postBlog, editBlog, fetchBlogs, signupUser } = bindActionCreators(
+    ActionCreators,
+    dispatch
+  );
+
   return (
     <div className="App">
       <Suspense fallback={<p>...Loading</p>}>
         <header className="App-header">
-          <Navbar />
+          <Navbar auth={auth} />
           <div className="body">
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Home auth={auth}/>} />
               <Route exact path="apipractice" element={<APIPractice />} />
-              
               <Route path="blog/*" element={<Blog />}>
-                <Route index element={<BlogPage />} />
-                <Route path=":blogId" element={<BlogEntryStandalone />} />
+                <Route index element={<BlogPage blogs={blogs} auth={auth} comments={comments} />} />
+                <Route
+                  path=":blogId"
+                  element={<BlogEntryStandalone blogs={blogs} auth={auth} comments={comments}/>}
+                />
               </Route>
               <Route path="about" element={<About />} />
               <Route path="nameguesser" element={<NameGuess />} />
@@ -46,8 +65,8 @@ function AppComponent() {
               <Route path="isslocator" element={<ISSLocator />} />
               <Route path="dnd" element={<DungeonsAndDragons />} />
               <Route path="ip" element={<IPAddress />} />
-              <Route path="signup" element={<Signup />} />
-              <Route path="login" element={<Login />} />
+              <Route path="signup" element={<Signup signup={signup} />} />
+              <Route path="login" element={<Login auth={auth} />} />
               <Route path="egg" element={<Egg />} />
               <Route path="csp" element={<CSP />} />
               <Route path="*" element={<NothinghHere />} />

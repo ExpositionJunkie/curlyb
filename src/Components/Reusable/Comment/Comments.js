@@ -13,24 +13,26 @@ function CommentFetch({ blogId }) {
   const { fetchComments } = bindActionCreators(ActionCreators, dispatch);
 
   useEffect(() => {
-    fetchComments(blogId);
-  }, []);
+    function subscribe(blogId) {
+      fetchComments(blogId);
+    }
+    return subscribe(blogId);
+  }, [blogId]);
 
   if (comments.isLoading || comments.errMess) {
     return <></>;
   } else if (!comments.isLoading && !comments.errMess) {
-      return (
-        <div className="entry-wrapper">
-          {comments.comments.map((comment) => {
-            return (
-              <div key={comment._id}>
-                <Comment comment={comment} />
-              </div>
-            );
-          })}
-        </div>
-      );
-    
+    return (
+      <div className="entry-wrapper">
+        {comments.comments.map((comment) => {
+          return (
+            <div key={comment._id}>
+              <Comment comment={comment} />
+            </div>
+          );
+        })}
+      </div>
+    );
   }
 }
 

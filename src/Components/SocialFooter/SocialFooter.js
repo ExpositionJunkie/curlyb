@@ -1,17 +1,10 @@
 import React from "react";
 import Line from "../Reusable/Line/Line";
 //Icons from FontAwesome but not relying on their library
-import { ReactComponent as ReactIcon } from "../../data/photos/frontend/icons/react.svg";
-import { ReactComponent as PiedPiperIcon } from "../../data/photos/frontend/icons/piedPiper.svg";
 import { ReactComponent as GithubIcon } from "../../data/photos/frontend/icons/github.svg";
 import { ReactComponent as LinkedInIcon } from "../../data/photos/frontend/icons/linkedIn.svg";
-import { ReactComponent as Css3 } from "../../data/photos/frontend/icons/css3.svg";
 import { ReactComponent as TwitterIcon } from "../../data/photos/frontend/icons/twitterUncaged.svg";
-import { ReactComponent as JavascriptIcon } from "../../data/photos/frontend/icons/javascript.svg";
-import { ReactComponent as SassIcon } from "../../data/photos/frontend/icons/sass.svg";
 import { ReactComponent as EnvelopeIcon } from "../../data/photos/frontend/icons/envelope.svg";
-import { ReactComponent as Html5Icon } from "../../data/photos/frontend/icons/html5.svg";
-import { NavLink } from "react-router-dom";
 
 import "./SocialFooter.css";
 
@@ -24,6 +17,7 @@ export default function SocialFooter(props) {
       <div className="lineDiv">
             <Line />
           </div>
+          <h1 className="contact-header">Contact Information</h1>
         <span className="spanWrap marg4">
           <span className="contactWrap">
             <span className="contactLink">
@@ -80,22 +74,6 @@ export default function SocialFooter(props) {
                 </div>
               </a>
             </span>
-          </span>
-          <span className="techStack ">
-            <div>
-              <h2>Site brought to you by</h2>
-              <div className="icons">
-                <ReactIcon />
-                <JavascriptIcon />
-                <Html5Icon />
-                <Css3 />
-                <SassIcon />
-
-                <NavLink to="/egg">
-                  <PiedPiperIcon width="55px" height="auto" length="auto" />
-                </NavLink>
-              </div>
-            </div>
           </span>
         </span>
       </div>

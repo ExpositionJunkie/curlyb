@@ -5,7 +5,7 @@ import DOMPurify from "dompurify";
 import BlogFooter from "./BlogFooter"
 
 // this component is for rendering the inner entries when blogs are listed out
-export default function BlogEntry({ blog, location }) {
+export default function BlogEntry({ blog, location, auth }) {
 
   const sanitizedData = () => ({
     __html: DOMPurify.sanitize(blog.text),
@@ -48,7 +48,7 @@ export default function BlogEntry({ blog, location }) {
           })}
         </div>
         </NavLink>
-        <BlogFooter blog={blog} comments={false} />
+        <BlogFooter blog={blog} comments={false} auth={auth} />
       </div>
     );
   } else {

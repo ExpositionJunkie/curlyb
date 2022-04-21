@@ -5,12 +5,10 @@ import { ReactComponent as Logo } from "../../data/photos/frontend/logo.svg";
 import { ReactComponent as RightBracket } from "../../data/photos/frontend/rightbracket.svg";
 import { ReactComponent as LeftBracket } from "../../data/photos/frontend/leftbracket.svg";
 import Elipses from "../../data/photos/frontend/Elipses.svg";
-import { useSelector } from "react-redux";
-
 //https://reactjs.org/docs/accessibility.html
 //Good article on aria attributes and a reminder to write accessible code
 
-export default function Navbar() {
+export default function Navbar({auth}) {
   
   return (
     <nav className="navbar">
@@ -29,7 +27,7 @@ export default function Navbar() {
           <NavLink to="/">Home</NavLink>
           <NavLink to="/blog">Blog</NavLink>
           <NavLink to="/about">About</NavLink>
-          <VariableLogin />
+          <VariableLogin auth={auth} />
         </span>
       </div>
       <Outlet />
@@ -37,8 +35,8 @@ export default function Navbar() {
   );
 }
 
-function VariableLogin() {
-  const auth = useSelector((state) => state.auth);
+function VariableLogin({auth}) {
+  
 
   if (auth.isAuthenticated) {
     return (
