@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useRef, useEffect } from "react";
 import "./App.css";
 import Home from "./Components/Home/Home";
 import About from "./Components/About/About";
@@ -22,26 +22,30 @@ import { Route, Routes } from "react-router-dom";
 import Cookie from "./Components/Reusable/Cookie/Cookie";
 
 //redux
-import { connect, useSelector, useDispatch } from "react-redux";
-import { bindActionCreators } from "redux";
-import { ActionCreators } from "./Redux/reduxIndex";
-
+import { connect, useSelector } from "react-redux";
 
 function AppComponent() {
-  const auth = useSelector((state) => state.auth);
+  const authentication = useSelector((state) => state.auth);
   const comments = useSelector((state) => state.comments)
   const signup = useSelector((state) => state.signup);
   const blogs = useSelector((state) => state.blogs);
 
-  const dispatch = useDispatch();
-  dispatch({ type: "postBlog" });
-  dispatch({ type: "editBlog" });
-  dispatch({ type: "fetchBlogs" });
-  dispatch({ type: "signupUser" });
-  const { postBlog, editBlog, fetchBlogs, signupUser } = bindActionCreators(
-    ActionCreators,
-    dispatch
-  );
+  const auth = useRef()
+
+
+  useEffect(() => {
+    auth.current = authentication
+  }, [authentication])
+
+  useEffect(() => {
+    const handleEvent = () => {
+      console.log(auth.current)
+    }
+  
+    document.addEventListener('my.custom.event', handleEvent);
+  
+    return(() => document.removeEventListener('my.custom.event', handleEvent));
+  }, []);
 
   return (
     <div className="App">

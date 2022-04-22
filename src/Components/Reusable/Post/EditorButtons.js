@@ -1,13 +1,56 @@
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro"; // <-- import styles to be used
+import "./Post.css";
 
 export default function EditorButtons({ editor }) {
-    if (!editor) {
-      return null;
+  const [active, setActive] = useState(false);
+  if (!editor) {
+    return null;
+  }
+
+  const handleClick = (evt) => {
+    evt.preventDefault();
+    setActive(!active);
+  };
+
+  const checkKeyDown = (e) => {
+    if (e.code === "Enter" || e.code === "NumpadEnter" || e.code === "13") {
+      e.preventDefault();
+      setActive(!active);
     }
-  
+  };
+
+  const EditorToggle = () => {
+    return (
+      <div
+        entrykeyhint="enter"
+        className={
+          active
+            ? "editor-toggle shadow-icon shadow-box"
+            : "editor-toggle shadow-icon"
+        }
+        onClick={(evt) => {
+          handleClick(evt);
+        }}
+        onKeyDown={(evt) => {
+          checkKeyDown(evt);
+        }}
+        tabIndex="0"
+      >
+        <FontAwesomeIcon
+          className="editor-toggle-icon"
+          icon={solid("file-word")}
+        />
+        <p className="editor-toggle-text">Activate Rich Text Editor</p>
+      </div>
+    );
+  };
+
+  if (active) {
     return (
       <div className="editor-button-wrap">
+        <EditorToggle />
         <div className="tooltip small-formatting-hide">
           <button
             type="button"
@@ -56,7 +99,7 @@ export default function EditorButtons({ editor }) {
             Heading 2
           </span>
         </div>
-  
+
         <div className="tooltip small-formatting-hide">
           <button
             type="button"
@@ -73,7 +116,7 @@ export default function EditorButtons({ editor }) {
           </button>
           <span className="tooltip-text shadow-box-no-zoom">Heading 3</span>
         </div>
-  
+
         <div className="tooltip small-formatting-hide">
           <button
             type="button"
@@ -90,7 +133,7 @@ export default function EditorButtons({ editor }) {
           </button>
           <span className="tooltip-text shadow-box-no-zoom ">Heading 4</span>
         </div>
-  
+
         <div className="tooltip small-formatting-hide">
           <button
             type="button"
@@ -107,7 +150,7 @@ export default function EditorButtons({ editor }) {
           </button>
           <span className="tooltip-text shadow-box-no-zoom">Heading 5</span>
         </div>
-  
+
         <div className="tooltip small-formatting-hide">
           <button
             type="button"
@@ -136,7 +179,7 @@ export default function EditorButtons({ editor }) {
             Remove Formatting
           </span>
         </div>
-  
+
         <div className="tooltip">
           <button
             type="button"
@@ -151,7 +194,7 @@ export default function EditorButtons({ editor }) {
           </button>
           <span className="tooltip-text shadow-box-no-zoom">Bold</span>
         </div>
-  
+
         <div className="tooltip">
           <button
             type="button"
@@ -166,7 +209,7 @@ export default function EditorButtons({ editor }) {
           </button>
           <span className="tooltip-text shadow-box-no-zoom">Italic</span>
         </div>
-  
+
         <div className="tooltip">
           <button
             type="button"
@@ -181,7 +224,7 @@ export default function EditorButtons({ editor }) {
           </button>
           <span className="tooltip-text shadow-box-no-zoom">Strikethrough</span>
         </div>
-  
+
         <div className="tooltip">
           <button
             type="button"
@@ -198,7 +241,7 @@ export default function EditorButtons({ editor }) {
             Bullet Point List
           </span>
         </div>
-  
+
         <div className="tooltip">
           <button
             type="button"
@@ -215,7 +258,7 @@ export default function EditorButtons({ editor }) {
             Numbered/Ordered List
           </span>
         </div>
-  
+
         <div className="tooltip">
           <button
             type="button"
@@ -230,7 +273,7 @@ export default function EditorButtons({ editor }) {
           </button>
           <span className="tooltip-text shadow-box-no-zoom">Code Block</span>
         </div>
-  
+
         <div className="tooltip">
           <button
             type="button"
@@ -245,7 +288,7 @@ export default function EditorButtons({ editor }) {
           </button>
           <span className="tooltip-text shadow-box-no-zoom">Code Snippet</span>
         </div>
-  
+
         <div className="tooltip">
           <button
             type="button"
@@ -260,7 +303,7 @@ export default function EditorButtons({ editor }) {
           </button>
           <span className="tooltip-text shadow-box-no-zoom">Blockquote</span>
         </div>
-  
+
         <div className="tooltip">
           <button
             type="button"
@@ -269,9 +312,11 @@ export default function EditorButtons({ editor }) {
           >
             <FontAwesomeIcon icon={solid("ruler-horizontal")} />
           </button>
-          <span className="tooltip-text shadow-box-no-zoom">Horizontal Line</span>
+          <span className="tooltip-text shadow-box-no-zoom">
+            Horizontal Line
+          </span>
         </div>
-  
+
         <div className="tooltip">
           <button
             type="button"
@@ -282,7 +327,7 @@ export default function EditorButtons({ editor }) {
           </button>
           <span className="tooltip-text shadow-box-no-zoom">New Line</span>
         </div>
-  
+
         <div className="tooltip">
           <button
             type="button"
@@ -305,4 +350,7 @@ export default function EditorButtons({ editor }) {
         </div>
       </div>
     );
+  } else {
+    return <EditorToggle />;
   }
+}

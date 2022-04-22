@@ -13,11 +13,8 @@ function CommentFetch({ blogId }) {
   const { fetchComments } = bindActionCreators(ActionCreators, dispatch);
 
   useEffect(() => {
-    function subscribe(blogId) {
-      fetchComments(blogId);
-    }
-    return subscribe(blogId);
-  }, [blogId]);
+    fetchComments(blogId)
+  }, []);
 
   if (comments.isLoading || comments.errMess) {
     return <></>;

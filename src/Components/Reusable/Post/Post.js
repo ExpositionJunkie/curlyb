@@ -81,7 +81,7 @@ function PostWrapper({ title, subtitle, tags, text, edit, blogId }) {
         <input
           type="text"
           id="title"
-          className="title shadow-icon"
+          className="post-title shadow-icon"
           placeholder="Title"
           value={input.title}
           onChange={(evt) => handleChange(evt)}
@@ -103,9 +103,9 @@ function PostWrapper({ title, subtitle, tags, text, edit, blogId }) {
           onChange={(evt) => handleChange(evt)}
         ></input>
         <EditorButtons editor={editor}></EditorButtons>
-        <EditorContent className="editor shadow-icon" id="text" editor={editor} />
+        <EditorContent autoFocus="end" className="editor shadow-icon" id="text" editor={editor} />
         <input
-          type="submit"
+          type="submit" 
           name="submit"
           value="Submit"
           className="submit-button shadow-icon"

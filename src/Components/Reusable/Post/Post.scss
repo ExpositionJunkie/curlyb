@@ -6,11 +6,31 @@
 }
 
 .ProseMirror {
-  overflow-wrap: break-word;
-  word-break: break-all;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 @media screen and (max-width: 500px) {
+  .editor-toggle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;  
+    margin-top: 1rem;
+  }
+
+  .editor-toggle-icon {
+    margin-left: 1rem;
+    font-size: 1rem;
+  }
+
+  .editor-toggle-text {
+    margin-left: 1rem;
+    font-size: 1rem;
+  }
+
+
   .post-header {
     font-size: 1.5rem;
     font-family: $bodyFont;
@@ -61,6 +81,7 @@
     color: $whiteColor;
     align-items: center;
     max-width: 90vw;
+    width: 100%;
   }
 
   .editor {
@@ -68,12 +89,13 @@
     font-family: $bodyFont;
     text-align: left;
   }
-  
-  .editor:hover, .editor:active {
+
+  .editor:hover,
+  .editor:active {
     outline: auto;
   }
 
-  .title,
+  .post-title,
   .post-subtitle,
   .editor {
     box-sizing: border-box;
@@ -88,11 +110,16 @@
     padding-bottom: 1rem;
   }
 
-  .title:hover, .title:active, .post-subtitle:hover, .post-subtitle:active, .editor:hover, .editor:active {
-    @include rainbow-shadow(5px, 5px, 15px)
+  .post-title:hover,
+  .post-title:active,
+  .post-subtitle:hover,
+  .post-subtitle:active,
+  .editor:hover,
+  .editor:active {
+    @include rainbow-shadow(5px, 5px, 15px);
   }
 
-  .title {
+  .post-title {
     @include textInputStyle(1rem);
     font-family: $subtitleFont2;
     padding-bottom: 0.5rem;
@@ -129,6 +156,25 @@
 }
 
 @media screen and (min-width: 500px) {
+  .editor-toggle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;  
+    margin-top: 1rem;
+  }
+
+  .editor-toggle-icon {
+    margin-left: 1rem;  
+    font-size: 2rem;
+  }
+
+  .editor-toggle-text {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+  }
+
   .tooltip button {
     background-color: black;
     color: $whiteColor;
@@ -179,7 +225,7 @@
     padding-bottom: 1rem;
   }
 
-  .title,
+  .post-title,
   .post-subtitle,
   .editor {
     background-color: $grayColor;
@@ -189,15 +235,14 @@
     width: 100%;
   }
 
-  .title {
-    @include textInputStyle(3rem);
+  .post-title {
+    @include textInputStyle(1.5rem);
     font-family: $subtitleFont2;
-    font-size: 3rem;
   }
 
   .post-subtitle {
     font-family: $subtitleFont;
-    @include textInputStyle(2rem);
+    @include textInputStyle(1.5rem);
   }
 
   .tooltip {
@@ -270,7 +315,7 @@
     margin-top: 0.5rem;
   }
 
-  .title,
+  .post-title,
   .post-subtitle,
   .editor {
     background-color: $grayColor;
@@ -280,16 +325,16 @@
     width: 100%;
   }
 
-  .title {
-    @include textInputStyle(3rem);
+  .post-title {
+    @include textInputStyle(2rem);
     font-family: $subtitleFont2;
-    font-size: 3rem;
+    font-size: 2rem;
     padding-bottom: 0.5rem;
   }
 
   .post-subtitle {
     font-family: $subtitleFont;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     @include textInputStyle(2rem);
   }
 
@@ -364,7 +409,7 @@
     margin-top: 0.5rem;
   }
 
-  .title,
+  .post-title,
   .post-subtitle,
   .editor {
     background-color: $grayColor;
@@ -374,16 +419,15 @@
     width: 100%;
   }
 
-  .title {
-    @include textInputStyle(3rem);
+  .post-title {
+    @include textInputStyle(2rem);
     font-family: $subtitleFont2;
-    font-size: 3rem;
+    font-size: 2rem;
     padding-bottom: 0.5rem;
   }
 
   .post-subtitle {
     font-family: $subtitleFont;
-    margin-bottom: 3rem;
     @include textInputStyle(2rem);
   }
 
@@ -448,7 +492,7 @@
   }
 
   .post-wrapper {
-    margin: 3rem;
+    margin: 5rem;
   }
 
   .editor {
@@ -460,7 +504,7 @@
     margin-top: 0.5rem;
   }
 
-  .title,
+  .post-title,
   .post-subtitle,
   .editor {
     background-color: $grayColor;
@@ -470,17 +514,17 @@
     width: 100%;
   }
 
-  .title {
-    @include textInputStyle(1.5rem);
+  .post-title {
+    @include textInputStyle(2rem);
     font-family: $subtitleFont2;
-    font-size: 3rem;
+    font-size: 2rem;
     padding-bottom: 0.5rem;
   }
 
   .post-subtitle {
     font-family: $subtitleFont;
-    margin-bottom: 3rem;
-    @include textInputStyle(1.5rem);
+    margin-bottom: 2rem;
+    @include textInputStyle(2rem);
   }
 
   .tooltip {
