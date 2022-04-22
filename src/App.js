@@ -1,4 +1,4 @@
-import React, { Suspense, useRef, useEffect } from "react";
+import React, { Suspense } from "react";
 import "./App.css";
 import Home from "./Components/Home/Home";
 import About from "./Components/About/About";
@@ -25,27 +25,11 @@ import Cookie from "./Components/Reusable/Cookie/Cookie";
 import { connect, useSelector } from "react-redux";
 
 function AppComponent() {
-  const authentication = useSelector((state) => state.auth);
+  const auth = useSelector((state) => state.auth);
   const comments = useSelector((state) => state.comments)
   const signup = useSelector((state) => state.signup);
   const blogs = useSelector((state) => state.blogs);
 
-  const auth = useRef()
-
-
-  useEffect(() => {
-    auth.current = authentication
-  }, [authentication])
-
-  useEffect(() => {
-    const handleEvent = () => {
-      console.log(auth.current)
-    }
-  
-    document.addEventListener('my.custom.event', handleEvent);
-  
-    return(() => document.removeEventListener('my.custom.event', handleEvent));
-  }, []);
 
   return (
     <div className="App">
