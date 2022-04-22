@@ -84,7 +84,6 @@ function DeleteAuth({ auth, blog }) {
   const navigate = useNavigate();
 
   function deleteAlert(evt) {
-    evt.preventDefault();
     if (
       window.confirm(
         `Are you sure you want to delete post titled ${blog.title}?`
@@ -97,11 +96,10 @@ function DeleteAuth({ auth, blog }) {
   }
 
   const handleDelete = (evt) => {
-    evt.preventDefault()
     deleteBlog(blog._id)
       .then((res) => {})
       .then((res) => {
-        navigate(1);
+        navigate(0);
       });
   };
 
