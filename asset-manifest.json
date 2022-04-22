@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.044f3319.css",
-    "main.js": "/static/js/main.29adb3f8.js",
+    "main.js": "/static/js/main.76366980.js",
     "static/media/the-great-flood.jpg": "/static/media/the-great-flood.30ebef797428840eac4a.jpg",
     "static/media/danny-devito.png": "/static/media/danny-devito.295f313995a3b743e5cb.png",
     "static/media/ApolloGlamourShot.jpg": "/static/media/ApolloGlamourShot.734f7496e7b076d056e6.jpg",
@@ -22,10 +22,10 @@
     "static/media/css3.svg": "/static/media/css3.f40adea72026a24a549a62082ce10ea8.svg",
     "static/media/html5.svg": "/static/media/html5.b2df6907108c1c1f71ca0581196c32bf.svg",
     "main.044f3319.css.map": "/static/css/main.044f3319.css.map",
-    "main.29adb3f8.js.map": "/static/js/main.29adb3f8.js.map"
+    "main.76366980.js.map": "/static/js/main.76366980.js.map"
   },
   "entrypoints": [
     "static/css/main.044f3319.css",
-    "static/js/main.29adb3f8.js"
+    "static/js/main.76366980.js"
   ]
 }
