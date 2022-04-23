@@ -2,12 +2,12 @@
   display: flex;
   flex-wrap: wrap;
   overflow-x: auto;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
 }
 
 .blog-entry-body {
-  overflow-wrap: break-word;
-  word-break: break-all;
+  overflow-wrap: normal;
+  word-break: normal;
   font-family: "Raleway", sans-serif;
 }
 
