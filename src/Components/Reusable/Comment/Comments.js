@@ -4,17 +4,20 @@ import { connect, useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { ActionCreators } from "../../../Redux/reduxIndex";
 
-function CommentFetch({ blogId }) {
+function CommentFetch({ blogId, auth }) {
   const dispatch = useDispatch();
   //dispatches for blogs
   dispatch({ type: "fetchComments" });
   const comments = useSelector((state) => state.comments);
-
   const { fetchComments } = bindActionCreators(ActionCreators, dispatch);
 
   useEffect(() => {
-    fetchComments(blogId)
-  }, []);
+    let mounted = true;
+    if (mounted) {
+      fetchComments(blogId);
+    }
+    return () => (mounted = false);
+  }, [blogId]);
 
   if (comments.isLoading || comments.errMess) {
     return <></>;
@@ -24,7 +27,7 @@ function CommentFetch({ blogId }) {
         {comments.comments.map((comment) => {
           return (
             <div key={comment._id}>
-              <Comment comment={comment} />
+              <Comment comment={comment} blogId={blogId} auth={auth} />
             </div>
           );
         })}

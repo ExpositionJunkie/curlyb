@@ -1,8 +1,9 @@
 import Line from "../Line/Line";
 import DOMPurify from "dompurify";
+import CommentFooter from "./CommentFooter";
 import "./Comment.css";
 
-export default function Comment({ comment }) {
+export default function Comment({ blogId, comment, auth }) {
   const sanitizedData = () => ({
     __html: DOMPurify.sanitize(comment.text),
   });
@@ -24,6 +25,7 @@ export default function Comment({ comment }) {
           </div>
           <p className="date"> - {date.toLocaleString()}</p>
           </div>
+          <CommentFooter blogId={blogId} comment={comment} auth={auth}/>
         </div>
       </>
     );

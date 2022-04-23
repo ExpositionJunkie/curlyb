@@ -9,7 +9,7 @@ import { ActionCreators } from "../../../Redux/reduxIndex";
 import { useNavigate } from "react-router-dom";
 import "./Post.css";
 
-function PostWrapper({ title, subtitle, tags, text, edit, blogId }) {
+function PostWrapper({ title, subtitle, tags, text, edit, blogId, }) {
   const [input, setInput] = useState({
     title: title || "",
     subtitle: subtitle || "",

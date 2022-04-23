@@ -134,8 +134,8 @@ export const deleteBlog = (blogId) => (dispatch) => {
     .then((response) => response.json())
     .then((response) => dispatch(addBlog(response)))
     .catch((error) => {
-      console.log("post blog", error.message);
-      alert("Your blog could not be posted\nError: " + error.message);
+      console.log("delete blog", error.message);
+      alert("Your blog could not be deleted\nError: " + error.message);
     });
 };
 
@@ -240,6 +240,83 @@ export const postComment = (text, blogId) => (dispatch) => {
       alert("Your comment could not be posted\nError: " + error.message);
     });
 };
+
+export const editComment = (text, blogId, commentId) => (dispatch) => {
+  const newComment = {
+    text: text,
+    blog: blogId,
+    comment: commentId
+  };
+  console.log("Comment ", newComment);
+  const bearer = "Bearer " + localStorage.getItem("token");
+  return fetch(baseUrl + "blog/" + blogId + "/comments/" + commentId, {
+    method: "PUT",
+    body: JSON.stringify(newComment),
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: bearer,
+    },
+    credentials: "same-origin",
+  })
+    .then(
+      (response) => {
+        if (response.ok) {
+          return response;
+        } else {
+          const error = new Error(
+            `Error ${response.status}: ${response.statusText}`
+          );
+          error.response = response;
+          throw error;
+        }
+      },
+      (error) => {
+        throw error;
+      }
+    )
+    .then((response) => response.json())
+    .then((response) => dispatch(addComment(response)))
+    .catch((error) => {
+      console.log("post comment", error.message);
+      alert("Your comment could not be posted\nError: " + error.message);
+    });
+};
+
+export const deleteComment = (blogId, commentId) => (dispatch) => {
+  const bearer = "Bearer " + localStorage.getItem("token");
+  return fetch(baseUrl + "blog/" + blogId + "/comments/" + commentId, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: bearer,
+    },
+    credentials: "same-origin",
+  })
+    .then(
+      (response) => {
+        if (response.ok) {
+          return response;
+        } else {
+          const error = new Error(
+            `Error ${response.status}: ${response.statusText}`
+          );
+          error.response = response;
+          throw error;
+        }
+      },
+      (error) => {
+        throw error;
+      }
+    )
+    .then((response) => response.json())
+    .then((response) => dispatch(addBlog(response)))
+    .catch((error) => {
+      console.log("delete comment", error.message);
+      alert("Your comment could not be deleted\nError: " + error.message);
+    });
+};
+
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Comments End ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Signup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

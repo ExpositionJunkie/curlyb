@@ -17,10 +17,14 @@ function BlogF({ blog, comments, auth }) {
   const [editActive, setEditActive] = useState(false);
 
   useEffect(() => {
-    if (comments) {
-      setCommentActive(!commentActive);
+    let mounted = true
+    if (mounted) {
+      if (comments) {
+        setCommentActive(!commentActive);
+      }
     }
-  }, []);
+    return () => mounted = false;
+  }, [comments]);
 
   const handleEdit = (evt) => {
     evt.preventDefault();
@@ -130,7 +134,7 @@ function ReplyDrop({ auth, blog, replyActive }) {
           <h1 className="edit-header">Add Comment</h1>
           <AddComment
             location={`blog`}
-            blog={blog}
+            blogId={blog._id}
             active={replyActive}
             auth={auth}
           ></AddComment>
@@ -144,9 +148,9 @@ function ReplyDrop({ auth, blog, replyActive }) {
   }
 }
 
-function CommentDrop({ blog, commentActive }) {
+function CommentDrop({ blog, commentActive, auth }) {
   if (commentActive) {
-    return <Comments blogId={blog._id} />;
+    return <Comments blogId={blog._id} auth={auth}/>;
   } else {
     return <></>;
   }

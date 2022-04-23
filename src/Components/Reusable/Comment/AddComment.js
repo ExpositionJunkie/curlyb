@@ -10,9 +10,9 @@ import { ActionCreators } from "../../../Redux/reduxIndex";
 import "../Post/Post.css";
 import "./AddComment.css";
 
-function CommentEditor({ auth, content, blog  }) {
+function CommentEditor({ auth, content, blogId, edit, comment  }) {
   const [input, setInput] = useState({
-    text: "",
+    text: content || "",
   });
   
   const [validationText, setValidationText] = useState("");
@@ -20,7 +20,8 @@ function CommentEditor({ auth, content, blog  }) {
   //redux dispatch
   const dispatch = useDispatch();
   dispatch({ type: "postComment" });
-  const { postComment } = bindActionCreators(ActionCreators, dispatch);
+  dispatch({ type: "editComment" });
+  const { postComment, editComment } = bindActionCreators(ActionCreators, dispatch);
   const comments = useSelector((state) => state.comments);
 
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ function CommentEditor({ auth, content, blog  }) {
   const editor = useEditor({
     extensions: [StarterKit],
     type: "doc",
-    content: content,
+    content: DOMPurify.sanitize(input.text),
     onUpdate: ({ editor }) => {
       const html = editor.getHTML();
       setInput((prevState) => ({
@@ -50,7 +51,8 @@ function CommentEditor({ auth, content, blog  }) {
 
   const handleSubmit = (evt) => {
     evt.preventDefault()
-    postComment(input.text, blog._id)
+    if (!edit) {
+      postComment(input.text, blogId)
       .then(() => {
         if (comments.errMess) {
           errMess();
@@ -62,6 +64,21 @@ function CommentEditor({ auth, content, blog  }) {
         }
         
       });
+    } else {
+      editComment(input.text, blogId, comment._id)
+      .then(() => {
+        if (comments.errMess) {
+          errMess();
+        }
+      })
+      .then(() => {
+        if (!comments.errMess) {
+          navigate(0);
+        }
+        
+      });
+    }
+
   };
 
   if (auth.isAuthenticated) {
