@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Post from "../Reusable/Post/Post";
@@ -11,20 +11,10 @@ import { bindActionCreators } from "redux";
 import { ActionCreators } from "../../Redux/reduxIndex";
 import { connect, useDispatch } from "react-redux";
 
-function BlogF({ blog, comments, auth }) {
+function BlogF({ blog, auth }) {
   const [commentActive, setCommentActive] = useState(false);
   const [replyActive, setReplyActive] = useState(false);
   const [editActive, setEditActive] = useState(false);
-
-  useEffect(() => {
-    let mounted = true
-    if (mounted) {
-      if (comments) {
-        setCommentActive(!commentActive);
-      }
-    }
-    return () => mounted = false;
-  }, [comments]);
 
   const handleEdit = (evt) => {
     evt.preventDefault();
@@ -150,7 +140,7 @@ function ReplyDrop({ auth, blog, replyActive }) {
 
 function CommentDrop({ blog, commentActive, auth }) {
   if (commentActive) {
-    return <Comments blogId={blog._id} auth={auth}/>;
+    return <Comments blog={blog} auth={auth}/>;
   } else {
     return <></>;
   }
