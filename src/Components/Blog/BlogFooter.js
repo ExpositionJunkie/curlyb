@@ -54,11 +54,14 @@ function BlogF({ blog, auth }) {
           className="shadow-icon blog-footer-icon"
           onClick={(evt) => handleReply(evt)}
         />
+        <span className="comment-container">
         <FontAwesomeIcon
           icon={solid("message")}
           className="shadow-icon blog-footer-icon"
           onClick={(evt) => handleComment(evt)}
         />
+        <p className="comment-number">{blog.comments.length}</p>
+        </span>
         <DeleteAuth auth={auth} blog={blog} />
         {editSymbol}
       </div>
