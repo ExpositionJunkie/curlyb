@@ -121,6 +121,37 @@ function DeleteAuth({ auth, blog }) {
 
 function ReplyDrop({ auth, blog, replyActive }) {
   if (replyActive) {
+    if (localStorage.getItem("comment")) {
+      let comment=JSON.parse(localStorage.getItem("comment"))
+      if (comment.blog === blog._id) {
+        return (
+          <div classNam="footer-drop">
+            <Line></Line>
+            <h1 className="edit-header">Add Comment</h1>
+            <AddComment
+              location={`blog`}
+              content={comment.text}
+              blogId={blog._id}
+              active={replyActive}
+              auth={auth}
+            ></AddComment>
+          </div>
+        );
+      } else {
+        return (
+          <div classNam="footer-drop">
+            <Line></Line>
+            <h1 className="edit-header">Add Comment</h1>
+            <AddComment
+              location={`blog`}
+              blogId={blog._id}
+              active={replyActive}
+              auth={auth}
+            ></AddComment>
+          </div>
+        );
+      }
+    } else {
       return (
         <div classNam="footer-drop">
           <Line></Line>
@@ -133,6 +164,8 @@ function ReplyDrop({ auth, blog, replyActive }) {
           ></AddComment>
         </div>
       );
+    }
+      
     
   } else {
     return (
