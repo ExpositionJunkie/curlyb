@@ -1,13 +1,17 @@
-import { connect, useSelector } from "react-redux";
 import Post from "./Post";
 import { NavLink } from "react-router-dom";
 import "./VariablePost.css";
 
-function VariablePostWrap({ location, content}) {
-  const auth = useSelector((state) => state.auth);
+function VariablePost({ location, content, auth}) {
+  
 
   if (auth.isAuthenticated) {
-    return <Post location={location} content={content} />;
+    if (localStorage.getItem("blog")) {
+      let blog=JSON.parse(localStorage.getItem("blog"))
+      return <Post location={location} content={content} title={blog.title} tags={blog.tags} text={blog.text} subtitle={blog.subtitle}/>;
+    } else {
+      return <Post location={location} content={content} />;
+    }
   } else {
     return (
       <div className="unverified-post">
@@ -21,6 +25,5 @@ function VariablePostWrap({ location, content}) {
   }
 }
 
-const VariablePost = connect(null, null)(VariablePostWrap);
 
 export default VariablePost;

@@ -31,7 +31,7 @@ export const postBlog = (input) => (dispatch) => {
   const newBlog = {
     ...input,
   };
-  console.log("Blog ", newBlog);
+  localStorage.setItem("blog", JSON.stringify(input));
   const bearer = "Bearer " + localStorage.getItem("token");
   return fetch(baseUrl + "blog", {
     method: "POST",
@@ -59,8 +59,12 @@ export const postBlog = (input) => (dispatch) => {
       }
     )
     .then((response) => response.json())
-    .then((response) => dispatch(addBlog(response)))
+    .then((response) => {
+      localStorage.removeItem("blog")
+      dispatch(addBlog(response))
+    })
     .catch((error) => {
+      
       console.log("post blog", error.message);
       alert("Your blog could not be posted\nError: " + error.message);
     });
@@ -70,7 +74,6 @@ export const editBlog = (input, blogId) => (dispatch) => {
   const newBlog = {
     ...input,
   };
-  console.log("Blog ", newBlog);
   const bearer = "Bearer " + localStorage.getItem("token");
   return fetch(baseUrl + "blog/" + blogId, {
     method: "PUT",
@@ -206,6 +209,7 @@ export const postComment = (text, blogId) => (dispatch) => {
     text: text,
     blog: blogId,
   };
+  
   console.log("Comment ", newComment);
   const bearer = "Bearer " + localStorage.getItem("token");
   return fetch(baseUrl + "blog/" + blogId + "/comments", {
@@ -234,8 +238,12 @@ export const postComment = (text, blogId) => (dispatch) => {
       }
     )
     .then((response) => response.json())
-    .then((response) => dispatch(addComment(response)))
+    .then((response) => {
+      localStorage.removeItem("blog")
+      dispatch(addComment(response))
+    })
     .catch((error) => {
+      localStorage.setItem("comment", JSON.stringify(newComment));
       console.log("post comment", error.message);
       alert("Your comment could not be posted\nError: " + error.message);
     });
@@ -247,7 +255,7 @@ export const editComment = (text, blogId, commentId) => (dispatch) => {
     blog: blogId,
     comment: commentId
   };
-  console.log("Comment ", newComment);
+  
   const bearer = "Bearer " + localStorage.getItem("token");
   return fetch(baseUrl + "blog/" + blogId + "/comments/" + commentId, {
     method: "PUT",
