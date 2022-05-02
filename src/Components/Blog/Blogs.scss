@@ -29,11 +29,9 @@
 .blog-wrapper select,
 .blog-wrapper label,
 .blog-wrapper input {
-  font-size: 1rem;
   border-style: none;
-  font-family: "Raleway";
-  color: $whiteColor;
 }
+
 .blog-wrapper li {
   list-style-type: square;
 }
@@ -61,10 +59,6 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-  }
-
-  .blog-wrapper p {
-    font-family: $bodyFont;
   }
 
   .date {
@@ -102,15 +96,17 @@
 }
 
 @media screen and (min-width: 500px) {
+  .post-list-wrapper {
+    margin: 2rem;
+    padding: 1rem;
+  }
+
   .author-details {
     display: flex;
     justify-content: space-around;
   }
 
-  .blog-wrapper p {
-    font-family: $bodyFont;
-    font-size: 1.25rem;
-  }
+
   .date {
     font-size: 1rem;
     justify-self: flex-end;
@@ -140,6 +136,11 @@
   .entry {
     margin: 2rem;
   }
+
+  .blog-entry-body p {
+    font-family: $bodyFont;
+    font-size: 1.25rem;
+  }
 }
 
 @media screen and (min-width: 950px) {
@@ -148,10 +149,6 @@
     justify-content: space-around;
   }
 
-  .blog-wrapper p {
-    font-family: $bodyFont;
-    font-size: 1.25rem;
-  }
   .date {
     font-size: 1rem;
     justify-self: flex-end;
@@ -185,10 +182,6 @@
 }
 
 @media screen and (min-width: 1200px) {
-  .blog-wrapper p {
-    font-family: $bodyFont;
-    font-size: 1.25rem;
-  }
   .date {
     font-size: 1rem;
     justify-self: flex-end;

@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import "./App.css";
 import Home from "./Components/Home/Home";
 import About from "./Components/About/About";
@@ -22,14 +22,43 @@ import { Route, Routes } from "react-router-dom";
 import Cookie from "./Components/Reusable/Cookie/Cookie";
 
 //redux
-import { connect, useSelector } from "react-redux";
+import { connect, useSelector, useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { ActionCreators } from "./Redux/reduxIndex";
 
 function AppComponent() {
   const auth = useSelector((state) => state.auth);
-  const comments = useSelector((state) => state.comments)
+  const comments = useSelector((state) => state.comments);
   const signup = useSelector((state) => state.signup);
   const blogs = useSelector((state) => state.blogs);
 
+  const dispatch = useDispatch();
+  dispatch({ type: "loginUser" });
+  const { loginUser } = bindActionCreators(ActionCreators, dispatch);
+
+  const handleLogin = () => {
+    if (localStorage.getItem("creds")) {
+      let creds = JSON.parse(localStorage.getItem("creds"));
+      loginUser(creds)
+        .then(() => {
+          if (auth.errMess) {
+            console.log(auth.errMess);
+          }
+        })
+        .then(() => {
+        });
+    } else {
+      loginUser() //running this so that it will reset the auth
+    }
+  };
+
+  useEffect(() => {
+    handleLogin() //The app won't recognize login between updates, this fixes that.
+    return function() {
+      //I don't really want to do anything here, but it will leak memory
+      //without a fake function here.
+    }
+  }, [])
 
   return (
     <div className="App">
@@ -38,13 +67,24 @@ function AppComponent() {
           <Navbar auth={auth} />
           <div className="body">
             <Routes>
-              <Route path="/" element={<Home auth={auth}/>} />
+              <Route path="/" element={<Home auth={auth} />} />
               <Route exact path="apipractice" element={<APIPractice />} />
               <Route path="blog/*" element={<Blog />}>
-                <Route index element={<BlogPage blogs={blogs} auth={auth} comments={comments} />} />
+                <Route
+                  index
+                  element={
+                    <BlogPage blogs={blogs} auth={auth} comments={comments} />
+                  }
+                />
                 <Route
                   path=":blogId"
-                  element={<BlogEntryStandalone blogs={blogs} auth={auth} comments={comments}/>}
+                  element={
+                    <BlogEntryStandalone
+                      blogs={blogs}
+                      auth={auth}
+                      comments={comments}
+                    />
+                  }
                 />
               </Route>
               <Route path="about" element={<About />} />

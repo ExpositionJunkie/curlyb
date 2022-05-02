@@ -155,7 +155,7 @@
   }
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 501px) {
   .editor-toggle {
     display: flex;
     justify-content: flex-start;
@@ -205,6 +205,7 @@
     border-radius: 15px;
     font-family: $bodyFont;
     font-size: 1.5rem;
+    max-width: 90vw;
     width: 100%;
     background-color: $pinkColor;
     color: $whiteColor;
@@ -213,9 +214,7 @@
   }
 
   .post-wrapper {
-    margin: 2rem;
-    display: flex;
-    flex-direction: column;
+    margin: 1rem;
   }
 
   .editor {
@@ -229,6 +228,7 @@
   .post-title,
   .post-subtitle,
   .editor {
+    border-style: none;
     background-color: $grayColor;
     color: $whiteColor;
     padding: 1rem;
@@ -320,6 +320,7 @@
   .post-title,
   .post-subtitle,
   .editor {
+    border-style: none;
     background-color: $grayColor;
     color: $whiteColor;
     padding: 1rem;
@@ -415,6 +416,7 @@
   .post-title,
   .post-subtitle,
   .editor {
+    border-style: none;
     background-color: $grayColor;
     color: $whiteColor;
     padding: 1rem;
@@ -511,6 +513,7 @@
   .post-title,
   .post-subtitle,
   .editor {
+    border-style: none;
     background-color: $grayColor;
     color: $whiteColor;
     padding: 1rem;

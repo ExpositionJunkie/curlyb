@@ -256,7 +256,7 @@
     visibility: visible;
   }
 }
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 501px) {
   .editor-toggle {
     display: flex;
     justify-content: flex-start;
@@ -355,6 +355,7 @@
     border-radius: 15px;
     font-family: "Raleway", sans-serif;
     font-size: 1.5rem;
+    max-width: 90vw;
     width: 100%;
     background-color: #e94584;
     color: #ffffff;
@@ -363,9 +364,7 @@
   }
 
   .post-wrapper {
-    margin: 2rem;
-    display: flex;
-    flex-direction: column;
+    margin: 1rem;
   }
 
   .editor {
@@ -381,6 +380,7 @@
   .post-title,
 .post-subtitle,
 .editor {
+    border-style: none;
     background-color: #262624;
     color: #ffffff;
     padding: 1rem;
@@ -526,6 +526,7 @@
   .post-title,
 .post-subtitle,
 .editor {
+    border-style: none;
     background-color: #262624;
     color: #ffffff;
     padding: 1rem;
@@ -675,6 +676,7 @@
   .post-title,
 .post-subtitle,
 .editor {
+    border-style: none;
     background-color: #262624;
     color: #ffffff;
     padding: 1rem;
@@ -825,6 +827,7 @@
   .post-title,
 .post-subtitle,
 .editor {
+    border-style: none;
     background-color: #262624;
     color: #ffffff;
     padding: 1rem;
