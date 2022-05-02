@@ -120,6 +120,7 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
     width: 95%;
+    cursor: pointer;
   }
 
   .post-wrapper {
@@ -358,6 +359,7 @@
     background-color: #e94584;
     color: #ffffff;
     padding: 1rem;
+    cursor: pointer;
   }
 
   .post-wrapper {
@@ -503,6 +505,7 @@
     color: #ffffff;
     padding: 1rem;
     width: 100%;
+    cursor: pointer;
   }
 
   .post-wrapper {
@@ -651,6 +654,7 @@
     color: #ffffff;
     padding: 1rem;
     width: 100%;
+    cursor: pointer;
   }
 
   .post-wrapper {
@@ -800,6 +804,7 @@
     color: #ffffff;
     padding: 1rem;
     width: 100%;
+    cursor: pointer;
   }
 
   .post-wrapper {

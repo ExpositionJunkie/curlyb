@@ -16,7 +16,7 @@
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    margin-bottom: 1rem;  
+    margin-bottom: 1rem;
     margin-top: 1rem;
   }
 
@@ -29,7 +29,6 @@
     margin-left: 1rem;
     font-size: 1rem;
   }
-
 
   .post-header {
     font-size: 1.5rem;
@@ -74,6 +73,7 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
     width: 95%;
+    cursor: pointer;
   }
 
   .post-wrapper {
@@ -161,12 +161,12 @@
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    margin-bottom: 1rem;  
+    margin-bottom: 1rem;
     margin-top: 1rem;
   }
 
   .editor-toggle-icon {
-    margin-left: 1rem;  
+    margin-left: 1rem;
     font-size: 2rem;
   }
 
@@ -209,6 +209,7 @@
     background-color: $pinkColor;
     color: $whiteColor;
     padding: 1rem;
+    cursor: pointer;
   }
 
   .post-wrapper {
@@ -300,6 +301,7 @@
     color: $whiteColor;
     padding: 1rem;
     width: 100%;
+    cursor: pointer;
   }
 
   .post-wrapper {
@@ -394,6 +396,7 @@
     color: $whiteColor;
     padding: 1rem;
     width: 100%;
+    cursor: pointer;
   }
 
   .post-wrapper {
@@ -489,6 +492,7 @@
     color: $whiteColor;
     padding: 1rem;
     width: 100%;
+    cursor: pointer;
   }
 
   .post-wrapper {

@@ -11,6 +11,7 @@
 }
 .comment-container {
     position: relative;
+    cursor: pointer;
 }
 .comment-number {
     color: $pinkColor;
@@ -27,6 +28,7 @@
     .blog-footer-icon {
         font-size: 1.75rem;
         margin-top: 1rem;
+        cursor: pointer;
     }
     .footer-drop {
         margin-top: 1rem;
@@ -42,6 +44,7 @@
     .blog-footer-icon {
         font-size: 1.5rem;
         margin-top: 1rem;
+        cursor: pointer;
     }
 
 }

@@ -10,7 +10,7 @@ $blueColor: #24aadb;
 $orangeColor: #f17c58;
 $tealColor: #27dbb1;
 $redColor: #ff3706;
-$transparentColor: rgba(0,0,0,0);
+$transparentColor: rgba(0, 0, 0, 0);
 
 //links
 $linkColor: rgba(251, 63, 182, 1);
@@ -105,7 +105,6 @@ $bodyFont2: "Comfortaa", cursive;
 }
 
 @mixin fade($duration) {
-
   animation: gradient $duration;
 
   @include keyframes(fade) {
@@ -139,7 +138,7 @@ $bodyFont2: "Comfortaa", cursive;
       box-shadow: $px1 $px2 $px3 $purpleColor;
     }
     84% {
-      box-shadow: $px1 $px2 $px3 $pinkColor
+      box-shadow: $px1 $px2 $px3 $pinkColor;
     }
     100% {
       box-shadow: $px1 $px2 $px3 $redColor;
@@ -168,7 +167,7 @@ $bodyFont2: "Comfortaa", cursive;
       text-shadow: $px1 $px2 $px3 $purpleColor;
     }
     84% {
-      text-shadow: $px1 $px2 $px3 $pinkColor
+      text-shadow: $px1 $px2 $px3 $pinkColor;
     }
     100% {
       text-shadow: $px1 $px2 $px3 $redColor;
@@ -182,7 +181,7 @@ $bodyFont2: "Comfortaa", cursive;
 
   @include keyframes(shadow-svg-fade) {
     0% {
-     filter: drop-shadow($px1 $px2 $px3 $orangeColor);
+      filter: drop-shadow($px1 $px2 $px3 $orangeColor);
     }
     16% {
       filter: drop-shadow($px1 $px2 $px3 $yellowColor);
@@ -204,8 +203,6 @@ $bodyFont2: "Comfortaa", cursive;
     }
   }
 }
-
-
 
 //https://brandonbrule.github.io/scss-animation-keyframe-mixin/
 

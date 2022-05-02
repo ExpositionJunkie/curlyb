@@ -49,7 +49,7 @@ function LoginPage() {
         <div className="login-form-inner-wrapper">
           <div className="login-form">
             <LoginForm />
-            <div className="signup-call">
+            <div className="signup-call linkNoUnderline">
               <p>
                 Don't have an account yet? No problem, choombatta, you can{" "}
                 <NavLink to="/signup">signup here.</NavLink>

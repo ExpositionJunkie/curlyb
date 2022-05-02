@@ -66,7 +66,7 @@ html {
 
 .linkNoUnderline a:link {
   text-decoration: none;
-  color: #e94584;
+  color: #27dbb1;
 }
 
 .linkNoUnderline a:hover {
@@ -76,7 +76,7 @@ html {
 
 .linkNoUnderline a:visited {
   text-decoration: none;
-  color: #27dbb1;
+  color: #e94584;
 }
 
 .linkNoUnderline a::after {

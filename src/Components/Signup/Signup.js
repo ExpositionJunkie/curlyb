@@ -28,7 +28,7 @@ function SignupWrap({signup}) {
             <div className="signup-validation-text">{signup.errMess}</div>
             <div className="signup-validation-text">{signup.message}</div>
             <SignupForm></SignupForm>
-            <p>Already have an account? <NavLink to="/login">Login here.</NavLink></p>
+            <p className="linkNoUnderline">Already have an account? <NavLink to="/login">Login here.</NavLink></p>
           </div>
         </div>
       </div>

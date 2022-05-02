@@ -10,12 +10,12 @@ import "./About.css";
 
 export default function About(props) {
   return (
-    <div className="about-wrapper">
+    <div className="about-wrapper linkNoUnderline">
       <Title titleStr="About" />
       <div className="inner-about-wrapper">
         <div className="intro goals">
           <h1>Site Goals</h1>
-          <h3 className="linkNoUnderline">
+          <h3>
             For most recent updates and snarky dev commentary, please check out
             my <NavLink to="/blog">Dev Blog</NavLink>.
           </h3>
