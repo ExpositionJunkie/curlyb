@@ -17,7 +17,7 @@ export default function About(props) {
           <h1>Site Goals</h1>
           <h3>
             For most recent updates and snarky dev commentary, please check out
-            my <NavLink to="/blog">Dev Blog</NavLink>.
+            my <NavLink to="/blog/devblog">Dev Blog</NavLink>.
           </h3>
           <p>Recently Completed</p>
           <ul>

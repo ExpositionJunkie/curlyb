@@ -8,8 +8,7 @@ import Elipses from "../../data/photos/frontend/Elipses.svg";
 //https://reactjs.org/docs/accessibility.html
 //Good article on aria attributes and a reminder to write accessible code
 
-export default function Navbar({auth}) {
-  
+export default function Navbar({ auth }) {
   return (
     <nav className="navbar">
       <div className="header-wrapper">
@@ -35,18 +34,10 @@ export default function Navbar({auth}) {
   );
 }
 
-function VariableLogin({auth}) {
-  
-
+function VariableLogin({ auth }) {
   if (auth.isAuthenticated) {
-    return (
-      <NavLink to="/login">Logout</NavLink>
-      )
+    return <NavLink to="/login">Logout</NavLink>;
   } else {
-    return (
-      <NavLink to="/login">Login</NavLink>
-    )
+    return <NavLink to="/login">Login</NavLink>;
   }
-  
 }
-

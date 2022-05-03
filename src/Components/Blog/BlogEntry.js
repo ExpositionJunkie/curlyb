@@ -5,7 +5,7 @@ import DOMPurify from "dompurify";
 import BlogFooter from "./BlogFooter"
 
 // this component is for rendering the inner entries when blogs are listed out
-export default function BlogEntry({ blog, location, auth }) {
+export default function BlogEntry({ blog, auth }) {
 
   const sanitizedData = () => ({
     __html: DOMPurify.sanitize(blog.text),
@@ -16,7 +16,7 @@ export default function BlogEntry({ blog, location, auth }) {
   if (blog) {
     return (
       <div id="inner_entry_wrapper">
-        <NavLink id="link-wrap" to={`${location}/${blog._id}`}>
+        <NavLink id="link-wrap" to={`/blog/${blog._id}`}>
         <Subtitle titleStr={blog.title} subtitleStr={blog.subtitle}></Subtitle>
         <Line></Line>
         <div className="author-details">

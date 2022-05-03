@@ -14,6 +14,7 @@ import NameGuess from "./Components/APIPractice/InnerPages/NameGuess/NameGuess";
 import Blog from "./Components/Blog/Blogs";
 import BlogEntryStandalone from "./Components/Blog/BlogEntryStandalone";
 import BlogPage from "./Components/Blog/BlogPage";
+import BlogList from "./Components/Blog/BlogList";
 import Login from "./Components/Login/Login";
 import CSP from "./Components/CSP/CSP";
 import Signup from "./Components/Signup/Signup";
@@ -28,13 +29,16 @@ import { ActionCreators } from "./Redux/reduxIndex";
 
 function AppComponent() {
   const auth = useSelector((state) => state.auth);
-  const comments = useSelector((state) => state.comments);
   const signup = useSelector((state) => state.signup);
   const blogs = useSelector((state) => state.blogs);
 
   const dispatch = useDispatch();
+  dispatch({ type: "fetchBlogs" });
   dispatch({ type: "loginUser" });
-  const { loginUser } = bindActionCreators(ActionCreators, dispatch);
+  const { fetchBlogs, loginUser } = bindActionCreators(
+    ActionCreators,
+    dispatch
+  );
 
   const handleLogin = () => {
     if (localStorage.getItem("creds")) {
@@ -45,20 +49,22 @@ function AppComponent() {
             console.log(auth.errMess);
           }
         })
-        .then(() => {
-        });
+        .then(() => {});
     } else {
-      loginUser() //running this so that it will reset the auth
+      loginUser();
+      //running this so that it will reset the auth
     }
   };
 
   useEffect(() => {
-    handleLogin() //The app won't recognize login between updates, this fixes that.
-    return function() {
+    fetchBlogs();
+    handleLogin();
+    //The app won't recognize login between updates, this fixes that.
+    return function () {
       //I don't really want to do anything here, but it will leak memory
       //without a fake function here.
-    }
-  }, [])
+    };
+  }, []);
 
   return (
     <div className="App">
@@ -67,23 +73,18 @@ function AppComponent() {
           <Navbar auth={auth} />
           <div className="body">
             <Routes>
-              <Route path="/" element={<Home auth={auth} />} />
+              <Route path="/" element={<Home auth={auth} blogs={blogs} />} />
               <Route exact path="apipractice" element={<APIPractice />} />
               <Route path="blog/*" element={<Blog />}>
-                <Route
-                  index
-                  element={
-                    <BlogPage blogs={blogs} auth={auth} comments={comments} />
-                  }
-                />
+                <Route index element={<BlogPage auth={auth} />} />
                 <Route
                   path=":blogId"
+                  element={<BlogEntryStandalone auth={auth} />}
+                />
+                <Route
+                  path="devblog"
                   element={
-                    <BlogEntryStandalone
-                      blogs={blogs}
-                      auth={auth}
-                      comments={comments}
-                    />
+                    <BlogList auth={auth} blogs={blogs} devblog={true} />
                   }
                 />
               </Route>
