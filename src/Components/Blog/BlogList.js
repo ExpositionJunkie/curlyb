@@ -9,6 +9,8 @@ import "./Blogs.css";
 //This component does not have the post included in it and is separate.
 
 function BlogList({ auth, blogs, devblog }) {
+
+
   if (blogs.isLoading || blogs.errMess) {
     return <></>;
   } else if (!blogs.isLoading && !blogs.errMess) {
@@ -33,6 +35,7 @@ function BlogList({ auth, blogs, devblog }) {
           </div>
         );
       } else {
+        console.info(blogs)
         return (
           <div className="entry-wrapper">
             <div>
