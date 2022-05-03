@@ -18,7 +18,7 @@ export const Blogs = (
         errMess: null,
         blogs: action.payload,
         devblogs: action.payload.filter((blog) => {
-          let tags = blog.tags.map(tag => tag.toLowerCase())
+          const tags = blog.tags.map(tag => tag.toLowerCase())
           return blog.author.username === "Zenith" && tags.includes("devblog");
         }),
       };
