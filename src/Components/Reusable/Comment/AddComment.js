@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import { useEditor, EditorContent } from "@tiptap/react";
+import Link from '@tiptap/extension-link'
 import StarterKit from "@tiptap/starter-kit";
 import EditorButtons from "../Post/EditorButtons";
 import DOMPurify from "dompurify";
@@ -27,7 +28,10 @@ function CommentEditor({ auth, content, blogId, edit, comment  }) {
   const navigate = useNavigate();
 
   const editor = useEditor({
-    extensions: [StarterKit],
+    extensions: [StarterKit, Link.configure({
+      linkOnPaste: true,
+      autolink: true,
+    })],
     type: "doc",
     content: DOMPurify.sanitize(input.text),
     onUpdate: ({ editor }) => {

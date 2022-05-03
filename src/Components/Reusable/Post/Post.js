@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
+import Link from '@tiptap/extension-link'
 import EditorButtons from "./EditorButtons";
 import DOMPurify from "dompurify";
 import { connect, useDispatch } from "react-redux";
@@ -27,7 +28,10 @@ function PostWrapper({ title, subtitle, tags, text, edit, blogId, }) {
   let navigate = useNavigate();
 
   const editor = useEditor({
-    extensions: [StarterKit],
+    extensions: [StarterKit, Link.configure({
+      linkOnPaste: true,
+      autolink: true,
+    })],
     type: "doc",
     content: DOMPurify.sanitize(input.text),
     onUpdate: ({ editor }) => {

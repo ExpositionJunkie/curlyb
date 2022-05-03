@@ -1,10 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro"; // <-- import styles to be used
 import "./Post.css";
 
 export default function EditorButtons({ editor }) {
   const [active, setActive] = useState(false);
+
+  const setLink = useCallback(() => {
+    const previousUrl = editor.getAttributes("link").href;
+    const url = window.prompt("URL", previousUrl);
+
+    // cancelled
+    if (url === null) {
+      return;
+    }
+
+    // empty
+    if (url === "") {
+      editor.chain().focus().extendMarkRange("link").unsetLink().run();
+
+      return;
+    }
+
+    // update link
+    editor
+      .chain()
+      .focus()
+      .extendMarkRange("link")
+      .setLink({ href: url, target: "_blank" })
+      .run();
+  }, [editor]);
+
   if (!editor) {
     return null;
   }
@@ -224,7 +251,22 @@ export default function EditorButtons({ editor }) {
           </button>
           <span className="tooltip-text shadow-box-no-zoom">Strikethrough</span>
         </div>
-
+        <div className="tooltip">
+          <button
+            type="button"
+            onClick={setLink}
+            className={
+              editor.isActive("link")
+                ? "is-active editor-button"
+                : "editor-button"
+            }
+          >
+            <FontAwesomeIcon icon={solid("link")} />
+          </button>
+          <span className="tooltip-text shadow-box-no-zoom">
+            Add/Remove Link
+          </span>
+        </div>
         <div className="tooltip">
           <button
             type="button"
