@@ -113,7 +113,7 @@ function CommentEditor({ auth, content, blogId, edit, comment }) {
           onKeyDown={(e) => checkKeyDown(e)}
         >
           <EditorButtons editor={editor}></EditorButtons>
-
+          <label htmlFor="text">Your two &#162;</label>
           <EditorContent className="editor" id="text" editor={editor} />
 
           <input

@@ -1,7 +1,7 @@
 @import "../../Variables/Sass/SassVariables.scss";
 
 .blog-entry-body img{
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
   padding: 1rem;
   border-radius: 40px;
@@ -81,6 +81,7 @@
     padding: 0.5rem;
     margin: 0.5rem;
     border-radius: 40px;
+    padding: 0rem 1rem 0rem 1rem; //right and left padding
   }
 
   .blog_title {
@@ -94,10 +95,12 @@
     font-family: $bodyFont;
     font-size: 0.75rem;
     text-transform: uppercase;
+    justify-content: space-around;
+    padding: 0rem 0.5rem 0rem 0.5rem; //right and left padding
   }
 
   .tags > * {
-    margin-left: 1rem;
+    justify-content: space-between;
   }
   .entry {
 
@@ -142,7 +145,7 @@
   }
 
   .tags > * {
-    margin-left: 1rem;
+    padding-left: 1rem;
   }
   .entry {
     margin: 2rem;
@@ -167,8 +170,8 @@
   
   #inner_entry_wrapper {
     margin: 3rem;
-    padding: 1rem;
     border-radius: 40px;
+    padding: 0rem 3rem 0rem 3rem; //right and left padding
   }
 
   .blog_title {
@@ -182,6 +185,7 @@
     font-family: $bodyFont;
     font-size: 1rem;
     text-transform: uppercase;
+    padding: 0rem 3rem 0rem 3rem; //right and left padding
   }
 
   .tags > * {
@@ -201,6 +205,7 @@
     margin: 4rem;
     padding: 1rem;
     border-radius: 40px;
+    padding: 0rem 5rem 0rem 5rem; //right and left padding
   }
 
   .blog_title {
@@ -215,6 +220,7 @@
     font-family: $bodyFont;
     font-size: 1rem;
     text-transform: uppercase;
+    padding: 0rem 5rem 0rem 5rem; //right and left padding
   }
 
   .tags > * {

@@ -54,16 +54,17 @@ export function BlogEntryS({auth}) {
         </span>
         <Line />
         <div className="blog-body-wrap">
-        <div className="blog-entry-body" dangerouslySetInnerHTML={sanitizedData()} />
+        <div className="blog-entry-body linkNoUnderline" dangerouslySetInnerHTML={sanitizedData()} />
         </div>
         <div className="marg3">
           <Line></Line>
         </div>
         <div className="tags">
+          
           {blog.tags.map((paragraph, index) => {
             return (
               <p className="tag" key={index}>
-                {paragraph}
+                {paragraph}{"  "}
               </p>
             );
           })}

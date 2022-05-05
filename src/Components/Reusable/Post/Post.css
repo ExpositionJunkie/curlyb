@@ -20,6 +20,10 @@
   text-align: center;
 }
 
+.editor:focus {
+  outline: auto;
+}
+
 @media screen and (max-width: 500px) {
   .editor-toggle {
     display: flex;
@@ -28,6 +32,7 @@
     width: 100%;
     margin-bottom: 1rem;
     margin-top: 1rem;
+    cursor: pointer;
   }
 
   .editor-toggle-icon {
@@ -54,6 +59,7 @@
 
   .editor-button {
     font-size: 0.75rem;
+    cursor: pointer;
   }
 
   .editor-button-wrap {
@@ -63,6 +69,7 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     flex-direction: row;
+    cursor: pointer;
   }
 
   .is-active {
@@ -265,6 +272,9 @@
   }
 
   .tooltip:hover .tooltip-text {
+    bottom: calc(0.5rem + 100%);
+    right: 50%;
+    transform: translateX(50%);
     visibility: visible;
   }
 }

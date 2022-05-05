@@ -28,7 +28,7 @@ export default function BlogEntry({ blog, auth }) {
         <Line></Line>
         <div className="blog-body-wrap">
         <div
-          className="blog-entry-body"
+          className="blog-entry-body linkNoUnderline"
           dangerouslySetInnerHTML={sanitizedData()}
         />
         </div>

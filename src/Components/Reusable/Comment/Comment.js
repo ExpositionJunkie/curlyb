@@ -16,7 +16,7 @@ export default function Comment({ blogId, comment, auth }) {
         <Line></Line>
         <div className="comment-body-wrap">
           <div
-            className="comment-entry-body"
+            className="comment-entry-body linkNoUnderline"
             dangerouslySetInnerHTML={sanitizedData()}
           />
         <div className="comment-author-details">

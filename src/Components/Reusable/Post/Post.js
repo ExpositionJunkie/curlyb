@@ -41,10 +41,6 @@ function PostWrapper({ title, subtitle, tags, text, edit, blogId }) {
       }),
       Image.configure({
         inline: true,
-        
-        HTMLAttributes: {
-          class: 'align-all-center',
-        },
       }),
       Dropcursor.configure({
         color: "#ff4d94",
@@ -120,6 +116,13 @@ function PostWrapper({ title, subtitle, tags, text, edit, blogId }) {
           value={input.subtitle}
           onChange={(evt) => handleChange(evt)}
         ></input>
+        <EditorButtons editor={editor}></EditorButtons>
+        <EditorContent
+          autoFocus="end"
+          className="editor shadow-icon"
+          id="text"
+          editor={editor}
+        />
         <input
           type="text"
           id="tags"
@@ -128,13 +131,6 @@ function PostWrapper({ title, subtitle, tags, text, edit, blogId }) {
           value={input.tags}
           onChange={(evt) => handleChange(evt)}
         ></input>
-        <EditorButtons editor={editor}></EditorButtons>
-        <EditorContent
-          autoFocus="end"
-          className="editor shadow-icon"
-          id="text"
-          editor={editor}
-        />
         <input
           type="submit"
           name="submit"
