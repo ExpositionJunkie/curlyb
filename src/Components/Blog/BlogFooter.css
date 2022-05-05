@@ -1,3 +1,8 @@
+.blog-entry-body img {
+  max-width: 100%;
+  height: auto;
+}
+
 .blog-footer-icons {
   display: flex;
   justify-content: space-around;
