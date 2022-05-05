@@ -9,15 +9,20 @@
       "version": "0.1.0",
       "dependencies": {
         "@fortawesome/fontawesome-free": "6.1.1",
-        "@fortawesome/fontawesome-svg-core": "^6.1.1",
-        "@fortawesome/free-regular-svg-icons": "^6.1.1",
-        "@fortawesome/free-solid-svg-icons": "^6.1.1",
-        "@fortawesome/react-fontawesome": "^0.1.18",
-        "@tiptap/extension-link": "^2.0.0-beta.37",
+        "@fortawesome/fontawesome-svg-core": "6.1.1",
+        "@fortawesome/free-regular-svg-icons": "6.1.1",
+        "@fortawesome/free-solid-svg-icons": "6.1.1",
+        "@fortawesome/react-fontawesome": "0.1.18",
+        "@tiptap/extension-dropcursor": "^2.0.0-beta.25",
+        "@tiptap/extension-highlight": "^2.0.0-beta.33",
+        "@tiptap/extension-image": "^2.0.0-beta.27",
+        "@tiptap/extension-link": "2.0.0-beta.37",
+        "@tiptap/extension-placeholder": "^2.0.0-beta.48",
+        "@tiptap/extension-text-align": "^2.0.0-beta.29",
         "@tiptap/react": "2.0.0-beta.108",
         "@tiptap/starter-kit": "2.0.0-beta.183",
         "axios": "0.26.1",
-        "babel-plugin-macros": "^3.1.0",
+        "babel-plugin-macros": "3.1.0",
         "dompurify": "2.3.6",
         "dotenv": "16.0.0",
         "gh-pages": "3.2.3",
@@ -3430,6 +3435,18 @@
         "@tiptap/core": "^2.0.0-beta.1"
       }
     },
+    "node_modules/@tiptap/extension-highlight": {
+      "version": "2.0.0-beta.33",
+      "resolved": "https://registry.npmjs.org/@tiptap/extension-highlight/-/extension-highlight-2.0.0-beta.33.tgz",
+      "integrity": "sha512-TXyMiCcY5a0w5UFax350xU+T79GKJw2XwJ6Punc6sY2RRRgKaEbN1ZF0JCdQhQvD1ooKImHzCRYR8Pldb0xgfg==",
+      "funding": {
+        "type": "github",
+        "url": "https://github.com/sponsors/ueberdosis"
+      },
+      "peerDependencies": {
+        "@tiptap/core": "^2.0.0-beta.1"
+      }
+    },
     "node_modules/@tiptap/extension-history": {
       "version": "2.0.0-beta.21",
       "resolved": "https://registry.npmjs.org/@tiptap/extension-history/-/extension-history-2.0.0-beta.21.tgz",
@@ -3453,6 +3470,18 @@
       "dependencies": {
         "prosemirror-state": "^1.3.4"
       },
+      "funding": {
+        "type": "github",
+        "url": "https://github.com/sponsors/ueberdosis"
+      },
+      "peerDependencies": {
+        "@tiptap/core": "^2.0.0-beta.1"
+      }
+    },
+    "node_modules/@tiptap/extension-image": {
+      "version": "2.0.0-beta.27",
+      "resolved": "https://registry.npmjs.org/@tiptap/extension-image/-/extension-image-2.0.0-beta.27.tgz",
+      "integrity": "sha512-kdJ7V39yNdVWUco/RBe7WgvFevd81l+pU6+Je9HpelqBBP953wDttzLMuAWQB4AeLv9WhKSlORHiFv2SKsV5NA==",
       "funding": {
         "type": "github",
         "url": "https://github.com/sponsors/ueberdosis"
@@ -3526,6 +3555,23 @@
         "@tiptap/core": "^2.0.0-beta.1"
       }
     },
+    "node_modules/@tiptap/extension-placeholder": {
+      "version": "2.0.0-beta.48",
+      "resolved": "https://registry.npmjs.org/@tiptap/extension-placeholder/-/extension-placeholder-2.0.0-beta.48.tgz",
+      "integrity": "sha512-TZNGAHocPoV5DtB8Q5BwQU2uf5vDiwLxbgVHRAIme9P4VsVqa/U1i1TkyN5A5BVdfOzc+E4EOU7cKuyjy7DNyA==",
+      "dependencies": {
+        "prosemirror-model": "^1.16.1",
+        "prosemirror-state": "^1.3.4",
+        "prosemirror-view": "^1.23.6"
+      },
+      "funding": {
+        "type": "github",
+        "url": "https://github.com/sponsors/ueberdosis"
+      },
+      "peerDependencies": {
+        "@tiptap/core": "^2.0.0-beta.1"
+      }
+    },
     "node_modules/@tiptap/extension-strike": {
       "version": "2.0.0-beta.27",
       "resolved": "https://registry.npmjs.org/@tiptap/extension-strike/-/extension-strike-2.0.0-beta.27.tgz",
@@ -3542,6 +3588,18 @@
       "version": "2.0.0-beta.15",
       "resolved": "https://registry.npmjs.org/@tiptap/extension-text/-/extension-text-2.0.0-beta.15.tgz",
       "integrity": "sha512-S3j2+HyV2gsXZP8Wg/HA+YVXQsZ3nrXgBM9HmGAxB0ESOO50l7LWfip0f3qcw1oRlh5H3iLPkA6/f7clD2/TFA==",
+      "funding": {
+        "type": "github",
+        "url": "https://github.com/sponsors/ueberdosis"
+      },
+      "peerDependencies": {
+        "@tiptap/core": "^2.0.0-beta.1"
+      }
+    },
+    "node_modules/@tiptap/extension-text-align": {
+      "version": "2.0.0-beta.29",
+      "resolved": "https://registry.npmjs.org/@tiptap/extension-text-align/-/extension-text-align-2.0.0-beta.29.tgz",
+      "integrity": "sha512-FNGpl0tVtgG7AK9kVWF/+CGYHta05NpoME4/j6+vhNlZLBNXRA+AKg7W5T8UxmtaC9yGoJsBs2X8M9eCxWVaEQ==",
       "funding": {
         "type": "github",
         "url": "https://github.com/sponsors/ueberdosis"
@@ -19239,6 +19297,12 @@
       "integrity": "sha512-nR6W/3rjnZH1Swo7tGBoYsmO6xMvu9MGq6jlm3WVHCB7B3CsrRvCkTwGjVIbKTaZC4bQfx5gvAUpQFvwuU+M5w==",
       "requires": {}
     },
+    "@tiptap/extension-highlight": {
+      "version": "2.0.0-beta.33",
+      "resolved": "https://registry.npmjs.org/@tiptap/extension-highlight/-/extension-highlight-2.0.0-beta.33.tgz",
+      "integrity": "sha512-TXyMiCcY5a0w5UFax350xU+T79GKJw2XwJ6Punc6sY2RRRgKaEbN1ZF0JCdQhQvD1ooKImHzCRYR8Pldb0xgfg==",
+      "requires": {}
+    },
     "@tiptap/extension-history": {
       "version": "2.0.0-beta.21",
       "resolved": "https://registry.npmjs.org/@tiptap/extension-history/-/extension-history-2.0.0-beta.21.tgz",
@@ -19255,6 +19319,12 @@
       "requires": {
         "prosemirror-state": "^1.3.4"
       }
+    },
+    "@tiptap/extension-image": {
+      "version": "2.0.0-beta.27",
+      "resolved": "https://registry.npmjs.org/@tiptap/extension-image/-/extension-image-2.0.0-beta.27.tgz",
+      "integrity": "sha512-kdJ7V39yNdVWUco/RBe7WgvFevd81l+pU6+Je9HpelqBBP953wDttzLMuAWQB4AeLv9WhKSlORHiFv2SKsV5NA==",
+      "requires": {}
     },
     "@tiptap/extension-italic": {
       "version": "2.0.0-beta.26",
@@ -19290,6 +19360,16 @@
       "integrity": "sha512-VWAxyzecErYWk97Kv/Gkghh97zAQTcaVOisEnYYArZAlyYDaYM48qVssAC/vnRRynP2eQxb1EkppbAxE+bMHAA==",
       "requires": {}
     },
+    "@tiptap/extension-placeholder": {
+      "version": "2.0.0-beta.48",
+      "resolved": "https://registry.npmjs.org/@tiptap/extension-placeholder/-/extension-placeholder-2.0.0-beta.48.tgz",
+      "integrity": "sha512-TZNGAHocPoV5DtB8Q5BwQU2uf5vDiwLxbgVHRAIme9P4VsVqa/U1i1TkyN5A5BVdfOzc+E4EOU7cKuyjy7DNyA==",
+      "requires": {
+        "prosemirror-model": "^1.16.1",
+        "prosemirror-state": "^1.3.4",
+        "prosemirror-view": "^1.23.6"
+      }
+    },
     "@tiptap/extension-strike": {
       "version": "2.0.0-beta.27",
       "resolved": "https://registry.npmjs.org/@tiptap/extension-strike/-/extension-strike-2.0.0-beta.27.tgz",
@@ -19300,6 +19380,12 @@
       "version": "2.0.0-beta.15",
       "resolved": "https://registry.npmjs.org/@tiptap/extension-text/-/extension-text-2.0.0-beta.15.tgz",
       "integrity": "sha512-S3j2+HyV2gsXZP8Wg/HA+YVXQsZ3nrXgBM9HmGAxB0ESOO50l7LWfip0f3qcw1oRlh5H3iLPkA6/f7clD2/TFA==",
+      "requires": {}
+    },
+    "@tiptap/extension-text-align": {
+      "version": "2.0.0-beta.29",
+      "resolved": "https://registry.npmjs.org/@tiptap/extension-text-align/-/extension-text-align-2.0.0-beta.29.tgz",
+      "integrity": "sha512-FNGpl0tVtgG7AK9kVWF/+CGYHta05NpoME4/j6+vhNlZLBNXRA+AKg7W5T8UxmtaC9yGoJsBs2X8M9eCxWVaEQ==",
       "requires": {}
     },
     "@tiptap/react": {

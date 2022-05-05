@@ -48,6 +48,14 @@ export default function EditorButtons({ editor }) {
     }
   };
 
+  const addImage = () => {
+    const url = window.prompt('URL')
+
+    if (url) {
+      editor.chain().focus().setImage({ src: url }).run()
+    }
+  }
+
   const EditorToggle = () => {
     return (
       <div
@@ -389,6 +397,56 @@ export default function EditorButtons({ editor }) {
             <FontAwesomeIcon icon={solid("rotate-right")} />
           </button>
           <span className="tooltip-text shadow-box-no-zoom">Redo</span>
+        </div>
+        <div className="tooltip">
+          <button
+            type="button"
+            className="editor-button"
+            onClick={addImage}
+          >
+            <FontAwesomeIcon icon={solid("image")} />
+          </button>
+          <span className="tooltip-text shadow-box-no-zoom">Add Image From URL</span>
+        </div>
+        <div className="tooltip">
+          <button
+            type="button"
+            className={editor.isActive({ textAlign: 'left' }) ? 'is-active editor-button' : 'editor-button'}
+            onClick={() => editor.chain().focus().setTextAlign('left').run()} 
+          >
+            <FontAwesomeIcon icon={solid("align-left")} />
+          </button>
+          <span className="tooltip-text shadow-box-no-zoom">Align Left</span>
+        </div>
+        <div className="tooltip">
+          <button
+            type="button"
+            className={editor.isActive({ textAlign: 'center' }) ? 'is-active editor-button' : 'editor-button'}
+            onClick={() => editor.chain().focus().setTextAlign('center').run()} 
+          >
+            <FontAwesomeIcon icon={solid("align-center")} />
+          </button>
+          <span className="tooltip-text shadow-box-no-zoom">Align Center</span>
+        </div>
+        <div className="tooltip">
+          <button
+            type="button"
+            className={editor.isActive({ textAlign: 'right' }) ? 'is-active editor-button' : 'editor-button'}
+            onClick={() => editor.chain().focus().setTextAlign('right').run()} 
+          >
+            <FontAwesomeIcon icon={solid("align-right")} />
+          </button>
+          <span className="tooltip-text shadow-box-no-zoom">Align Right</span>
+        </div>
+        <div className="tooltip">
+          <button
+            type="button"
+            className={editor.isActive({ highlight: true }) ? 'is-active editor-button' : 'editor-button'}
+            onClick={() => editor.chain().focus().toggleHighlight().run()}
+          >
+            <FontAwesomeIcon icon={solid("highlighter")} />
+          </button>
+          <span className="tooltip-text shadow-box-no-zoom">Highlight</span>
         </div>
       </div>
     );

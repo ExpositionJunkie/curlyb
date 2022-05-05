@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import Link from '@tiptap/extension-link'
+import Link from "@tiptap/extension-link";
+import Image from "@tiptap/extension-image";
+import Dropcursor from "@tiptap/extension-dropcursor";
+import TextAlign from "@tiptap/extension-text-align";
+import Highlight from "@tiptap/extension-highlight";
 import EditorButtons from "./EditorButtons";
+
 import DOMPurify from "dompurify";
 import { connect, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -10,7 +15,7 @@ import { ActionCreators } from "../../../Redux/reduxIndex";
 import { useNavigate } from "react-router-dom";
 import "./Post.css";
 
-function PostWrapper({ title, subtitle, tags, text, edit, blogId, }) {
+function PostWrapper({ title, subtitle, tags, text, edit, blogId }) {
   const [input, setInput] = useState({
     title: title || "",
     subtitle: subtitle || "",
@@ -28,10 +33,19 @@ function PostWrapper({ title, subtitle, tags, text, edit, blogId, }) {
   let navigate = useNavigate();
 
   const editor = useEditor({
-    extensions: [StarterKit, Link.configure({
-      linkOnPaste: true,
-      autolink: true,
-    })],
+    extensions: [
+      StarterKit,
+      Link.configure({
+        linkOnPaste: true,
+        autolink: true,
+      }),
+      Image,
+      Dropcursor,
+      TextAlign.configure({
+        types: ['heading', 'paragraph', 'image']
+      }),
+      Highlight,
+    ],
     type: "doc",
     content: DOMPurify.sanitize(input.text),
     onUpdate: ({ editor }) => {
@@ -58,21 +72,20 @@ function PostWrapper({ title, subtitle, tags, text, edit, blogId, }) {
   };
 
   const handleSubmit = (evt) => {
-    evt.preventDefault()
+    evt.preventDefault();
     if (!edit) {
       postBlog(input)
-      .then((res) => {})
-      .then((res) => {
-        navigate(0);
-      });
+        .then((res) => {})
+        .then((res) => {
+          navigate(0);
+        });
     } else {
       editBlog(input, blogId)
-      .then((res) => {})
-      .then((res) => {
-        navigate(0);
-      });
+        .then((res) => {})
+        .then((res) => {
+          navigate(0);
+        });
     }
-
   };
 
   return (
@@ -107,9 +120,14 @@ function PostWrapper({ title, subtitle, tags, text, edit, blogId, }) {
           onChange={(evt) => handleChange(evt)}
         ></input>
         <EditorButtons editor={editor}></EditorButtons>
-        <EditorContent autoFocus="end" className="editor shadow-icon" id="text" editor={editor} />
+        <EditorContent
+          autoFocus="end"
+          className="editor shadow-icon"
+          id="text"
+          editor={editor}
+        />
         <input
-          type="submit" 
+          type="submit"
           name="submit"
           value="Submit"
           className="submit-button shadow-icon"

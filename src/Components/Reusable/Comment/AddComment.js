@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import { useEditor, EditorContent } from "@tiptap/react";
-import Link from '@tiptap/extension-link'
+import Link from "@tiptap/extension-link";
 import StarterKit from "@tiptap/starter-kit";
 import EditorButtons from "../Post/EditorButtons";
+import Image from "@tiptap/extension-image";
+import Dropcursor from "@tiptap/extension-dropcursor";
+import TextAlign from "@tiptap/extension-text-align";
+import Highlight from "@tiptap/extension-highlight";
 import DOMPurify from "dompurify";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -11,27 +15,37 @@ import { ActionCreators } from "../../../Redux/reduxIndex";
 import "../Post/Post.css";
 import "./AddComment.css";
 
-function CommentEditor({ auth, content, blogId, edit, comment  }) {
+function CommentEditor({ auth, content, blogId, edit, comment }) {
   const [input, setInput] = useState({
     text: content || "",
   });
-  
+
   const [validationText, setValidationText] = useState("");
 
   //redux dispatch
   const dispatch = useDispatch();
   dispatch({ type: "postComment" });
   dispatch({ type: "editComment" });
-  const { postComment, editComment } = bindActionCreators(ActionCreators, dispatch);
+  const { postComment, editComment } = bindActionCreators(
+    ActionCreators,
+    dispatch
+  );
   const comments = useSelector((state) => state.comments);
 
   const navigate = useNavigate();
 
   const editor = useEditor({
-    extensions: [StarterKit, Link.configure({
-      linkOnPaste: true,
-      autolink: true,
-    })],
+    extensions: [
+      StarterKit,
+      Link.configure({
+        linkOnPaste: true,
+        autolink: true,
+      }),
+      Image,
+      Dropcursor,
+      TextAlign,
+      Highlight,
+    ],
     type: "doc",
     content: DOMPurify.sanitize(input.text),
     onUpdate: ({ editor }) => {
@@ -54,35 +68,32 @@ function CommentEditor({ auth, content, blogId, edit, comment  }) {
   };
 
   const handleSubmit = (evt) => {
-    evt.preventDefault()
+    evt.preventDefault();
     if (!edit) {
       postComment(input.text, blogId)
-      .then(() => {
-        if (comments.errMess) {
-          errMess();
-        }
-      })
-      .then(() => {
-        if (!comments.errMess) {
-          navigate(0);
-        }
-        
-      });
+        .then(() => {
+          if (comments.errMess) {
+            errMess();
+          }
+        })
+        .then(() => {
+          if (!comments.errMess) {
+            navigate(0);
+          }
+        });
     } else {
       editComment(input.text, blogId, comment._id)
-      .then(() => {
-        if (comments.errMess) {
-          errMess();
-        }
-      })
-      .then(() => {
-        if (!comments.errMess) {
-          navigate(0);
-        }
-        
-      });
+        .then(() => {
+          if (comments.errMess) {
+            errMess();
+          }
+        })
+        .then(() => {
+          if (!comments.errMess) {
+            navigate(0);
+          }
+        });
     }
-
   };
 
   if (auth.isAuthenticated) {
