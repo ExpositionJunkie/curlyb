@@ -124,7 +124,7 @@ function ReplyDrop({ auth, blog, replyActive }) {
       let comment=JSON.parse(localStorage.getItem("comment"))
       if (comment.blog === blog._id) {
         return (
-          <div classNam="footer-drop">
+          <div className="footer-drop">
             <Line></Line>
             <h1 className="edit-header">Add Comment</h1>
             <AddComment

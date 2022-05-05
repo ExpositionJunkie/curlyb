@@ -5,7 +5,7 @@ import Link from "@tiptap/extension-link";
 import StarterKit from "@tiptap/starter-kit";
 import EditorButtons from "../Post/EditorButtons";
 import Image from "@tiptap/extension-image";
-import Dropcursor from "@tiptap/extension-dropcursor";
+import DropCursor from "@tiptap/extension-dropcursor";
 import TextAlign from "@tiptap/extension-text-align";
 import Highlight from "@tiptap/extension-highlight";
 import DOMPurify from "dompurify";
@@ -42,7 +42,9 @@ function CommentEditor({ auth, content, blogId, edit, comment }) {
         autolink: true,
       }),
       Image,
-      Dropcursor,
+      DropCursor.configure({
+        color: "#ff4d94"
+      }),
       TextAlign,
       Highlight,
     ],
@@ -54,6 +56,11 @@ function CommentEditor({ auth, content, blogId, edit, comment }) {
         ...prevState,
         text: DOMPurify.sanitize(html),
       }));
+    },
+    editorProps: {
+      attributes: {
+        class: 'prose prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto focus:outline-none',
+      },
     },
   });
 

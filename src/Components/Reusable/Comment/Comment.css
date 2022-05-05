@@ -1,3 +1,10 @@
+.comment-entry-body img {
+  max-width: 90%;
+  height: auto;
+  padding: 1rem;
+  border-radius: 40px;
+}
+
 @media screen and (max-width: 500px) {
   .comment-author-details {
     display: flex;

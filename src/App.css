@@ -64,6 +64,36 @@ html {
   margin: 5rem;
 }
 
+.align-all-center {
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+}
+
+.align-all-start {
+  text-align: start;
+  align-items: flex-start;
+  align-content: flex-start;
+  align-self: flex-start;
+  justify-content: flex-start;
+  justify-items: flex-start;
+  justify-self: flex-start;
+}
+
+.align-all-end {
+  text-align: end;
+  align-items: flex-end;
+  align-content: flex-end;
+  align-self: flex-end;
+  justify-content: flex-end;
+  justify-items: flex-end;
+  justify-self: flex-end;
+}
+
 .linkNoUnderline a:link {
   text-decoration: none;
   color: #27dbb1;

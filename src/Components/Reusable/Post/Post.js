@@ -39,10 +39,19 @@ function PostWrapper({ title, subtitle, tags, text, edit, blogId }) {
         linkOnPaste: true,
         autolink: true,
       }),
-      Image,
-      Dropcursor,
+      Image.configure({
+        inline: true,
+        
+        HTMLAttributes: {
+          class: 'align-all-center',
+        },
+      }),
+      Dropcursor.configure({
+        color: "#ff4d94",
+        width: 2,
+      }),
       TextAlign.configure({
-        types: ['heading', 'paragraph', 'image']
+        types: ["heading", "paragraph", "image"],
       }),
       Highlight,
     ],
