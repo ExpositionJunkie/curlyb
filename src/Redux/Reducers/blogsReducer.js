@@ -6,6 +6,7 @@ export const Blogs = (
     errMess: null,
     blogs: [],
     devblogs: [],
+    tags: [],
     blog: {},
   },
   action
@@ -19,13 +20,9 @@ export const Blogs = (
         blogs: action.payload,
         devblogs: action.payload.filter((blog) => {
           let tags = blog.tags.map((tag) => tag.toLowerCase());
-          tags = tags.filter(tag => tag.includes("devblog"));
-          if (blog.author.username === "Zenith" && tags.length !== 0) {
-            console.log(blog);
-            return blog;
-          } else {
-            return;
-          }
+          tags = tags.filter((tag) => tag.includes("devblog"));
+          return blog.author.username === "Zenith" && tags.length !== 0
+          
         }),
       };
     case ActionTypes.ADD_BLOG:
