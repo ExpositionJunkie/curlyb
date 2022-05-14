@@ -162,6 +162,51 @@ export const addBlog = (blog) => ({
   type: ActionTypes.ADD_BLOG,
   payload: blog,
 });
+
+export const fetchBlogsByTag = () => (dispatch) => {
+  dispatch(blogsLoading());
+  return fetch(baseUrl + "blog")
+    .then(
+      (response) => {
+        if (response.ok) {
+          return response;
+        } else {
+          const error = new Error(
+            `Error ${response.status}: ${response.statusText}`
+          );
+          error.response = response;
+          throw error;
+        }
+      },
+      (error) => {
+        const errMess = new Error(error.message);
+        throw errMess;
+      }
+    )
+    .then((response) => response.json())
+    .then((blogs) => dispatch(addBlogs(blogs)))
+    .catch((error) => dispatch(blogsFailed(error.message)));
+};
+
+
+export const blogsByTagLoading = () => ({
+  type: ActionTypes.BLOGS_BY_TAG_LOADING,
+});
+
+export const blogsByTagFailed = (errMess) => ({
+  type: ActionTypes.BLOGS_BY_TAG_FAILED,
+  payload: errMess,
+});
+
+export const addBlogsByTag = (blogs) => ({
+  type: ActionTypes.ADD_BLOGS_BY_TAG,
+  payload: blogs,
+});
+
+export const addBlogByTag = (blog) => ({
+  type: ActionTypes.ADD_BLOG_BY_TAG,
+  payload: blog,
+});
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Blogs End ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Comments ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

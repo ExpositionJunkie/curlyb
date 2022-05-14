@@ -35,7 +35,6 @@ function BlogList({ auth, blogs, devblog }) {
           </div>
         );
       } else {
-        console.info(blogs)
         return (
           <div className="entry-wrapper">
             <div>

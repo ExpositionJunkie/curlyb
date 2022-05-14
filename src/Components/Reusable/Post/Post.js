@@ -20,7 +20,7 @@ function PostWrapper({ title, subtitle, tags, text, edit, blogId }) {
     title: title || "",
     subtitle: subtitle || "",
     text: text || "",
-    tags: tags || "",
+    tags: [tags] || [],
   });
 
   //redux dispatch
@@ -78,6 +78,7 @@ function PostWrapper({ title, subtitle, tags, text, edit, blogId }) {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
+    debugger
     if (!edit) {
       postBlog(input)
         .then((res) => {})
@@ -116,13 +117,13 @@ function PostWrapper({ title, subtitle, tags, text, edit, blogId }) {
           value={input.subtitle}
           onChange={(evt) => handleChange(evt)}
         ></input>
-        <EditorButtons editor={editor}></EditorButtons>
         <EditorContent
           autoFocus="end"
           className="editor shadow-icon"
           id="text"
           editor={editor}
         />
+        <EditorButtons editor={editor}></EditorButtons>
         <input
           type="text"
           id="tags"

@@ -1,6 +1,7 @@
 import React from "react";
 import Title from "../Reusable/Title/Title";
 import BlogList from "../Blog/BlogList";
+import TagsSummary from "../Reusable/Tags/TagsSummary";
 import { connect } from "react-redux";
 import Line from "../Reusable/Line/Line";
 import VariablePost from "../Reusable/Post/VariablePost";
@@ -20,6 +21,7 @@ function HomePage({auth, blogs}) {
         </div>
         <Line></Line>
         <VariablePost location={"home"} auth={auth}/>
+        <TagsSummary blogs={blogs}></TagsSummary>
         <div className="plain-link"><BlogList auth={auth} blogs={blogs} /></div>
       </div>
     </div>

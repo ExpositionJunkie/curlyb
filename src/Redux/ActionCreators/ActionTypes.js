@@ -3,6 +3,11 @@ export const ADD_BLOG = "ADD_BLOG";
 export const BLOGS_LOADING = "BLOGS_LOADING";
 export const BLOGS_FAILED = "BLOGS_FAILED";
 
+export const ADD_BLOGS_BY_TAG = "ADD_BLOGS_BY_TAG";
+export const ADD_BLOG_BY_TAG = "ADD_BLOG_BY_TAG";
+export const BLOGS_BY_TAG_LOADING = "BLOGS_BY_TAG_LOADING";
+export const BLOGS_BY_TAG_FAILED = "BLOGS_BY_TAG_FAILED";
+
 export const ADD_COMMENTS = "ADD_COMMENTS";
 export const COMMENTS_FAILED = "COMMENTS_FAILED";
 export const ADD_COMMENT = "ADD_COMMENT";
