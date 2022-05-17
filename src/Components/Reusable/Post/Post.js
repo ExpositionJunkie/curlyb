@@ -20,7 +20,7 @@ function PostWrapper({ title, subtitle, tags, text, edit, blogId }) {
     title: title || "",
     subtitle: subtitle || "",
     text: text || "",
-    tags: [tags] || [],
+    tags: tags || "",
   });
 
   //redux dispatch
@@ -78,7 +78,6 @@ function PostWrapper({ title, subtitle, tags, text, edit, blogId }) {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    debugger
     if (!edit) {
       postBlog(input)
         .then((res) => {})

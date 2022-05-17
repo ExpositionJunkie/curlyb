@@ -1,6 +1,7 @@
 import React from "react";
 import Title from "../Reusable/Title/Title";
 import BlogList from "../Blog/BlogList";
+import Tags from "../Reusable/Tags/Tags";
 import TagsSummary from "../Reusable/Tags/TagsSummary";
 import { connect } from "react-redux";
 import Line from "../Reusable/Line/Line";
@@ -15,6 +16,7 @@ function HomePage({auth, blogs}) {
       <Title titleStr="Home" />
       <div className="inner-home-wrapper">
         <div className="headline">
+          <Tags tag="test" auth={auth} />
           <h1 className="home-title">Welcome to Curlybrackets.</h1>
           <h2 className="home-subtitle">Blog in Dark Mode</h2>
           <p>Write your magnum opus or "Hello World"</p>

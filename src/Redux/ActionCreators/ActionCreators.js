@@ -60,11 +60,10 @@ export const postBlog = (input) => (dispatch) => {
     )
     .then((response) => response.json())
     .then((response) => {
-      localStorage.removeItem("blog")
-      dispatch(addBlog(response))
+      localStorage.removeItem("blog");
+      dispatch(addBlog(response));
     })
     .catch((error) => {
-      
       console.log("post blog", error.message);
       alert("Your blog could not be posted\nError: " + error.message);
     });
@@ -142,8 +141,6 @@ export const deleteBlog = (blogId) => (dispatch) => {
     });
 };
 
-
-
 export const blogsLoading = () => ({
   type: ActionTypes.BLOGS_LOADING,
 });
@@ -163,9 +160,9 @@ export const addBlog = (blog) => ({
   payload: blog,
 });
 
-export const fetchBlogsByTag = () => (dispatch) => {
+export const fetchBlogsByTag = (tag) => (dispatch) => {
   dispatch(blogsLoading());
-  return fetch(baseUrl + "blog")
+  return fetch(baseUrl + "blog/tags/" + tag)
     .then(
       (response) => {
         if (response.ok) {
@@ -184,10 +181,9 @@ export const fetchBlogsByTag = () => (dispatch) => {
       }
     )
     .then((response) => response.json())
-    .then((blogs) => dispatch(addBlogs(blogs)))
-    .catch((error) => dispatch(blogsFailed(error.message)));
+    .then((blogs) => dispatch(addBlogsByTag(blogs)))
+    .catch((error) => dispatch(blogsByTagFailed(error.message)));
 };
-
 
 export const blogsByTagLoading = () => ({
   type: ActionTypes.BLOGS_BY_TAG_LOADING,
@@ -254,7 +250,7 @@ export const postComment = (text, blogId) => (dispatch) => {
     text: text,
     blog: blogId,
   };
-  
+
   console.log("Comment ", newComment);
   const bearer = "Bearer " + localStorage.getItem("token");
   return fetch(baseUrl + "blog/" + blogId + "/comments", {
@@ -284,8 +280,8 @@ export const postComment = (text, blogId) => (dispatch) => {
     )
     .then((response) => response.json())
     .then((response) => {
-      localStorage.removeItem("blog")
-      dispatch(addComment(response))
+      localStorage.removeItem("blog");
+      dispatch(addComment(response));
     })
     .catch((error) => {
       localStorage.setItem("comment", JSON.stringify(newComment));
@@ -298,9 +294,9 @@ export const editComment = (text, blogId, commentId) => (dispatch) => {
   const newComment = {
     text: text,
     blog: blogId,
-    comment: commentId
+    comment: commentId,
   };
-  
+
   const bearer = "Bearer " + localStorage.getItem("token");
   return fetch(baseUrl + "blog/" + blogId + "/comments/" + commentId, {
     method: "PUT",
@@ -368,7 +364,6 @@ export const deleteComment = (blogId, commentId) => (dispatch) => {
       alert("Your comment could not be deleted\nError: " + error.message);
     });
 };
-
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Comments End ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

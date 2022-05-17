@@ -1,30 +1,43 @@
 import React, { useEffect, useState } from "react";
 
 export default function TagsSummary({ blogs }) {
-  const [tags, setTags] = useState([]);
+  const [tags, setTags] = useState(null);
 
-  useEffect(()=> {
-    let arr = []
-    if (blogs.blogs) {
-      let tempTags = blogs.blogs.map((blog) => {
+  useEffect(() => {
+    settingTags(blogs);
+  }, [blogs]);
+
+  const settingTags = (blog) => {
+    let arr = [];
+    if (blog.blogs) {
+      let tempTags = blog.blogs.map((blog) => {
         return blog.tags;
       });
-      console.info(tempTags);
       arr.push(tempTags);
-      let flatArray = tempTags.flat(2);
-      console.info(flatArray);
+      let flatArray = tempTags.flat(3);
       let newArr = flatArray
         .map((tag) => {
           let newTags = [tag.split(" ")];
           return newTags;
         })
         .flat(3);
-      console.info(newArr)
-      setTags([...newArr])
+      setTags([...newArr]);
     }
-  }, [blogs.blogs])
+  };
 
-
-
+  if (tags) {
+    return (
+      <>
+        {tags.map((tag, index) => {
+          return (
+            <p loading="lazy" key={index}>
+              {tag}
+            </p>
+          );
+        })}
+      </>
+    );
+  } else {
     return <></>;
+  }
 }
