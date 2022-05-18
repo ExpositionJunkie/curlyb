@@ -386,7 +386,15 @@
   }
 
   .post-wrapper {
-    margin: 1rem;
+    margin: 2rem;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .post-wrapper form {
+    flex-grow: 1;
+    max-width: 100%;
   }
 
   .editor {
@@ -532,6 +540,10 @@
 
   .post-wrapper {
     margin: 3rem;
+    max-width: 100%;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
   }
 
   .editor {
@@ -682,6 +694,10 @@
 
   .post-wrapper {
     margin: 3rem;
+    max-width: 100%;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
   }
 
   .editor {
@@ -833,6 +849,10 @@
 
   .post-wrapper {
     margin: 5rem;
+    max-width: 100%;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
   }
 
   .editor {

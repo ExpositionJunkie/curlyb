@@ -1,6 +1,7 @@
 import React from "react";
 import Line from "../Reusable/Line/Line";
 import BlogEntry from "./BlogEntry";
+
 import "./Blogs.css";
 
 //this is used on the home page and as a standalone for routes - we pass in the param for the redirect to the blogentry
@@ -59,7 +60,6 @@ function BlogList({ auth, blogs, devblog }) {
     } else {
       return <></>
     }
-    
   }
 }
 

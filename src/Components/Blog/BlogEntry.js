@@ -1,3 +1,4 @@
+import React, {useState, useEffect} from "react";
 import {NavLink} from "react-router-dom"
 import Subtitle from "../Reusable/Subtitle/Subtitle";
 import Line from "../Reusable/Line/Line";
@@ -6,17 +7,36 @@ import BlogFooter from "./BlogFooter"
 
 // this component is for rendering the inner entries when blogs are listed out
 export default function BlogEntry({ blog, auth }) {
-
+  const [tags, setTags] = useState([])
   const sanitizedData = () => ({
     __html: DOMPurify.sanitize(blog.text),
   });
 
   const date = new Date(blog.createdAt);
 
+  useEffect(() => {
+    TagSplit()
+  }, [blog]);
+
+  function TagSplit() {
+    if (blog) {
+      if (blog.tags) {
+        console.log(blog.tags)
+        let temp = blog.tags
+        let temp2 = temp.toString()
+        let temp3 = temp2.split(" ")
+        console.log(temp)
+        setTags((prevState) =>([...prevState, ...temp3]) )
+        console.log("tags", tags)
+      }
+    }
+  }
+
+
   if (blog) {
     return (
       <div id="inner_entry_wrapper">
-        <NavLink id="link-wrap" to={`/blog/${blog._id}`}>
+        <NavLink className="link-wrap" to={`/blog/${blog._id}`}>
         <Subtitle titleStr={blog.title} subtitleStr={blog.subtitle}></Subtitle>
         <Line></Line>
         <div className="author-details">
@@ -35,19 +55,24 @@ export default function BlogEntry({ blog, auth }) {
         <div className="marg3">
           <Line></Line>
         </div>
+        </NavLink>
         <div className="tags">
+        
           <div>
             <p>Tags:</p>
           </div>
-          {blog.tags.map((paragraph, index) => {
+
+          {tags.map((tag, index) => {
             return (
+              <NavLink className="link-wrap" key={index} to={`/blog/tags/${tag}`}>
               <p className="tag" key={index}>
-                {paragraph}
+                {tag}
               </p>
+              </NavLink>
             );
           })}
         </div>
-        </NavLink>
+        
         <BlogFooter blog={blog} comments={false} auth={auth} />
       </div>
     );

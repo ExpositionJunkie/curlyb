@@ -77,7 +77,7 @@ function AppComponent() {
             <Routes>
               <Route path="/" element={<Home auth={auth} blogs={blogs} />} />
               <Route exact path="apipractice" element={<APIPractice />} />
-              <Route path="blog/*" element={<Blog />}>
+              <Route path="blog/*" element={<Blog blogs={blogs}/>}>
                 <Route index element={<BlogPage auth={auth} />} />
                 <Route
                   path=":blogId"

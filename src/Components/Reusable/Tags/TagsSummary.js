@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from "react";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import "./TagsSummary.css";
 
 export default function TagsSummary({ blogs }) {
   const [tags, setTags] = useState([]);
-  let reduceArr
+  let reduceArr;
 
   useEffect(() => {
     settingTags(blogs);
+    return function () {
+      //closeout
+      setTags([]);
+    };
   }, [blogs]);
 
   const settingTags = (blog) => {
@@ -15,49 +20,70 @@ export default function TagsSummary({ blogs }) {
 
     if (blog.blogs) {
       //this very ugly function flattens out the results from each blog into one big array so we can sort it later and note frequency
-      arr.push(blog.blogs.map((blog) => {
-        return blog.tags;
-      }));
-      let newArr = arr.flat(2)
+      arr.push(
+        blog.blogs.map((blog) => {
+          return blog.tags;
+        })
+      );
+      let newArr = arr
+        .flat(2)
         .map((tag) => {
           let newTags = [tag.split(" ")];
           return newTags;
         })
         .flat(3);
       for (let i = 0; i < newArr.length; i++) {
-        let tempTag = {tag: newArr[i]}
-        tagArr.push(tempTag)
+        let tempTag = { tag: newArr[i] };
+        tagArr.push(tempTag);
       }
       //compiles tags into an object that lists frequency
-      reduceArr = tagArr.reduce((x,y)=>{if(x[y.tag]) {x[y.tag]++;return x;} else {var z={};z[y.tag]=1;return Object.assign(x,z,);}},{})
+      reduceArr = tagArr.reduce((x, y) => {
+        if (x[y.tag]) {
+          x[y.tag]++;
+          return x;
+        } else {
+          var z = {};
+          z[y.tag] = 1;
+          return Object.assign(x, z);
+        }
+      }, {});
       //sorts entries by frequency
       let sorted = Object.fromEntries(
-        Object.entries(reduceArr).sort(([,a],[,b]) => b-a)
-      )
+        Object.entries(reduceArr).sort(([, a], [, b]) => b - a)
+      );
       //puts them into the tag object
-      Object.keys(sorted).map(function(key, index) {
-        console.log(key, sorted[key])
-        setTags((prevState) => [...prevState, {tag: key, count: sorted[key]}])
-      })
+      Object.keys(sorted).map(function (key, index) {
+        console.log(key, sorted[key]);
+        setTags((prevState) => [
+          ...prevState,
+          { tag: key, count: sorted[key] },
+        ]);
+      });
     }
   };
 
   if (tags) {
     return (
-      <>
-      <h2>What's the word?</h2>
-      <p>Blogs by Tag</p>
-        {tags.map((tag, index) => {
-          console.log("tag",tag)
-          return (
-            <NavLink key={index} to={`/blog/tags/${tag.tag}`}>
-            <p loading="lazy">
-              {tag.tag}
-            </p>
-            </NavLink>
-          );
-        })}
-      </>
+      <div className="tags-summary">
+        <div>
+          <div className="tags-header">
+            <h2 className="tags-header-text">What's the word?</h2>
+            <p className="tags-header-text">We have to say the most about...</p>
+            </div>
+          <span className="tag-summary-span">
+            {tags.map((tag, index) => {
+              console.log("tag", tag);
+              return (
+                <NavLink key={index} to={`/blog/tags/${tag.tag}`}>
+                  <p loading="lazy">{tag.tag}</p>
+                </NavLink>
+              );
+            })}
+          </span>
+          </div>
+        <div className="summary-border"></div>
+     
+      </div>
     );
   } else {
     return <></>;

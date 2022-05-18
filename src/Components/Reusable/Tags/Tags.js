@@ -1,4 +1,5 @@
 import React from "react";
+import TagsSummary from "./TagsSummary";
 import { useParams } from "react-router-dom";
 import BlogEntry from "../../Blog/BlogEntry";
 import Line from "../Line/Line";
@@ -20,7 +21,6 @@ function Tags({ auth, blogs }) {
     console.log(newblogs)
      return (
       <div className="entry-wrapper">
-        <div>
           {newblogs.map((blogEntry) => {
             return (
               <div key={blogEntry._id}>
@@ -33,7 +33,6 @@ function Tags({ auth, blogs }) {
               </div>
             );
           })}
-        </div>
       </div>
     );;
   }

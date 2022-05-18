@@ -8,8 +8,7 @@ import { connect, useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { ActionCreators } from "../../Redux/reduxIndex";
 
-
-export function Blogs({auth}) {
+export function Blogs({ auth }) {
   const dispatch = useDispatch();
   //dispatches for blogs
   dispatch({ type: "fetchBlogs" });
@@ -29,21 +28,23 @@ export function Blogs({auth}) {
         <div className="post-list-wrapper">
           <VariablePost location="blog" auth={auth} />
         </div>
-        <div>
-          {blogs.blogs.map((blogEntry) => {
-            return (
-              <div key={blogEntry._id}>
-                <div className="entry shadow-box">
-                  
-                    <BlogEntry blog={blogEntry} location={"."} auth={auth}/>
+
+          <div className="column post-column">
+            {blogs.blogs.map((blogEntry) => {
+              return (
+                <div key={blogEntry._id}>
+                  <div className="entry shadow-box">
+                    <BlogEntry blog={blogEntry} location={"."} auth={auth} />
+                  </div>
+                  <div className="pad2">
+                    <Line />
+                  </div>
                 </div>
-                <div className="pad2">
-                  <Line />
-                </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+
+
       </div>
     );
   }
