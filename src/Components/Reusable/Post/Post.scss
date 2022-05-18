@@ -239,7 +239,128 @@
     justify-content: center;
   }
   .post-wrapper form {
-    flex-grow: 1;
+    max-width: 100%;
+  }
+
+  .editor {
+    @include textInputStyle(1.5rem);
+    font-family: $bodyFont;
+    text-align: left;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .post-title,
+  .post-subtitle,
+  .editor {
+    border-style: none;
+    background-color: $grayColor;
+    color: $whiteColor;
+    padding: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .post-title {
+    @include textInputStyle(1.5rem);
+    font-family: $subtitleFont2;
+  }
+
+  .post-subtitle {
+    font-family: $subtitleFont;
+    @include textInputStyle(1.5rem);
+  }
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+
+  .tooltip .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: $blackColor;
+    color: $pinkColor;
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 15px;
+  }
+
+  .tooltip:hover .tooltip-text {
+    visibility: visible;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .editor-toggle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .editor-toggle-icon {
+    margin-left: 1rem;
+    font-size: 2rem;
+  }
+
+  .editor-toggle-text {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .tooltip button {
+    background-color: black;
+    color: $whiteColor;
+    padding: 0.5rem;
+    border-radius: 10px;
+  }
+
+  .editor-button {
+    font-size: 1.5rem;
+    margin: 0.25rem;
+  }
+
+  .editor-button-wrap {
+    display: flex;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: row;
+  }
+
+  .is-active {
+    @include rainbow-shadow(5px, 5px, 15px);
+    background-color: $pinkColor;
+  }
+
+  .submit-button {
+    margin-top: 1rem;
+    border-radius: 15px;
+    font-family: $bodyFont;
+    font-size: 1.5rem;
+    max-width: 90vw;
+    width: 100%;
+    background-color: $pinkColor;
+    color: $whiteColor;
+    padding: 1rem;
+    cursor: pointer;
+  }
+
+  .post-wrapper {
+    margin: 2rem;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .post-wrapper form {
     max-width: 100%;
   }
 
