@@ -46,13 +46,13 @@ export default function TagsSummary({ blogs }) {
     return (
       <>
       <h2>What's the word?</h2>
-      <p>Check out these tags & the blogs attached</p>
+      <p>Blogs by Tag</p>
         {tags.map((tag, index) => {
           console.log("tag",tag)
           return (
             <NavLink key={index} to={`/blog/tags/${tag.tag}`}>
             <p loading="lazy">
-              {tag.tag} ({tag.count})
+              {tag.tag}
             </p>
             </NavLink>
           );

@@ -160,44 +160,6 @@ export const addBlog = (blog) => ({
   payload: blog,
 });
 
-export const fetchBlogsByTag = (tag) => (dispatch) => {
-  dispatch(blogsLoading());
-  return fetch(baseUrl + "blog/tags/" + tag)
-    .then(
-      (response) => {
-        if (response.ok) {
-          return response;
-        } else {
-          const error = new Error(
-            `Error ${response.status}: ${response.statusText}`
-          );
-          error.response = response;
-          throw error;
-        }
-      },
-      (error) => {
-        const errMess = new Error(error.message);
-        throw errMess;
-      }
-    )
-    .then((response) => response.json())
-    .then((blogs) => dispatch(addBlogsByTag(blogs)))
-    .catch((error) => dispatch(blogsByTagFailed(error.message)));
-};
-
-export const blogsByTagLoading = () => ({
-  type: ActionTypes.BLOGS_BY_TAG_LOADING,
-});
-
-export const blogsByTagFailed = (errMess) => ({
-  type: ActionTypes.BLOGS_BY_TAG_FAILED,
-  payload: errMess,
-});
-
-export const addBlogsByTag = (blogs) => ({
-  type: ActionTypes.ADD_BLOGS_BY_TAG,
-  payload: blogs,
-});
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Blogs End ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
