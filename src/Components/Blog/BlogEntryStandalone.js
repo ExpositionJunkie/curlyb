@@ -47,10 +47,11 @@ export function BlogEntryS({ auth }) {
       if (blog.tags) {
         console.log(blog.tags);
         let temp = blog.tags;
-        temp = temp.toString();
-        temp = temp.split(" ");
-        console.log(temp);
-        setTags((prevState) => [...prevState, ...temp]);
+        let temp2 = temp.toString();
+        let temp3 = temp2.toLowerCase();
+        let temp4 = temp3.split(" ");
+
+        setTags((prevState) => [...prevState, ...temp4]);
         console.log("tags", tags);
       }
     }
@@ -83,6 +84,7 @@ export function BlogEntryS({ auth }) {
           </div>
           <div className="tags">
             {tags.map((tag, index) => {
+              console.log(tag)
               return (
                 <NavLink
                   className="link-wrap"
@@ -91,7 +93,6 @@ export function BlogEntryS({ auth }) {
                 >
                   <p className="tag">
                     {tag}
-                    {"  "}
                   </p>
                 </NavLink>
               );

@@ -24,9 +24,10 @@ export default function BlogEntry({ blog, auth }) {
         console.log(blog.tags)
         let temp = blog.tags
         let temp2 = temp.toString()
-        let temp3 = temp2.split(" ")
-        console.log(temp)
-        setTags((prevState) =>([...prevState, ...temp3]) )
+        let temp3 = temp2.toLowerCase()
+        let temp4 = temp3.split(" ")
+        console.log(temp4)
+        setTags((prevState) =>([...prevState, ...temp4]) )
         console.log("tags", tags)
       }
     }

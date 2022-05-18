@@ -13,7 +13,7 @@ function Tags({ auth, blogs }) {
     return <div>{blogs.errMess}</div>;
   } else {
     let newblogs = blogs.blogs.filter((blog) =>{
-      let tags = blog.tags.toString()
+      let tags = blog.tags.toString().toLowerCase()
       if (tags.includes(tagname)) {
         return blog;
       }

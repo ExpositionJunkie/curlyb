@@ -28,12 +28,13 @@ export default function TagsSummary({ blogs }) {
       let newArr = arr
         .flat(2)
         .map((tag) => {
-          let newTags = [tag.split(" ")];
+          let newTag = tag.toString().toLowerCase()
+          let newTags = [newTag.split(" ")];
           return newTags;
         })
         .flat(3);
       for (let i = 0; i < newArr.length; i++) {
-        let tempTag = { tag: newArr[i] };
+        let tempTag = { tag: newArr[i]};
         tagArr.push(tempTag);
       }
       //compiles tags into an object that lists frequency
@@ -54,9 +55,10 @@ export default function TagsSummary({ blogs }) {
       //puts them into the tag object
       Object.keys(sorted).map(function (key, index) {
         console.log(key, sorted[key]);
+        let lowercase = key.toLowerCase()
         setTags((prevState) => [
           ...prevState,
-          { tag: key, count: sorted[key] },
+          { tag: lowercase, count: sorted[key] },
         ]);
       });
     }
@@ -75,7 +77,7 @@ export default function TagsSummary({ blogs }) {
               console.log("tag", tag);
               return (
                 <NavLink key={index} to={`/blog/tags/${tag.tag}`}>
-                  <p loading="lazy">{tag.tag}</p>
+                  <div className="shadow-icon tags tag-bubble" loading="lazy">{tag.tag}</div>
                 </NavLink>
               );
             })}

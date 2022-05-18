@@ -36,6 +36,12 @@
     padding-right: 1rem;
     padding-left: 1rem;
   }
+  .tag-bubble {
+      padding: 1rem;
+    color: $whiteColor;
+    background-color: black;
+    margin: 0.5rem;
+  }
 
 }
 
@@ -75,6 +81,12 @@
         padding-right: 1rem;
         padding-left: 1rem;
       }
+      .tag-bubble {
+        padding: 1rem;
+      color: $whiteColor;
+      background-color: black;
+      margin: 0.5rem;
+    }
     
 }
 
@@ -108,6 +120,12 @@
     text-transform: uppercase;
     font-family: $tagFont;
   }
+  .tag-bubble {
+    padding: 1rem;
+  color: $whiteColor;
+  background-color: black;
+  margin: 0.5rem;
+}
 }
 
 @media screen and (min-width: 950px){
