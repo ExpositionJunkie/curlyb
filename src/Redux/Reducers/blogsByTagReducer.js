@@ -17,20 +17,15 @@ export const BlogsByTag = (
         errMess: null,
         blogs: action.payload,
       };
-    case ActionTypes.ADD_BLOG_BY_TAG:
-      return {
-        ...state,
-        isLoading: false,
-        errMess: null,
-        blog: action.payload,
-      };
     case ActionTypes.BLOGS_BY_TAG_LOADING:
-      return { ...state, isLoading: true, errMess: null, blogs: [] };
+      return { ...state, isLoading: true, errMess: null, blogs: null };
 
     case ActionTypes.BLOGS_BY_TAG_FAILED:
-      return { ...state, isLoading: false, errMess: action.payload };
+      return { ...state, isLoading: false, errMess: action.payload, blogs: null };
 
     default:
       return state;
   }
 };
+
+export const selectBlogsByTag = state => state.BlogsByTag

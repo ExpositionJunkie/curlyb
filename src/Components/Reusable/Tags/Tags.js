@@ -1,39 +1,41 @@
-import React, { useEffect } from "react";
-import BlogList from "../../Blog/BlogList";
-//redux
-import { connect, useSelector, useDispatch } from "react-redux";
-import { bindActionCreators } from "redux";
-import { ActionCreators } from "../../../Redux/reduxIndex";
+import React from "react";
+import { useParams } from "react-router-dom";
+import BlogEntry from "../../Blog/BlogEntry";
+import Line from "../Line/Line";
 
-function BlogsByTags({ auth, tag }) {
-  const dispatch = useDispatch();
-  dispatch({ type: "fetchBlogsByTag" });
-  const { fetchBlogsByTag } = bindActionCreators(ActionCreators, dispatch);
-  const blogsByTag = useSelector((state) => state.blogsByTag);
+function Tags({ auth, blogs }) {
+  let { tagname } = useParams();
 
-  useEffect(() => {
-    if (tag) {
-      fetchBlogsByTag(tag);
-    }
-    return function () {
-      //I don't really want to do anything here, but it will leak memory
-      //without a fake function here.
-    };
-  }, [tag]);
-
-
-  if (blogsByTag.isLoading) {
+  if (blogs.isLoading) {
     return <div>Loading...</div>;
-  } else if (blogsByTag.errMess) {
-    return <div>{blogsByTag.errMess}</div>;
+  } else if (blogs.errMess) {
+    return <div>{blogs.errMess}</div>;
   } else {
-    return (
-      <>
-        <BlogList auth={auth} blogs={blogsByTag} />
-      </>
-    );
+    let newblogs = blogs.blogs.filter((blog) =>{
+      let tags = blog.tags.toString()
+      if (tags.includes(tagname)) {
+        return blog;
+      }
+    })
+    console.log(newblogs)
+     return (
+      <div className="entry-wrapper">
+        <div>
+          {newblogs.map((blogEntry) => {
+            return (
+              <div key={blogEntry._id}>
+                <div className="entry shadow-box">
+                  <BlogEntry blog={blogEntry} auth={auth} />
+                </div>
+                <div className="pad2">
+                  <Line />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );;
   }
 }
-
-const Tags = connect(null, null)(BlogsByTags);
 export default Tags;

@@ -4,7 +4,6 @@ export const BLOGS_LOADING = "BLOGS_LOADING";
 export const BLOGS_FAILED = "BLOGS_FAILED";
 
 export const ADD_BLOGS_BY_TAG = "ADD_BLOGS_BY_TAG";
-export const ADD_BLOG_BY_TAG = "ADD_BLOG_BY_TAG";
 export const BLOGS_BY_TAG_LOADING = "BLOGS_BY_TAG_LOADING";
 export const BLOGS_BY_TAG_FAILED = "BLOGS_BY_TAG_FAILED";
 

@@ -15,6 +15,7 @@ import Blog from "./Components/Blog/Blogs";
 import BlogEntryStandalone from "./Components/Blog/BlogEntryStandalone";
 import BlogPage from "./Components/Blog/BlogPage";
 import BlogList from "./Components/Blog/BlogList";
+import Tags from "./Components/Reusable/Tags/Tags";
 import Login from "./Components/Login/Login";
 import CSP from "./Components/CSP/CSP";
 import Signup from "./Components/Signup/Signup";
@@ -31,6 +32,7 @@ function AppComponent() {
   const auth = useSelector((state) => state.auth);
   const signup = useSelector((state) => state.signup);
   const blogs = useSelector((state) => state.blogs);
+  const blogsByTag = useSelector((state) => state.blogsByTag);
 
   const dispatch = useDispatch();
   dispatch({ type: "fetchBlogs" });
@@ -87,6 +89,7 @@ function AppComponent() {
                     <BlogList auth={auth} blogs={blogs} devblog={true} />
                   }
                 />
+                <Route path="tags/:tagname" element={<Tags auth={auth} blogs={blogs}/>} />
               </Route>
               <Route path="about" element={<About />} />
               <Route path="nameguesser" element={<NameGuess />} />

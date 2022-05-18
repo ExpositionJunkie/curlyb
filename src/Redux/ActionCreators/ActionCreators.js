@@ -199,10 +199,6 @@ export const addBlogsByTag = (blogs) => ({
   payload: blogs,
 });
 
-export const addBlogByTag = (blog) => ({
-  type: ActionTypes.ADD_BLOG_BY_TAG,
-  payload: blog,
-});
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Blogs End ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Comments ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
