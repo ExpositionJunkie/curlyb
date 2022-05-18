@@ -35,7 +35,7 @@ export default function BlogEntry({ blog, auth }) {
 
   if (blog) {
     return (
-      <div id="inner_entry_wrapper">
+      <div className="inner-entry-wrapper">
         <NavLink className="link-wrap" to={`/blog/${blog._id}`}>
         <Subtitle titleStr={blog.title} subtitleStr={blog.subtitle}></Subtitle>
         <Line></Line>
