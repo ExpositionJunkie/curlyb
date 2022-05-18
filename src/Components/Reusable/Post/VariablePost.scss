@@ -2,11 +2,13 @@
 
 .unverified-post{
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
-.action-call-heading {
+.tagline {
     color: inherit;
     font-family: $subtitleFont;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 

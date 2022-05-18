@@ -58,7 +58,7 @@ export function BlogEntryS({ auth }) {
 
   if (blog) {
     return (
-        <div key={blogId} className="inner-entry-wrapper standalone">
+        <div key={blogId} id="inner_entry_wrapper" className="inner-entry-wrapper standalone">
           <div className="column post-column"></div>
           <Subtitle
             titleStr={blog.title}

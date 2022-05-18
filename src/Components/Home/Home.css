@@ -22,12 +22,6 @@
     justify-content: space-evenly;
   }
 
-  .blog-columns-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-  }
-
   .inner-home-wrapper {
     padding: 2rem;
     display: flex;
@@ -36,14 +30,6 @@
 
   .tag-column .post-column {
     padding: 1rem;
-  }
-
-  .tag-column {
-    flex: 0 0 20%;
-  }
-
-  .post-column {
-    flex: 0 0 80%;
   }
 
   .headline {
@@ -59,16 +45,9 @@
     font-size: 2rem;
   }
 }
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 500px) and (max-width: 749px) {
   .post-list-wrapper {
     display: flex;
-    justify-content: space-evenly;
-    flex-grow: 1;
-  }
-
-  .blog-columns-container {
-    display: flex;
-    flex-direction: row-reverse;
     justify-content: space-evenly;
   }
 
@@ -83,13 +62,24 @@
     padding: 1rem;
   }
 
-  .tag-column {
-    margin-left: 2rem;
-    flex: 0 0 40%;
+  .headline {
+    padding: 1rem;
+    text-align: center;
   }
 
-  .post-column {
-    flex: 0 0 60%;
+  .home-title {
+    font-size: 3rem;
+  }
+
+  .home-subtitle {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 750px) and (max-width: 900px) {
+  .post-list-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    flex-grow: 1;
   }
 
   .headline {
@@ -105,63 +95,11 @@
     font-size: 2rem;
   }
 }
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 901px) {
   .post-list-wrapper {
     display: flex;
     justify-content: space-evenly;
     flex-grow: 1;
-  }
-
-  .blog-columns-container {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-evenly;
-  }
-
-  .inner-home-wrapper {
-    padding: 2rem;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-  }
-
-  .tag-column .post-column {
-    padding: 1rem;
-  }
-
-  .tag-column {
-    margin-left: 2rem;
-    flex: 0 0 30%;
-  }
-
-  .post-column {
-    flex: 0 0 70%;
-  }
-
-  .headline {
-    padding: 1rem;
-    text-align: center;
-  }
-
-  .home-title {
-    font-size: 3rem;
-  }
-
-  .home-subtitle {
-    font-size: 2rem;
-  }
-}
-@media screen and (min-width: 900px) {
-  .post-list-wrapper {
-    display: flex;
-    justify-content: space-evenly;
-    flex-grow: 1;
-  }
-
-  .blog-columns-container {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-evenly;
   }
 
   .inner-home-wrapper {

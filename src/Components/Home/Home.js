@@ -28,11 +28,11 @@ function HomePage({ auth, blogs }) {
         <div className="column post-column">
         <VariablePost location={"home"} auth={auth} />
         
-          <div className="column post-column">
+       
             <div className="plain-link">
               <BlogList auth={auth} blogs={blogs} />
             </div>
-          </div>
+
           </div>
           </div>
         </div>

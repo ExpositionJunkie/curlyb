@@ -1,9 +1,11 @@
 .unverified-post {
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.action-call-heading {
+.tagline {
   color: inherit;
   font-family: "Advent Pro", sans-serif;
-  font-size: 2rem;
+  font-size: 1rem;
 }
