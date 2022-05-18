@@ -72,11 +72,11 @@ export default function TagsSummary({ blogs }) {
             <h2 className="tags-header-text">What's the word?</h2>
             <p className="tags-header-text">We have to say the most about...</p>
             </div>
-          <span className="tag-summary-span">
+          <span className="tag-summary-span plainLink">
             {tags.map((tag, index) => {
               console.log("tag", tag);
               return (
-                <NavLink key={index} to={`/blog/tags/${tag.tag}`}>
+                <NavLink className="plainLink" key={index} to={`/blog/tags/${tag.tag}`}>
                   <div className="shadow-icon tags tag-bubble" loading="lazy">{tag.tag}</div>
                 </NavLink>
               );

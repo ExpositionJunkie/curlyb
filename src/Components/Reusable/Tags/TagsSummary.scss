@@ -41,6 +41,7 @@
     color: $whiteColor;
     background-color: black;
     margin: 0.5rem;
+    text-decoration: none;
   }
 
 }
@@ -86,6 +87,7 @@
       color: $whiteColor;
       background-color: black;
       margin: 0.5rem;
+      text-decoration: none;
     }
     
 }
@@ -125,6 +127,7 @@
   color: $whiteColor;
   background-color: black;
   margin: 0.5rem;
+  text-decoration: none;
 }
 }
 
@@ -156,5 +159,12 @@
     .tag-summary-span {
       text-transform: uppercase;
       font-family: $tagFont;
+    }
+    .tag-bubble {
+        padding: 1rem;
+      color: $whiteColor;
+      background-color: black;
+      margin: 0.5rem;
+      text-decoration: none;
     }
   }
