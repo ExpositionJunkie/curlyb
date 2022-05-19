@@ -204,9 +204,8 @@
   }
 
   #inner_entry_wrapper {
-    margin: 3rem;
     border-radius: 40px;
-    padding: 0rem 3rem 0rem 3rem; //right and left padding
+    padding: 0rem 1rem 0rem 1rem; //right and left padding
   }
 
   .blog_title {
@@ -224,7 +223,6 @@
     font-family: $bodyFont;
     font-size: 1rem;
     text-transform: uppercase;
-    padding: 0rem 3rem 0rem 3rem; //right and left padding
   }
 
   .tags > * {
@@ -262,7 +260,7 @@
   #inner_entry_wrapper {
     margin: 3rem;
     border-radius: 40px;
-    padding: 0rem 3rem 0rem 3rem; //right and left padding
+    padding: 0rem 1.5rem 0rem 1.5rem; //right and left padding
   }
 
   .blog_title {
@@ -280,7 +278,6 @@
     font-family: $bodyFont;
     font-size: 1rem;
     text-transform: uppercase;
-    padding: 0rem 3rem 0rem 3rem; //right and left padding
   }
 
   .tags > * {
@@ -311,7 +308,7 @@
     margin: 4rem;
     padding: 1rem;
     border-radius: 40px;
-    padding: 0rem 5rem 0rem 5rem; //right and left padding
+    padding: 0rem 3rem 0rem 3rem; //right and left padding
   }
 
   .blog_title {
@@ -326,7 +323,6 @@
     font-family: $bodyFont;
     font-size: 1rem;
     text-transform: uppercase;
-    padding: 0rem 5rem 0rem 5rem; //right and left padding
   }
 
   .tags > * {
