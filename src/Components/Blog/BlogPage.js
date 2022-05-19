@@ -29,7 +29,7 @@ export function Blogs({ auth }) {
           <VariablePost location="blog" auth={auth} />
         </div>
 
-          <div className="column post-column">
+          <div>
             {blogs.blogs.map((blogEntry) => {
               return (
                 <div key={blogEntry._id}>
