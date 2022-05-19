@@ -63,7 +63,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    
   }
   .post-list-wrapper {
     display: flex;
@@ -81,7 +80,6 @@
     font-size: 1rem;
     justify-self: flex-end;
   }
-
 
   #inner_entry_wrapper {
     overflow-x: scroll !important;
@@ -117,7 +115,6 @@
 }
 
 @media screen and (min-width: 501px) and (max-width: 749px) {
-
   .post-list-wrapper {
     display: flex;
     justify-content: space-evenly;
@@ -177,7 +174,6 @@
 }
 
 @media screen and (min-width: 750px) and (max-width: 949px) {
-
   .entry-wrapper {
     margin: 3rem;
   }
@@ -196,7 +192,6 @@
   .post-column {
     max-width: 60%;
   }
-
 
   .author-details {
     display: flex;
@@ -242,8 +237,6 @@
 }
 
 @media screen and (min-width: 950px) {
-
-
   .blog-columns-container {
     display: flex;
     flex-direction: row-reverse;
@@ -253,7 +246,6 @@
   .tag-column .post-column {
     padding: 1rem;
   }
-
 
   .author-details {
     display: flex;
@@ -299,7 +291,6 @@
 }
 
 @media screen and (min-width: 1200px) {
-
   .blog-columns-container {
     display: flex;
     flex-direction: row-reverse;
