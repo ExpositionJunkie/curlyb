@@ -59,46 +59,48 @@ export function BlogEntryS({ auth }) {
 
   if (blog) {
     return (
-        <div key={blogId} id="inner_entry_wrapper" className="inner-entry-wrapper standalone">
-          <div className="column post-column"></div>
-          <Subtitle
-            titleStr={blog.title}
-            subtitleStr={blog.subtitle}
-          ></Subtitle>
-          <Line />
-          <span className="author-details">
-            <div className="author">
-              <h2>Author: {blog.author.username}</h2>
-            </div>
-            <p className="date"> - {date.toLocaleString()}</p>
-          </span>
-          <Line />
-          <div className="blog-body-wrap">
-            <div
-              className="blog-entry-body linkNoUnderline"
-              dangerouslySetInnerHTML={sanitizedData()}
-            />
+      <div
+        key={blogId}
+        id="inner_entry_wrapper"
+        className="inner-entry-wrapper standalone"
+      >
+        <div className="column post-column"></div>
+        <Subtitle titleStr={blog.title} subtitleStr={blog.subtitle}></Subtitle>
+        <Line />
+        <span className="author-details">
+          <div className="author">
+            <h2>Author: {blog.author.username}</h2>
           </div>
-          <div className="marg3">
-            <Line></Line>
-          </div>
-          <div className="tags">
-            {tags.map((tag, index) => {
-              console.log(tag)
+          <p className="date"> - {date.toLocaleString()}</p>
+        </span>
+        <Line />
+        <div className="blog-body-wrap">
+          <div
+            className="blog-entry-body linkNoUnderline"
+            dangerouslySetInnerHTML={sanitizedData()}
+          />
+        </div>
+        <div className="marg3">
+          <Line></Line>
+        </div>
+        <div className="tags">
+          {tags.map((tag, index) => {
+            if (tag) {
               return (
                 <NavLink
                   className="link-wrap"
                   key={index}
                   to={`/blog/tags/${tag}`}
                 >
-                  <p className="tag">
-                    {tag}
-                  </p>
+                  <p className="tag">{tag}</p>
                 </NavLink>
               );
-            })}
-          </div>
-          <BlogFooter blog={blog} comments={true} auth={auth} />
+            } else {
+              return null;
+            }
+          })}
+        </div>
+        <BlogFooter blog={blog} comments={true} auth={auth} />
       </div>
     );
   } else {

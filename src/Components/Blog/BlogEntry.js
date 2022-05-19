@@ -63,17 +63,21 @@ export default function BlogEntry({ blog, auth }) {
           <p>Tags:</p>
 
           {tags.map((tag, index) => {
-            return (
-              <NavLink
-                className="link-wrap"
-                key={index}
-                to={`/blog/tags/${tag}`}
-              >
-                <p className="tag" key={index}>
-                  {tag}
-                </p>
-              </NavLink>
-            );
+            if (tag) {
+              return (
+                <NavLink
+                  className="link-wrap"
+                  key={index}
+                  to={`/blog/tags/${tag}`}
+                >
+                  <p className="tag" key={index}>
+                    {tag}
+                  </p>
+                </NavLink>
+              );
+            } else {
+              return <></>;
+            }
           })}
         </div>
 

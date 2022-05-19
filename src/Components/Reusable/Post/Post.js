@@ -94,7 +94,7 @@ function PostWrapper({ title, subtitle, tags, text, edit, blogId }) {
   };
 
   return (
-    <div className="post-wrapper">
+    <div className="post-wrapper linkNoUnderline">
       <form
         autoComplete="off"
         onSubmit={(evt) => handleSubmit(evt)}
