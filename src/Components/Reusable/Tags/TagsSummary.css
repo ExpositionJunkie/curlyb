@@ -1,55 +1,55 @@
 @media screen and (max-width: 500px) {
   .tags-header {
+    height: 50px;
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .tags-header > * {
     margin: 0px;
+    align-self: flex-start;
   }
 
   .tags-summary {
-    margin: 2rem;
+    overflow-y: scroll;
+    margin: 1rem;
     display: flex;
     flex-direction: column;
     height: 200px;
-    overflow-y: scroll;
     border-radius: 15px;
     background: rgb(240, 9, 122);
     background: linear-gradient(0deg, rgba(240, 9, 122, 0.2) 5%, rgba(0, 0, 0, 0.0490654206) 88%);
   }
 
   .tag-summary-span {
-    overflow-y: scroll;
     text-transform: uppercase;
     font-family: "Cairo", sans-serif;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding-right: 1rem;
-    padding-left: 1rem;
+    flex-direction: column;
+    padding: 1rem;
   }
 
   .tag-bubble {
-    padding: 1rem;
+    width: 90%;
     color: #ffffff;
     background-color: black;
-    margin-left: 0.25rem;
     text-decoration: none;
+    padding: 1rem;
+    margin-top: 0.5rem;
   }
 }
 @media screen and (min-width: 501px) and (max-width: 749px) {
   .tags-header {
+    position: -webkit-sticky;
+    position: sticky;
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .tags-header > * {
@@ -57,35 +57,32 @@
   }
 
   .tags-summary {
-    margin: 2rem;
+    overflow-y: scroll;
+    margin: 1rem;
     display: flex;
     flex-direction: column;
     height: 200px;
-    overflow-y: scroll;
     border-radius: 15px;
     background: rgb(240, 9, 122);
     background: linear-gradient(0deg, rgba(240, 9, 122, 0.2) 5%, rgba(0, 0, 0, 0.0490654206) 88%);
   }
 
   .tag-summary-span {
-    overflow-y: scroll;
     text-transform: uppercase;
     font-family: "Cairo", sans-serif;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding-right: 1rem;
-    padding-left: 1rem;
+    flex-direction: column;
+    padding: 1rem;
   }
 
   .tag-bubble {
-    padding: 1rem;
+    width: 90%;
+    text-align: center;
     color: #ffffff;
     background-color: black;
-    margin-left: 0.25rem;
     text-decoration: none;
+    padding: 1rem;
+    margin-top: 0.5rem;
   }
 }
 @media screen and (min-width: 750px) {
