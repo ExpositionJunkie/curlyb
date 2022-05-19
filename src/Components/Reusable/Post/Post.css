@@ -564,13 +564,11 @@
 
   .post-wrapper {
     margin: 2rem;
+    padding: 2rem;
+    flex-grow: 1;
     max-width: 100%;
     display: flex;
     justify-content: center;
-  }
-
-  .post-wrapper form {
-    max-width: 100%;
   }
 
   .editor {
@@ -716,6 +714,7 @@
 
   .post-wrapper {
     margin: 3rem;
+    padding: 2rem;
     max-width: 100%;
     display: flex;
     flex-grow: 1;
