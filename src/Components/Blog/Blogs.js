@@ -11,10 +11,10 @@ export default function Blog({blogs}) {
       <div>
 
       <div className="blog-columns-container">
-          <div className="column tag-column">
+          <div className="tag-column">
             <TagsSummary blogs={blogs} className="tags-layout" />
           </div>
-          <div className="column post-column">
+          <div className="post-column">
           <Outlet />
         </div>
         </div>

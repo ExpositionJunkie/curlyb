@@ -12,9 +12,7 @@
   }
 
   .tags-summary {
-    margin-top: 1rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    margin: 2rem;
     display: flex;
     flex-direction: column;
     height: 200px;
@@ -41,7 +39,7 @@
     padding: 1rem;
     color: #ffffff;
     background-color: black;
-    margin: 0.5rem;
+    margin-left: 0.25rem;
     text-decoration: none;
   }
 }
@@ -59,9 +57,7 @@
   }
 
   .tags-summary {
-    margin-top: 1rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    margin: 2rem;
     display: flex;
     flex-direction: column;
     height: 200px;
@@ -88,7 +84,7 @@
     padding: 1rem;
     color: #ffffff;
     background-color: black;
-    margin: 0.5rem;
+    margin-left: 0.25rem;
     text-decoration: none;
   }
 }
@@ -112,9 +108,9 @@
     -webkit-animation-direction: alternate;
             animation-direction: alternate;
     overflow-x: hidden;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    margin-left: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
     margin-right: 1rem;
     padding-right: 1px;
   }
@@ -163,7 +159,7 @@
 @media screen and (min-width: 950px) {
   .tags-header {
     font-family: "Advent Pro", sans-serif;
-    font-size: 2rem;
+    font-size: 1rem;
   }
 
   .summary-border {
