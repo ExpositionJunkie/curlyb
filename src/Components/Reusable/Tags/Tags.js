@@ -12,29 +12,29 @@ function Tags({ auth, blogs }) {
   } else if (blogs.errMess) {
     return <div>{blogs.errMess}</div>;
   } else {
-    let newblogs = blogs.blogs.filter((blog) =>{
-      let tags = blog.tags.toString().toLowerCase()
+    let newblogs = blogs.blogs.filter((blog) => {
+      let tags = blog.tags.toString().toLowerCase();
       if (tags.includes(tagname)) {
         return blog;
       }
-    })
-    console.log(newblogs)
-     return (
+    });
+
+    return (
       <div className="entry-wrapper">
-          {newblogs.map((blogEntry) => {
-            return (
-              <div key={blogEntry._id}>
-                <div className="entry shadow-box">
-                  <BlogEntry blog={blogEntry} auth={auth} />
-                </div>
-                <div className="pad2">
-                  <Line />
-                </div>
+        {newblogs.map((blogEntry) => {
+          return (
+            <div key={blogEntry._id}>
+              <div className="entry shadow-box">
+                <BlogEntry blog={blogEntry} auth={auth} />
               </div>
-            );
-          })}
+              <div className="pad2">
+                <Line />
+              </div>
+            </div>
+          );
+        })}
       </div>
-    );;
+    );
   }
 }
 export default Tags;

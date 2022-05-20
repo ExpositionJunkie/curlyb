@@ -57,7 +57,6 @@ export default function TagsSummary({ blogs }) {
       );
       //puts them into the tag object
       Object.keys(sorted).map(function (key, index) {
-        console.log(key, sorted[key]);
         let lowercase = key.toLowerCase();
         setTags((prevState) => [
           ...prevState,
@@ -77,7 +76,6 @@ export default function TagsSummary({ blogs }) {
           </div>
           <span className="tag-summary-span plainLink">
             {tags.map((tag, index) => {
-              console.log("tag", tag);
               return (
                 <NavLink
                   className="plainLink"
