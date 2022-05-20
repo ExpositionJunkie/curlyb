@@ -6,31 +6,43 @@ import { NavLink, useNavigate } from "react-router-dom";
 import Title from "../Reusable/Title/Title";
 import LoginForm from "../Login/LoginForm";
 import DOMPurify from "dompurify";
+import splash from "../../data/photos/frontend/splash.png";
 import "./Signup.css";
 
-function SignupWrap({signup}) {
-
+function SignupWrap({ signup }) {
   //redux actions
   const dispatch = useDispatch();
   dispatch({ type: "signupUser" });
-
 
   if (!signup.signupSuccess) {
     return (
       <div className="signup-wrapper">
         <Title titleStr="Sign Up"></Title>
-        <div className="signup-form-inner-wrapper">
-          <div className="signup-form">
-            <h1 className="signup-tagline">
-              Want to start your own blog or leave a comment? Sign Up to leave
-              your mark between the curly brackets.
-            </h1>
-            <div className="signup-validation-text">{signup.errMess}</div>
-            <div className="signup-validation-text">{signup.message}</div>
-            <SignupForm></SignupForm>
-            <p className="linkNoUnderline">Already have an account? <NavLink to="/login">Login here.</NavLink></p>
+        <h1 className="signup-tagline">
+          Want to start your own blog or leave a comment?
+        </h1>
+        <h2 className="h2-signup-tagline">
+          Sign Up to leave your mark between the curly brackets.
+        </h2>
+        <div className="signup-container">
+          <div className="splash-container">
+            <img
+              className="splash"
+              src={splash}
+              alt="Splash page showing curlybrackets blog layout on both mobile and desktop."
+            />
+          </div>
+          <div className="signup-form-inner-wrapper">
+            <div className="signup-form">
+              <div className="signup-validation-text">{signup.errMess}</div>
+              <div className="signup-validation-text">{signup.message}</div>
+              <SignupForm></SignupForm>
+            </div>
           </div>
         </div>
+        <p className="linkNoUnderline login-tagline">
+          Already have an account? <NavLink to="/login">Login here.</NavLink>
+        </p>
       </div>
     );
   } else {
@@ -49,7 +61,7 @@ function SignupWrap({signup}) {
   }
 }
 
-export function SignupForm({signup}) {
+export function SignupForm({ signup }) {
   const [input, setInput] = useState({ email: "", username: "", password: "" });
   const [validationText, setValidationText] = useState("");
   //redux actions
@@ -67,22 +79,21 @@ export function SignupForm({signup}) {
     evt.preventDefault();
   };
 
-  
   const errMess = () => {
     setValidationText(signup.errMess);
   };
 
   const handleSignup = (evt) => {
-    evt.preventDefault()
+    evt.preventDefault();
     signupUser(input)
-    .then((res) => {
-      if (signup.errMess) {
-        errMess();
-      }
-    })
-    .then((res) => {
-      navigate("/login");
-    });
+      .then((res) => {
+        if (signup.errMess) {
+          errMess();
+        }
+      })
+      .then((res) => {
+        navigate("/login");
+      });
   };
 
   return (
@@ -137,7 +148,6 @@ export function SignupForm({signup}) {
     </form>
   );
 }
-
 
 const Signup = connect(null, null)(SignupWrap);
 
