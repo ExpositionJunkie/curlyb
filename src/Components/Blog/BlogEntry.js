@@ -21,14 +21,9 @@ export default function BlogEntry({ blog, auth }) {
   function TagSplit() {
     if (blog) {
       if (blog.tags) {
-        console.log(blog.tags);
-        let temp = blog.tags;
-        let temp2 = temp.toString().replace("#", " ");
-        let temp3 = temp2.toLowerCase().trim();
-        let temp4 = temp3.split(/[\s*|#]/);
-        console.log(temp4);
-        setTags((prevState) => [...prevState, ...temp4]);
-        console.log("tags", tags);
+        let temp = blog.tags.toString().replace("#", " ").toLowerCase().split(/[\s*|#]/);
+        setTags((prevState) => [...prevState, ...temp]);
+       
       }
     }
   }
@@ -70,13 +65,13 @@ export default function BlogEntry({ blog, auth }) {
                   key={index}
                   to={`/blog/tags/${tag}`}
                 >
-                  <p className="tag" key={index}>
+                  <p className="tag">
                     {tag}
                   </p>
                 </NavLink>
               );
             } else {
-              return <></>;
+              return <div key={index}></div>;
             }
           })}
         </div>

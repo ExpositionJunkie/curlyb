@@ -4,7 +4,6 @@ import "./TagsSummary.css";
 
 export default function TagsSummary({ blogs }) {
   const [tags, setTags] = useState([]);
-  let reduceArr;
 
   useEffect(() => {
     settingTags(blogs);
@@ -14,10 +13,10 @@ export default function TagsSummary({ blogs }) {
     };
   }, [blogs]);
 
+  //TODO - do this properly and write something on the backend to serve this function.
   const settingTags = (blog) => {
     let arr = [];
-    let tagArr = [];
-
+    let tagArr = []
     if (blog.blogs) {
       //this very ugly function flattens out the results from each blog into one big array so we can sort it later and note frequency
       arr.push(
@@ -25,23 +24,32 @@ export default function TagsSummary({ blogs }) {
           return blog.tags;
         })
       );
-      let newArr = arr
+      arr = arr
         .flat(2)
         .map((tag) => {
-          let newTag = tag.toString().toLowerCase();
-          let newTags = [newTag.trim().split(/[\s*|#]/)];//Takes out hashtags too!
-          return newTags;
+          // filter out: # spaces
+
+          // naughty strings leaderboard:
+          // Tyrant-J | Strings that broke formatting:  1
+          // Zenith | Strings that broke formatting: 1
+          
+          let temp = tag
+            .toString()
+            .replace("#", " ")
+            .toLowerCase()
+            .split(/[\s*|#]/);
+          return temp;
         })
         .flat(3);
-      for (let i = 0; i < newArr.length; i++) {
-        let tempTag = { tag: newArr[i] };
+      for (let i = 0; i < arr.length; i++) {
+        let tempTag = { tag: arr[i] };
         if (tempTag.tag) {
           //without this spaces get left in.
           tagArr.push(tempTag);
         }
       }
       //compiles tags into an object that lists frequency
-      reduceArr = tagArr.reduce((x, y) => {
+      tagArr = tagArr.reduce((x, y) => {
         if (x[y.tag]) {
           x[y.tag]++;
           return x;
@@ -53,7 +61,7 @@ export default function TagsSummary({ blogs }) {
       }, {});
       //sorts entries by frequency
       let sorted = Object.fromEntries(
-        Object.entries(reduceArr).sort(([, a], [, b]) => b - a)
+        Object.entries(tagArr).sort(([, a], [, b]) => b - a)
       );
       //puts them into the tag object
       Object.keys(sorted).map(function (key, index) {

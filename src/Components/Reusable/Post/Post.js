@@ -77,6 +77,16 @@ function PostWrapper({ title, subtitle, tags, text, edit, blogId }) {
   };
 
   const handleSubmit = (evt) => {
+
+    let temp = input.tags
+      .toString()
+      .replace("#", " ")
+      .toLowerCase()
+      .split(/[\s*|#]/);
+    setInput((prevState) => ({
+      ...prevState,
+      tags: temp,
+    }));
     evt.preventDefault();
     if (!edit) {
       postBlog(input)

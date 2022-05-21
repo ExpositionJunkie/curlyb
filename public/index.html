@@ -30,7 +30,7 @@
     <title>Curly Brackets</title>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script>
+    <script async>
       //defines dataLayer and the gtag function
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -47,7 +47,7 @@
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-RWVLYS3GQ3"
     ></script>
-    <script>
+    <script async>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
@@ -59,7 +59,7 @@
         cookie_flags: "max-age=7200;secure;samesite=strict",
       });
     </script>
-    <script>
+    <script async>
       function consentGranted() {
         gtag("consent", "update", {
           ad_storage: "granted",
@@ -67,7 +67,7 @@
         });
       }
     </script>
-    <script>
+    <script async>
       function consentRevoked() {
         gtag("consent", "update", {
           ad_storage: "denied",
@@ -78,7 +78,7 @@
   </head>
   <body>
     <noscript
-      >Oh hi, I see you have devtools open. :) This is a react app, so there's
+      >Oh hi, I see you have devtools open. Nice to see you here! :) This is a react app, so there's
       nothing here, but there is plenty to find!</noscript
     >
     <div id="root"></div>
