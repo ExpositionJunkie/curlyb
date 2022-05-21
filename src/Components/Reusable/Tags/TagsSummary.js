@@ -28,8 +28,8 @@ export default function TagsSummary({ blogs }) {
       let newArr = arr
         .flat(2)
         .map((tag) => {
-          let newTag = tag.toString().toLowerCase().trim();
-          let newTags = [newTag.split(" ")];
+          let newTag = tag.toString().toLowerCase();
+          let newTags = [newTag.trim().split(/[\s*|#]/)];//Takes out hashtags too!
           return newTags;
         })
         .flat(3);
