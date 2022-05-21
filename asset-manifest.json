@@ -1,18 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.1fe1262b.css",
-    "main.js": "/static/js/main.856eff9b.js",
-    "static/media/the-great-flood.jpg": "/static/media/the-great-flood.30ebef797428840eac4a.jpg",
+    "main.css": "/static/css/main.214b9fff.css",
+    "main.js": "/static/js/main.78b1e4b6.js",
     "static/media/danny-devito.png": "/static/media/danny-devito.295f313995a3b743e5cb.png",
     "static/media/splash.png": "/static/media/splash.4defddf9dcbce9974aa4.png",
     "static/media/ApolloGlamourShot.jpg": "/static/media/ApolloGlamourShot.734f7496e7b076d056e6.jpg",
     "static/media/WorkshopRoz.jpg": "/static/media/WorkshopRoz.414192ff0eceb9c030f1.jpg",
-    "static/media/Elipses.svg": "/static/media/Elipses.8d519f04421f9854e91bb1e77c7b3145.svg",
-    "static/media/logo.svg": "/static/media/logo.4a3da65cfe97b22f9ab5aeb08813b984.svg",
+    "static/media/logo.svg": "/static/media/logo.ce769beb40904dcb8a05f0402efd3464.svg",
     "static/media/sass.svg": "/static/media/sass.321b2edad0c70a8332cf1a22ba2ef430.svg",
     "static/media/react.svg": "/static/media/react.f6fb1759e0fc4bce6aa9872d99cabfd5.svg",
-    "static/media/leftbracket.svg": "/static/media/leftbracket.41a076d453ed88b9d5ea96f6debae09b.svg",
-    "static/media/rightbracket.svg": "/static/media/rightbracket.d1f4081788c874fca1d577785402ad14.svg",
     "static/media/github.svg": "/static/media/github.f1c392a6a5fb4c941283c5edd681e2d8.svg",
     "index.html": "/index.html",
     "static/media/javascript.svg": "/static/media/javascript.11546d4aa962f5fe5320b42532d8ea40.svg",
@@ -22,11 +18,11 @@
     "static/media/linkedIn.svg": "/static/media/linkedIn.bf00913dc77d0de97d51e9b723abc05f.svg",
     "static/media/css3.svg": "/static/media/css3.f40adea72026a24a549a62082ce10ea8.svg",
     "static/media/html5.svg": "/static/media/html5.b2df6907108c1c1f71ca0581196c32bf.svg",
-    "main.1fe1262b.css.map": "/static/css/main.1fe1262b.css.map",
-    "main.856eff9b.js.map": "/static/js/main.856eff9b.js.map"
+    "main.214b9fff.css.map": "/static/css/main.214b9fff.css.map",
+    "main.78b1e4b6.js.map": "/static/js/main.78b1e4b6.js.map"
   },
   "entrypoints": [
-    "static/css/main.1fe1262b.css",
-    "static/js/main.856eff9b.js"
+    "static/css/main.214b9fff.css",
+    "static/js/main.78b1e4b6.js"
   ]
 }
