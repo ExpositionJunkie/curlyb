@@ -25,7 +25,7 @@ export default function BlogEntry({ blog, auth }) {
         let temp = blog.tags;
         let temp2 = temp.toString().replace("#", " ");
         let temp3 = temp2.toLowerCase().trim();
-        let temp4 = temp3.split(" ");
+        let temp4 = temp3.split(/[\s*|#]/);
         console.log(temp4);
         setTags((prevState) => [...prevState, ...temp4]);
         console.log("tags", tags);
