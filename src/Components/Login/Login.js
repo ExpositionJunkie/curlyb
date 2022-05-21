@@ -5,6 +5,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { bindActionCreators } from "redux";
 import { ActionCreators } from "../../Redux/reduxIndex";
 import { connect, useSelector, useDispatch } from "react-redux";
+import splash from "../../data/photos/frontend/splash.png";
 
 import "./Login.css";
 
@@ -46,16 +47,30 @@ function LoginPage() {
     return (
       <div className="login-wrapper">
         <Title titleStr="Login" />
+        <h1 className="login-tagline">Login below</h1>{" "}
         <div className="login-form-inner-wrapper">
-          <div className="login-form">
-            <LoginForm />
-            <div className="signup-call linkNoUnderline">
-              <p>
-                Don't have an account yet? No problem, choombatta, you can{" "}
-                <NavLink to="/signup">signup here.</NavLink>
-              </p>
+          
+          <div className="signup-container">
+            <div className="signup-form">
+              <LoginForm />
             </div>
+            <NavLink to="/signup">
+            <div className="splash-container">
+              <img
+                className="splash"
+                src={splash}
+                alt="Splash page showing curlybrackets blog layout on both mobile and desktop."
+              />
+            </div>
+            </NavLink>
           </div>
+        </div>
+        <div className="signup-call linkNoUnderline">
+          <h1 className="login-tagline">Don't have an account yet?</h1>
+          <h2 className="login-tagline">
+            No problem, choombatta, you can{" "}
+            <NavLink to="/signup">signup here.</NavLink>
+          </h2>
         </div>
       </div>
     );

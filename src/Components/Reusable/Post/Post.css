@@ -388,7 +388,7 @@
   .post-wrapper {
     margin: 2rem;
     max-width: 100%;
-    display: flex;
+    display: block;
     justify-content: center;
   }
 
@@ -566,7 +566,7 @@
     margin: 2rem;
     padding: 2rem;
     max-width: 100%;
-    display: flex;
+    display: block;
     justify-content: center;
   }
 
@@ -715,7 +715,7 @@
     margin: 3rem;
     padding: 2rem;
     max-width: 100%;
-    display: flex;
+    display: block;
     justify-content: center;
   }
 
@@ -868,7 +868,7 @@
   .post-wrapper {
     margin: 3rem;
     max-width: 100%;
-    display: flex;
+    display: block;
     justify-content: center;
   }
 
@@ -1022,7 +1022,7 @@
   .post-wrapper {
     margin: 5rem;
     max-width: 100%;
-    display: flex;
+    display: block;
     justify-content: center;
   }
 

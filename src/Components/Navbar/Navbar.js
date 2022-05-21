@@ -1,26 +1,21 @@
 import React from "react";
+import Title from "../Reusable/Title/Title";
 import { NavLink, Outlet } from "react-router-dom";
 import "./Navbar.css";
 import { ReactComponent as Logo } from "../../data/photos/frontend/logo.svg";
-import { ReactComponent as RightBracket } from "../../data/photos/frontend/rightbracket.svg";
-import { ReactComponent as LeftBracket } from "../../data/photos/frontend/leftbracket.svg";
-import Elipses from "../../data/photos/frontend/Elipses.svg";
 //https://reactjs.org/docs/accessibility.html
 //Good article on aria attributes and a reminder to write accessible code
 
 export default function Navbar({ auth }) {
   return (
     <nav className="navbar">
-      <div className="header-wrapper">
-        <img id="elipses" src={Elipses} alt="navigation Elipses" />
-        <LeftBracket className="leftBracket" />
-        <NavLink className="titleText" to="/">
-          Curly Brackets
+ 
+      <NavLink className="nav-link-text-deco" to="/">
+          <Title titleStr="Curly Brackets" centerLogo={<Logo className="logo" /> } >
+          </Title>
         </NavLink>
-        <Logo className="logo" />
-        <RightBracket className="rightBracket" />
-      </div>
-
+      
+        
       <div className="linkWrapper">
         <span className="navbarLinks">
           <NavLink to="/">Home</NavLink>
