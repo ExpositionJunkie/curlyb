@@ -91,7 +91,7 @@ export default function TagsSummary({ blogs }) {
                   to={`/blog/tags/${tag.tag}`}
                 >
                   <div className="shadow-icon tags tag-bubble" loading="lazy">
-                    {tag.tag}
+                    {tag.tag.substr(0, 20)}
                   </div>
                 </NavLink>
               );
