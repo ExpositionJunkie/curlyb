@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.93bed595.css",
-    "main.js": "/static/js/main.78b1e4b6.js",
+    "main.js": "/static/js/main.bd6d246e.js",
     "static/media/danny-devito.png": "/static/media/danny-devito.295f313995a3b743e5cb.png",
     "static/media/splash.png": "/static/media/splash.4defddf9dcbce9974aa4.png",
     "static/media/ApolloGlamourShot.jpg": "/static/media/ApolloGlamourShot.734f7496e7b076d056e6.jpg",
@@ -19,10 +19,10 @@
     "static/media/css3.svg": "/static/media/css3.f40adea72026a24a549a62082ce10ea8.svg",
     "static/media/html5.svg": "/static/media/html5.b2df6907108c1c1f71ca0581196c32bf.svg",
     "main.93bed595.css.map": "/static/css/main.93bed595.css.map",
-    "main.78b1e4b6.js.map": "/static/js/main.78b1e4b6.js.map"
+    "main.bd6d246e.js.map": "/static/js/main.bd6d246e.js.map"
   },
   "entrypoints": [
     "static/css/main.93bed595.css",
-    "static/js/main.78b1e4b6.js"
+    "static/js/main.bd6d246e.js"
   ]
 }
