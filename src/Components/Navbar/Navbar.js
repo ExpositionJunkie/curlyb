@@ -100,22 +100,22 @@ export default function Navbar({ auth }) {
 
         <div className="linkWrapper">
           <span className="navbarLinks">
-            <button
+            <button 
               className="hamburger"
               onClick={() => setIsNavExpanded(!isNavExpanded)}
             >
-              <FontAwesomeIcon icon={solid("bars")} />
+              <FontAwesomeIcon className=" menu-item nav-icon" icon={solid("bars")} />
             </button>
 
-            <NavLink to="/">
+            <NavLink className="menu-item" to="/">
               <FontAwesomeIcon className="nav-icon" icon={solid("home")} />
               <div className="long-menu">Home</div>
             </NavLink>
-            <NavLink to="/blog">
+            <NavLink className="menu-item" to="/blog">
               <FontAwesomeIcon className="nav-icon" icon={solid("blog")} />
               <div className="long-menu">Blog</div>
             </NavLink>
-            <NavLink to="/about">
+            <NavLink className="menu-item" to="/about">
               <FontAwesomeIcon
                 className="nav-icon"
                 icon={solid("address-card")}
