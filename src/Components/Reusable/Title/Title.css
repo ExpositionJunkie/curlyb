@@ -4,7 +4,6 @@
     margin: auto;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     background: linear-gradient(45deg, #f17c58, #e94584, #24aadb, #27dbb1, #ffdc18, #ff3706);
     background-size: 600% 100%;
     -webkit-animation: gradient 16s linear infinite;
@@ -42,7 +41,6 @@
     color: #ffffff;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    font-size: 5rem;
     text-align: center;
   }
 
@@ -57,7 +55,6 @@
     margin: auto;
     max-width: 100%;
     max-height: 100%;
-    overflow: hidden;
     background: linear-gradient(45deg, #f17c58, #e94584, #24aadb, #27dbb1, #ffdc18, #ff3706);
     background-size: 600% 100%;
     -webkit-animation: gradient 16s linear infinite;
