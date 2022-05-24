@@ -41,6 +41,7 @@
     border-style: none;
     border-radius: 5px;
   }
+  
   .menu-dropdown {
     z-index: 15;
     @include rainbow-shadow(5px, 5px, 15px);
