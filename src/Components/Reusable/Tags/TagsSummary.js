@@ -84,6 +84,12 @@ export default function TagsSummary({ blogs }) {
           </div>
           <span className="tag-summary-span plainLink">
             {tags.map((tag, index) => {
+              let tagstr = ""
+              if (tag.tag.length > 10) {
+                tagstr = tag.tag.substr(0, 10) + "..."
+              } else {
+                tagstr = tag.tag
+              }
               return (
                 <NavLink
                   className="plainLink"
@@ -91,7 +97,7 @@ export default function TagsSummary({ blogs }) {
                   to={`/blog/tags/${tag.tag}`}
                 >
                   <div className="shadow-icon tags tag-bubble" loading="lazy">
-                    {tag.tag.substr(0, 20)}
+                    {tagstr}
                   </div>
                 </NavLink>
               );
