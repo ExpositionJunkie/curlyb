@@ -22,6 +22,14 @@ export default function Navbar({ auth }) {
       <div className="sticky-div">
         {isNavExpanded ? ( //terinary to see if the menu is open
           <div className="menu-dropdown">
+            <NavLink
+              onClick={() => setIsNavExpanded(!isNavExpanded)}
+              className="menu-item"
+              to="/"
+            >
+              <FontAwesomeIcon className="nav-icon" icon={solid("home")} />
+              Home
+            </NavLink>
             {auth.isAuthenticated ? ( //show login/logout dynamically
               <NavLink
                 onClick={() => setIsNavExpanded(!isNavExpanded)}
@@ -47,14 +55,7 @@ export default function Navbar({ auth }) {
                 Login
               </NavLink>
             )}
-            <NavLink
-              onClick={() => setIsNavExpanded(!isNavExpanded)}
-              className="menu-item"
-              to="/"
-            >
-              <FontAwesomeIcon className="nav-icon" icon={solid("home")} />
-              Home
-            </NavLink>
+
             <NavLink
               onClick={() => setIsNavExpanded(!isNavExpanded)}
               className="menu-item"
@@ -100,11 +101,14 @@ export default function Navbar({ auth }) {
 
         <div className="linkWrapper">
           <span className="navbarLinks">
-            <button 
+            <button
               className="hamburger"
               onClick={() => setIsNavExpanded(!isNavExpanded)}
             >
-              <FontAwesomeIcon className=" menu-item nav-icon" icon={solid("bars")} />
+              <FontAwesomeIcon
+                className=" menu-item nav-icon"
+                icon={solid("bars")}
+              />
             </button>
 
             <NavLink className="menu-item" to="/">

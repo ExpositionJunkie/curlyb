@@ -15,7 +15,6 @@
   text-decoration: none;
 }
 
-
 .nav-icon {
   padding-right: 0.5rem;
 }
@@ -31,18 +30,15 @@
     margin-bottom: 1rem;
     font-family: $titleFont;
   }
-  
+
   .long-menu {
     display: none;
   }
 
   .hamburger {
-    position: absolute;
     background: $blackColor;
     outline: none;
     border-style: none;
-    z-index: 10;
-    left: 0.5rem;
     border-radius: 5px;
   }
   .menu-dropdown {
@@ -90,19 +86,17 @@
   .linkWrapper {
     background-color: $blackColor;
     position: relative;
-
   }
 
   .navbarLinks {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: nowrap;
     padding-left: 3rem;
     padding-right: 3rem;
   }
-
 
   .logo {
     position: absolute;
@@ -142,7 +136,7 @@
     margin-bottom: 1rem;
     font-family: $titleFont;
   }
-  
+
   .hamburger {
     background: $blackColor;
     outline: none;

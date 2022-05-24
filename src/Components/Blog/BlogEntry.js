@@ -35,7 +35,7 @@ export default function BlogEntry({ blog, auth }) {
           <Subtitle
             titleStr={blog.title}
             subtitleStr={blog.subtitle}
-          ></Subtitle>
+          ></Subtitle></NavLink>
           <Line></Line>
           <div className="author-details">
             <div className="author">
@@ -53,7 +53,7 @@ export default function BlogEntry({ blog, auth }) {
           <div className="marg3">
             <Line></Line>
           </div>
-        </NavLink>
+        
         <div className="tags">
           <p>Tags:</p>
 

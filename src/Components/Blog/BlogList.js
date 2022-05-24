@@ -23,7 +23,7 @@ function BlogList({ auth, blogs, devblog }) {
               {blogs.blogs.map((blogEntry) => {
                 return (
                   <div key={blogEntry._id}>
-                    <div className="entry shadow-box">
+                    <div className="entry shadow-box-no-zoom">
                       <BlogEntry blog={blogEntry} auth={auth} />
                     </div>
                     <div className="pad2">

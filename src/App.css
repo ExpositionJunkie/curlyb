@@ -228,19 +228,12 @@ html {
 }
 
 .shadow-box-no-zoom::after {
-  content: "";
-  border-radius: 20px;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   -webkit-animation: shadow-fade 16s linear infinite;
           animation: shadow-fade 16s linear infinite;
   -webkit-animation-direction: alternate;
           animation-direction: alternate;
-  opacity: 0;
+  animation: shadow-fade 16s linear infinite;
+  animation-direction: alternate;
 }
 @-webkit-keyframes shadow-fade {
   0% {
@@ -288,8 +281,54 @@ html {
     box-shadow: 5px 5px 15px #ff3706;
   }
 }
+@-webkit-keyframes shadow-fade {
+  0% {
+    box-shadow: 5px 10px 20px #f17c58;
+  }
+  16% {
+    box-shadow: 5px 10px 20px #ffdc18;
+  }
+  32% {
+    box-shadow: 5px 10px 20px #27dbb1;
+  }
+  48% {
+    box-shadow: 5px 10px 20px #24aadb;
+  }
+  64% {
+    box-shadow: 5px 10px 20px #8335d0;
+  }
+  84% {
+    box-shadow: 5px 10px 20px #e94584;
+  }
+  100% {
+    box-shadow: 5px 10px 20px #ff3706;
+  }
+}
+@keyframes shadow-fade {
+  0% {
+    box-shadow: 5px 10px 20px #f17c58;
+  }
+  16% {
+    box-shadow: 5px 10px 20px #ffdc18;
+  }
+  32% {
+    box-shadow: 5px 10px 20px #27dbb1;
+  }
+  48% {
+    box-shadow: 5px 10px 20px #24aadb;
+  }
+  64% {
+    box-shadow: 5px 10px 20px #8335d0;
+  }
+  84% {
+    box-shadow: 5px 10px 20px #e94584;
+  }
+  100% {
+    box-shadow: 5px 10px 20px #ff3706;
+  }
+}
 
-.shadow-box-noz-zoom:hover::after {
+.shadow-box-no-zoom:hover::after {
   opacity: 1;
 }
 
