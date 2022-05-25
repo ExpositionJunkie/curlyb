@@ -1,17 +1,17 @@
 import Post from "./Post";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import splash from "../../../data/photos/frontend/splash.png";
 import "./VariablePost.css";
 
-function VariablePost({ location, content, auth}) {
-  
+function VariablePost({auth}) {
+  let location = useParams()
 
   if (auth.isAuthenticated) {
     if (localStorage.getItem("blog")) {
       let blog=JSON.parse(localStorage.getItem("blog"))
-      return <Post location={location} content={content} title={blog.title} tags={blog.tags} text={blog.text} subtitle={blog.subtitle}/>;
+      return <Post location={location}  title={blog.title} tags={blog.tags} text={blog.text} subtitle={blog.subtitle}/>;
     } else {
-      return <Post location={location} content={content} />;
+      return <Post location={location} />;
     }
   } else {
     return (

@@ -20,6 +20,7 @@ import Login from "./Components/Login/Login";
 import CSP from "./Components/CSP/CSP";
 import Signup from "./Components/Signup/Signup";
 import NothinghHere from "./Components/Reusable/404/NothingHere";
+import PostOverlay from "./Components/Reusable/Post/PostOverlay"
 import { Route, Routes } from "react-router-dom";
 import Cookie from "./Components/Reusable/Cookie/Cookie";
 
@@ -73,6 +74,7 @@ function AppComponent() {
       <Suspense fallback={<p>...Loading</p>}>
         <header className="App-header">
           <Navbar auth={auth} />
+          <PostOverlay auth={auth} />
           <div className="body">
             <Routes>
               <Route path="/" element={<Home auth={auth} blogs={blogs} />} />
@@ -105,7 +107,9 @@ function AppComponent() {
             </Routes>
             <Footer />
             <Cookie />
+            
           </div>
+         
         </header>
       </Suspense>
     </div>

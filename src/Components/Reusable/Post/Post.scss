@@ -104,6 +104,8 @@
     @include textInputStyle(1rem);
     font-family: $bodyFont;
     text-align: left;
+    max-height: 50vh;
+    overflow-x: hidden;
   }
 
   .editor:hover,
@@ -248,6 +250,8 @@
     text-align: left;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    max-height: 50vw;
+    overflow-y: scroll;
   }
 
   .post-title,
