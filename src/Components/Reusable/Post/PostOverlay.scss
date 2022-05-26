@@ -7,8 +7,6 @@
     border-radius: 20px;
     margin: 0.5rem;
     position: fixed;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
     top: 1rem;
     left: 1rem;
     right: 1rem;
@@ -26,6 +24,8 @@
   }
   .post-button {
     position: fixed;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     bottom: 1rem;
     right: 1rem;
     border-radius: 10px;
