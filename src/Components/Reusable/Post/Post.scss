@@ -25,13 +25,16 @@
 }
 
 @media screen and (max-width: 500px) {
+  .header {
+    font-size: 0.75rem;
+    font-family: $bodyFont;
+  }
+
   .editor-toggle {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
     cursor: pointer;
   }
 
@@ -109,8 +112,8 @@
     @include textInputStyle(1rem);
     font-family: $bodyFont;
     text-align: left;
-    height: 30vh;
-    max-height: 40vh;
+    height: 20vh;
+    max-height: 30vh;
     width: 100%;
     overflow-x: hidden;
   }

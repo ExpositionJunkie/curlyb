@@ -150,10 +150,10 @@
   }
 
   .post-background {
-    overflow-y: hidden;
+    overflow-y: auto;
     background-color: #000000;
     border-radius: 20px;
-    width: 20vw;
+    width: 40vw;
     -webkit-animation: shadow-fade 16s linear infinite;
             animation: shadow-fade 16s linear infinite;
     -webkit-animation-direction: alternate;
@@ -208,6 +208,8 @@
 
   .post-button {
     position: fixed;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     bottom: 1rem;
     right: 1rem;
     border-radius: 10px;

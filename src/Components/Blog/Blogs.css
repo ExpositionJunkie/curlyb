@@ -16,6 +16,7 @@
   word-break: normal;
   font-family: "Raleway", sans-serif;
   max-width: 100%;
+  overflow-x: auto;
 }
 
 .blog-wrapper {

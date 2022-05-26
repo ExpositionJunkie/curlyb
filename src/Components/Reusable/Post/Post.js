@@ -111,7 +111,7 @@ function PostWrapper({ title, subtitle, tags, text, edit, blogId }) {
         onSubmit={(evt) => handleSubmit(evt)}
         onKeyDown={(e) => checkKeyDown(e)}
       >
-        <h2>Share your thoughts...</h2>
+        <h2 className="header">Share your thoughts...</h2>
         <input
           type="text"
           id="title"

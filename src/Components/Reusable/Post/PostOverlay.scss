@@ -56,15 +56,17 @@
   }
 
   .post-background {  
-    overflow-y: hidden;
+    overflow-y: auto;
     background-color: $blackColor;
     border-radius: 20px;
-    width: 20vw;
+    width: 40vw;
     @include rainbow-shadow(0px, 5px, 15px);
   }
 
   .post-button {
     position: fixed;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     bottom: 1rem;
     right: 1rem;
     border-radius: 10px;

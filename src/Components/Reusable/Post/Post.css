@@ -26,13 +26,16 @@
 }
 
 @media screen and (max-width: 500px) {
+  .header {
+    font-size: 0.75rem;
+    font-family: "Raleway", sans-serif;
+  }
+
   .editor-toggle {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
     cursor: pointer;
   }
 
@@ -161,8 +164,8 @@
     border-radius: 20px;
     font-family: "Raleway", sans-serif;
     text-align: left;
-    height: 30vh;
-    max-height: 40vh;
+    height: 20vh;
+    max-height: 30vh;
     width: 100%;
     overflow-x: hidden;
   }
