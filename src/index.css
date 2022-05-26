@@ -7,6 +7,7 @@ body {
 .body, .main {
   background-color: black;
   margin: 0;
+  max-width: 100vw;
 }
 
 body {

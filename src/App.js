@@ -33,7 +33,7 @@ function AppComponent() {
   const auth = useSelector((state) => state.auth);
   const signup = useSelector((state) => state.signup);
   const blogs = useSelector((state) => state.blogs);
-  const blogsByTag = useSelector((state) => state.blogsByTag);
+
 
   const dispatch = useDispatch();
   dispatch({ type: "fetchBlogs" });
