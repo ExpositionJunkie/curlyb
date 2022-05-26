@@ -1,6 +1,5 @@
 import React, {useState} from "react"
-import {useParams} from "react-router-dom"
-import VariablePost from "./Post"
+import VariablePost from "./VariablePost"
 import "./PostOverlay.css"
 
 export default function PostOverlay({auth}) {

@@ -1,19 +1,26 @@
 @import "../../../Variables/Sass/SassVariables.scss";
 
 @media screen and (max-width: 500px) {
+
   .post-overlay {
+    color: $whiteColor;
     border-radius: 20px;
     margin: 0.5rem;
     position: fixed;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
     z-index: 100;
-    overflow-y: scroll;
     overflow-wrap: normal;
     word-break: normal;
-  }
-  .post-background {
     background-color: $blackColor;
-    padding: 1rem;
-    width: 80vw;
+  }
+
+  .post-background {  
+    overflow-y: hidden;
+    background-color: $blackColor;
+    border-radius: 20px;
+    @include rainbow-shadow(0px, 5px, 15px);
   }
   .post-button {
     position: fixed;
@@ -28,26 +35,32 @@
     @include rainbow-shadow(0px, 5px, 15px);
   }
 }
+
 
 @media screen and (min-width: 501px) {
   .post-overlay {
+    border-radius: 20px;
+    top: 1rem;
+    right: 1rem;
     position: fixed;
     z-index: 100;
-
+    max-height: 95vh;
+    color: $whiteColor;
     overflow-wrap: normal;
     word-break: normal;
+    overflow: auto;
+    padding: 1rem;
+    margin: 1rem;
   }
-  .post-background {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
+
+  .post-background {  
+    overflow-y: hidden;
     background-color: $blackColor;
-    width: 80vw;
-    padding-right: 1rem;
-    color: $whiteColor;
-    overflow-y: scroll;
     border-radius: 20px;
+    width: 20vw;
+    @include rainbow-shadow(0px, 5px, 15px);
   }
+
   .post-button {
     position: fixed;
     bottom: 1rem;
@@ -61,3 +74,4 @@
     @include rainbow-shadow(0px, 5px, 15px);
   }
 }
+
