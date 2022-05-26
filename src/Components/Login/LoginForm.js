@@ -53,7 +53,7 @@ function LoginFormOnly() {
             required
             id="username"
             maxLength="320"
-            autocComplete="username"
+            autoComplete="username"
             placeholder="username"
             value={input.username}
             onChange={(e) => handleChange(e)}
