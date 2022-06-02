@@ -169,6 +169,10 @@ html {
   color: inherit;
 }
 
+.first-letter {
+  color: red;
+}
+
 .shadow-box-no-zoom {
   position: relative;
   width: inherit;

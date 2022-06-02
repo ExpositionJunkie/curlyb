@@ -107,10 +107,14 @@
     text-transform: uppercase;
     justify-content: space-around;
     padding: 0rem 0.5rem 0rem 0.5rem; //right and left padding
+    word-break: break-all;
+
   }
 
   .tags > * {
     justify-content: space-between;
+    flex-wrap: wrap;
+  overflow-wrap: break-word;
   }
   .entry {
     flex-wrap: wrap;
@@ -150,6 +154,7 @@
     margin: 1rem;
     padding: 1rem;
     border-radius: 40px;
+    
   }
 
   .blog_title {
@@ -164,6 +169,7 @@
     font-family: $bodyFont;
     font-size: 1rem;
     text-transform: uppercase;
+    word-break: break-all;
   }
 
   .tags > * {
@@ -230,10 +236,13 @@
     font-family: $bodyFont;
     font-size: 1rem;
     text-transform: uppercase;
+    word-break: break-all;
   }
 
   .tags > * {
     margin-left: 1rem;
+    flex-wrap: wrap;
+  overflow-wrap: break-word;
   }
 }
 
@@ -286,6 +295,7 @@
     font-family: $bodyFont;
     font-size: 1rem;
     text-transform: uppercase;
+    word-break: break-all;
   }
 
   .tags > * {
@@ -333,10 +343,13 @@
     font-family: $bodyFont;
     font-size: 1rem;
     text-transform: uppercase;
+    word-break: break-all;
   }
 
   .tags > * {
     margin-left: 1rem;
+
+  
   }
   .entry {
     margin: 5rem;

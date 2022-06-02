@@ -69,6 +69,18 @@ function AppComponent() {
     };
   }, []);
 
+  useEffect(() => {
+    
+      var elements = document.getElementsByClassName("blog-entry-body")
+      console.log(elements)
+      for (var i=0; i<elements.length; i++){
+        elements[i].innerHTML = elements[i].innerHTML.replace(/\\b([a-z])([a-z]+)?\\b/gim, `<span class='first-letter'>${elements[i].innerHTML}</span>`)
+        console.log(elements[i].innerHTML)
+      }
+    
+  }, [])
+
+
   return (
     <div className="App">
       <Suspense fallback={<p>...Loading</p>}>

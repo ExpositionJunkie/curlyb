@@ -12,18 +12,19 @@ export default function BlogEntry({ blog, auth }) {
     __html: DOMPurify.sanitize(blog.text),
   });
 
+  
+
   const date = new Date(blog.createdAt);
 
   useEffect(() => {
-    TagSplit();
+    TagSplit(blog);
   }, [blog]);
 
-  function TagSplit() {
-    if (blog) {
-      if (blog.tags) {
-        let temp = blog.tags.toString().replace("#", " ").toLowerCase().split(/[\s*|#]/);
+  function TagSplit(b) {
+    if (b) {
+      if (b.tags) {
+        let temp = b.tags.toString().replace("#", " ").toLowerCase().split(/[\s*|#]/);
         setTags((prevState) => [...prevState, ...temp]);
-       
       }
     }
   }

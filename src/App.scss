@@ -129,6 +129,10 @@ html {
 //Shadow Containers
 //Explanation of why we are using this type of box shadow - adapted this for use across site.
 //https://tobiasahlin.com/blog/how-to-animate-box-shadow/
+
+.first-letter {
+  color: red;
+}
 .shadow-box-no-zoom {
   position: relative;
   width: inherit;
