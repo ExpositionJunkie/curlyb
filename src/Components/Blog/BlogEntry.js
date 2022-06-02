@@ -12,8 +12,6 @@ export default function BlogEntry({ blog, auth }) {
     __html: DOMPurify.sanitize(blog.text),
   });
 
-  
-
   const date = new Date(blog.createdAt);
 
   useEffect(() => {
@@ -23,7 +21,11 @@ export default function BlogEntry({ blog, auth }) {
   function TagSplit(b) {
     if (b) {
       if (b.tags) {
-        let temp = b.tags.toString().replace("#", " ").toLowerCase().split(/[\s*|#]/);
+        let temp = b.tags
+          .toString()
+          .replace("#", " ")
+          .toLowerCase()
+          .split(/[\s*|#]/);
         setTags((prevState) => [...prevState, ...temp]);
       }
     }
@@ -36,25 +38,26 @@ export default function BlogEntry({ blog, auth }) {
           <Subtitle
             titleStr={blog.title}
             subtitleStr={blog.subtitle}
-          ></Subtitle></NavLink>
+          ></Subtitle>
+        </NavLink>
+        <Line></Line>
+        <div className="author-details">
+          <div className="author">
+            <h2>Author: {blog.author.username}</h2>
+          </div>
+          <p className="date"> - {date.toLocaleString()}</p>
+        </div>
+        <Line></Line>
+        <div className="blog-body-wrap">
+          <div
+            className="blog-entry-body linkNoUnderline"
+            dangerouslySetInnerHTML={sanitizedData()}
+          />
+        </div>
+        <div className="marg3">
           <Line></Line>
-          <div className="author-details">
-            <div className="author">
-              <h2>Author: {blog.author.username}</h2>
-            </div>
-            <p className="date"> - {date.toLocaleString()}</p>
-          </div>
-          <Line></Line>
-          <div className="blog-body-wrap">
-            <div
-              className="blog-entry-body linkNoUnderline"
-              dangerouslySetInnerHTML={sanitizedData()}
-            />
-          </div>
-          <div className="marg3">
-            <Line></Line>
-          </div>
-        
+        </div>
+
         <div className="tags">
           <p>Tags:</p>
 
@@ -66,9 +69,7 @@ export default function BlogEntry({ blog, auth }) {
                   key={index}
                   to={`/blog/tags/${tag}`}
                 >
-                  <p className="tag">
-                    {tag}
-                  </p>
+                  <p className="tag">{tag}</p>
                 </NavLink>
               );
             } else {
@@ -76,7 +77,6 @@ export default function BlogEntry({ blog, auth }) {
             }
           })}
         </div>
-
         <BlogFooter blog={blog} comments={false} auth={auth} />
       </div>
     );
