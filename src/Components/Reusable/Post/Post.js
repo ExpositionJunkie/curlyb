@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+//tiptap
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Link from "@tiptap/extension-link";
@@ -7,15 +9,18 @@ import Dropcursor from "@tiptap/extension-dropcursor";
 import TextAlign from "@tiptap/extension-text-align";
 import Highlight from "@tiptap/extension-highlight";
 import EditorButtons from "./EditorButtons";
-
+//sanitize
 import DOMPurify from "dompurify";
+//redux
 import { connect, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { ActionCreators } from "../../../Redux/reduxIndex";
-import { useNavigate } from "react-router-dom";
-import "./Post.css";
+//youtube embed
+import ReactComponent from "../Youtube/Extension";
+import YoutubeEmbed from "../Youtube/YoutubeEmbed";
 
-function PostWrapper({ title, subtitle, tags, text, edit, blogId }) {
+import "./Post.css";
+function PostWrapper({ title, subtitle, tags, text, edit, blogId, fullPost }) {
   const [input, setInput] = useState({
     title: title || "",
     subtitle: subtitle || "",
@@ -50,14 +55,17 @@ function PostWrapper({ title, subtitle, tags, text, edit, blogId }) {
         types: ["heading", "paragraph", "image"],
       }),
       Highlight,
+      ReactComponent,
     ],
     type: "doc",
     content: DOMPurify.sanitize(input.text),
     onUpdate: ({ editor }) => {
       const html = editor.getHTML();
+      const newHTML = checkYoutubeLink(html);
+      console.info(newHTML);
       setInput((prevState) => ({
         ...prevState,
-        text: DOMPurify.sanitize(html),
+        text: DOMPurify.sanitize(newHTML),
       }));
     },
   });
@@ -67,6 +75,7 @@ function PostWrapper({ title, subtitle, tags, text, edit, blogId }) {
       ...prevState,
       [evt.target.id]: evt.target.value,
     }));
+
     evt.preventDefault();
   };
 
@@ -76,8 +85,52 @@ function PostWrapper({ title, subtitle, tags, text, edit, blogId }) {
     }
   };
 
-  const handleSubmit = (evt) => {
+  const checkYoutubeLink = (text) => {
+    //tiptap docs on how to insert a React Node
+    //wasn't jazzed about having to use a button to add this and want it to auto detect
+    //https://tiptap.dev/guide/node-views/react
+    console.info(typeof text, text);
 
+    if (
+      text
+        .toString()
+        .includes(
+          '<a target="_blank" rel="noopener noreferrer nofollow" href="https://www.youtube.com/'
+        )
+    ) {
+      const ytLinkFull =
+        /<a target="_blank" rel="noopener noreferrer nofollow" href="https:\/\/www\.youtube\.com\/watch\?v=d5Hgjp_1V0s">(https:\/\/www\.youtube\.com\/watch\?([^\s]+))<\/a>/gim;
+      const innerStr = ytLinkFull.exec(text)[0];
+      console.info(innerStr);
+      const ytRegex = /href="https:\/\/www.youtube.com\/watch\?v=([^\s]+)"/gim;
+      let ytEmbed = ytRegex.exec(text)[1];
+      console.info(ytEmbed);
+      console.log(typeof ytEmbed, ytEmbed);
+      let newText = text.replace(
+        innerStr,
+        `<react-component>
+          <div className="video-responsive">
+            <a
+              rel="noopener noreferrer nofollow"
+              target="_blank"
+              href={'https://www.youtube.com/watch?v=${ytEmbed}'}
+            >
+            <object data={'https://www.youtube.com/embed/${ytEmbed}'}
+        width='560px' height='315px'>
+              </object>
+            </a>
+          </div>
+        </react-component>`
+      );
+      console.info(newText);
+      return newText;
+    } else {
+      console.log("doesn't include");
+      return text;
+    }
+  };
+
+  const handleSubmit = (evt) => {
     let temp = input.tags
       .toString()
       .replace("#", " ")
@@ -105,7 +158,6 @@ function PostWrapper({ title, subtitle, tags, text, edit, blogId }) {
 
   return (
     <div className="post-wrapper linkNoUnderline">
-      
       <form
         autoComplete="off"
         onSubmit={(evt) => handleSubmit(evt)}
@@ -143,7 +195,7 @@ function PostWrapper({ title, subtitle, tags, text, edit, blogId }) {
           value={input.tags}
           onChange={(evt) => handleChange(evt)}
         ></input>
-        
+
         <input
           type="submit"
           name="submit"
