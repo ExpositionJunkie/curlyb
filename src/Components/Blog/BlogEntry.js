@@ -9,7 +9,10 @@ import BlogFooter from "./BlogFooter";
 export default function BlogEntry({ blog, auth }) {
   const [tags, setTags] = useState([]);
   const sanitizedData = () => ({
-    __html: DOMPurify.sanitize(blog.text, { ADD_TAGS: ["iframe", "react-component"], ADD_ATTR: ['allow', 'allowfullscreen', 'frameborder', 'scrolling'] } ),
+    __html: DOMPurify.sanitize(blog.text, {
+      ALLOWED_TAGS: ["iframe", "react-component"],
+      ADD_ATTR: ["allow", "allowfullscreen", "frameborder", "scrolling"],
+    }),
   });
 
   const date = new Date(blog.createdAt);
@@ -29,12 +32,6 @@ export default function BlogEntry({ blog, auth }) {
         setTags((prevState) => [...prevState, ...temp]);
       }
     }
-  }
-
-  function DetectYoutube() {
-    let sanitized = sanitizedData()
-    console.log(sanitized.innerHTML)
-
   }
 
   if (blog) {

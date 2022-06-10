@@ -160,7 +160,6 @@ export const addBlog = (blog) => ({
   payload: blog,
 });
 
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Blogs End ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Comments ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -591,3 +590,25 @@ export const addFavorites = (favorites) => ({
 });
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Favorites End ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Youtube Embed Id Start ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+export const setYtEmbed = (embedId) => (dispatch) => {
+  dispatch(ytEmbedLoading)
+  dispatch(addYtEmbed(embedId));
+};
+
+export const ytEmbedLoading = () => ({
+  type: ActionTypes.FAVORITES_LOADING,
+});
+
+export const addYtEmbed = (ytEmbedId) => ({
+  type: ActionTypes.ADD_YTEMBEDID,
+  payload: ytEmbedId,
+});
+
+export const removeYtEmbed = () => ({
+  type: ActionTypes.REMOVE_YTEMBEDID,
+});
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Youtube Embed Id End ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,6 +1,6 @@
 import { Node, mergeAttributes } from "@tiptap/core";
 import { ReactNodeViewRenderer } from "@tiptap/react";
-import Component from "./YoutubeEmbed";
+import YoutubeEmbed from "./YoutubeEmbed";
 
 export default Node.create({
   name: "reactComponent",
@@ -24,6 +24,6 @@ export default Node.create({
   },
 
   addNodeView() {
-    return ReactNodeViewRenderer(Component);
+    return ReactNodeViewRenderer(YoutubeEmbed);
   },
 });

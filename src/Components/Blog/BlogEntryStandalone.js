@@ -33,7 +33,10 @@ export function BlogEntryS({ auth }) {
   }, []);
 
   const sanitizedData = () => ({
-    __html: DOMPurify.sanitize(blog.text),
+    __html: DOMPurify.sanitize(blog.text, {
+      ALLOWED_TAGS: ["iframe", "react-component"],
+      ADD_ATTR: ["allow", "allowfullscreen", "frameborder", "scrolling"],
+    }),
   });
 
   let date;

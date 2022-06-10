@@ -8,6 +8,7 @@ import { Comments } from "./commentsReducer";
 import { Favorites } from "./favoritesReducer";
 import { Auth } from "./authReducer";
 import { Signup } from "./singupReducer";
+import { YtEmbed } from "./ytEmbedReducer";
 
 const reducers = combineReducers({
   blogs: Blogs,
@@ -15,6 +16,7 @@ const reducers = combineReducers({
   favorites: Favorites,
   auth: Auth,
   signup: Signup,
+  ytEmbed: YtEmbed,
 });
 
 export default reducers;
