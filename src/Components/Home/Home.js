@@ -14,26 +14,24 @@ function HomePage({ auth, blogs }) {
       <Title titleStr="Home" />
       <div className="inner-home-wrapper">
         <div>
-        <div className="headline">
-          <h1 className="home-title">Welcome to Curlybrackets.</h1>
-          <h2 className="home-subtitle">Blog in Dark Mode</h2>
-          <p>Write your magnum opus or "Hello World"</p>
-        </div>
-        
-        <Line></Line>
-        <div className="blog-columns-container">
-          <div className="tag-column">
-            <TagsSummary blogs={blogs} className="tags-layout" />
+          <div className="headline">
+            <h1 className="home-title">Welcome to Curlybrackets.</h1>
+            <h2 className="home-subtitle">Blog in Dark Mode</h2>
+            <p>Write your magnum opus or "Hello World"</p>
           </div>
-        <div className="post-column">
-        <VariablePost location={"home"} auth={auth} />
-        
-       
-            <div className="plain-link">
-              <BlogList auth={auth} blogs={blogs} />
-            </div>
 
-          </div>
+          <Line></Line>
+          <div className="blog-columns-container">
+            <div className="tag-column">
+              <TagsSummary blogs={blogs} className="tags-layout" />
+            </div>
+            <div className="post-column">
+              <VariablePost location={"home"} auth={auth} />
+
+              <div className="plain-link">
+                <BlogList auth={auth} blogs={blogs} />
+              </div>
+            </div>
           </div>
         </div>
       </div>

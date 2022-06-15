@@ -1,0 +1,72 @@
+.loading-wrap {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: center;
+}
+
+.loading-text {
+  font-size: 1.5rem;
+  font-family: "Raleway", sans-serif;
+  padding: 1rem;
+}
+
+.loader {
+  border: 16px solid #000000;
+  border-top: 16px solid #f17c58;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  -webkit-animation: spin 2s linear infinite;
+          animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    border-top: 16px solid #f17c58;
+  }
+  16% {
+    border-top: 16px solid #ffdc18;
+  }
+  32% {
+    border-top: 16px solid #27dbb1;
+  }
+  48% {
+    border-top: 16px solid #24aadb;
+  }
+  64% {
+    border-top: 16px solid #8335d0;
+  }
+  84% {
+    border-top: 16px solid #e94584;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-top: 16px solid #ff3706;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    border-top: 16px solid #f17c58;
+  }
+  16% {
+    border-top: 16px solid #ffdc18;
+  }
+  32% {
+    border-top: 16px solid #27dbb1;
+  }
+  48% {
+    border-top: 16px solid #24aadb;
+  }
+  64% {
+    border-top: 16px solid #8335d0;
+  }
+  84% {
+    border-top: 16px solid #e94584;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-top: 16px solid #ff3706;
+  }
+}

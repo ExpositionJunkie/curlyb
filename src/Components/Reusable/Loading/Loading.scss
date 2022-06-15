@@ -1,0 +1,48 @@
+@import "../../../Variables/Sass/SassVariables.scss";
+
+.loading-wrap {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    align-items: center;
+}
+
+.loading-text {
+    font-size: 1.5rem;
+    font-family: $bodyFont;
+    padding: 1rem;
+}
+.loader {
+    border: 16px solid $blackColor; 
+    border-top: 16px solid $orangeColor; 
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+
+    @include keyframes(spin) {
+      0% {
+        transform: rotate(0deg);
+        border-top: 16px solid $orangeColor;
+      }
+      16% {
+        border-top: 16px solid $yellowColor;
+      }
+      32% {
+        border-top: 16px solid $tealColor;
+      }
+      48% {
+        border-top: 16px solid $blueColor;
+      }
+      64% {
+        border-top: 16px solid $purpleColor;
+      }
+      84% {
+        border-top: 16px solid $pinkColor;
+      }
+      100% {
+        transform: rotate(360deg);
+        border-top: 16px solid $redColor;
+      }
+    }
+}

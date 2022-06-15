@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect } from "react";
+import React, { useState, Suspense, useEffect } from "react";
 import "./App.css";
 import Home from "./Components/Home/Home";
 import About from "./Components/About/About";
@@ -23,6 +23,7 @@ import NothinghHere from "./Components/Reusable/404/NothingHere";
 import PostOverlay from "./Components/Reusable/Post/PostOverlay"
 import { Route, Routes } from "react-router-dom";
 import Cookie from "./Components/Reusable/Cookie/Cookie";
+import Loading from "./Components/Reusable/Loading/Loading";
 
 //redux
 import { connect, useSelector, useDispatch } from "react-redux";
@@ -30,6 +31,7 @@ import { bindActionCreators } from "redux";
 import { ActionCreators } from "./Redux/reduxIndex";
 
 function AppComponent() {
+  const [loginCheck, setLoginCheck] = useState(false)
   const auth = useSelector((state) => state.auth);
   const signup = useSelector((state) => state.signup);
   const blogs = useSelector((state) => state.blogs);
@@ -48,9 +50,7 @@ function AppComponent() {
       let creds = JSON.parse(localStorage.getItem("creds"));
       loginUser(creds)
         .then(() => {
-          if (auth.errMess) {
-            console.log(auth.errMess);
-          }
+          setLoginCheck(true)
         })
         .then(() => {});
     } else {
@@ -61,7 +61,12 @@ function AppComponent() {
 
   useEffect(() => {
     fetchBlogs();
-    handleLogin();
+
+    if (!loginCheck) {
+      handleLogin();
+      setLoginCheck(!loginCheck);
+    }
+    
     //The app won't recognize login between updates, this fixes that.
     return function () {
       //I don't really want to do anything here, but it will leak memory
@@ -69,21 +74,10 @@ function AppComponent() {
     };
   }, []);
 
-  useEffect(() => {
-    
-      var elements = document.getElementsByClassName("blog-entry-body")
-      console.log(elements)
-      for (var i=0; i<elements.length; i++){
-        elements[i].innerHTML = elements[i].innerHTML.replace(/\\b([a-z])([a-z]+)?\\b/gim, `<span class='first-letter'>${elements[i].innerHTML}</span>`)
-        console.log(elements[i].innerHTML)
-      }
-    
-  }, [])
-
 
   return (
     <div className="App">
-      <Suspense fallback={<p>...Loading</p>}>
+      <Suspense fallback={<Loading />}>
         <header className="App-header">
           <Navbar auth={auth} />
           <PostOverlay auth={auth} />

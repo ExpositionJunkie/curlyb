@@ -1,9 +1,9 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
-
+import "./Loading.css"
 //TODO add animation
 
 export default function Loading() {
-  const { t } = useTranslation();
-  return <>{t("loading")}</>;
+  return (
+  <div className="loading-wrap"><div className="loader"></div><div className="loading-text">Loading...</div></div>
+  );
 }

@@ -111,15 +111,15 @@ export default function Navbar({ auth }) {
               />
             </button>
 
-            <NavLink className="menu-item" to="/">
+            <NavLink className="menu-item" to="/" onClick={() => {if (isNavExpanded) {setIsNavExpanded(!isNavExpanded)}}}>
               <FontAwesomeIcon className="nav-icon" icon={solid("home")} />
               <div className="long-menu">Home</div>
             </NavLink>
-            <NavLink className="menu-item" to="/blog">
+            <NavLink className="menu-item" to="/blog" onClick={() => {if (isNavExpanded) {setIsNavExpanded(!isNavExpanded)}}}>
               <FontAwesomeIcon className="nav-icon" icon={solid("blog")} />
               <div className="long-menu">Blog</div>
             </NavLink>
-            <NavLink className="menu-item" to="/about">
+            <NavLink className="menu-item" to="/about" onClick={() => {if (isNavExpanded) {setIsNavExpanded(!isNavExpanded)}}}>
               <FontAwesomeIcon
                 className="nav-icon"
                 icon={solid("address-card")}
@@ -127,7 +127,7 @@ export default function Navbar({ auth }) {
               <div className="long-menu">About</div>
             </NavLink>
             {auth.isAuthenticated ? ( //show login/logout dynamically
-              <NavLink className="menu-item" to="/login">
+              <NavLink className="menu-item" to="/login" onClick={() => {if (isNavExpanded) {setIsNavExpanded(!isNavExpanded)}}}>
                 <FontAwesomeIcon
                   className="nav-icon"
                   icon={solid("user-astronaut")}
@@ -135,7 +135,7 @@ export default function Navbar({ auth }) {
                 <div className="long-menu">Logout</div>
               </NavLink>
             ) : (
-              <NavLink className="menu-item" to="/login">
+              <NavLink className="menu-item" to="/login" onClick={() => {if (isNavExpanded) {setIsNavExpanded(!isNavExpanded)}}}>
                 <FontAwesomeIcon
                   className="nav-icon"
                   icon={solid("user-astronaut")}
