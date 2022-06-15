@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.55632573.css",
-    "main.js": "/static/js/main.9a7f561b.js",
+    "main.css": "/static/css/main.903a9f97.css",
+    "main.js": "/static/js/main.65f6e2a2.js",
     "static/media/danny-devito.png": "/static/media/danny-devito.295f313995a3b743e5cb.png",
     "static/media/splash.png": "/static/media/splash.4defddf9dcbce9974aa4.png",
     "static/media/ApolloGlamourShot.jpg": "/static/media/ApolloGlamourShot.734f7496e7b076d056e6.jpg",
@@ -18,11 +18,11 @@
     "static/media/linkedIn.svg": "/static/media/linkedIn.bf00913dc77d0de97d51e9b723abc05f.svg",
     "static/media/css3.svg": "/static/media/css3.f40adea72026a24a549a62082ce10ea8.svg",
     "static/media/html5.svg": "/static/media/html5.b2df6907108c1c1f71ca0581196c32bf.svg",
-    "main.55632573.css.map": "/static/css/main.55632573.css.map",
-    "main.9a7f561b.js.map": "/static/js/main.9a7f561b.js.map"
+    "main.903a9f97.css.map": "/static/css/main.903a9f97.css.map",
+    "main.65f6e2a2.js.map": "/static/js/main.65f6e2a2.js.map"
   },
   "entrypoints": [
-    "static/css/main.55632573.css",
-    "static/js/main.9a7f561b.js"
+    "static/css/main.903a9f97.css",
+    "static/js/main.65f6e2a2.js"
   ]
 }
