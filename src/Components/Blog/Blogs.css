@@ -67,24 +67,20 @@
     flex-direction: column;
     justify-content: space-evenly;
   }
-
   .post-list-wrapper {
     display: flex;
     justify-content: space-evenly;
   }
-
   .author-details {
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
   }
-
   .date {
     font-size: 1rem;
     justify-self: flex-end;
   }
-
   #inner_entry_wrapper {
     overflow-wrap: break-word;
     word-break: normal;
@@ -93,13 +89,11 @@
     border-radius: 40px;
     padding: 0rem 1rem 0rem 1rem;
   }
-
   .blog_title {
     padding: 0.5rem;
     border-radius: 40px;
     z-index: 4;
   }
-
   .tags {
     display: flex;
     flex-wrap: wrap;
@@ -110,13 +104,11 @@
     padding: 0rem 0.5rem 0rem 0.5rem;
     word-break: break-all;
   }
-
   .tags > * {
     justify-content: space-between;
     flex-wrap: wrap;
     overflow-wrap: break-word;
   }
-
   .entry {
     flex-wrap: wrap;
   }
@@ -126,30 +118,25 @@
     display: flex;
     justify-content: space-evenly;
   }
-
   .blog-columns-container {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     margin: 1rem;
   }
-
   .tag-column .post-column {
     padding: 1rem;
   }
-
   .author-details {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
   }
-
   .date {
     font-size: 1rem;
     justify-self: flex-end;
   }
-
   #inner_entry_wrapper {
     overflow-wrap: break-word;
     word-break: normal;
@@ -157,13 +144,11 @@
     padding: 1rem;
     border-radius: 40px;
   }
-
   .blog_title {
     padding: 0.5rem;
     border-radius: 40px;
     z-index: 4;
   }
-
   .tags {
     display: flex;
     flex-wrap: wrap;
@@ -172,16 +157,13 @@
     text-transform: uppercase;
     word-break: break-all;
   }
-
   .tags > * {
     margin-left: 1rem;
   }
-
   .entry {
     margin-left: 2rem;
     margin-right: 2rem;
   }
-
   .blog-entry-body p {
     font-family: "Raleway", sans-serif;
     font-size: 1rem;
@@ -192,46 +174,37 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;
-    margin: 2rem;
   }
-
   .tag-column .post-column {
     padding: 1rem;
   }
-
   .post-column {
     max-width: 60%;
   }
-
   .author-details {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
   }
-
   .date {
     font-size: 1.25rem;
     justify-self: flex-end;
   }
-
   #inner_entry_wrapper {
     overflow-wrap: break-word;
     word-break: normal;
     border-radius: 40px;
     padding: 0rem 1rem 0rem 1rem;
   }
-
   .blog_title {
     padding: 0.5rem;
     border-radius: 40px;
     z-index: 4;
   }
-
   .blog-entry-body p {
     font-size: 1rem;
   }
-
   .tags {
     display: flex;
     flex-wrap: wrap;
@@ -240,7 +213,6 @@
     text-transform: uppercase;
     word-break: break-all;
   }
-
   .tags > * {
     margin-left: 1rem;
     flex-wrap: wrap;
@@ -253,26 +225,21 @@
     flex-direction: row-reverse;
     justify-content: space-around;
   }
-
   .tag-column .post-column {
     padding: 1rem;
   }
-
   .post-column {
     max-width: 70%;
   }
-
   .author-details {
     display: flex;
     justify-content: space-around;
     align-items: center;
   }
-
   .date {
     font-size: 1.25rem;
     justify-self: flex-end;
   }
-
   #inner_entry_wrapper {
     overflow-wrap: break-word;
     word-break: normal;
@@ -280,17 +247,14 @@
     border-radius: 40px;
     padding: 0rem 1.5rem 0rem 1.5rem;
   }
-
   .blog_title {
     padding: 0.5rem;
     border-radius: 40px;
     z-index: 4;
   }
-
   .blog-entry-body p {
     font-size: 1rem;
   }
-
   .tags {
     display: flex;
     flex-wrap: wrap;
@@ -299,11 +263,9 @@
     text-transform: uppercase;
     word-break: break-all;
   }
-
   .tags > * {
     margin-left: 1rem;
   }
-
   .entry {
     margin: 3rem;
   }
@@ -314,16 +276,13 @@
     flex-direction: row-reverse;
     justify-content: space-evenly;
   }
-
   .tag-column .post-column {
     padding: 1rem;
   }
-
   .date {
     font-size: 1rem;
     justify-self: flex-end;
   }
-
   #inner_entry_wrapper {
     overflow-wrap: break-word;
     word-break: normal;
@@ -332,13 +291,11 @@
     border-radius: 40px;
     padding: 0rem 3rem 0rem 3rem;
   }
-
   .blog_title {
     padding: 0.5rem;
     border-radius: 40px;
     z-index: 4;
   }
-
   .tags {
     display: flex;
     flex-wrap: wrap;
@@ -347,11 +304,9 @@
     text-transform: uppercase;
     word-break: break-all;
   }
-
   .tags > * {
     margin-left: 1rem;
   }
-
   .entry {
     margin: 5rem;
   }
